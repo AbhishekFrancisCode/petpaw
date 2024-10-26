@@ -1,12 +1,14 @@
 export default function HeroTitle() {
   return (
-    <div className="flex w-full mb-4 lg:pl-[48px] xl:pl-[104px]  text-center lg:text-left">
-      <div className="max-w-screen md:max-w-4xl flex flex-col mx-auto text-white text-[28px] md:text-[56px] font-normal md:leading-[67.20px] text-center lg:text-left">
-        <p className="w-full px-8 xl:px-0 xl:pr-2">
-          Get access to the India's best
-          <span className="pl-2"> event managements</span>
+    <div className="flex w-full h-full place-content-center items-center text-center lg:text-left">
+      <div className="flex flex-col">
+        <div className="text-2xl md:text-4xl text-[#EE9422] font-bold">
+          <p className="w-full">Happy Gut,</p>
+          <p className="w-full">Waggy Butt!</p>
+        </div>
+        <p className="text-base font-medium mt-6 ">
+          Fresh expert crafted meals, cooked and deliverd daily
         </p>
-        <p className="px-10 xl:px-0 font-semibold">But who is care of you?</p>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ interface dataFormProps {
 
 export default function Button({ text, id, cls, disabled, handleRedirect }: dataFormProps) {
   return (
-    <button id={id} onClick={handleRedirect} className={`lg:px-4 py-0 h-8 ${cls}`}>
+    <button id={id} onClick={handleRedirect} className={`lg:px-4 py-0 h-6 lg:h-8 ${cls}`}>
       {text}
     </button>
   );

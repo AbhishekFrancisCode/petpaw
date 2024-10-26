@@ -1,5 +1,5 @@
 export const TITLES = {
-  home: "Gina"
+  home: "Pwatful"
 };
 
 export const STRINGS = {
