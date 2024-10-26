@@ -1,0 +1,11 @@
+.quill .ql-toolbar{
+  border: #F5F5F5;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background: #F5F5F5;
+}
+.quill .ql-container {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.quill .ql-container .ql-editor {
+  height: 120px;
+}

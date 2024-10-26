@@ -1,0 +1,17 @@
+{
+    "country": "India",
+    "city" : [
+        { 
+          "city" : "Bangalore",
+          "state" : "karnataka"
+        },
+        { 
+          "city" : "Chennai",
+          "state" : "Tamil Nadu"
+        },
+        { 
+          "city" : "Hyderabad",
+          "state" : "Telangana"
+        }
+    ]
+}
