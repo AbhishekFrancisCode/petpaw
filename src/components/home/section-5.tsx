@@ -38,13 +38,14 @@ const buttons: ButtonProps[] = [
     title: "Get Started",
     link_to: "https://example.com/forest",
     color: "#EE9422",
-    title_color: "#FFF8EF"
+    title_color: "#ffffff"
   },
   {
     title: "Know More",
     link_to: "https://example.com/city",
     color: "#FFF8EF",
-    title_color: "#EE9422"
+    title_color: "#EE9422",
+    outlineButton: true
   }
 ];
 

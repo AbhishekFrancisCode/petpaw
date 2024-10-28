@@ -6,7 +6,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <div className="mx-auto">
       <HeaderBlack />
       {children}
-      {/* <Footer _isBlack={false} /> */}
+      <Footer _isBlack={false} />
     </div>
   );
 }

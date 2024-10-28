@@ -8,6 +8,7 @@ export interface ButtonProps {
   title_color?: string;
   link_to?: string;
   color?: string;
+  outlineButton?: boolean;
 }
 
 export interface ImagePropsType {
@@ -45,21 +46,13 @@ export default function TempletType1({
       {title && (
         <h3 className={`text-[${title_color}] text-3xl font-semibold py-1 text-center`}>{title}</h3>
       )}
-      {sub_title && <div className="text-black text-center">{sub_title}</div>}
+      {sub_title && <div className="text-black text-center px-4">{sub_title}</div>}
       {images && (
-        <div className="flex flex-wrap place-content-center py-14 justify-evenly">
+        <div className="flex flex-wrap place-content-center py-14 justify-evenly gap-8 lg:gap-0">
           {images.map((item: ImagePropsType, index: number) => {
             return (
               <div key={index} className="flex flex-col">
-                {/* <p>{item.image_link}</p> */}
-                {steps_count && (
-                  <div
-                    className={`text-black top-2 left-2 bg-[#FFF8EF] text-sm font-bold px-2 py-1 rounded-md mb-2`}
-                  >
-                    {"Step - " + (index + 1)} {/* Display index as badge */}
-                  </div>
-                )}
-                <div className="w-80 h-44 rounded-md border-black relative">
+                <div className="w-[330px] h-[290px] md:w-80 md:h-44 relative rounded-xl">
                   <Image
                     key={index}
                     src={item.image_link}
@@ -73,18 +66,23 @@ export default function TempletType1({
                       console.error("Image load failed:", e);
                     }}
                   />
+                  {steps_count && (
+                    <span className="absolute size-20 top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-70 text-white text-5xl text-center font-semibold place-content-center rounded-full">
+                      {index + 1}
+                    </span>
+                  )}
                 </div>
                 {item.title && (
-                  <p
-                    className={`text-[${item.title_color}] w-80 text-base font-medium py-1 text-center pt-4`}
+                  <h2
+                    className={`text-[${item.title_color}] w-[330px] text-[1.15rem] font-medium py-1 text-center pt-5 lg:pt-4 px-8`}
                   >
                     {item.title}
-                  </p>
+                  </h2>
                 )}
 
                 {item.description && (
                   <p
-                    className={`text-[${item.title_color}] w-80 text-base font-medium py-1 text-center pt-4`}
+                    className={`text-[${item.title_color}] w-[330px] text-base font-normal py-1 text-center pt-2 lg:pt-4`}
                   >
                     {item.description}
                   </p>
@@ -104,7 +102,7 @@ export default function TempletType1({
                   <button
                     key={index}
                     onClick={() => {}}
-                    className={`text-[${item.title_color}] bg-[${item.color}] rounded-full min-h-16 px-10 border-2 border-black`}
+                    className={`bg-[${item.outlineButton ? "transprent" : item.color}] rounded-md min-h-16 px-10 text-[${item.title_color}] hover:opacity-80 ${item.outlineButton && "border-2"} border-[#999999] } `}
                   >
                     {item.title}
                   </button>

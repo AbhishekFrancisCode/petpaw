@@ -36,18 +36,6 @@ const buttons: ButtonProps[] = [
     color: "#028391",
     title_color: "#ffffff"
   }
-  // {
-  //   title: "Know More",
-  //   link_to: "https://example.com/forest",
-  //   color: "#EE9422",
-  //   title_color: "#028391",
-  // },
-  // {
-  //   title: "Get Started",
-  //   link_to: "https://example.com/city",
-  //   color: "#EE9422",
-  //   title_color: "#EE9422",
-  // }
 ];
 
 export default function Section_type_3() {

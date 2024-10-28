@@ -9,7 +9,7 @@ type Inputs = {
   email: string;
 };
 
-export default function NewsLetter() {
+export default function ExploreForm() {
   const [email, setEmail] = useState<string>("");
 
   const handleEmailOnChange = (event: ChangeEvent<HTMLInputElement>) => {
