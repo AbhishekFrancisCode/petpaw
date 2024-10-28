@@ -8,12 +8,7 @@ interface TempletProps {
   time: string;
 }
 
-export default function Eventemplet({
-  title,
-  image,
-  address,
-  date,
-  time}: TempletProps) {
+export default function Eventemplet({ title, image, address, date, time }: TempletProps) {
   return (
     <div className="flex justify-between p-6">
       <div className="flex basis-4/5 gap-6">
@@ -32,7 +27,7 @@ export default function Eventemplet({
           alt={image}
           width={0}
           height={0}
-          className={`rounded-md object-fill size-28`}
+          className={`rounded-xl object-fill size-28`}
         />
       </div>
     </div>

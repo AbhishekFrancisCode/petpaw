@@ -37,7 +37,7 @@ export default function Input({
         disabled={disabled}
         placeholder={placeholder}
         onChange={(e) => changeHandler1(e)}
-        className={`form-input mt-1 block w-full border-2 border-[#000000] border-opacity-5 rounded-md focus:border-[#DADADA] ] focus:ring-[#DADADA] `}
+        className={`form-input mt-1 block w-full border-2 border-[#000000] border-opacity-5 rounded-xl focus:border-[#DADADA] ] focus:ring-[#DADADA] `}
       />
     </label>
   );

@@ -6,32 +6,29 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
 
     // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
-    // screens: {
-    //   sm: "340px",
-    //   md: "768px",
-    //   lg: "1024px",
-    //   xl: "1440px",
-    //   "2xl": "1920px",
-    // },
     extend: {
       colors: {
         black: "#000000",
 
         "clr-505050": "#505050",
         "clr-888": "#888888",
-        
-        sidebar : {
+
+        sidebar: {
           active: "#E8ECF1",
-          background : "#E8ECF1"
+          background: "#E8ECF1"
         }
-      },
-    },
+      }
+      // screens: {
+      //   "xs": "340px",
+      //   "3xl": "1920px"
+      // }
+    }
   },
   plugins: [
-    require("@tailwindcss/forms"),
+    require("@tailwindcss/forms")
     // ...
-  ],
+  ]
 };

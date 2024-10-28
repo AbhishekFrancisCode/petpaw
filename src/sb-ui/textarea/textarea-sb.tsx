@@ -39,7 +39,7 @@ const SbTextarea = (props: any) => {
         placeholder={placeholder}
         type={type ? type : "text"}
         autoFocus={focus}
-        className={`text-xs text-black min-w-full min-h-32 border border-[#C2C2C2] rounded-md focus:border-[#C2C2C2] focus:ring-[#C2C2C2] my-1`}
+        className={`text-xs text-black min-w-full min-h-32 border border-[#C2C2C2] rounded-xl focus:border-[#C2C2C2] focus:ring-[#C2C2C2] my-1`}
       />
       <p className="text-blac w-full text-end">{`${strlen} / 300`}</p>
     </div>

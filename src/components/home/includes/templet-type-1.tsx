@@ -102,7 +102,7 @@ export default function TempletType1({
                   <button
                     key={index}
                     onClick={() => {}}
-                    className={`bg-[${item.outlineButton ? "transprent" : item.color}] rounded-md min-h-16 px-10 text-[${item.title_color}] hover:opacity-80 ${item.outlineButton && "border-2"} border-[#999999] } `}
+                    className={`bg-[${item.outlineButton ? "transprent" : item.color}] rounded-xl min-h-16 px-10 text-[${item.title_color}] hover:opacity-80 ${item.outlineButton && "border-2"} border-[#999999] } `}
                   >
                     {item.title}
                   </button>

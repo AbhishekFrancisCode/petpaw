@@ -29,7 +29,7 @@ const SbInput = (props: any) => {
       <input
         {...register(name, {
           required: required,
-          minLength: min,
+          minLength: min
           // validation
         })}
         inputprops={{ disableUnderline: true }}
@@ -42,7 +42,7 @@ const SbInput = (props: any) => {
         autoFocus={focus}
         disabled={disabled}
         // autoComplete="off"
-        className={`text-black placeholder-opacity-85 min-w-full max-w-[294px] min-h-12 border border-[#C2C2C2] rounded-md focus:border-[#C2C2C2] focus:ring-[#C2C2C2] my-1`}
+        className={`text-black placeholder-opacity-85 min-w-full max-w-[294px] min-h-12 border border-[#C2C2C2] rounded-xl focus:border-[#C2C2C2] focus:ring-[#C2C2C2] my-1`}
         //   autoComplete=""
       />
       <ErrorMessage

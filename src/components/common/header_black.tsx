@@ -32,10 +32,10 @@ export default function HeaderBlack() {
 
   return (
     <div
-      className="absolute float-start py-6 pl-0 bg-transprent w-screen z-50 "
+      className="fixed float-start py-6 pl-0 bg-transprent backdrop-blur-[2px] w-screen z-50  "
       onBlur={(e) => e.currentTarget.focus()}
     >
-      <div className="px-2 md:px-6 text-sm text-black rounded-md font-medium text-right">
+      <div className="px-2 md:px-6 text-sm text-black rounded-xl font-medium text-right">
         <div className="flex flex-row justify-between">
           <div className="flex flex-row w-auto justify-between place-content-center ">
             <div className="">
@@ -74,7 +74,7 @@ export default function HeaderBlack() {
                   />
                 </Link>
                 <Button
-                  cls="w-32 h-10 text-sm text-black rounded-md font-medium text-center bg-[#EE9422]"
+                  cls="w-32 h-10 text-sm text-black rounded-xl font-medium text-center bg-[#EE9422]"
                   text="EXPLORE"
                   handleRedirect={goToDateSection}
                 />

@@ -23,7 +23,7 @@ export default function Section_type_8() {
             <Button
               text={"Explore Pricing Plans"}
               handleRedirect={() => {}}
-              cls="bg-[#028391] w-[300px] min-h-16 rounded-full "
+              cls="bg-[#028391] w-[300px] min-h-16 rounded-xl text-white "
             />
           </div>
         </div>
