@@ -3,6 +3,7 @@ export interface Pet {
   owner_id?: string;
   name?: string;
   nickname?: string;
+  waight?: string;
   species?: string;
   breed?: string;
   date_of_birth?: Date;

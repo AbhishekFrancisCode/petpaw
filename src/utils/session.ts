@@ -1,5 +1,5 @@
 var jwt = require("jsonwebtoken");
-import { AT_SECRECT, COOKIE_AUTH, COOKIE_NAME, COOKIE_REF, ENVIRONMENT } from "@/config";
+import { AT_SECRECT, COOKIE_AUTH, COOKIE_NAME, COOKIE_REF, ENVIRONMENT, USER_DATA } from "@/config";
 import { deleteCookie, getCookie, setCookie } from "cookies-next";
 
 export function isCookieValid() {
@@ -31,6 +31,10 @@ export function sbCreateCookie(res: any) {
   localStorage.setItem(COOKIE_NAME!, token);
   localStorage.setItem(COOKIE_AUTH!, res.auth_token);
   localStorage.setItem(COOKIE_REF!, res.refresh_token);
+}
+
+export function sbCreateTempInfo(res: any) {
+  localStorage.setItem(USER_DATA!, res);
 }
 
 export function logout() {

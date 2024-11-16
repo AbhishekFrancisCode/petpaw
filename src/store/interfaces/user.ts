@@ -1,3 +1,5 @@
+import { Pet } from "./pet";
+
 export interface User {
   id?: string;
   name?: string;
@@ -5,7 +7,7 @@ export interface User {
   gender?: string;
   address?: Address;
   contact?: Contact;
-  pets?: Pet[];
+  pets?: Pet;
 }
 
 export interface Address {
@@ -18,9 +20,4 @@ export interface Address {
 export interface Contact {
   email?: string;
   phone?: string;
-}
-
-export interface Pet {
-  petid?: string;
-  name?: number;
 }

@@ -5,6 +5,7 @@ export const ENVIRONMENT = process.env.NEXT_PUBLIC_ENVIRONMENT;
 export const COOKIE_AUTH = process.env.NEXT_PUBLIC_COOKIE_AUTH;
 export const COOKIE_NAME = process.env.NEXT_PUBLIC_COOKIE_NAME;
 export const RAZOR_PAY_KEY = process.env.NEXT_PUBLIC_RAZOR_PAY_KEY;
+export const USER_DATA = process.env.NEXT_PUBLIC_PAWTFUL_PETINFO;
 
 export const baseURL =
   ENVIRONMENT === "dev"

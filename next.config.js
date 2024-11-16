@@ -2,11 +2,18 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: ["localhost", "pawtful.com"],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "ik.imagekit.io"
+      },
+      {
+        protocol: "http",
+        hostname: "localhost"
+      },
+      {
+        protocol: "https",
+        hostname: "pawtful.com"
       }
     ]
   },

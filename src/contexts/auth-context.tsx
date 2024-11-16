@@ -1,9 +1,9 @@
 import { COOKIE_NAME } from "@/config";
 import { getCookieValue } from "@/utils/session";
 import { getCookie } from "cookies-next";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { signInWithPopup, signOut, onAuthStateChanged, GoogleAuthProvider } from "firebase/auth";
-import { authFirebase } from "../store/firebase";
+import { auth } from "../store/firebase";
 
 export interface AuthType {
   email: string;
@@ -14,9 +14,9 @@ export interface AuthType {
 }
 
 export type AuthContextType = {
-  auth: any;
-  googleSignIn: () => void;
-  logOut: () => void;
+  user: any;
+  googleSignIn: () => any;
+  logOut: () => any;
 };
 
 export const AuthContext = React.createContext<AuthContextType | null>(null);
@@ -24,33 +24,30 @@ export const AuthContext = React.createContext<AuthContextType | null>(null);
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   // const cookie = getCookie(COOKIE_NAME!);
   // const ck: AuthType = cookie ? getCookieValue() : {};
-  const [auth, setAuth] = React.useState<any>();
-  //   {
-  //   id: ck.id || "",
-  //   name: ck.name || "",
-  //   email: ck.email || "",
-  //   phone: ck.phone || "",
-  //   image: ck.image || "",
-  // }
+  const [user, setUser] = React.useState<any>(null);
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
-    signInWithPopup(authFirebase, provider);
+    return signInWithPopup(auth, provider);
   };
 
   const logOut = () => {
-    signOut(authFirebase);
+    return signOut(auth);
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(authFirebase, (currentUser) => {
-      setAuth(currentUser);
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log(currentUser);
+      setUser(currentUser);
     });
     return () => unsubscribe();
-  }, []);
+  }, [user]);
 
   return (
-    <AuthContext.Provider value={{ auth, googleSignIn, logOut }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ user, googleSignIn, logOut }}>{children}</AuthContext.Provider>
   );
 };
 export default AuthProvider;
+
+// Custom hook to use User Context
+export const useUser = () => useContext(AuthContext);

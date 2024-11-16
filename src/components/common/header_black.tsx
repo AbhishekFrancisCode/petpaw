@@ -2,15 +2,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import Button from "@/sb-ui/button/button";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import HamburgerMenu from "../home/includes/mobile-menu";
-// import styled from "styled-components";
-// export const Container = styled.div``;
+import { AuthContext, AuthContextType } from "@/contexts/auth-context";
 
 export default function HeaderBlack() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   var faqElement: HTMLElement | null;
+  const { user } = useContext(AuthContext) as AuthContextType;
 
   const handleClickOutside = (event: any) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -73,14 +73,22 @@ export default function HeaderBlack() {
                     // handleRedirect={handleRedirect}
                   />
                 </Link>
-                <Button
-                  cls="w-32 h-10 text-sm text-black rounded-xl font-medium text-center bg-[#EE9422]"
-                  text="EXPLORE"
-                  handleRedirect={goToDateSection}
-                />
-                <Link href={"/login"}>
-                  <text>Login</text>
+                <Link href={`/onboarding`}>
+                  <Button
+                    cls="w-32 h-10 text-sm text-black rounded-xl font-medium text-center bg-[#EE9422]"
+                    text="EXPLORE"
+                    handleRedirect={goToDateSection}
+                  />
                 </Link>
+                {!user ? (
+                  <Link href={"/login"}>
+                    <text>Login</text>
+                  </Link>
+                ) : (
+                  <Link href={"/profile"}>
+                    <text>Profile</text>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
