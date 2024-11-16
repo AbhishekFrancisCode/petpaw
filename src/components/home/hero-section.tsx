@@ -19,10 +19,10 @@ export default function HeroSection() {
             />
           </div>
           <div className="order-2 lg:order-1 grid grid-rows-2 bg-[#FFF8EF]">
-            <div className=" lg:pl-16 xl:24">
+            <div className="px-6 md:px-0 lg:pl-16 xl:24">
               <HeroTitle />
             </div>
-            <div className="flex place-content-center lg:place-content-start lg:pl-16 xl:24">
+            <div className="px-6 md:px-0 flex place-content-center lg:place-content-start lg:pl-16 xl:24">
               <ExploreForm />
             </div>
           </div>

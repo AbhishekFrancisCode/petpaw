@@ -44,9 +44,13 @@ export default function TempletType1({
   return (
     <div className={`flex flex-col pt-4 ${section_color}`}>
       {title && (
-        <h3 className={`text-[${title_color}] text-3xl font-semibold py-1 text-center`}>{title}</h3>
+        <h3
+          className={`text-[${title_color}] text-3xl font-semibold py-1 text-center px-6 md:px-4`}
+        >
+          {title}
+        </h3>
       )}
-      {sub_title && <div className="text-black text-center px-4">{sub_title}</div>}
+      {sub_title && <div className="text-black text-center px-6 md:px-4">{sub_title}</div>}
       {images && (
         <div className="flex flex-wrap place-content-center py-14 justify-evenly gap-8 lg:gap-0">
           {images.map((item: ImagePropsType, index: number) => {

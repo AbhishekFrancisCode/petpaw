@@ -1,77 +1,56 @@
 import { COOKIE_NAME } from "@/config";
-import { copyObject } from "@/utils/json";
 import { getCookieValue } from "@/utils/session";
 import { getCookie } from "cookies-next";
-import React from "react";
+import React, { useEffect } from "react";
+import { signInWithPopup, signOut, onAuthStateChanged, GoogleAuthProvider } from "firebase/auth";
+import { authFirebase } from "../store/firebase";
 
 export interface AuthType {
-  exist: string;
   email: string;
-  family_name: string;
   id: string;
   image: string;
   name: string;
   phone: string;
-  company: string;
-  about: string;
 }
 
 export type AuthContextType = {
-  auth: AuthType;
-  updateAuth: (a: AuthType) => void;
-  updatePhone: (a: AuthType) => void;
-  updateAuthFields: (value: string, keyname: string) => void;
+  auth: any;
+  googleSignIn: () => void;
+  logOut: () => void;
 };
 
 export const AuthContext = React.createContext<AuthContextType | null>(null);
 
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const cookie = getCookie(COOKIE_NAME!);
-  const ck: AuthType = cookie ? getCookieValue() : {};
-  // const ck: AuthType = cookie ?    JSON.parse(cookie!) : {};
-  const [auth, setAuth] = React.useState<AuthType>({
-    id: ck.id || "",
-    name: ck.name || "",
-    family_name: ck.family_name || "",
-    email: ck.email || "",
-    phone: ck.phone || "",
-    image: ck.image || "",
-    company: ck.image || "",
-    about: ck.image || "",
-    exist: "1"
-  });
+  // const cookie = getCookie(COOKIE_NAME!);
+  // const ck: AuthType = cookie ? getCookieValue() : {};
+  const [auth, setAuth] = React.useState<any>();
+  //   {
+  //   id: ck.id || "",
+  //   name: ck.name || "",
+  //   email: ck.email || "",
+  //   phone: ck.phone || "",
+  //   image: ck.image || "",
+  // }
 
-  const updateAuth = (obj: AuthType) => {
-    setAuth({
-      ...obj
-    });
+  const googleSignIn = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(authFirebase, provider);
   };
 
-
-  
-  const updateAuthFields = (value: string, keyname: string) => {
-    const tmp = copyObject(auth);
-
-    setAuth({
-      ...tmp,
-      [keyname]: value
-    });
+  const logOut = () => {
+    signOut(authFirebase);
   };
 
-  const updatePhone = (obj: AuthType) => {
-    const tmp = copyObject(auth);
-    const { phone } = obj;
-
-    setAuth({
-      ...tmp,
-      phone
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(authFirebase, (currentUser) => {
+      setAuth(currentUser);
     });
-  };
+    return () => unsubscribe();
+  }, []);
 
   return (
-    <AuthContext.Provider value={{ auth, updateAuth, updatePhone, updateAuthFields}}>
-      {children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={{ auth, googleSignIn, logOut }}>{children}</AuthContext.Provider>
   );
 };
 export default AuthProvider;

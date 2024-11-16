@@ -32,7 +32,7 @@ export default function HeaderBlack() {
 
   return (
     <div
-      className="fixed float-start py-6 pl-0 bg-transprent backdrop-blur-[2px] w-screen z-50  "
+      className="fixed float-start py-4 md:py-6 pl-0 lg:bg-transprent backdrop-blur-[2px] w-screen z-50  "
       onBlur={(e) => e.currentTarget.focus()}
     >
       <div className="px-2 md:px-6 text-sm text-black rounded-xl font-medium text-right">
@@ -44,7 +44,7 @@ export default function HeaderBlack() {
                   fill={true}
                   src="/images/logos/pawtful_logo_appbar.svg"
                   alt="pawtful.com"
-                  className="max-h-[72px] max-w-[100px]  md:max-w-[150px] py-2"
+                  className="max-h-[64px] md:max-h-[72px] max-w-[100px]  md:max-w-[150px] py-2"
                 />
               </Link>
             </div>
@@ -78,6 +78,9 @@ export default function HeaderBlack() {
                   text="EXPLORE"
                   handleRedirect={goToDateSection}
                 />
+                <Link href={"/login"}>
+                  <text>Login</text>
+                </Link>
               </div>
             </div>
           </div>

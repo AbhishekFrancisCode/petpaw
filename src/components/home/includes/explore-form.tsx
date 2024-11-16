@@ -30,7 +30,7 @@ export default function ExploreForm() {
   };
 
   return (
-    <div className="flex flex-col gap-2 h-full px-4">
+    <div className="flex flex-col gap-2 h-full">
       <div className="text-base font-normal leading-snug lg:mt-[10px] w-full text-center lg:text-left">
         {"What breed is your dog?!"}
       </div>

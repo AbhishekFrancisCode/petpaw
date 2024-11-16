@@ -1,13 +1,26 @@
 export interface User {
-  ID: string;
-  image: string;
-  identifier: string;
-  short_about: string;
-  short_about_one: string;
-  name: string;
-  family_name: string;
-  tags: string;
-  proceedings: string;
-  price: string;
-  request_price: number;
+  id?: string;
+  name?: string;
+  age?: number;
+  gender?: string;
+  address?: Address;
+  contact?: Contact;
+  pets?: Pet[];
+}
+
+export interface Address {
+  street?: string;
+  city?: string;
+  state?: string;
+  zipcode?: string;
+}
+
+export interface Contact {
+  email?: string;
+  phone?: string;
+}
+
+export interface Pet {
+  petid?: string;
+  name?: number;
 }

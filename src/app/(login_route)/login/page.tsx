@@ -29,14 +29,24 @@ export default function Login(props: Props) {
           </Link>
         </div>
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-300 dark:border-gray-700">
+          <div className="fixed inset-0 bg-gray-800 bg-opacity-60 flex items-center justify-center">
+            {/* Card Container */}
+            <div className="bg-white rounded-lg shadow-lg w-80 p-6">
+              {/* Title */}
+              <h2 className="text-center text-xl font-semibold mb-6">Login</h2>
+              {/* Buttons */}
+              <div className="flex flex-col gap-4">
+                <button className="bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
+                  Login with Phone
+                </button>
+                <button className="bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">
+                  Login with Email
+                </button>
+              </div>
+            </div>
+          </div>
           {/* <AuthProvider>
-            <OtpWrapper searchParams={searchParams} loginFlow={true} handleCurrentStep={() => {}} />
           </AuthProvider> */}
-          {/* <div className="py-4">
-            <AuthProvider>
-              <SbGoogleWrapper />
-            </AuthProvider>
-          </div> */}
         </div>
       </div>
     </section>

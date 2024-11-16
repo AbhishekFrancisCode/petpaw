@@ -91,7 +91,9 @@ export default function Section_type_2() {
             </p>
           </div>
           <div className="flex-1 place-content-center lg:place-content-start lg:px-10 xl:px-12 py-4">
-            <p className={`text-[#333333] text-base font-normal py-1 text-center lg:text-left`}>
+            <p
+              className={`text-[#333333] text-base font-normal py-1 text-center lg:text-left px-6 md:px-0`}
+            >
               {
                 "Pawtful's meals are expertly crafted by a team of board-certified veterinary nutritionists, using the finest locally and sustainably sourced ingredients. Our recipes are designed to enhance nutrient absorption through carefully controlled cooking methods, ensuring that your dog enjoys the wholesome goodness of real, flavourful food."
               }
@@ -126,7 +128,7 @@ export default function Section_type_2() {
                   }}
                 />
               </div>
-              <div className="text-base font-medium text-[#028391] text-center lg:max-w-[500px]">
+              <div className="text-base font-medium text-[#028391] text-center lg:max-w-[500px] px-6 md:px-0">
                 {imageSlides[activeTabIndex].discription}
               </div>
             </div>

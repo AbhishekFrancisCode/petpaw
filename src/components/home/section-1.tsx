@@ -5,7 +5,7 @@ import TempletType1, { ImagePropsType } from "./includes/templet-type-1";
 const images: ImagePropsType[] = [
   {
     title: "100% Human Grade & Fresh Ingredients",
-    image_link: "https://ik.imagekit.io/funlogic/ingredients.png?updatedAt=1730043328617",
+    image_link: "https://ik.imagekit.io/funlogic/freshIngredients.png?updatedAt=1730187860071",
     link_to: "https://example.com/sunset",
     color: "",
     title_color: "#028391"

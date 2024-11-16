@@ -32,14 +32,14 @@ export default function Section_type_8() {
             <Image
               key={0}
               src={
-                "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850?tr=w-500"
+                "https://ik.imagekit.io/funlogic/price_plans_1.jpg?updatedAt=1730188452928?tr=w-500"
               }
               alt={""}
               fill
               sizes=""
-              objectFit="cover"
+              objectFit="letf"
               className=""
-              objectPosition="top"
+              objectPosition="left"
               onError={(e) => {
                 console.error("Image load failed:", e);
               }}

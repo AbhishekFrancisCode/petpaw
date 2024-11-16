@@ -63,23 +63,13 @@ export default function LoginNotUsikng(props: Props) {
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div className="pb-4">
           <Link href="/">
-            <Image
-              src="/images/logos/gina-logo.svg"
-              alt="gina.com"
-              width="200"
-              height="46"
-            />
+            <Image src="/images/logos/gina-logo.svg" alt="gina.com" width="200" height="46" />
           </Link>
         </div>
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-300 dark:border-gray-700">
           <AuthProvider>
-            <></>
+            <SbGoogleWrapper />
           </AuthProvider>
-          <div className="py-4">
-            <AuthProvider>
-              <SbGoogleWrapper />
-            </AuthProvider>
-          </div>
         </div>
       </div>
     </section>
