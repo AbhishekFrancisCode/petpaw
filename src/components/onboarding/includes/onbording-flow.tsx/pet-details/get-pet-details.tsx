@@ -9,7 +9,6 @@ import PetWaightStep from "./includes/petWeightStep";
 import PetBreedStep from "./includes/petBreedStep";
 import PetShapeStep from "./includes/PetShapeStep";
 import PetActivityStatusStep from "./includes/petActivityStep";
-import PetAgeStep from "./includes/petAgeStep";
 import PetFoodTypesStep from "./includes/petFoodtypesStep";
 import PetAllergiesTypesStep from "./includes/petAllergiestypesStep";
 import { Formdata } from "@/store/interfaces/form-data";
@@ -19,6 +18,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/store/firebase";
 import OnLoadingingPage from "@/components/onboarding/onUploadScreen";
 import { useRouter } from "next/navigation";
+import PetAgeStep from "./includes/petAgeStep";
 
 const steps = [
   PetNameStep,
