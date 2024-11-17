@@ -1,12 +1,12 @@
 export interface Pet {
   id?: string;
   owner_id?: string;
-  name?: string;
+  petname?: string;
   nickname?: string;
-  waight?: string;
+  weight?: string;
   species?: string;
   breed?: string;
-  date_of_birth?: Date;
+  // dob?: Date;
   age?: number;
   gender?: string;
   neutered?: boolean;

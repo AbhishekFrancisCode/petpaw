@@ -17,9 +17,9 @@ export default function OnboardingPage() {
 
   return (
     <>
-      <div className="grid grid-rows-8 min-w-full min-h-screen place-items-center">
-        <div className="grid grid-rows-2 row-span-2 min-w-full place-items-center max-h-52 min-h-52">
-          <div className="p-4">
+      <div className="flex flex-col min-w-full min-h-screen place-items-center">
+        <div className="flex flex-col min-w-full place-items-center max-h-4 min-h-48">
+          <div className="p-4 max-h-24 min-h-24">
             <Image
               width={110}
               height={0}
@@ -30,12 +30,8 @@ export default function OnboardingPage() {
           <ProgressTracker currentStep={currentStep} />
         </div>
 
-        <div className="grid row-span-3 max-h-80">
-          <PetDetails innerStep={innerStep} />;
-        </div>
-
-        <div className="grid row-span-2 fixed py-12 bottom-0 max-h-52 min-h-52">
-          <StepButton
+        <div className="flex min-w-full place-content-center">
+          <PetDetails
             currentStep={currentStep}
             setCurrentStep={setCurrentStep}
             NUMBER_OF_STEPS={NUMBER_OF_STEPS}
@@ -43,6 +39,16 @@ export default function OnboardingPage() {
             setInnerStep={setInnerStep}
           />
         </div>
+
+        {/* <div className="grid row-span-2 fixed py-12 bottom-0 max-h-52 min-h-52">
+          <StepButton
+            currentStep={currentStep}
+            setCurrentStep={setCurrentStep}
+            NUMBER_OF_STEPS={NUMBER_OF_STEPS}
+            innerStep={innerStep}
+            setInnerStep={setInnerStep}
+          />
+        </div> */}
       </div>
     </>
   );

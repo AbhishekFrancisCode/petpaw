@@ -22,33 +22,31 @@ interface StepProps {
 }
 
 const PetAllergiesTypesStep = ({ control }: StepProps) => {
-  const { userData } = useContext(UserDataContext) as UserDataContextType;
+  const { formdata } = useContext(UserDataContext) as UserDataContextType;
 
   return (
     <div className="flex flex-col max-h-80 mt-8">
       <text className="text-center text-2xl font-semibold mb-6 text-[#EE9422]">
-        What has Caeser's been eating?
+        {`Dose ${formdata.petname + "'s" || "pet's"} have any allergies?`}
       </text>
       <div className="grid grid-rows-3 md:grid-cols-1 gap-4 max-h-72">
         {/* Cards with Controller from React Hook Form */}
         <Controller
           control={control}
           name="allergies"
-          defaultValue={userData.pets?.allergies || ""}
           render={({ field }) => (
             <div className="flex flex-wrap max-w-[500px] gap-4 justify-center">
-              {dogAllergens.map((food) => {
-                const isSelected = field.value.includes(food);
-
+              {dogAllergens.map((afood) => {
+                const isSelected = field.value.includes(afood);
                 return (
                   <button
-                    key={food}
+                    key={afood}
                     type="button"
                     onClick={() => {
                       // Toggle selection
                       const newValue = isSelected
-                        ? field.value.filter((item: any) => item !== food)
-                        : [...field.value, food];
+                        ? field.value.filter((item: any) => item !== afood)
+                        : [...field.value, afood];
 
                       field.onChange(newValue);
                     }}
@@ -58,7 +56,7 @@ const PetAllergiesTypesStep = ({ control }: StepProps) => {
                         : "bg-[#faefe1] text-gray-700 border-[#faefe1]"
                     }`}
                   >
-                    <span className="mr-2 text-sm">{food}</span>
+                    <span className="mr-2 text-sm">{afood}</span>
                     {isSelected ? (
                       <div className="p-1 rounded-full bg-[#faefe1]">
                         <MdCheck className="text-[#EE9422]" />

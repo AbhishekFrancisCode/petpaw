@@ -13,23 +13,27 @@ interface StepProps {
 }
 
 const PetShapeStep = ({ control }: StepProps) => {
-  const { userData } = useContext(UserDataContext) as UserDataContextType;
-  const [innerStep, setInnerStep] = useState(0);
+  const { formdata } = useContext(UserDataContext) as UserDataContextType;
+  const [innerStep, setInnerStep] = useState(1);
   const handleCardClick = (id: number) => {
+    console.log(id);
     setInnerStep(id); // Set the selected card value in form state
   };
   const steps: SelectCardProps[] = [
     {
+      id: 1,
       title: "A bit slim",
       subtitle: "Skinny waist with visable ribs",
       image: slimDog
     },
     {
+      id: 2,
       title: "Just right",
       subtitle: "Visable waist and easy to feel ribs",
       image: fitDog
     },
     {
+      id: 3,
       title: "Carries a bit extra",
       subtitle: "Hidden waist, hard to find to ribs",
       image: overwaightDog
@@ -38,37 +42,31 @@ const PetShapeStep = ({ control }: StepProps) => {
   return (
     <div className="flex flex-col max-h-80 mt-8">
       <text className="text-center text-2xl font-semibold mb-6 text-[#EE9422]">
-        What is Caeser's body shape?
+        {`What is ${formdata.petname + "'s" || "pet's"} body shape?`}
       </text>
       <div className="grid grid-rows-3 md:grid-cols-3 gap-4 max-h-72">
         {/* Cards with Controller from React Hook Form */}
         <Controller
-          name="petShape"
+          name="body_shape"
           control={control}
-          defaultValue={userData.pets?.body_shape || ""}
           rules={{ required: "Please select a card" }} // Validation rule
           render={({ field }) => (
             <>
-              {steps.map((item: SelectCardProps, i: number) => {
-                const isSelected = field.value.includes(item);
-                return (
-                  <Card
-                    key={item.title}
-                    id={i}
-                    image={item.image}
-                    text={item.title}
-                    subtitle={item.subtitle}
-                    subtitle1={""}
-                    isSelected={innerStep === i}
-                    onClick={() => {
-                      handleCardClick(i);
-                      const newValue = isSelected;
-                      console.log(field.value);
-                      // field.onChange(isSelected)
-                    }}
-                  />
-                );
-              })}
+              {steps.map((item: SelectCardProps) => (
+                <Card
+                  key={item.id}
+                  id={item.id}
+                  image={item.image}
+                  text={item.title}
+                  subtitle={item.subtitle}
+                  subtitle1={""}
+                  isSelected={innerStep === item.id}
+                  onClick={() => {
+                    handleCardClick(item.id);
+                    field.onChange(item.title);
+                  }}
+                />
+              ))}
             </>
           )}
         />

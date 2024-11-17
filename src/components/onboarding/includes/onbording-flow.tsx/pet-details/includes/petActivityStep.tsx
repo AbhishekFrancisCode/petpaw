@@ -13,25 +13,28 @@ interface StepProps {
 }
 
 const PetActivityStatusStep = ({ control }: StepProps) => {
-  const { userData } = useContext(UserDataContext) as UserDataContextType;
-  const [innerStep, setInnerStep] = useState(0);
+  const { formdata } = useContext(UserDataContext) as UserDataContextType;
+  const [innerStep, setInnerStep] = useState(1);
   const handleCardClick = (id: number) => {
     setInnerStep(id); // Set the selected card value in form state
   };
   const steps: SelectCardProps[] = [
     {
+      id: 1,
       title: "Chilled out",
       subtitle: "Mellow and loves sleep",
       subtitle1: "<30 minutes exercies",
       image: slimDog
     },
     {
+      id: 2,
       title: "Low to play",
       subtitle: "Energetic, small walks.",
       subtitle1: "30-90 minutes exercies",
       image: fitDog
     },
     {
+      id: 3,
       title: "Ball of energy",
       subtitle: "Athletic, long walks & runs",
       subtitle1: ">90 minutes exercies",
@@ -41,27 +44,29 @@ const PetActivityStatusStep = ({ control }: StepProps) => {
   return (
     <div className="flex flex-col max-h-80 mt-8">
       <text className="text-center text-2xl font-semibold mb-6 text-[#EE9422]">
-        How active is Caeser each day?
+        {`How active is ${formdata.petname + "'s" || "pet's"} each day?`}
       </text>
       <div className="grid grid-rows-3 md:grid-cols-3 gap-4 max-h-72">
         {/* Cards with Controller from React Hook Form */}
         <Controller
-          name="petShape"
+          name="activity_level"
           control={control}
-          defaultValue={userData.pets?.body_shape || ""}
           rules={{ required: "Please select a card" }} // Validation rule
           render={({ field }) => (
             <>
               {steps.map((item: SelectCardProps, i: number) => (
                 <Card
-                  key={i}
-                  id={i}
+                  key={item.id}
+                  id={item.id}
                   image={item.image}
                   text={item.title}
                   subtitle={item.subtitle}
                   subtitle1={item.subtitle1}
-                  isSelected={innerStep === i}
-                  onClick={() => handleCardClick(i)}
+                  isSelected={innerStep === item.id}
+                  onClick={() => {
+                    handleCardClick(item.id);
+                    field.onChange(item.title);
+                  }}
                 />
               ))}
             </>

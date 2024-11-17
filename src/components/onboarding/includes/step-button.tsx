@@ -17,7 +17,7 @@ export default function StepButton({
 }) {
   const [error, setError] = useState<string>("");
 
-  const MAX_COUNT = 6;
+  const MAX_COUNT = 7;
   const MIN_COUNT = 0;
 
   const goToNextStep = () => {
@@ -30,7 +30,7 @@ export default function StepButton({
   };
   const goToPreviousStep = () => {
     try {
-      if (innerStep === 4 || innerStep === 6) {
+      if (innerStep === 4 || innerStep === 7) {
         setCurrentStep((prev: number) => (prev <= 0 ? prev : prev - 1));
       }
       setInnerStep((prev: number) => Math.max(MIN_COUNT, prev - 1));

@@ -7,16 +7,15 @@ interface StepProps {
 }
 
 const PetNameStep = ({ control }: StepProps) => {
-  const { userData } = useContext(UserDataContext) as UserDataContextType;
+  const { formdata } = useContext(UserDataContext) as UserDataContextType;
 
   return (
     <Controller
       control={control}
-      name="dietplan"
-      defaultValue={userData.pets?.diet_plan || ""}
+      name="diet_plan"
       render={({ field }) => (
         <div className="md:min-w-[400px]">
-          <label className="block mb-2 text-lg text-center">What's your pet's name?</label>
+          <label className="block mb-2 text-lg text-center">{`What's your ${formdata.petname + "'s" || "pet's"} name?`}</label>
           <input
             {...field}
             type="text"

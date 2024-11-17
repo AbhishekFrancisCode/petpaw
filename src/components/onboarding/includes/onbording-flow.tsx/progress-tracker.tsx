@@ -4,7 +4,7 @@ export default function ProgressTracker({ currentStep }: { currentStep: any }) {
   const steps = ["Dog details", "Dog health", "Plan detail"];
 
   return (
-    <div className="flex flex-col max-w-[400px] mx-auto">
+    <div className="flex flex-col max-w-[400px] mx-auto max-h-24 min-h-24">
       <div className="flex max-w-[300px] mt-4 mx-auto">
         {steps.map((step, index) => (
           <div key={index} className="flex-1 min-w-[130px]">

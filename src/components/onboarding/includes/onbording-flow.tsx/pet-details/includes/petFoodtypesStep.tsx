@@ -22,19 +22,18 @@ interface StepProps {
 }
 
 const PetFoodTypesStep = ({ control }: StepProps) => {
-  const { userData } = useContext(UserDataContext) as UserDataContextType;
+  const { formdata } = useContext(UserDataContext) as UserDataContextType;
 
   return (
     <div className="flex flex-col max-h-80 mt-8">
       <text className="text-center text-2xl font-semibold mb-6 text-[#EE9422]">
-        What has Caeser's been eating?
+        {`What has ${formdata.petname + "'s" || "pet's"} been eating?`}
       </text>
       <div className="grid grid-rows-3 md:grid-cols-1 gap-4 max-h-72">
         {/* Cards with Controller from React Hook Form */}
         <Controller
           control={control}
-          name="preferredfoods"
-          defaultValue={userData.pets?.preferred_foods || ""}
+          name="preferred_foods"
           render={({ field }) => (
             <div className="flex flex-wrap max-w-[500px] gap-4 justify-center">
               {dogFoodOptions.map((food) => {

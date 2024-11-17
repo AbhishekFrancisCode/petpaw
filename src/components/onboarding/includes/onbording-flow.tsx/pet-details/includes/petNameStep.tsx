@@ -1,5 +1,3 @@
-import { UserDataContext, UserDataContextType } from "@/contexts/userdata-context";
-import { useContext } from "react";
 import { Controller, Control } from "react-hook-form";
 
 interface StepProps {
@@ -7,16 +5,13 @@ interface StepProps {
 }
 
 const PetNameStep = ({ control }: StepProps) => {
-  const { userData } = useContext(UserDataContext) as UserDataContextType;
-
   return (
     <Controller
       control={control}
-      name="petName"
-      defaultValue={userData.pets?.name || ""}
+      name="petname"
       render={({ field }) => (
         <div className="md:min-w-[400px]">
-          <label className="block mb-2 text-lg text-center">What's your pet's name?</label>
+          <label className="block mb-2 text-lg text-center">{`What's your pet's name?`}</label>
           <input
             {...field}
             type="text"
