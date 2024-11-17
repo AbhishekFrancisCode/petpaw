@@ -42,8 +42,6 @@ const PetAgeStep = ({ control }: StepProps) => {
   );
 };
 
-export default PetAgeStep;
-
 const GenderToggle = ({ value, onChange }: any) => {
   return (
     <div className="flex space-x-4 mx-auto">
@@ -71,3 +69,5 @@ const GenderToggle = ({ value, onChange }: any) => {
     </div>
   );
 };
+
+export default PetAgeStep;
