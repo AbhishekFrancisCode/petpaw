@@ -7,7 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 //
 import ReduxWrapper from "../store/redux-wrapper";
 import { ToastContainer } from "react-toastify";
-import { GoogleTagManager } from "@next/third-parties/google";
 // import Head from "next/head";
 
 const poppins = Poppins({
@@ -33,7 +32,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${poppins.className}`}>
         <ReduxWrapper>{children}</ReduxWrapper>
         <ToastContainer />
-        {/* <GoogleTagManager gtmId="" /> */}
       </body>
     </html>
   );
