@@ -15,6 +15,10 @@ import PetAllergiesTypesStep from "./includes/petAllergiestypesStep";
 import { Formdata } from "@/store/interfaces/form-data";
 import StepButton from "../../step-button";
 import { MdArrowBack } from "react-icons/md";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "@/store/firebase";
+import OnLoadingingPage from "@/components/onboarding/onUploadScreen";
+import { useRouter } from "next/navigation";
 
 const steps = [
   PetNameStep,
@@ -24,7 +28,8 @@ const steps = [
   PetShapeStep,
   PetActivityStatusStep,
   PetFoodTypesStep,
-  PetAllergiesTypesStep
+  PetAllergiesTypesStep,
+  OnLoadingingPage
 ];
 
 export default function PetDetails({
@@ -42,9 +47,9 @@ export default function PetDetails({
 }) {
   const { control, handleSubmit, setValue, getValues } = useForm<Formdata>({
     defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
+      name: "Abhishek",
+      email: "abhi09shek@gmail.com",
+      phone: "9845449281",
       street: "",
       city: "",
       state: "",
@@ -63,12 +68,13 @@ export default function PetDetails({
 
   const { formdata, updateFormdata } = useContext(UserDataContext) as UserDataContextType;
   const StepComponent = steps[innerStep];
+  const router = useRouter();
 
   useEffect(() => {
     if (formdata) {
-      setValue("name", formdata.name);
-      setValue("email", formdata.gender);
-      setValue("phone", formdata.phone);
+      // setValue("name", formdata.name);
+      // setValue("email", formdata.email);
+      // setValue("phone", formdata.phone);
       setValue("petname", formdata.petname);
       setValue("gender", formdata.gender);
       setValue("age", formdata.age);
@@ -77,7 +83,7 @@ export default function PetDetails({
     }
   }, [formdata, setValue]);
 
-  const MAX_COUNT = 7;
+  const MAX_COUNT = 8;
   const MIN_COUNT = 0;
 
   const goToNextStep = () => {
@@ -105,6 +111,38 @@ export default function PetDetails({
   const onSubmit = (data: any) => {
     updateFormdata(data);
     console.log("Submitting data:", formdata);
+    createUser(data);
+  };
+
+  const createUser = async (data: Formdata) => {
+    const payload: User = {
+      name: data.name,
+      contact: {
+        phone: data.phone,
+        email: data.email
+      },
+      pets: {
+        petname: data.petname,
+        gender: data.gender,
+        age: data.age,
+        weight: data.weight,
+        breed: data.breed,
+        body_shape: data.body_shape,
+        activity_level: data.activity_level,
+        preferred_foods: data.preferred_foods,
+        allergies: data.allergies
+      }
+    };
+    if (payload.name !== "") {
+      await addDoc(collection(db, "user"), { ...payload })
+        .then((docRef) => {
+          console.log("Document written with ID: ", docRef.id);
+          router.push("/");
+        })
+        .catch((error) => {
+          console.error("Error adding document: ", error);
+        });
+    }
   };
 
   return (
