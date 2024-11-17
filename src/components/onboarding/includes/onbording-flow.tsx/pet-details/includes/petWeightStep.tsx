@@ -1,4 +1,4 @@
-import { UserDataContext, UserDataContextType } from "@/contexts/leader-data-context";
+import { UserDataContext, UserDataContextType } from "@/contexts/userdata-context";
 import { useContext } from "react";
 import { Controller, Control } from "react-hook-form";
 
@@ -10,10 +10,10 @@ const PetWaightStep = ({ control }: StepProps) => {
   const { userData } = useContext(UserDataContext) as UserDataContextType;
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col md:min-w-[400px]">
       <Controller
         control={control}
-        name="petAge"
+        name="petwaight"
         defaultValue={userData.pets?.waight || ""}
         render={({ field }) => (
           <div>
@@ -22,7 +22,7 @@ const PetWaightStep = ({ control }: StepProps) => {
               {...field}
               type="text"
               placeholder="e.g., Bella"
-              className="w-full h-16 px-4 py-2 border-[#f2d4ad] rounded-full shadow-md focus:border-[#f2c386] focus:ring-0"
+              className="min-w-full  h-16 px-4 py-2 border-[#f2d4ad] rounded-full shadow-md focus:border-[#f2c386] focus:ring-0"
             />
           </div>
         )}
@@ -38,7 +38,7 @@ const PetWaightStep = ({ control }: StepProps) => {
               {...field}
               type="text"
               placeholder="e.g., Bella"
-              className="w-full h-16 px-4 py-2 border-[#f2d4ad] rounded-full shadow-md focus:border-[#f2c386] focus:ring-0"
+              className="min-w-full  h-16 px-4 py-2 border-[#f2d4ad] rounded-full shadow-md focus:border-[#f2c386] focus:ring-0"
             />
           </div>
         )}

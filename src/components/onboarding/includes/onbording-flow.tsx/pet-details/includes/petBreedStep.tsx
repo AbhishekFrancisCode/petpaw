@@ -1,4 +1,4 @@
-import { UserDataContext, UserDataContextType } from "@/contexts/leader-data-context";
+import { UserDataContext, UserDataContextType } from "@/contexts/userdata-context";
 import { useContext } from "react";
 import { Controller, Control } from "react-hook-form";
 
@@ -28,10 +28,10 @@ const PetBreedStep = ({ control }: StepProps) => {
   return (
     <Controller
       control={control}
-      name="petAge"
+      name="petbreed"
       defaultValue={userData.pets?.breed || ""}
       render={({ field }) => (
-        <div>
+        <div className="md:min-w-[400px]">
           <label className="block mb-2 text-lg text-center">What's your pet's Bread?</label>
           <select
             {...field}

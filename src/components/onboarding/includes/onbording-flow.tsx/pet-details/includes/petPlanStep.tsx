@@ -6,17 +6,17 @@ interface StepProps {
   control: Control;
 }
 
-const PetAgeStep = ({ control }: StepProps) => {
+const PetNameStep = ({ control }: StepProps) => {
   const { userData } = useContext(UserDataContext) as UserDataContextType;
 
   return (
     <Controller
       control={control}
-      name="petAge"
-      defaultValue={userData.pets?.date_of_birth || ""}
+      name="dietplan"
+      defaultValue={userData.pets?.diet_plan || ""}
       render={({ field }) => (
         <div className="md:min-w-[400px]">
-          <label className="block mb-2 text-lg text-center">What's your pet's age?</label>
+          <label className="block mb-2 text-lg text-center">What's your pet's name?</label>
           <input
             {...field}
             type="text"
@@ -29,4 +29,4 @@ const PetAgeStep = ({ control }: StepProps) => {
   );
 };
 
-export default PetAgeStep;
+export default PetNameStep;

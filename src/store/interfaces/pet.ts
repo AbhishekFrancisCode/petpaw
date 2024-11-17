@@ -15,10 +15,16 @@ export interface Pet {
   activity_level?: string;
   body_shape?: string;
   eating_habits?: string;
+  diet_plan?: [];
   allergies?: string[];
   preferred_foods?: string[];
   medical_history?: MedicalHistory[];
   note?: Note;
+}
+
+export interface Diet {
+  id?: string;
+  name?: string;
 }
 
 export interface MedicalHistory {

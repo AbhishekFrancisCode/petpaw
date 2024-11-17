@@ -1,68 +1,61 @@
 "use client";
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { useContext, useState } from "react";
 import { motion } from "framer-motion";
-import { UserDataContext, UserDataContextType } from "@/contexts/leader-data-context";
+import { UserDataContext, UserDataContextType } from "@/contexts/userdata-context";
 import { User } from "@/store/interfaces/user";
 import PetNameStep from "./includes/petNameStep";
-import PetAgeStep from "./includes/PetAgeStep";
 import PetWaightStep from "./includes/petWeightStep";
 import PetBreedStep from "./includes/petBreedStep";
+import PetShapeStep from "./includes/PetShapeStep";
+import PetActivityStatusStep from "./includes/petActivityStep";
+import PetAgeStep from "./includes/petAgeStep";
+import PetFoodTypesStep from "./includes/petFoodtypesStep";
+import PetAllergiesTypesStep from "./includes/petAllergiestypesStep";
 
-const steps = [PetNameStep, PetAgeStep, PetWaightStep, PetBreedStep];
+const steps = [
+  PetNameStep,
+  PetAgeStep,
+  PetWaightStep,
+  PetBreedStep,
+  PetShapeStep,
+  PetActivityStatusStep,
+  PetFoodTypesStep,
+  PetAllergiesTypesStep
+];
 
-export default function PetDetails({ setStep }: { setStep: any }) {
-  const { control, handleSubmit } = useForm();
-  const [currentStep, setCurrentStep] = useState(0);
+export default function PetDetails({ innerStep }: { innerStep: number }) {
+  const { control, handleSubmit } = useForm<User>();
   const { userData, updateUserData } = useContext(UserDataContext) as UserDataContextType;
-  const StepComponent = steps[currentStep];
+  const StepComponent = steps[innerStep];
 
   const handleNext = (data: any) => {
+    console.log(userData);
     updateUserData(data);
-    setCurrentStep((prev) => prev + 1);
-  };
-
-  const handleBack = () => {
-    setCurrentStep((prev) => prev - 1);
   };
 
   const onSubmit = (data: any) => {
-    // const finalData = { ...formData, ...data };
     console.log("Submitting data:", userData);
-    // // Replace with your API endpoint
-    // fetch('/api/submitPetDetails', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(finalData),
-    // })
-    //   .then((response) => response.json())
-    //   .then((result) => console.log('Success:', result))
-    //   .catch((error) => console.error('Error:', error));
   };
 
   return (
-    <div className="min-w-[300px] md:min-w-[400px] p-4">
-      <form onSubmit={handleSubmit(currentStep === steps.length - 1 ? onSubmit : handleNext)}>
+    <div className="max-h-80">
+      <form onSubmit={handleSubmit(innerStep === steps.length - 1 ? onSubmit : handleNext)}>
         <motion.div
-          key={currentStep}
+          key={innerStep}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="mb-4"
+          className="max-h-80"
         >
           <StepComponent control={control} />
         </motion.div>
-
-        <div className="flex justify-between">
-          {currentStep > 0 && (
-            <button type="button" onClick={handleBack} className="px-4 py-2 bg-gray-300 rounded-lg">
-              Back
-            </button>
-          )}
-          <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-lg">
-            {currentStep === steps.length - 1 ? "Submit" : "Next"}
-          </button>
-        </div>
+        <button
+          type="submit"
+          className="bg-[#EE9422] text-white text-lg py-2 px-4 min-w-[300px] rounded-full hover:text-xl"
+        >
+          Continue
+        </button>
       </form>
     </div>
   );
