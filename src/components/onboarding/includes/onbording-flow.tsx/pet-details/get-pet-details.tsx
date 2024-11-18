@@ -18,7 +18,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/store/firebase";
 import OnLoadingingPage from "@/components/onboarding/onUploadScreen";
 import { useRouter } from "next/navigation";
-import PetAgeStep from "./includes/petAgeStep";
+import PetAgeStep from "./includes/petdobStep";
 
 const steps = [
   PetNameStep,
