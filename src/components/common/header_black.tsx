@@ -4,6 +4,7 @@ import Image from "next/image";
 import Button from "@/sb-ui/button/button";
 import { useContext, useEffect, useRef, useState } from "react";
 import HamburgerMenu from "../home/includes/mobile-menu";
+import ProfileIcon from "../../../public/images/svg/profile_icon_black.svg";
 import { AuthContext, AuthContextType } from "@/contexts/auth-context";
 
 export default function HeaderBlack() {
@@ -32,7 +33,7 @@ export default function HeaderBlack() {
 
   return (
     <div
-      className="fixed float-start py-4 md:py-6 pl-0 lg:bg-transprent backdrop-blur-[2px] w-screen z-50  "
+      className="fixed float-start py-4 pl-0 lg:bg-transparent backdrop-blur-[40px] w-screen z-50 max-h-[70px]"
       onBlur={(e) => e.currentTarget.focus()}
     >
       <div className="px-2 md:px-6 text-sm text-black rounded-xl font-medium text-right">
@@ -75,18 +76,18 @@ export default function HeaderBlack() {
                 </Link>
                 <Link href={`/onboarding`}>
                   <Button
-                    cls="w-32 h-10 text-sm text-black rounded-xl font-medium text-center bg-[#EE9422]"
-                    text="EXPLORE"
+                    cls="w-32 h-9 text-sm text-white font-normal text-center bg-[#EE9422]"
+                    text="Get Started"
                     handleRedirect={goToDateSection}
                   />
                 </Link>
                 {!user ? (
                   <Link href={"/login"}>
-                    <text>Login</text>
+                    <Button text="Login" />
                   </Link>
                 ) : (
                   <Link href={"/profile"}>
-                    <text>Profile</text>
+                    <Image src={ProfileIcon} alt="" sizes="20" className="mr-6 py-2" />
                   </Link>
                 )}
               </div>
