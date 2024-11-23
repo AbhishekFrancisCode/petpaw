@@ -32,7 +32,11 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const logOut = () => {
-    return signOut(auth);
+    signOut(auth).then(() => {
+      return true;
+    }).catch((error: any) => {
+      return false;
+    });
   };
 
   useEffect(() => {

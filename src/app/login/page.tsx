@@ -73,8 +73,6 @@ export default function Login(props: Props) {
             Privacy Policy
           </a>
         </p>
-        {/* <AuthProvider>
-          </AuthProvider> */}
       </div>
     </section>
   );
