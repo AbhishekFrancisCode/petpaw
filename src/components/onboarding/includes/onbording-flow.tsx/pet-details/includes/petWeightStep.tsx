@@ -13,9 +13,10 @@ const PetWaightStep = ({ control }: StepProps) => {
     <Controller
       control={control}
       name="weight"
-      render={({ field }) => (
+      rules={{ required: "Please enter the weight" }}
+      render={({ field, fieldState }) => (
         <div className="md:min-w-[400px]">
-          <label className="block mb-2 text-lg text-center">{`What's your ${formdata.petname + "'s" || "pet's"} waight?`}</label>
+          <label className="block mb-2 text-lg text-center">{`What's ${formdata.petname + "'s" || "pet's"} waight?`}</label>
           <div className="relative">
             <input
               {...field}
@@ -27,6 +28,9 @@ const PetWaightStep = ({ control }: StepProps) => {
               \kg
             </span>
           </div>
+          {fieldState?.error && (
+              <p className="text-red-500 text-sm mt-2">{fieldState.error.message}</p>
+            )}
         </div>
       )}
     />

@@ -82,7 +82,7 @@ export default function HeaderBlack() {
                   />
                 </Link>
                 {!user ? (
-                  <Link href={"/login"}>
+                  <Link href={"/login?flow=loginflow"}>
                     <Button text="Login" />
                   </Link>
                 ) : (

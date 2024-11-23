@@ -14,7 +14,7 @@ interface StepProps {
 
 const PetActivityStatusStep = ({ control }: StepProps) => {
   const { formdata } = useContext(UserDataContext) as UserDataContextType;
-  const [innerStep, setInnerStep] = useState(1);
+  const [innerStep, setInnerStep] = useState(0);
   const handleCardClick = (id: number) => {
     setInnerStep(id); // Set the selected card value in form state
   };
@@ -52,7 +52,7 @@ const PetActivityStatusStep = ({ control }: StepProps) => {
           name="activity_level"
           control={control}
           rules={{ required: "Please select a card" }} // Validation rule
-          render={({ field }) => (
+          render={({ field, fieldState }) => (
             <>
               {steps.map((item: SelectCardProps, i: number) => (
                 <Card
@@ -69,14 +69,16 @@ const PetActivityStatusStep = ({ control }: StepProps) => {
                   }}
                 />
               ))}
+              {fieldState?.error && (
+                <p className="mt-2 text-sm text-red-500 text-center mt-24">
+                  {fieldState?.error.message}
+                </p>
+              )}
             </>
           )}
         />
       </div>
     </div>
-    //   {errors.selectedCard && (
-    //     <p className="text-red-500">{errors.selectedCard.message}</p>
-    //   )}
   );
 };
 

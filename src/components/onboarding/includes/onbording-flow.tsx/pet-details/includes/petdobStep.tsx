@@ -16,15 +16,20 @@ const PetAgeStep = ({ control }: StepProps) => {
         name="gender"
         control={control}
         rules={{ required: "Please select a gender" }}
-        render={({ field }) => <GenderToggle value={field.value} onChange={field.onChange} />}
+        render={({ field, fieldState }) => (
+          <>
+            <GenderToggle value={field.value} onChange={field.onChange} />
+            {fieldState?.error && (<></>)}
+          </>
+        )}
       />
       <Controller
         control={control}
         name="age"
         defaultValue={formdata.age || ""}
-        render={({ field }) => (
+        render={({ field, fieldState }) => (
           <div className="md:min-w-[400px] mt-4">
-            <label className="block mb-2 text-lg text-center">{`What's your ${formdata.petname + "'s" || "pet's"} age?`}</label>
+            <label className="block mb-2 text-lg text-center">{`What's ${formdata.petname + "'s" || "pet's"} age?`}</label>
             <div className="relative">
               <input
                 {...field}
@@ -36,6 +41,9 @@ const PetAgeStep = ({ control }: StepProps) => {
                 years
               </span>
             </div>
+            {fieldState?.error && (
+              <p className="text-red-500 text-sm mt-2">{fieldState.error.message}</p>
+            )}
           </div>
         )}
       />

@@ -3,7 +3,7 @@ import { Formdata } from "@/store/interfaces/form-data";
 import { User } from "@/store/interfaces/user";
 import { getCookieValue, sbCreateTempInfo } from "@/utils/session";
 import { getCookie } from "cookies-next";
-import React from "react";
+import React, { createContext, ReactNode, useState } from "react";
 
 export type UserDataContextType = {
   userData: User;
@@ -12,14 +12,15 @@ export type UserDataContextType = {
   updateFormdata: (a: Formdata) => void;
 };
 
-export const UserDataContext = React.createContext<UserDataContextType | null>(null);
+export const UserDataContext = createContext<UserDataContextType | null>(null);
 
-const UserDataProvider = ({ children }: { children: React.ReactNode }) => {
+const UserDataProvider = ({ children }: { children: ReactNode }) => {
   const cookie = getCookie(COOKIE_NAME!);
   const ck: User = cookie ? getCookieValue() : {};
 
-  const [userData, setUserData] = React.useState<User>({});
-  const [formdata, setFormdata] = React.useState<Formdata>({});
+  const [userData, setUserData] = useState<User>({});
+  const [formdata, setFormdata] = useState<Formdata>({});
+  const [currentStep, setCurrentStep] = useState(1);
 
   const updateUserData = (data: User) => {
     setUserData((prev) => ({ ...prev, ...data }));

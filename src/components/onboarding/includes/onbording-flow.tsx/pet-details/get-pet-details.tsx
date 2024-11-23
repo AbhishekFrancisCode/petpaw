@@ -19,6 +19,7 @@ import { db } from "@/store/firebase";
 import OnLoadingingPage from "@/components/onboarding/onUploadScreen";
 import { useRouter } from "next/navigation";
 import PetAgeStep from "./includes/petdobStep";
+import { AuthContext, AuthContextType } from "@/contexts/auth-context";
 
 const steps = [
   PetNameStep,
@@ -45,7 +46,8 @@ export default function PetDetails({
   innerStep: number;
   setInnerStep: (prev: any) => void;
 }) {
-  const { control, handleSubmit, setValue, getValues } = useForm<Formdata>({
+  const { user } = useContext(AuthContext) as AuthContextType;
+  const { control, handleSubmit, setValue, getValues, formState, trigger } = useForm<Formdata>({
     defaultValues: {
       name: "Abhishek",
       email: "abhi09shek@gmail.com",
@@ -86,13 +88,38 @@ export default function PetDetails({
   const MAX_COUNT = 8;
   const MIN_COUNT = 0;
 
-  const goToNextStep = () => {
-    try {
-      if (innerStep === 3 || innerStep === 6) {
-        setCurrentStep((prev: number) => (prev === NUMBER_OF_STEPS - 1 ? prev : prev + 1));
+  const goToNextStep = async () => {
+    const isValid = await trigger();
+    // switch (currentStep) {
+    //   case 1:
+    //     isValid = await trigger("name"); // Only validate "name" on Step 1
+    //     break;
+    //   case 2:
+    //     isValid = await trigger("gender"); // Only validate "gender" on Step 2
+    //     break;
+    //   case 3:
+    //     isValid = await trigger("age"); // Only validate "age" on Step 3
+    //     break;
+    //   case 4:
+    //     isValid = await trigger(["phone", "email"]); // Only validate "phone" and "email" on Step 4
+    //     break;
+    //   default:
+    //     isValid = true;
+    // }
+    console.log(innerStep);
+    if (isValid) {
+      if (innerStep === 0 && !user) {
+        console.log(user);
+        router.push("/login?flow=onboardingflow");
+      } else {
+        try {
+          if (innerStep === 3 || innerStep === 6) {
+            setCurrentStep((prev: number) => (prev === NUMBER_OF_STEPS - 1 ? prev : prev + 1));
+          }
+          setInnerStep((prev: number) => Math.min(MAX_COUNT, prev + 1));
+        } catch (error) {}
       }
-      setInnerStep((prev: number) => Math.min(MAX_COUNT, prev + 1));
-    } catch (error) {}
+    }
   };
   const goToPreviousStep = () => {
     try {
@@ -111,7 +138,7 @@ export default function PetDetails({
   const onSubmit = (data: any) => {
     updateFormdata(data);
     console.log("Submitting data:", formdata);
-    createUser(data);
+    // createUser(data);
   };
 
   const createUser = async (data: Formdata) => {
@@ -137,7 +164,7 @@ export default function PetDetails({
       await addDoc(collection(db, "user"), { ...payload })
         .then((docRef) => {
           console.log("Document written with ID: ", docRef.id);
-          router.push("/");
+          router.push("/profile");
         })
         .catch((error) => {
           console.error("Error adding document: ", error);
