@@ -72,9 +72,9 @@ export default function NewsLetter() {
           </div>
           <button
             type="submit"
-            className="flex bg-[#028391] w-[224px] h-[54px] lg:w-[172px] lg:h-12 rounded-xl place-content-center items-center gap-4"
+            className="flex bg-[#028391] w-[224px] h-[54px] lg:w-[172px] lg:h-12 rounded-md place-content-center items-center gap-4"
           >
-            <div className="text-center text-white text-xl font-normal leading-7">Subscribe</div>
+            <div className="text-center text-white font-normal leading-7">Subscribe</div>
             <Image src={Subscribe} alt="" width={20} height={20} className="" />
           </button>
         </form>

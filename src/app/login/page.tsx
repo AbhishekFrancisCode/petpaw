@@ -2,7 +2,7 @@
 import { AuthContext, AuthContextType } from "@/contexts/auth-context";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 type Props = {
   params: {};
@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function Login(props: Props) {
-  const searchParams = props.searchParams;
+  const searchParams = props.searchParams['flow'];
   const { googleSignIn } = useContext(AuthContext) as AuthContextType;
   const router = useRouter();
 
@@ -18,7 +18,8 @@ export default function Login(props: Props) {
     try {
       const result = await googleSignIn();
       if (result.user) {
-        router.push("/");
+        searchParams === "onboardingflow" ?
+        router.push("/onboarding") : router.push("/")
       }
     } catch (error) {
       console.log(error);
@@ -72,8 +73,6 @@ export default function Login(props: Props) {
             Privacy Policy
           </a>
         </p>
-        {/* <AuthProvider>
-          </AuthProvider> */}
       </div>
     </section>
   );

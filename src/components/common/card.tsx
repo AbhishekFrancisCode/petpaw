@@ -3,7 +3,7 @@ const Card = ({ id, image, text, subtitle, subtitle1, isSelected, onClick }: any
   return (
     <div
       onClick={() => onClick(id)}
-      className={`relative border-2 p-4 rounded-lg cursor-pointer transition-all min-w-72 max-w-72 min-h-44 ${
+      className={`relative border-2 p-4 rounded-md cursor-pointer transition-all min-w-72 max-w-72 min-h-44 ${
         isSelected ? "border-[#EE9422] bg-[#EE9422] bg-opacity-10" : "border-gray-300"
       }`}
     >

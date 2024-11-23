@@ -102,7 +102,7 @@ export default function Section_type_2() {
               <Button
                 text={"Explore Meals"}
                 handleRedirect={() => {}}
-                cls="bg-[#028391] w-[300px] min-h-16 rounded-xl text-white "
+                cls="bg-[#028391] min-w-[200px] h-16 rounded-md px-10 text-[#ffffff] hover:opacity-80"
               />
             </div>
           </div>

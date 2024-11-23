@@ -29,27 +29,31 @@ const PetBreedStep = ({ control }: StepProps) => {
     <Controller
       control={control}
       name="breed"
-      render={({ field }) => (
-        <div className="md:min-w-[400px]">
-          <label className="block mb-2 text-lg text-center">{`What's your ${formdata.petname + "'s" || "pet's"} Bread?`}</label>
+      rules={{ required: "Please select a gender" }}
+      render={({ field, fieldState }) => (
+        <div className="max-w-[300px] min-w-[300px] md:min-w-[400px] md:max-w-[400px]">
+          <label className="block mb-2 text-base md:text-lg text-center">{`What's your ${formdata.petname + "'s" || "pet's"} Bread?`}</label>
           <select
             {...field}
-            className="w-full h-16 px-4 py-2 border-[#f2d4ad] rounded-full shadow-md focus:border-[#f2c386] focus:ring-0"
+            className="w-full h-16 pl-8 pr-4 py-2 border-[#f2d4ad] rounded-full shadow-md focus:border-[#f2c386] focus:ring-0 relative"
           >
             <option value="">Select Breed</option>
             {breedOptions.map((breed) => (
               <option
                 key={breed}
                 value={breed}
-                className="bg-gray-100"
+                className=""
                 style={{
-                  backgroundColor: field.value === breed ? "#F5EFC3FF" : ""
+                  backgroundColor: field.value === breed ? "#F5EFC3" : ""
                 }}
               >
                 {breed}
               </option>
             ))}
           </select>
+          {fieldState?.error && (
+            <p className="mt-2 text-sm text-red-500 text-center">{fieldState?.error.message}</p>
+          )}
         </div>
       )}
     />

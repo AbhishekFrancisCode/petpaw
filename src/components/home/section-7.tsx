@@ -30,20 +30,20 @@ const buttons: ButtonProps[] = [
   {
     title: "Know More",
     link_to: "https://example.com/city",
-    color: "#FFF8EF",
-    title_color: "#EE9422"
+      color: "#EE9422",
+    title_color: "#ffffff"
   },
   {
     title: "Get Started",
     link_to: "https://example.com/forest",
-    color: "#FFF8EF",
-    title_color: "#EE9422"
+    color: "#EE9422",
+    title_color: "#ffffff"
   }
 ];
 
 export default function Section_type_7() {
   return (
-    <div className="bg-[#EE9422] place-content-center">
+    <div className="bg-[#FFF8EF] place-content-center">
       <div className="container mx-auto">
         <TempletType1
           title="How it works?"

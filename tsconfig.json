@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/google-auth/google-calander.ts", "src/app/api/payment-status/[id]/route.ts", "src/utils/optimization.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/google-auth/google-calander.ts", "src/app/api/payment-status/[id]/route.ts", "src/utils/optimization.js", "src/utils/loading-state.txs"],
   "exclude": ["node_modules"]
 }
