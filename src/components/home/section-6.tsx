@@ -12,18 +12,18 @@ export default function Section_type_8() {
               {"Benefits of Eating Fresh Food"}
             </p>
           </div>
-          <div className="flex-1 place-content-center lg:place-content-start lg:px-10 xl:px-12 py-4 w-full lg:w-[550px]">
+          <div className="flex place-content-center lg:place-content-start lg:px-10 xl:px-12 py-4 w-full lg:w-[550px]">
             <p className={`text-[#333333] text-base font-normal py-2 text-left`}>
               {
                 "IMPROVED DIGESTION & ENERGY \n More digestible than kibble, giving your pup more nutrients and pep in their step. ALLERGY & WEIGHT CONTROL Our food helps maintain your pup's ideal weight and is great for allergies and sensitivities. MORE MEALTIMES TOGETHER A fresh, whole food diet has been proven to help dogs live up to 2.5 years longer."
               }
             </p>
           </div>
-          <div className="flex place-content-center lg:place-content-end">
+          <div className="flex place-content-center lg:place-content-start lg:px-10 xl:px-12">
             <Button
               text={"Explore Pricing Plans"}
               handleRedirect={() => {}}
-              cls="bg-[#028391] w-[300px] min-h-16 rounded-xl text-white "
+              cls="bg-[#028391] min-w-[200px] h-16 rounded-md px-10 text-[#ffffff] hover:opacity-80 "
             />
           </div>
         </div>
