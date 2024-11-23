@@ -2,13 +2,23 @@
 import Link from "next/link";
 import Image from "next/image";
 import Button from "@/sb-ui/button/button";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState, CSSProperties } from "react";
 import HamburgerMenu from "../home/includes/mobile-menu";
 import ProfileIcon from "../../../public/images/svg/profile_icon_black.svg";
 import { AuthContext, AuthContextType } from "@/contexts/auth-context";
+import SyncLoader from "react-spinners/ClipLoader";
+import LoadingState from "@/utils/loading-state";
+
+const override: CSSProperties = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red"
+};
 
 export default function HeaderBlack() {
   const [isOpen, setIsOpen] = useState(false);
+  let [loading, setLoading] = useState(true);
+
   const menuRef = useRef<HTMLDivElement>(null);
   var faqElement: HTMLElement | null;
   const { user } = useContext(AuthContext) as AuthContextType;
@@ -82,12 +92,16 @@ export default function HeaderBlack() {
                   />
                 </Link>
                 {!user ? (
-                  <Link href={"/login?flow=loginflow"}>
-                    <Button text="Login" />
-                  </Link>
+                  !user && loading ? (
+                    <LoadingState loading={loading}/>
+                  ) : (
+                    <Link href={"/login?flow=loginflow"}>
+                      <Button text="Login" />
+                    </Link>
+                  )
                 ) : (
                   <Link href={"/profile"}>
-                    <Image src={ProfileIcon} alt="" sizes="20" className="mr-6 py-2" />
+                    <Image src={ProfileIcon} alt="" width={18} height={18} className="mr-6 py-2" />
                   </Link>
                 )}
               </div>

@@ -12,7 +12,6 @@ import PetActivityStatusStep from "./includes/petActivityStep";
 import PetFoodTypesStep from "./includes/petFoodtypesStep";
 import PetAllergiesTypesStep from "./includes/petAllergiestypesStep";
 import { Formdata } from "@/store/interfaces/form-data";
-import StepButton from "../../step-button";
 import { MdArrowBack } from "react-icons/md";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/store/firebase";
@@ -106,10 +105,8 @@ export default function PetDetails({
     //   default:
     //     isValid = true;
     // }
-    console.log(innerStep);
     if (isValid) {
       if (innerStep === 0 && !user) {
-        console.log(user);
         router.push("/login?flow=onboardingflow");
       } else {
         try {
@@ -122,12 +119,22 @@ export default function PetDetails({
     }
   };
   const goToPreviousStep = () => {
-    try {
-      if (innerStep === 4 || innerStep === 7) {
-        setCurrentStep((prev: number) => (prev <= 0 ? prev : prev - 1));
+    
+    if (innerStep === 0 && currentStep === 0) {
+      console.log(innerStep, currentStep);
+      if (document.referrer) {
+        router.back();
+      } else {
+        router.push('/'); // Navigate to a fallback page
       }
-      setInnerStep((prev: number) => Math.max(MIN_COUNT, prev - 1));
-    } catch (error) {}
+    } else {
+      try {
+        if (innerStep === 4 || innerStep === 7) {
+          setCurrentStep((prev: number) => (prev <= 0 ? prev : prev - 1));
+        }
+        setInnerStep((prev: number) => Math.max(MIN_COUNT, prev - 1));
+      } catch (error) {}
+    }
   };
 
   const handleNext = (data: any) => {
@@ -183,24 +190,24 @@ export default function PetDetails({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="min-h-full "
+          className="min-h-full"
         >
           <StepComponent control={control} />
         </motion.div>
-        <div className="fixed py-12 bottom-0 max-h-52 min-h-52">
+        <div className="fixed py-4 md:py-12 bottom-0 max-h-28 min-h-28 md:max-h-52 md:min-h-52">
           <div className="flex mx-auto justify-center">
-            <section className="flex gap-2 px-6 py-4 flex-row-reverse">
+            <section className="flex gap-2 px-6 py-2 md:py-4 flex-row-reverse">
               <button
                 type="submit"
                 onClick={goToNextStep}
-                className="bg-[#EE9422] text-white text-lg py-2 px-4 min-w-[300px] rounded-full hover:text-xl"
+                className="bg-[#EE9422] text-white text-base md:text-lg py-2 px-4 min-w-[200px] md:min-w-[300px] max-h-16 md:max-h-full rounded-full hover:text-xl"
               >
                 Continue
               </button>
               <button
+                type="button"
                 onClick={goToPreviousStep}
-                className="flex items-center justify-center size-24 text-xl hover:text-3xl rounded-full bg-gray-200 text-gray-700"
-                aria-label="Go Back"
+                className="flex items-center justify-center size-24 text-xl max-h-16 md:max-h-full hover:text-3xl rounded-full bg-gray-200 text-gray-700"
               >
                 <MdArrowBack />
               </button>

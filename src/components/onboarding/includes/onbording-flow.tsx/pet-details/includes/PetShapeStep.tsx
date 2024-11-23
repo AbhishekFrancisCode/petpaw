@@ -8,6 +8,7 @@ import slimDog from "../../../../../../../public/images/img/slim_dog.png";
 import overwaightDog from "../../../../../../../public/images/img/overwaight_dog.png";
 import Card from "@/components/common/card";
 import { SelectCardProps } from "@/store/interfaces/card";
+import CardView from "./card-view";
 interface StepProps {
   control: Control;
 }
@@ -39,11 +40,11 @@ const PetShapeStep = ({ control }: StepProps) => {
     }
   ];
   return (
-    <div className="flex flex-col max-h-80 mt-8">
-      <text className="text-center text-2xl font-semibold mb-6 text-[#EE9422]">
+    <div className="flex flex-col md:max-h-80 md:mt-8 ">
+      <text className="text-center text:lg md:text-2xl font-semibold mb-6 text-[#EE9422]">
         {`What is ${formdata.petname + "'s" || "pet's"} body shape?`}
       </text>
-      <div className="grid grid-rows-3 md:grid-cols-3 gap-4 max-h-72">
+      <div className="grid grid-auto md:grid-cols-3 gap-4 md:max-h-72 mx-auto mb-32 md:mb-0">
         {/* Cards with Controller from React Hook Form */}
         <Controller
           name="body_shape"
@@ -51,24 +52,12 @@ const PetShapeStep = ({ control }: StepProps) => {
           rules={{ required: "Please select a card" }} // Validation rule
           render={({ field, fieldState }) => (
             <>
-              {steps.map((item: SelectCardProps) => (
-                <Card
-                  key={item.id}
-                  id={item.id}
-                  image={item.image}
-                  text={item.title}
-                  subtitle={item.subtitle}
-                  subtitle1={""}
-                  isSelected={innerStep === item.id}
-                  onClick={() => {
-                    handleCardClick(item.id);
-                    field.onChange(item.title);
-                  }}
-                />
-              ))}
-                  {fieldState?.error && (
-            <p className="mt-2 text-sm text-red-500 text-center mt-24">{fieldState?.error.message}</p>
-          )}
+          <CardView step={innerStep} list={steps} field={field} handleClick={handleCardClick}/>
+              {fieldState?.error && (
+                <p className="text-sm text-red-500 text-center mt-6 md:mt-24">
+                  {fieldState?.error.message}
+                </p>
+              )}
             </>
           )}
         />

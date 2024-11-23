@@ -12,7 +12,7 @@ const PetNameStep = ({ control }: StepProps) => {
       name="petname"
       rules={{ required: "Pet name is required" }}
       render={({ field, fieldState }) => (
-        <div className="md:min-w-[400px]">
+        <div className="min-w-[300px] md:min-w-[400px]">
           <label className="block mb-2 text-lg text-center">{`What's your pet's name?`}</label>
           <input
             {...field}
