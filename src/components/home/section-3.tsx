@@ -32,7 +32,7 @@ const images: ImagePropsType[] = [
 const buttons: ButtonProps[] = [
   {
     title: "Explore Pricing Plans",
-    link_to: "https://example.com/sunset",
+    link_to: "",
     color: "#028391",
     title_color: "#ffffff"
   }
@@ -40,7 +40,7 @@ const buttons: ButtonProps[] = [
 
 export default function Section_type_3() {
   return (
-    <div className="bg-[#C4DEE1] place-content-center">
+    <section className="bg-[#C4DEE1] place-content-center">
       <div className="container mx-auto">
         <TempletType1
           title="Flexible pricing, personalized nutrition"
@@ -50,6 +50,6 @@ export default function Section_type_3() {
           buttons={buttons}
         />
       </div>
-    </div>
+    </section>
   );
 }

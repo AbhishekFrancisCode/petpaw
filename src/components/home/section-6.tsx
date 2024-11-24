@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Section_type_8() {
   return (
-    <div className="place-content-center bg-[#FFF8EF]">
+    <section className="place-content-center bg-[#FFF8EF]">
       <div className="mx-auto min-h-[800px] grid grid-rows-10 grid-cols-1 lg:grid-rows-1 lg:grid-cols-10">
         <div className="order-2 lg:order-1 flex flex-col row-span-6 lg:col-span-6 bg-[#C4DEE1] p-10 lg:p-20">
           <div className="lg:px-10 xl:px-12">
@@ -47,6 +47,6 @@ export default function Section_type_8() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -4,6 +4,8 @@ import { AuthContext, AuthContextType } from "@/contexts/auth-context";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import Back from "../../../public/images/svg/arrow-left.svg";
 
 const ProfilePage = () => {
   const { logOut } = useContext(AuthContext) as AuthContextType;
@@ -25,6 +27,13 @@ const ProfilePage = () => {
         href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
       />
       <main className="profile-page">
+        <div className="absolute">
+          <Link href={"/"}>
+            <div className="fixed align-middle mb-4 z-50 p-4">
+              <Image src={Back} alt="" width={18} height={18} className="" />
+            </div>
+          </Link>
+        </div>
         <section className="relative block h-500-px">
           <div
             className="absolute top-0 w-full h-full bg-center bg-cover"

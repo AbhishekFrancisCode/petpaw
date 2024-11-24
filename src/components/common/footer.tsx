@@ -3,6 +3,7 @@ import { ENVIRONMENT } from "@/config";
 import Link from "next/link";
 import { useEffect } from "react";
 import { hotjar } from "react-hotjar";
+import SocialIcons from "./social_link";
 
 export default function Footer({ _isBlack, _isMargin }: any) {
   useEffect(() => {
@@ -16,9 +17,9 @@ export default function Footer({ _isBlack, _isMargin }: any) {
 
   return (
     <div
-      className={`bg-[#FFF8EF] pt-4 pb-10 md:px-28 border-t border-[#e0dede] ${_isMargin ? "mb-24 lg:mb-0" : ""}`}
+      className={`bottom-0 bg-[#FFF8EF] pt-4 pb-10 px-4 md:px-28 border-t border-[#e0dede] ${_isMargin ? "mb-24 lg:mb-0" : ""}`}
     >
-      <div className="sb-container flex flex-col lg:flex-row ">
+      <div className="sb-container flex flex-col lg:flex-row justify-between ">
         <div className="lg:max-w-[35%]  sm:px-2 md:p-0 flex flex-col justify-between">
           <div className="lg:max-w-[100%]  sm:px-2 md:p-0 flex flex-col justify-between">
             <div className="flex flex-col">
@@ -31,6 +32,9 @@ export default function Footer({ _isBlack, _isMargin }: any) {
           <div className="text-[#000000] opacity-70 text-[11px]">
             Pwatful. &copy; 2024. All Rights Reserved
           </div>
+        </div>
+        <div className="flex space-x-4">
+          <SocialIcons />
         </div>
       </div>
     </div>

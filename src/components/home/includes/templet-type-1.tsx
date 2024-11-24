@@ -102,7 +102,7 @@ export default function TempletType1({
           {buttons.map((item: ButtonProps, index: number) => {
             return (
               <div key={index} className="">
-                <Link href={``}>
+                <Link href={item.link_to!}>
                   <button
                     key={index}
                     onClick={() => {}}
