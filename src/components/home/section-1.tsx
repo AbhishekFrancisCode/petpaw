@@ -35,7 +35,7 @@ const images: ImagePropsType[] = [
 
 export default function Section_type_1() {
   return (
-    <div className="bg-[#C4DEE1] place-content-center">
+    <section className="bg-[#C4DEE1] place-content-center">
       <div className="container mx-auto">
         <TempletType1
           title="Fresh & Wholesome"
@@ -44,6 +44,6 @@ export default function Section_type_1() {
           images={images}
         />
       </div>
-    </div>
+    </section>
   );
 }

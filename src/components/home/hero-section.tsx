@@ -6,7 +6,7 @@ import NewsLetterPage from "./includes/explore-form";
 import ExploreForm from "./includes/explore-form";
 export default function HeroSection() {
   return (
-    <div className="bg-[#FFF8EF] pb-10 lg:pb-0">
+    <section className="bg-[#FFF8EF] pb-10 lg:pb-0">
       <div className="flex h-[800px] justify-center">
         <div className="grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 w-full h-full">
           <div className="order-1 lg:order-2 relative bg-orange-200 col-span-1">
@@ -40,6 +40,6 @@ export default function HeroSection() {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

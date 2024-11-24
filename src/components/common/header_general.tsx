@@ -12,7 +12,7 @@ export default function HeaderGeneral() {
       <div className="flex flex-row justify-between min-w-full">
         <div className="flex justify-between place-content-center ">
           <div className="">
-            <Link href="">
+            <Link href="/">
               <Image
                 fill={true}
                 src="/images/logos/pawtful_logo_appbar.svg"

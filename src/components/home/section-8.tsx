@@ -34,7 +34,7 @@ export default function NewsLetter() {
   };
 
   return (
-    <div className="flex place-content-center py-14 px-2 lg:px-8 bg-[#FFF8EF]">
+    <section className="flex place-content-center py-14 px-2 lg:px-8 bg-[#FFF8EF]">
       <div className="container bg-transprent px-8 flex flex-col lg:flex-row gap-0 justify-between items-center rounded-lg pt-8 lg:pt-14 pb-16 lg:pb-14 border-2 border-[#EE9422]">
         <div className="h-auto min-w-[325px] max-w-[675px] flex flex-col text-[#EE9422] text-center lg:text-left">
           <div className="text-[40px] font-medium leading-[47.60px] text-[#028391]">
@@ -79,6 +79,6 @@ export default function NewsLetter() {
           </button>
         </form>
       </div>
-    </div>
+    </section>
   );
 }

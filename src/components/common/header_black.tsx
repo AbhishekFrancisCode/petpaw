@@ -137,11 +137,11 @@ export default function HeaderBlack() {
                       // !user && loading ? (
                       //   <LoadingState loading={loading} />
                       // ) : (
-                        <Link href={"/login?flow=loginflow"}>
-                          <Button text="Login" />
-                        </Link>
-                      // )
+                      <Link href={"/login?flow=loginflow"}>
+                        <Button text="Login" />
+                      </Link>
                     ) : (
+                      // )
                       <Link href={"/profile"}>
                         <Image
                           src={ProfileIcon}
@@ -179,34 +179,70 @@ export default function HeaderBlack() {
                     className="max-h-[52px] pt-2"
                   />
                 </div>
-                <h2 className="text-xl font-semibold mb-4">Menu</h2>
+                {!user ? (
+                  // !user && loading ? (
+                  //   <LoadingState loading={loading} />
+                  // ) : (
+                  <Link href={"/login?flow=loginflow"}>
+                    <Button text="Login" />
+                  </Link>
+                ) : (
+                  // )
+                  <Link href={"/profile"}>
+                    <div className="flex flex-row align-middle mb-4">
+                      <Image
+                        src={ProfileIcon}
+                        alt=""
+                        width={18}
+                        height={18}
+                        className=""
+                      />
+                      <text className="px-4"> Profile </text>
+                    </div>
+                  </Link>
+                )}
                 <ul className="space-y-4">
                   <li>
-                    <a href="#home" className="block text-blue-600 hover:underline">
-                      Home
+                    <a href="/" className="block text-gray-400 hover:text-[#333333]">
+                      <Button text="How it Works" handleRedirect={goToDateSection} />
                     </a>
                   </li>
                   <li>
-                    <a href="#about" className="block text-blue-600 hover:underline">
-                      About
+                    <a href="" className="block text-gray-400 hover:text-[#333333]">
+                      <Button text="Meal plan" handleRedirect={goToDateSection} />
                     </a>
                   </li>
                   <li>
-                    <a href="#services" className="block text-blue-600 hover:underline">
-                      Services
+                    <a href="" className="block text-gray-400 hover:text-[#333333]">
+                      <Button text="Our Products" handleRedirect={goToDateSection} />
                     </a>
                   </li>
                   <li>
-                    <a href="#contact" className="block text-blue-600 hover:underline">
-                      Contact
+                    <a href="/faq" className="block text-gray-400 hover:text-[#333333]">
+                      <Button
+                        text="FAQ's"
+                        // handleRedirect={handleRedirect}
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" className="block text-gray-400 hover:text-[#333333]">
+                      <Button
+                        text="Contact us"
+                        // handleRedirect={handleRedirect}
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/onboarding" className="block text-gray-400 hover:text-[#333333]">
+                      <Button
+                        cls="w-32 h-9 text-sm text-white font-normal text-center bg-[#EE9422]"
+                        text="Get Started"
+                        handleRedirect={goToDateSection}
+                      />
                     </a>
                   </li>
                 </ul>
-              </div>
-              <div className="mt-auto p-2">
-                <button onClick={toggleDrawer} className="text-gray-500 rounded-md">
-                  Logout
-                </button>
               </div>
             </div>
           </div>

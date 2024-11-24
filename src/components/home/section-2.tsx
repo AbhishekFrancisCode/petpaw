@@ -75,7 +75,7 @@ export default function Section_type_2() {
   };
 
   return (
-    <div className="place-content-center bg-[#FFF8EF] py-8">
+    <section className="place-content-center bg-[#FFF8EF] py-8">
       <div className="container mx-auto lg:min-h-[700px] grid grid-rows-5 grid-cols-1 lg:grid-rows-1 lg:grid-cols-5">
         <div className="order-1 flex flex-col items-center row-span-2 lg:col-span-2 bg-[#FFF8EF] py-10">
           <div className="flex flex-col md:px-4 lg:px-10 xl:pl-12 xl:px-0">
@@ -155,6 +155,6 @@ export default function Section_type_2() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
