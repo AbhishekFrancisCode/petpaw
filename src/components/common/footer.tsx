@@ -16,7 +16,7 @@ export default function Footer({ _isBlack, _isMargin }: any) {
 
   return (
     <div
-      className={`bg-[#FFF8EF] pt-4 pb-10 md:px-28 border-t border-[#e0dede] ${_isMargin ? "mb-24 lg:mb-0" : ""}`}
+      className={`bottom-0 bg-[#FFF8EF] pt-4 pb-10 md:px-28 border-t border-[#e0dede] ${_isMargin ? "mb-24 lg:mb-0" : ""}`}
     >
       <div className="sb-container flex flex-col lg:flex-row ">
         <div className="lg:max-w-[35%]  sm:px-2 md:p-0 flex flex-col justify-between">
