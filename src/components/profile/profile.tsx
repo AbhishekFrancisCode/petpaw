@@ -9,7 +9,7 @@ const ProfilePage = () => {
   const { logOut } = useContext(AuthContext) as AuthContextType;
   const router = useRouter();
   const handleSignOut = async () => {
-    try {
+    try { 
       await logOut();
       router.push("/");
     } catch (error) {}

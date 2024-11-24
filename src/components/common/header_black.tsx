@@ -114,7 +114,7 @@ export default function HeaderBlack() {
               <div className="block">
                 <div className="justify-center place-content-center ">
                   <div className="flex flex-row w-auto gap-12 ">
-                    <Link href={``}>
+                    <Link href={`/faq`}>
                       <Button
                         text="FAQ's"
                         // handleRedirect={handleRedirect}
