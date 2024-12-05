@@ -91,7 +91,7 @@ export default function HeaderBlack() {
             <div className="flex flex-row justify-between">
               <div className="flex flex-row w-auto justify-between place-content-center ">
                 <div className="">
-                  <Link href="">
+                  <Link href="/">
                     <Image
                       fill={true}
                       src="/images/logos/pawtful_logo_appbar.svg"
@@ -105,8 +105,12 @@ export default function HeaderBlack() {
                     <Link href={``}>
                       <Button text="How it Works" handleRedirect={goToDateSection} />
                     </Link>
-                    <Button text="Meal plan" handleRedirect={goToDateSection} />
-                    <Button text="Our Products" handleRedirect={goToDateSection} />
+                    <Link href={``}>
+                      <Button text="Meal plan" handleRedirect={goToDateSection} />
+                    </Link>
+                    <Link href={`/product`}>
+                      <Button text="Our Products" handleRedirect={goToDateSection} />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -190,13 +194,7 @@ export default function HeaderBlack() {
                   // )
                   <Link href={"/profile"}>
                     <div className="flex flex-row align-middle mb-4">
-                      <Image
-                        src={ProfileIcon}
-                        alt=""
-                        width={18}
-                        height={18}
-                        className=""
-                      />
+                      <Image src={ProfileIcon} alt="" width={18} height={18} className="" />
                       <text className="px-4"> Profile </text>
                     </div>
                   </Link>

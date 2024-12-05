@@ -1,7 +1,7 @@
 "use client";
 
-import TempletType1, { ImagePropsType } from "./includes/templet-type-1";
-
+import { ImagePropsType } from "@/store/interfaces/templete";
+import TempletType1 from "./includes/templet-type-1";
 const images: ImagePropsType[] = [
   {
     title: "100% Human Grade & Fresh Ingredients",

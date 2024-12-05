@@ -1,6 +1,7 @@
 "use client";
 
-import TempletType1, { ButtonProps, ImagePropsType } from "./includes/templet-type-1";
+import { ButtonProps, ImagePropsType } from "@/store/interfaces/templete";
+import TempletType1 from "./includes/templet-type-1";
 
 const images: ImagePropsType[] = [
   {

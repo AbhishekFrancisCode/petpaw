@@ -1,35 +1,8 @@
 import Button from "@/sb-ui/button/button";
+import { ButtonProps, ImagePropsType, TempletProps } from "@/store/interfaces/templete";
 import imageKitLoader from "@/utils/image-kit-loader";
 import Image from "next/image";
 import Link from "next/link";
-
-export interface ButtonProps {
-  title: string;
-  title_color?: string;
-  link_to?: string;
-  color?: string;
-  outlineButton?: boolean;
-}
-
-export interface ImagePropsType {
-  title?: string;
-  title_color?: string;
-  image_link: string;
-  link_to?: string;
-  color?: string;
-  description?: string;
-}
-
-interface TempletProps {
-  title: string;
-  title_color?: string;
-  sub_title?: string;
-  sub_title_color?: string;
-  section_color?: string;
-  buttons?: ButtonProps[];
-  images?: ImagePropsType[];
-  steps_count?: boolean;
-}
 
 export default function TempletType1({
   title,
