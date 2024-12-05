@@ -1,7 +1,8 @@
 "use client";
+import YouTubePlayer from "@/components/common/video/youtube_player";
 import Button from "@/sb-ui/button/button";
 import { ImagePropsType, TempletProps } from "@/store/interfaces/templete";
-import Image from "next/image";
+import Image from "../../../../public/images/img/background-veg.jpg";
 
 export default function HowItsMade({ title, sub_title, section_color }: TempletProps) {
   const images1: ImagePropsType[] = [
@@ -34,23 +35,27 @@ export default function HowItsMade({ title, sub_title, section_color }: TempletP
       title_color: "#028391"
     }
   ];
+  const url = "/images/img/background-veg.jpg";
   return (
-    <section className="place-content-center bg-[#028391]">
+    <section className="place-content-center" style={{ backgroundImage: `url(${url})` }}>
       <div
-        className={`flex flex-col pt-4 mx-auto place-content-center min-w-full  ${section_color}`}
+        className={`flex flex-col pt-4 mx-auto place-content-center min-w-full bg-[#EE9422] bg-opacity-90 ${section_color}`}
       >
         {title && (
-          <h3 className={`text-[#EE9422] text-4xl font-semibold py-1 text-center px-6 md:px-4`}>
+          <h3 className={`text-[#fff] text-4xl font-semibold py-1 text-center px-6 md:px-4`}>
             {title}
           </h3>
         )}
         {sub_title && (
           <div className="flex place-content-center min-w-full">
-            <div className="text-[#FFF8EF] text-base font-semibold w-[60%] text-center">
+            <div className="text-[#fff] text-base font-semibold w-[60%] text-center">
               {sub_title}
             </div>
           </div>
         )}
+        <div className="m-10">
+          <YouTubePlayer videoId="JbTbM9c4urI" />
+        </div>
       </div>
     </section>
   );
