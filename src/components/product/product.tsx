@@ -1,5 +1,6 @@
 "use client";
 
+import Faq from "@/app/(public_routes)/faq/page";
 import BannerSection from "./includes/banner_section";
 import FoodTypeOffered from "./includes/food_type_offered";
 import HowItsMade from "./includes/how_its_made";
@@ -35,6 +36,7 @@ export default function Product() {
         width="w-full"
         bgColor="bg-slate-600"
       />
+      <Faq />
     </div>
   );
 }

@@ -54,7 +54,11 @@ export default function IngredientsUsed() {
   return (
     <section
       className="place-content-center max-h-[900px]"
-      style={{ backgroundImage: `url(${url})` }}
+      style={{
+        backgroundImage: `url(${url})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat"
+      }}
     >
       <div className="mx-auto min-h-[900px] grid grid-rows-10 grid-cols-1 lg:grid-rows-1 lg:grid-cols-10 bg-[#ffffff] bg-opacity-50">
         <div className="order-2 lg:order-2 flex flex-col row-span-3 lg:col-span-3  min-w-full ">
