@@ -166,14 +166,14 @@ const TestimonialsSwiper = ({
 );
 
 const YouTubePlayer = ({ videoId }: { videoId: any }) => {
-  const src = `https://www.youtube.com/embed/${videoId}?loop=1&playlist=${videoId}`;
+  const src = `https://www.youtube.com/embed/${videoId}?loop=1&mute=1`;
 
   return (
     <div className="youtube-wrapper1">
       <div className="youtube-container1">
         <iframe
           src={src}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
           allowFullScreen
           title="YouTube Video Player"
           style={{
