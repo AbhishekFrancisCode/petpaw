@@ -57,14 +57,14 @@ export default function IngredientsUsed() {
       style={{ backgroundImage: `url(${url})` }}
     >
       <div className="mx-auto min-h-[900px] grid grid-rows-10 grid-cols-1 lg:grid-rows-1 lg:grid-cols-10 bg-[#ffffff] bg-opacity-50">
-        <div className="order-2 lg:order-1 flex flex-col row-span-3 lg:col-span-3  min-w-full ">
+        <div className="order-2 lg:order-2 flex flex-col row-span-3 lg:col-span-3  min-w-full ">
           <div className="flex w-full h-full relative overflow-hidden">
             <Image
               key={0}
               src={bowlImage}
               alt={""}
               //   objectPosition="right"
-              className="object-cover object-top lg:object-right"
+              className="object-cover object-top lg:object-left "
               fill={true}
               onError={(e) => {
                 console.error("Image load failed:", e);
@@ -72,7 +72,7 @@ export default function IngredientsUsed() {
             />
           </div>
         </div>
-        <div className="flex flex-col order-1 lg:order-2 lg:pl-36  row-span-7 lg:col-span-7 place-items-center">
+        <div className="flex flex-col order-1 lg:order-1 lg:pl-36  row-span-7 lg:col-span-7 place-items-center">
           <text className="py-6 text-5xl font-bold *:">Only real ingredients</text>
           <ItemGrid items={items} items1={items1} items2={items2} />
         </div>
