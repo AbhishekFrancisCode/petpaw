@@ -73,7 +73,7 @@ export default function IngredientsUsed() {
           </div>
         </div>
         <div className="flex flex-col order-1 lg:order-1 lg:pl-36  row-span-7 lg:col-span-7 place-items-center">
-          <text className="py-6 text-5xl font-bold *:">Only real ingredients</text>
+          <text className="py-6 text-4xl font-bold *:">Only real ingredients</text>
           <ItemGrid items={items} items1={items1} items2={items2} />
         </div>
       </div>

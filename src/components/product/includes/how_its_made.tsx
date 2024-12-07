@@ -42,7 +42,7 @@ export default function HowItsMade({ title, sub_title, section_color }: TempletP
         className={`flex flex-col pt-4 mx-auto place-content-center min-w-full bg-[#EE9422] bg-opacity-90 ${section_color}`}
       >
         {title && (
-          <h3 className={`text-[#fff] text-4xl font-semibold py-1 text-center px-6 md:px-4`}>
+          <h3 className={`text-[#fff] text-4xl font-bold py-1 text-center px-6 md:px-4`}>
             {title}
           </h3>
         )}

@@ -5,6 +5,7 @@ import FoodTypeOffered from "./includes/food_type_offered";
 import HowItsMade from "./includes/how_its_made";
 import IngredientsUsed from "./includes/ingredients_used";
 import OfferStrip from "./includes/offer_strip";
+import Testimonials from "./includes/testimonials";
 
 export default function Product() {
   return (
@@ -26,6 +27,14 @@ export default function Product() {
         sub_title="Pawtful's Rich meals are packaged in advanced retort packaging, preserving maximum nutrition and taste without the need for preservatives. Enjoy fresh, flavorful meals anytime."
       />
       <IngredientsUsed />
+      <Testimonials />
+      <OfferStrip
+        text="Welcome to the Sale!"
+        subText="Up to 50% off on all items"
+        height="h-8"
+        width="w-full"
+        bgColor="bg-slate-600"
+      />
     </div>
   );
 }
