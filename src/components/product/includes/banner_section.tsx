@@ -20,13 +20,9 @@ export default function BannerSection() {
               {"Crafting Wellness in Every Bite: Nutritious Dog Food Made with Love and Care."}
             </p>
           </div>
-          <Image
-            src={"https://ik.imagekit.io/funlogic/DifferentDogFoodWord.png?updatedAt=1733585008500"}
-            alt="pawtful"
-            width={500}
-            height={250}
-            className="px-7"
-          />
+          <div className="lg:px-10">
+            <p className={`text-[#028391] text-4xl font-medium py-1 text-left`}>{"P"}</p>
+          </div>
           <div className="flex place-content-center lg:place-content-start px-10 pt-20">
             <Button
               text={"Explore"}

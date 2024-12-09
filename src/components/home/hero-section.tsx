@@ -19,9 +19,9 @@ export default function HeroSection() {
   return (
     <section className="bg-[#FFF8EF] pb-10 lg:pb-0">
       <div className="flex h-[800px] justify-center">
-        <div className="grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-6 w-full h-full">
-          <div className="order-1 lg:order-2 relative col-span-4">
-            <div className="inline-block max-w-full mx-auto pt-[70px] h-full place-content-end relative">
+        <div className="grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-4 w-full h-full">
+          <div className="order-1 lg:order-2 relative col-span-2">
+            <div className="inline-block max-w-full mx-auto pt-[70px] h-full place-content-center relative bg-black">
               <video
                 ref={videoRef}
                 src="/images/img/heroVid.mp4"
@@ -29,7 +29,7 @@ export default function HeroSection() {
                 autoPlay
                 loop
                 muted
-                className="w-full aspect-video object-bottom max-h-[800px]"
+                className="w-full aspect-video object-center max-h-[800px]"
               ></video>
               <button
                 onClick={toggleMute}
@@ -47,9 +47,9 @@ export default function HeroSection() {
                 className="object-cover"
               /> */}
           </div>
-          <div className="order-2 lg:order-1 grid grid-rows-2 col-span-2">
-            <div className="hidden lg:block absolute w-[35%]">
-              <div className="flex max-h-[200px] place-content-end">
+          <div className="order-2 lg:order-1 grid grid-rows-3 col-span-2">
+            {/* <div className="hidden lg:block absolute w-[35%]">
+              <div className="flex max-h-[200px] place-content-">
                 <Image
                   src={logo_herosection}
                   alt="pawtful"
@@ -58,8 +58,8 @@ export default function HeroSection() {
                   className="h-full max-h-[250px] w-[200px]"
                 />
               </div>
-            </div>
-            <div className="px-6 md:px-0 lg:pl-16 xl:24">
+            </div> */}
+            <div className="px-6 md:px-0 lg:pl-16 xl:24 pt-24">
               <HeroTitle />
             </div>
             <div className="px-6 md:px-0 flex place-content-center lg:place-content-start lg:pl-16 xl:24">
