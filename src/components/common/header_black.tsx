@@ -102,7 +102,7 @@ export default function HeaderBlack() {
                 </div>
                 <div className="block">
                   <div className="flex flex-row pl-32 lg:gap-3">
-                    <Link href={`/how-it-works`}>
+                    <Link href={``}>
                       <Button text="How it Works" handleRedirect={goToDateSection} />
                     </Link>
                     <Button text="Meal plan" handleRedirect={goToDateSection} />

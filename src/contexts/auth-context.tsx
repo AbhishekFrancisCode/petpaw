@@ -1,7 +1,7 @@
 import { COOKIE_NAME } from "@/config";
 import { getCookieValue } from "@/utils/session";
 import { getCookie } from "cookies-next";
-import { useContext, useEffect, createContext, useState, ReactNode } from "react";
+import React, { useContext, useEffect } from "react";
 import { signInWithPopup, signOut, onAuthStateChanged, GoogleAuthProvider } from "firebase/auth";
 import { auth } from "../store/firebase";
 
@@ -19,12 +19,12 @@ export type AuthContextType = {
   logOut: () => any;
 };
 
-export const AuthContext = createContext<AuthContextType | null>(null);
+export const AuthContext = React.createContext<AuthContextType | null>(null);
 
-const AuthProvider = ({ children }: { children: ReactNode }) => {
+const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   // const cookie = getCookie(COOKIE_NAME!);
   // const ck: AuthType = cookie ? getCookieValue() : {};
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = React.useState<any>(null);
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
