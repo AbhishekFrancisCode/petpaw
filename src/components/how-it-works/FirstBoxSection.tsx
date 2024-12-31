@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import firstBox1 from '../../../public/images/howItWorks/firstBox/firstBoxImage1.webp'
-
-
+import firstBox1 from "../../../public/images/howItWorks/firstBox/firstBoxImage1.webp";
+import firstBox2 from "../../../public/images/howItWorks/firstBox/firstBoxImage2.webp";
+import firstBox3 from "../../../public/images/howItWorks/firstBox/firstBoxImage3.webp";
+import firstBox4 from "../../../public/images/howItWorks/firstBox/firstBoxImage4.webp";
 
 const FirstBoxDetails = () => {
   const sections = [
@@ -10,27 +11,27 @@ const FirstBoxDetails = () => {
       title: "DELICIOUS FOOD",
       description: "All recipes arrive ready to serve or store.",
       imgAlt: "Delicious food packages",
-      // imgSrc: "/public/images/howItWorks/firstBox/firstBoxImage1.webp", // Replace with your image path
+      imgSrc: "https://ik.imagekit.io/funlogic/how-it-works/firstBoxImage4.webp?updatedAt=1733813690989"
     },
     {
       title: "DIGITAL FEEDING GUIDE",
       description: "Custom instructions ensure a smooth transition and easy feeding.",
       imgAlt: "Digital feeding guide on phones",
-      // imgSrc: "/public/images/howItWorks/firstBox/firstBoxImage2.webp", // Replace with your image path
+      imgSrc: "https://ik.imagekit.io/funlogic/how-it-works/firstBoxImage4.webp?updatedAt=1733813690989"
     },
     {
       title: "WELCOME KIT",
       description: "A special scoop and Puptainer to make serving and storing Ollie a breeze.",
       imgAlt: "Welcome kit with scoop and container",
-      // imgSrc: "/public/images/howItWorks/firstBox/firstBoxImage3.webp", // Replace with your image path
+      imgSrc: "https://ik.imagekit.io/funlogic/how-it-works/firstBoxImage4.webp?updatedAt=1733813690989"
     },
     {
       title: "HEALTH SCREENINGS",
       description:
         "Free and informative digestion, dental, and weight screenings from our experts.",
       imgAlt: "Health screening information on phone",
-      // imgSrc: "/public/images/howItWorks/firstBox/firstBoxImage4.webp", // Replace with your image path
-    },
+      imgSrc: "https://ik.imagekit.io/funlogic/how-it-works/firstBoxImage4.webp?updatedAt=1733813690989"
+    }
   ];
 
   return (
@@ -46,7 +47,7 @@ const FirstBoxDetails = () => {
           <div key={index} className="max-w-xs text-center">
             <div className="relative w-full h-64 mb-4">
               <Image
-                src={firstBox1}
+                src={section.imgSrc}
                 alt={section.imgAlt}
                 fill
                 className="object-cover rounded-lg"
