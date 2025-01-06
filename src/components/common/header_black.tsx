@@ -62,7 +62,6 @@ export default function HeaderBlack() {
 
   // Toggle drawer
   const toggleDrawer = () => {
-    console.log("drawer");
     setIsDrawerOpen(!isDrawerOpen);
   };
 
@@ -96,7 +95,7 @@ export default function HeaderBlack() {
                       fill={true}
                       src="/images/logos/pawtful_logo_appbar.svg"
                       alt="pawtful.com"
-                      className="max-h-[64px] md:max-h-[72px] max-w-[100px]  md:max-w-[150px] py-2"
+                      className="max-h-[64px] max-w-[100px] py-2"
                     />
                   </Link>
                 </div>
@@ -105,7 +104,7 @@ export default function HeaderBlack() {
                     <Link href={``}>
                       <Button text="How it Works" handleRedirect={goToDateSection} />
                     </Link>
-                    <Link href={``}>
+                    <Link href={`/mealplan`}>
                       <Button text="Meal plan" handleRedirect={goToDateSection} />
                     </Link>
                     <Link href={`/product`}>

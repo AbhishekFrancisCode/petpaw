@@ -1,6 +1,7 @@
 export const TITLES = {
   home: "Pwatful",
-  product:"Product"
+  product:"Product",
+  mealplan:"Meal Plan"
 };
 
 export const STRINGS = {
