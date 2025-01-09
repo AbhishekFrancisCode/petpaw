@@ -7,19 +7,27 @@ import HowItsMade from "./includes/how_its_made";
 import IngredientsUsed from "./includes/ingredients_used";
 import OfferStrip from "./includes/offer_strip";
 import Testimonials from "./includes/testimonials";
+import Banner from "./include/banner";
+import ProductDisplay from "./include/expand_card";
 
 export default function Product() {
   return (
     <div className=" flex flex-col pt-24">
-      <OfferStrip
+      {/* <OfferStrip
         text="Welcome to the Sale!"
         subText="Up to 50% off on all items"
         height="h-10"
         width="w-full"
         bgColor="bg-black"
-      />
-      <BannerSection />
-      <FoodTypeOffered
+      /> */}
+      <Banner />
+      <div className="min-h-12"></div>
+      <ProductDisplay />
+      <div className="min-h-12"></div>
+      <div className="min-h-12"></div>
+      <div className="min-h-12"></div>
+      {/* <BannerSection /> */}
+      {/* <FoodTypeOffered
         title={"A Bowl for Every Tail: Premium Dog Food for Every Breed, Age, and Need."}
         sub_title="From protein-rich Classic meals, easy-to-digest Grain-free options, allergen-free Sensitive Diet to Biryani for pets that eat like royals, Pawtful's Rich Food has something for everyone."
       />
@@ -36,7 +44,7 @@ export default function Product() {
         width="w-full"
         bgColor="bg-slate-600"
       />
-      <Faq />
+      <Faq /> */}
     </div>
   );
 }
