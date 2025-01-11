@@ -8,11 +8,11 @@ import IngredientsUsed from "./includes/ingredients_used";
 import OfferStrip from "./includes/offer_strip";
 import Testimonials from "./includes/testimonials";
 import Banner from "./include/banner";
-import ProductDisplay from "./include/expand_card";
+import ProductView from "./include/product_view";
 
 export default function Product() {
   return (
-    <div className=" flex flex-col pt-24">
+    <div className=" flex flex-col pt-24 ">
       {/* <OfferStrip
         text="Welcome to the Sale!"
         subText="Up to 50% off on all items"
@@ -22,7 +22,7 @@ export default function Product() {
       /> */}
       <Banner />
       <div className="min-h-12"></div>
-      <ProductDisplay />
+      <ProductView />
       <div className="min-h-12"></div>
       <div className="min-h-12"></div>
       <div className="min-h-12"></div>
