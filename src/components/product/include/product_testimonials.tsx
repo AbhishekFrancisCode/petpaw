@@ -14,61 +14,61 @@ interface Step {
 const ProductTestimonials = () => {
   const cards: Card[] = [
     {
-      title: "Card 1",
+      title: "Jack",
       content: "Short content card",
       color: "bg-[#f5f3ee]",
-      height: "h-32"
+      petInfo: "4-year-old Golden Retriever"
     },
     {
-      title: "Card 2",
+      title: "Chris Rayan",
       content:
         "Medium length content with some extra text to show how it handles longer content blocks.",
       color: "bg-[#f5f3ee]",
-      height: "h-48"
+      petInfo: "4-year-old Golden Retriever"
     },
     {
-      title: "Card 3",
+      title: "Preethi",
       content: "Another short card",
       color: "bg-purple-500",
-      height: "h-32"
+      petInfo: "4-year-old Golden Retriever"
     },
     {
-      title: "Card 4",
+      title: "Riya Ashely",
       content:
         "This card has a bit more content to display and show how the grid handles different heights.",
       color: "bg-red-500",
-      height: "h-40"
+      petInfo: "4-year-old Golden Retriever"
     },
     {
-      title: "Card 5",
+      title: "Aaron",
       content: "Short and sweet",
       color: "bg-yellow-500",
-      height: "h-32"
+      petInfo: "4-year-old Golden Retriever"
     },
     {
-      title: "Card 6",
+      title: "Divya",
       content: "The final card with normal content length",
       color: "bg-indigo-500",
-      height: "h-36"
+      petInfo: "4-year-old Golden Retriever"
     },
     {
-      title: "Card 4",
+      title: "Robin",
       content:
-        "This card has a bit more content to display and show how the grid handles different heights.",
+        "This card has a bit more content to display and show how the grid handles different heights, This card has a bit more content to display and show how the grid handles different heights.",
       color: "bg-red-500",
-      height: "h-40"
+      petInfo: "4-year-old Golden Retriever"
     },
     {
-      title: "Card 5",
+      title: "Anto",
       content: "Short and sweet",
       color: "bg-yellow-500",
-      height: "h-32"
+      petInfo: "4-year-old Golden Retriever"
     },
     {
-      title: "Card 6",
+      title: "Francis",
       content: "The final card with normal content length",
       color: "bg-indigo-500",
-      height: "h-36"
+      petInfo: "4-year-old Golden Retriever"
     }
   ];
 
