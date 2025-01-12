@@ -1,5 +1,5 @@
-import { ReactNode, useRef, useState, useEffect } from "react";
-
+import Image from "next/image";
+import image from "../../../public/images/img/dog-doodle.png";
 export interface Card {
   title: string;
   petInfo?: string;
@@ -21,15 +21,8 @@ const Testimonials = ({ cards }: { cards: Card[] }) => {
             <div key={index} className={`rounded-3xl p-4 text-[#999999] bg-white`}>
               <div className="flex items-start gap-3">
                 {/* Circle with dog silhouette */}
-                <div className="w-12 h-12 rounded-full bg-[#f8f3ef] flex items-center justify-center">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="w-8 h-8 fill-[#d4b7a8]"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
-                    <path d="M15 8.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm-6 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm3 6.5c-2.33 0-4.31-1.46-5.11-3.5h10.22c-.8 2.04-2.78 3.5-5.11 3.5z" />
-                  </svg>
+                <div className="w-16 h-16 rounded-full bg-[#f8f3ef] flex items-center justify-center">
+                  <Image src={image} alt="" width={40} height={40} className="" />
                 </div>
 
                 {/* Text and stars content */}
