@@ -53,7 +53,7 @@ export default function ProductView() {
     }
   ];
   return (
-    <section className="flex flex-col mx-auto place-content-center">
+    <section className="flex flex-col ">
       <div className="flex flex-col mx-auto place-content-center items-center">
         <h1 className="text-6xl text-[#333333] font-bold leading-normal">Our Meals</h1>
         <p className="text-xl md:max-w-[600px] text-center">

@@ -6,9 +6,10 @@ import FoodTypeOffered from "./includes/food_type_offered";
 import HowItsMade from "./includes/how_its_made";
 import IngredientsUsed from "./includes/ingredients_used";
 import OfferStrip from "./includes/offer_strip";
-import Testimonials from "./includes/testimonials";
 import Banner from "./include/banner";
 import ProductView from "./include/product_view";
+import HowItWorks from "./include/how_it_works";
+import Testimonials from "../common/testimonial";
 
 export default function Product() {
   return (
@@ -24,7 +25,9 @@ export default function Product() {
       <div className="min-h-12"></div>
       <ProductView />
       <div className="min-h-12"></div>
+      <HowItWorks />
       <div className="min-h-12"></div>
+      <Testimonials />
       <div className="min-h-12"></div>
       {/* <BannerSection /> */}
       {/* <FoodTypeOffered

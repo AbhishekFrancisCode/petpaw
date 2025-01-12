@@ -15,7 +15,7 @@ const ProductDisplay = ({ productDetails }: { productDetails: ProductDetailsProp
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className={`${isHovered ? "bg-slate-200" : "bg-[#f1e8dc]"} rounded-3xl border-0 text-card-foreground shadow-sm h-[668px] transition-all duration-300 ease-in-out hover:h-[734px] max-w-1/2 max-h-[734px]`}
+      className={`${isHovered ? "bg-[#f5f3ee]" : "bg-[#f1e8dc]"} rounded-3xl border-0 text-card-foreground shadow-sm h-[668px] transition-all duration-300 ease-in-out hover:h-[734px] max-w-1/2 max-h-[734px]`}
     >
       <div className="grid grid-rows-[3fr_auto] items-center max-h-full max-w-full">
         <div className="row-span-3 relative h-[506px]">
@@ -39,8 +39,8 @@ const ProductDisplay = ({ productDetails }: { productDetails: ProductDetailsProp
               <p className="text-3xl font-bold text-gray-900">{productDetails.title}</p>
             </div>
             <motion.div
-              animate={{ opacity: isHovered ? 1 : 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : -10 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
               className="inset-0 bg-transparent px-4 rounded-lg"
             >
               <Button
@@ -53,8 +53,8 @@ const ProductDisplay = ({ productDetails }: { productDetails: ProductDetailsProp
             </motion.div>
           </div>
           <motion.div
-            animate={{ opacity: isHovered ? 1 : 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
+            animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : -10 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="inset-0 bg-transparent p-4 rounded-lg"
           >
             <p className="text-sm text-gray-600">
