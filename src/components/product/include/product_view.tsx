@@ -35,7 +35,7 @@ export default function ProductView() {
   const productDetails1: ProductDetailsProps[] = [
     {
       id: 2,
-      title: "Chicken Bowl",
+      title: "Fish Bowl",
       subtitle: "Free Range Chow Chompin'",
       description:
         "Our Free Range Chicken recipe is complete and balanced for all lifestages, and is suitable for puppies and seniors alike. This nourishing recipe is one of the lowest in fat across our range, making it the best choice for those puppers with gastrointestinal issues. It may be appropriate for dogs who have had mild pancreatitis in the past but speak to your vet about this. It is low in carbohydrates, which makes a great choice for diabetic dogs looking to minimise blood sugar fluctuations, and also for overweight dogs looking to lose weight while maintaining muscle mass.",
@@ -44,7 +44,7 @@ export default function ProductView() {
     },
     {
       id: 3,
-      title: "Lamb Bowl",
+      title: "Veg Bowl",
       subtitle: "Grass Fed Lip Lickin'",
       description:
         " Our Grass Fed Lamb recipe is complete and balanced for all lifestages. This recipe is the richest across our range, making it a great choice for itchy skin, or for puppers looking for a more novel diet. We do not generally recommend this recipe for our golden oldies or puppers with sensitive digestive tracts, as it can be too rich due to its higher fat content.",
@@ -55,7 +55,7 @@ export default function ProductView() {
   return (
     <section className="flex flex-col ">
       <div className="flex flex-col mx-auto place-content-center items-center">
-        <h1 className="text-6xl text-[#333333] font-bold leading-normal">Our Meals</h1>
+        <h1 className="text-6xl text-[#333333] font-bold leading-normal">Our Products</h1>
         <p className="text-xl md:max-w-[600px] text-center">
           Freshly prepared, lightly cooked meals packed with human-grade, nutritious, wholefood
           ingredients.
