@@ -5,8 +5,8 @@ import DogMealPlan from "./includes/banner-2-grid";
 export default function MealPlan() {
   return (
     <>
-      <DogMealPlan />
       <FoodTypeSelection />
+      <DogMealPlan />
     </>
   );
 }
