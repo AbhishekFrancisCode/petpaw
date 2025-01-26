@@ -1,0 +1,22 @@
+.youtube-wrapper {
+  width: 100%;
+  max-width: 1200px; /* Limit the max width on larger screens */
+  margin: 0 auto; /* Center the video horizontally */
+}
+
+.youtube-container {
+  position: relative;
+  width: 100%; /* Full width of the wrapper */
+  padding-bottom: 56.25%; /* Aspect ratio: 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.youtube-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Fully fills the container */
+  height: 100%;
+
+}

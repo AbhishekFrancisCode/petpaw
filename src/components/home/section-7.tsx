@@ -1,6 +1,7 @@
 "use client";
 
-import TempletType1, { ButtonProps, ImagePropsType } from "./includes/templet-type-1";
+import { ButtonProps, ImagePropsType } from "@/store/interfaces/templete";
+import TempletType1 from "./includes/templet-type-1";
 
 const images: ImagePropsType[] = [
   {
@@ -30,7 +31,7 @@ const buttons: ButtonProps[] = [
   {
     title: "Know More",
     link_to: "",
-      color: "#EE9422",
+    color: "#EE9422",
     title_color: "#ffffff"
   },
   {

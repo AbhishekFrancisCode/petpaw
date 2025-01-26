@@ -6,7 +6,7 @@ import Button from "@/sb-ui/button/button";
 export default function HeaderGeneral() {
   return (
     <div
-      className="flex py-4 pl-0 lg:bg-transprent backdrop-blur-[40px] w-screen z-20 min-h-[70px] max-h-[70px]"
+      className="flex py-4 pl-0 lg:bg-red-200 backdrop-blur-[40px] w-screen z-20 min-h-[70px] max-h-[70px]"
       onBlur={(e) => e.currentTarget.focus()}
     >
       <div className="flex flex-row justify-between min-w-full">

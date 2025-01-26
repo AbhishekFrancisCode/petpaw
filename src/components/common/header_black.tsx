@@ -62,7 +62,6 @@ export default function HeaderBlack() {
 
   // Toggle drawer
   const toggleDrawer = () => {
-    console.log("drawer");
     setIsDrawerOpen(!isDrawerOpen);
   };
 
@@ -91,12 +90,12 @@ export default function HeaderBlack() {
             <div className="flex flex-row justify-between">
               <div className="flex flex-row w-auto justify-between place-content-center ">
                 <div className="">
-                  <Link href="">
+                  <Link href="/">
                     <Image
                       fill={true}
                       src="/images/logos/pawtful_logo_appbar.svg"
                       alt="pawtful.com"
-                      className="max-h-[64px] md:max-h-[72px] max-w-[100px]  md:max-w-[150px] py-2"
+                      className="max-h-[64px] max-w-[100px] py-2"
                     />
                   </Link>
                 </div>
@@ -105,8 +104,12 @@ export default function HeaderBlack() {
                     <Link href={`/how-it-works`}>
                       <Button text="How it Works" handleRedirect={goToDateSection} />
                     </Link>
-                    <Button text="Meal plan" handleRedirect={goToDateSection} />
-                    <Button text="Our Products" handleRedirect={goToDateSection} />
+                    <Link href={`/mealplan`}>
+                      <Button text="Meal plan" handleRedirect={goToDateSection} />
+                    </Link>
+                    <Link href={`/product`}>
+                      <Button text="Our Products" handleRedirect={goToDateSection} />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -190,13 +193,7 @@ export default function HeaderBlack() {
                   // )
                   <Link href={"/profile"}>
                     <div className="flex flex-row align-middle mb-4">
-                      <Image
-                        src={ProfileIcon}
-                        alt=""
-                        width={18}
-                        height={18}
-                        className=""
-                      />
+                      <Image src={ProfileIcon} alt="" width={18} height={18} className="" />
                       <text className="px-4"> Profile </text>
                     </div>
                   </Link>
