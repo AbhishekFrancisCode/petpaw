@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: TITLES.mealplan
 };
 
-export default function Landing() {
+export default function MealPlanPage() {
   return (
     <div>
       <MealPlan />

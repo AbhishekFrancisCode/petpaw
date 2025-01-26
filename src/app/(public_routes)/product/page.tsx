@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: TITLES.product
 };
 
-export default function Landing() {
+export default function ProductPage() {
   return (
     <div className="max-w-screen-2xl mx-auto">
       <Product />

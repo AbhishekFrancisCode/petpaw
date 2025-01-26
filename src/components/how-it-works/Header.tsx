@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "next/image"
-import dogImage from './includes/images/dog-man.webp'
+import Image from "next/image";
+import dogImage from "./includes/images/dog-man.webp";
 
-const Header = () => {
+const HeroSectionHowItWorks = () => {
   return (
     <header className="flex flex-col items-center bg-gray-50 p-8">
       {/* Tagline Section */}
@@ -24,4 +24,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeroSectionHowItWorks;
