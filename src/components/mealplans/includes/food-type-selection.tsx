@@ -6,15 +6,22 @@ import Image from "next/image";
 import { FoodOption, FoodType, Mealdata, mealdatas } from "../mealdata";
 
 export default function FoodTypeSelection() {
-  const [selectedFood, setSelectedFood] = useState<string>("");
+  const [selectedFood, setSelectedFood] = useState<string>(mealdatas[0].imageUrl);
 
   const [selectedType, setSelectedType] = useState<FoodType>("");
   const [selectedPrep, setSelectedPrep] = useState("");
 
   const options = {
-    fresh: [mealdatas[1], mealdatas[2], mealdatas[3], mealdatas[4]] as const,
-    vegetarian: [mealdatas[5], mealdatas[6]] as const
+    fresh: [
+      mealdatas[1],
+      mealdatas[2],
+      mealdatas[3],
+      mealdatas[4],
+      mealdatas[5],
+      mealdatas[6]
+    ] as const
   };
+
   return (
     <div className="p-8 max-w-7xl mx-auto">
       <h1 className="text-3xl font-semibold text-center mb-4">A Healthy Choice</h1>
@@ -26,18 +33,18 @@ export default function FoodTypeSelection() {
       <div className="grid grid-cols-8 gap-8 items-start mb-8">
         <div className="space-y-2 col-span-2">
           <div className="flex mb-4 w-full place-content-center">
-            <h2 className="text-xl">Non-Vegetarian</h2>
+            <h2 className="text-xl">Meals</h2>
           </div>
           <div className="flex flex-col items-center gap-6">
             {options.fresh.map((option) => (
-              <div key={`option-${option.name}`} className="min-w-[100px] bg-slate-100">
+              <div key={`option-${option.name}`} className="min-w-[160px]">
                 <button
                   onClick={() => {
                     setSelectedType("Vegetarian");
                     setSelectedPrep(option.name);
                     setSelectedFood(option.imageUrl);
                   }}
-                  className={`flex px-6 py-4 rounded-full transition-colors place-content-start items-center ${
+                  className={`flex min-w-full px-6 py-4 rounded-full transition-colors place-content-start items-center ${
                     selectedType === "Vegetarian" && selectedPrep === option.name
                       ? "bg-blue-500 text-white"
                       : "bg-white hover:bg-gray-100 border border-gray-300"
@@ -71,39 +78,7 @@ export default function FoodTypeSelection() {
         </div>
 
         <div className="space-y-2 col-span-2  place-content-center">
-          <div className="flex mb-4 w-full place-content-center">
-            <h2 className="text-xl">Vegetarian</h2>
-          </div>
-          <div className="flex flex-col items-center gap-6">
-            {options.vegetarian.map((option) => (
-              <div key={`option-${option.name}`} className="flex items-center space-x-3">
-                <button
-                  onClick={() => {
-                    setSelectedType("Vegetarian");
-                    setSelectedPrep(option.name);
-                    setSelectedFood(option.imageUrl);
-                  }}
-                  className={`flex  px-6 py-4 rounded-full transition-colors place-content-start items-center ${
-                    selectedType === "Vegetarian" && selectedPrep === option.name
-                      ? "bg-blue-500 text-white"
-                      : "bg-white hover:bg-gray-100"
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    checked={selectedPrep === option.name}
-                    onChange={() => {
-                      setSelectedType("Vegetarian"); // Set the type (static here, can be dynamic)
-                      setSelectedPrep(option.name); // Set the name of the selected prep
-                      setSelectedFood(option.imageUrl); // Set the image URL
-                    }}
-                    className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  />
-                  <div className="pl-8">{option.name}</div>
-                </button>
-              </div>
-            ))}
-          </div>
+          <div className="flex flex-col items-center gap-6"></div>
         </div>
       </div>
 
