@@ -12,7 +12,8 @@ export default function TempletType1({
   section_color,
   images,
   buttons,
-  steps_count
+  steps_count,
+  grid_height
 }: TempletProps) {
   return (
     <div className={`flex flex-col pt-4 ${section_color}`}>
@@ -29,7 +30,9 @@ export default function TempletType1({
           {images.map((item: ImagePropsType, index: number) => {
             return (
               <div key={index} className="flex flex-col">
-                <div className="w-[330px] h-[290px] md:w-80 md:h-44 relative rounded-xl">
+                <div
+                  className={`w-[330px] h-[290px] md:w-80 ${grid_height ? `md-h-[${grid_height}px]` : "md:h-40"} relative rounded-xl`}
+                >
                   <Image
                     key={index}
                     src={item.image_link}
