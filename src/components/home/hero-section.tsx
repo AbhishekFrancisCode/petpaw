@@ -21,15 +21,15 @@ export default function HeroSection() {
       <div className="flex h-[800px] justify-center">
         <div className="grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-4 w-full h-full">
           <div className="order-1 lg:order-2 relative col-span-2">
-            <div className="inline-block max-w-full mx-auto pt-[70px] h-full place-content-center relative bg-black">
+            <div className="inline-block max-w-full mx-auto pt-[70px] h-full place-content-center relative bg-transparent">
               <video
                 ref={videoRef}
-                src="/images/img/heroVid.mp4"
-                controls={false} // Disables the controls
+                src="https://ik.imagekit.io/funlogic/Pawtful%20Final%20With%20Text_1280x960.mp4?updatedAt=1738081202132"
+                controls={false}
                 autoPlay
                 loop
                 muted
-                className="w-full aspect-video object-center max-h-[800px]"
+                className="w-full h-full aspect-video object-bottom p-0"
               ></video>
               <button
                 onClick={toggleMute}
