@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function MealPlanPage() {
   return (
-    <div>
+    <div className="pt-[70px]">
       <MealPlan />
     </div>
   );
