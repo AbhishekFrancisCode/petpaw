@@ -5,7 +5,7 @@ const StepsSubsection = () => {
     <>
       <section className="bg-gray-50 py-12 px-4 text-center">
         {/* Section Title */}
-        <h2 className="text-3xl font-bold text-gray-800 mb-10">How Ollie Works</h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-10">How Pawtful Works</h2>
 
         {/* Steps Container */}
         <div className="flex flex-col md:flex-row justify-center items-start gap-8 md:gap-16 max-w-5xl mx-auto">
