@@ -47,7 +47,8 @@ export default function HeroSection() {
                 className="object-cover"
               /> */}
           </div>
-          <div className="order-2 lg:order-1 grid grid-rows-3 col-span-2">
+          <div className="order-2 lg:order-1 grid grid-rows-12 col-span-2">
+            <div className="row-span-2 max-h-3 bg-slate-200"></div>
             {/* <div className="hidden lg:block absolute w-[35%]">
               <div className="flex max-h-[200px] place-content-">
                 <Image
@@ -59,10 +60,10 @@ export default function HeroSection() {
                 />
               </div>
             </div> */}
-            <div className="px-6 md:px-0 lg:pl-16 xl:24 pt-24">
+            <div className="row-span-5 px-6 md:px-0 lg:pl-16 ">
               <HeroTitle />
             </div>
-            <div className="px-6 md:px-0 flex place-content-center lg:place-content-start lg:pl-16 xl:24">
+            <div className="row-span-5 px-6 md:px-0 flex place-content-center lg:place-content-start lg:pl-16 xl:24 ">
               <ExploreForm />
             </div>
           </div>

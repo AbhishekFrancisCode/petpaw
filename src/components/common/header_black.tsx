@@ -68,18 +68,18 @@ export default function HeaderBlack() {
   return (
     <div>
       <div
-        className="fixed float-start py-4 pl-0 lg:bg-transparent backdrop-blur-[40px] w-screen z-20 min-h-[70px] max-h-[70px]"
+        className="fixed float-start pl-0 lg:bg-transparent backdrop-blur-[40px] w-screen z-20 min-h-[70px] max-h-[70px]"
         onBlur={(e) => e.currentTarget.focus()}
       >
         <div className="px-2 md:px-6 text-sm text-black rounded-xl font-medium text-right">
           {isMobile ? (
-            <div className="flex flex-row">
+            <div className="flex flex-row justify-between items-center min-h-[70px]">
               <div className="">
                 <Image
                   fill={true}
-                  src="/images/logos/pawtful_logo_appbar.svg"
+                  src="/images/logos/logo_round.png"
                   alt="pawtful.com"
-                  className="max-h-[52px] pt-2"
+                  className="max-h-[64px] max-w-[64px] ml-2"
                 />
               </div>
               <div onClick={() => toggleDrawer()} className="p-2 z-20">
@@ -87,23 +87,21 @@ export default function HeaderBlack() {
               </div>
             </div>
           ) : (
-            <div className="flex flex-row justify-between">
-              <div className="flex flex-row w-auto justify-between place-content-center ">
-                <div className="">
-                  <Link href="/">
-                    <Image
-                      fill={true}
-                      src="/images/logos/pawtful_logo_appbar.svg"
-                      alt="pawtful.com"
-                      className="max-h-[64px] max-w-[100px] py-2"
-                    />
-                  </Link>
-                </div>
-                <div className="block">
+            <div className="flex flex-row min-h-[70px] min-w-full justify-between items-center">
+              <div className="flex flex-row justify-between  ">
+                <Link href="/">
+                  <Image
+                    fill={true}
+                    src="/images/logos/logo_round.png"
+                    alt="pawtful.com"
+                    className="max-h-full max-w-[80px] ml-6"
+                  />
+                </Link>
+                <div className=" ">
                   <div className="flex flex-row pl-32 lg:gap-3">
-                    <Link href={`/how-it-works`}>
+                    {/* <Link href={`/how-it-works`}>
                       <Button text="How it Works" />
-                    </Link>
+                    </Link> */}
                     <Link href={`/mealplan`}>
                       <Button text="Meal plan" />
                     </Link>
@@ -205,18 +203,18 @@ export default function HeaderBlack() {
                   </Link>
                 )}
                 <ul className="space-y-4">
-                  <li>
+                  {/* <li>
                     <a href="/" className="block text-gray-400 hover:text-[#333333]">
                       <Button text="How it Works" handleRedirect={goToDateSection} />
                     </a>
-                  </li>
+                  </li> */}
                   <li>
-                    <a href="" className="block text-gray-400 hover:text-[#333333]">
+                    <a href="/mealplan" className="block text-gray-400 hover:text-[#333333]">
                       <Button text="Meal plan" handleRedirect={goToDateSection} />
                     </a>
                   </li>
                   <li>
-                    <a href="" className="block text-gray-400 hover:text-[#333333]">
+                    <a href="/product" className="block text-gray-400 hover:text-[#333333]">
                       <Button text="Our Products" handleRedirect={goToDateSection} />
                     </a>
                   </li>

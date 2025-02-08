@@ -32,7 +32,7 @@ const images: ImagePropsType[] = [
 const buttons: ButtonProps[] = [
   {
     title: "Explore Pricing Plans",
-    link_to: "",
+    link_to: "/product",
     color: "#028391",
     title_color: "#ffffff"
   }
