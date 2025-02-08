@@ -181,7 +181,7 @@ export default function HeaderBlack() {
                 <div className="p-2 min-h-[70px] max-h-[70px]">
                   <Image
                     fill={true}
-                    src="/images/logos/pawtful_logo_appbar.svg"
+                    src="/images/logos/logo_round.png"
                     alt="pawtful.com"
                     className="max-h-[52px] pt-2"
                   />
