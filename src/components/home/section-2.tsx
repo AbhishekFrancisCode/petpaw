@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Button from "@/sb-ui/button/button";
+import { useRouter } from "next/navigation";
 
 interface ImageSlide {
   title: string;
@@ -73,6 +74,10 @@ export default function Section_type_2() {
       setIndex(index);
     }
   };
+  const router = useRouter();
+  const handleNavigate = () => {
+    router.push(`/mealplan`);
+  };
 
   return (
     <section className="place-content-center bg-[#FFF8EF] py-8">
@@ -101,7 +106,7 @@ export default function Section_type_2() {
             <div className="flex place-content-center lg:place-content-start mt-5">
               <Button
                 text={"Explore Meals"}
-                handleRedirect={() => {}}
+                handleRedirect={handleNavigate}
                 cls="bg-[#028391] min-w-[200px] h-16 rounded-md px-10 text-[#ffffff] hover:opacity-80"
               />
             </div>

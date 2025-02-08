@@ -30,12 +30,12 @@ export default function FoodTypeSelection() {
         options.
       </p>
 
-      <div className="grid grid-cols-8 gap-8 items-start mb-8">
-        <div className="space-y-2 col-span-2">
+      <div className="grid md:grid-cols-8 gap-8 items-start mb-8">
+        <div className="space-y-2 md:col-span-2">
           <div className="flex mb-4 w-full place-content-center">
             <h2 className="text-xl">Meals</h2>
           </div>
-          <div className="flex flex-col items-center gap-6">
+          <div className="flex md:flex-col items-center gap-6">
             {options.fresh.map((option) => (
               <div key={`option-${option.name}`} className="min-w-[160px]">
                 <button
@@ -68,7 +68,7 @@ export default function FoodTypeSelection() {
         </div>
 
         <div className="flex justify-center col-span-4">
-          <div className="min-w-[500px] h-[500px]">
+          <div className="min-w-[300px] h-[300px] md:min-w-[500px] md:h-[500px]">
             <img
               src={selectedFood}
               alt="Food bowl"

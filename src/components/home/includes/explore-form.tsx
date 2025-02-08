@@ -4,16 +4,25 @@ import { ChangeEvent, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { saveNewsLetter } from "@/store/clients/clients-slice";
 import { sbToasterSuccess } from "@/utils/sb-toaster";
+import { useRouter } from "next/navigation";
 
 type Inputs = {
-  email: string;
+  name: string;
 };
 
 export default function ExploreForm() {
-  const [email, setEmail] = useState<string>("");
+  const [name, setName] = useState<string>("");
+
+  const router = useRouter();
+
+  const navigateWithQuery = () => {
+    if (name.length > 0) {
+      router.push(`/onboarding?name=${name}`);
+    }
+  };
 
   const handleEmailOnChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
+    setName(event.target.value);
   };
 
   const {
@@ -40,15 +49,15 @@ export default function ExploreForm() {
       >
         <div className="flex max-h-12">
           <input
-            type="email"
+            type="text"
             id="newsletter"
             required={true}
             placeholder="eg: Labrador"
-            {...register("email", {
+            {...register("name", {
               pattern: {
                 value:
                   /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                message: "Invalid email address"
+                message: "Provide your dog name"
               }
             })}
             onChange={(e) => {
@@ -60,6 +69,7 @@ export default function ExploreForm() {
         <button
           type="submit"
           className="flex w-[224px] lg:w-[172px] h-12 rounded-md place-content-center items-center gap-4 bg-[#EE9422]"
+          onClick={() => navigateWithQuery()}
         >
           <div className="text-center text-white text-base font-normal leading-7">
             Get your plan

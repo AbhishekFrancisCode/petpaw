@@ -1,8 +1,13 @@
 "use client";
 import Button from "@/sb-ui/button/button";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Section_type_8() {
+  const router = useRouter();
+  const handleNavigate = () => {
+    router.push(`/product`);
+  };
   return (
     <section className="place-content-center bg-[#FFF8EF]">
       <div className="mx-auto min-h-[800px] grid grid-rows-10 grid-cols-1 lg:grid-rows-1 lg:grid-cols-10">
@@ -22,7 +27,7 @@ export default function Section_type_8() {
           <div className="flex place-content-center lg:place-content-start lg:px-10 xl:px-12">
             <Button
               text={"Explore Pricing Plans"}
-              handleRedirect={() => {}}
+              handleRedirect={handleNavigate}
               cls="bg-[#028391] min-w-[200px] h-16 rounded-md px-10 text-[#ffffff] hover:opacity-80 "
             />
           </div>

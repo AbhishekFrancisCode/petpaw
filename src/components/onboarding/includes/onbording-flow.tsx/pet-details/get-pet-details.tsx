@@ -1,6 +1,6 @@
 "use client";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { UserDataContext, UserDataContextType } from "@/contexts/userdata-context";
 import { User } from "@/store/interfaces/user";
@@ -16,7 +16,7 @@ import { MdArrowBack } from "react-icons/md";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/store/firebase";
 import OnLoadingingPage from "@/components/onboarding/onUploadScreen";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import PetAgeStep from "./includes/petdobStep";
 import { AuthContext, AuthContextType } from "@/contexts/auth-context";
 
@@ -70,6 +70,20 @@ export default function PetDetails({
   const { formdata, updateFormdata } = useContext(UserDataContext) as UserDataContextType;
   const StepComponent = steps[innerStep];
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const name = useMemo(() => searchParams.get("name"), [searchParams]);
+
+  useEffect(() => {
+    console.log(name);
+  }, [name]);
+
+  useEffect(() => {
+    if (name) {
+      updateFormdata({ petname: name });
+      setInnerStep(1);
+      setCurrentStep(0);
+    }
+  }, [name]);
 
   useEffect(() => {
     if (formdata) {
@@ -119,15 +133,15 @@ export default function PetDetails({
     }
   };
   const goToPreviousStep = () => {
-    
     if (innerStep === 0 && currentStep === 0) {
       console.log(innerStep, currentStep);
       if (document.referrer) {
         router.back();
       } else {
-        router.push('/'); // Navigate to a fallback page
+        router.push("/"); // Navigate to a fallback page
       }
     } else {
+      console.log(innerStep, currentStep);
       try {
         if (innerStep === 4 || innerStep === 7) {
           setCurrentStep((prev: number) => (prev <= 0 ? prev : prev - 1));
@@ -138,8 +152,8 @@ export default function PetDetails({
   };
 
   const handleNext = (data: any) => {
-    console.log(formdata);
     updateFormdata(data);
+    goToNextStep();
   };
 
   const onSubmit = (data: any) => {
@@ -199,7 +213,7 @@ export default function PetDetails({
             <section className="flex gap-2 px-6 py-2 md:py-4 flex-row-reverse">
               <button
                 type="submit"
-                onClick={goToNextStep}
+                // onClick={goToNextStep}
                 className="bg-[#EE9422] text-white text-base md:text-lg py-2 px-4 min-w-[200px] md:min-w-[300px] max-h-16 md:max-h-full rounded-full hover:text-xl"
               >
                 Continue

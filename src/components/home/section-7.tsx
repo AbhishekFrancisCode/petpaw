@@ -30,7 +30,7 @@ const images: ImagePropsType[] = [
 const buttons: ButtonProps[] = [
   {
     title: "Know More",
-    link_to: "",
+    link_to: "/mealplan",
     color: "#EE9422",
     title_color: "#ffffff"
   },
@@ -48,7 +48,7 @@ export default function Section_type_7() {
       <div className="container mx-auto">
         <TempletType1
           title="How it works?"
-          title_color="#ffffff"
+          title_color="#EE9422"
           images={images}
           buttons={buttons}
           steps_count={true}

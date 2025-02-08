@@ -43,7 +43,7 @@ const buttons: ButtonProps[] = [
   },
   {
     title: "Know More",
-    link_to: "",
+    link_to: "/mealplan",
     color: "#EE9422",
     title_color: "#ffffff"
   }
