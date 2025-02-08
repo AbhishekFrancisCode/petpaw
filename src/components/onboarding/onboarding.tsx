@@ -1,7 +1,7 @@
 "use client";
 import { AuthContext, AuthContextType } from "@/contexts/auth-context";
 import Image from "next/image";
-import { useContext, useEffect, useMemo, useState } from "react";
+import { Suspense, useContext, useEffect, useMemo, useState } from "react";
 import React from "react";
 import PetDetails from "./includes/onbording-flow.tsx/pet-details/get-pet-details";
 import ProgressTracker from "./includes/onbording-flow.tsx/progress-tracker";
@@ -24,13 +24,15 @@ export default function OnboardingPage() {
         </div>
 
         <div className="flex min-w-full place-content-center">
-          <PetDetails
-            currentStep={currentStep}
-            setCurrentStep={setCurrentStep}
-            NUMBER_OF_STEPS={NUMBER_OF_STEPS}
-            innerStep={innerStep}
-            setInnerStep={setInnerStep}
-          />
+          <Suspense fallback={<div>Loading...</div>}>
+            <PetDetails
+              currentStep={currentStep}
+              setCurrentStep={setCurrentStep}
+              NUMBER_OF_STEPS={NUMBER_OF_STEPS}
+              innerStep={innerStep}
+              setInnerStep={setInnerStep}
+            />
+          </Suspense>
         </div>
       </div>
     </>
