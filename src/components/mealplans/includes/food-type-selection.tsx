@@ -30,21 +30,24 @@ export default function FoodTypeSelection() {
         options.
       </p>
 
-      <div className="grid md:grid-cols-8 gap-8 items-start mb-8">
-        <div className="space-y-2 md:col-span-2">
-          <div className="flex mb-4 w-full place-content-center">
+      <div className="grid grid-cols-1 md:grid-cols-8 gap-8 items-start mb-8">
+        <div className="space-y-2 md:col-span-2 order-2 md:order-1">
+          <div className="flex mb-4 min-w-[360px]  md:w-full place-content-center items-center">
             <h2 className="text-xl">Meals</h2>
           </div>
-          <div className="flex md:flex-col items-center gap-6">
+          <div className="flex flex-wrap md:flex-col place-content-center md:place-content-start items-center gap-6 min-w-[360px] md:min-w-full">
             {options.fresh.map((option) => (
-              <div key={`option-${option.name}`} className="min-w-[160px]">
+              <div
+                key={`option-${option.name}`}
+                className="max-w-[120px] min-w-[120px] md:max-w-[180px] md:min-w-[160px]"
+              >
                 <button
                   onClick={() => {
                     setSelectedType("Vegetarian");
                     setSelectedPrep(option.name);
                     setSelectedFood(option.imageUrl);
                   }}
-                  className={`flex min-w-full px-6 py-4 rounded-full transition-colors place-content-start items-center ${
+                  className={`flex min-w-full px-3 py-2 md:px-6 md:py-4 rounded-full transition-colors place-content-start items-center ${
                     selectedType === "Vegetarian" && selectedPrep === option.name
                       ? "bg-blue-500 text-white"
                       : "bg-white hover:bg-gray-100 border border-gray-300"
@@ -60,14 +63,14 @@ export default function FoodTypeSelection() {
                     }}
                     className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 focus:ring-2"
                   />
-                  <div className="pl-8">{option.name}</div>
+                  <div className="pl-2 md:pl-8">{option.name}</div>
                 </button>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="flex justify-center col-span-4">
+        <div className="flex justify-center col-span-4 order-1 md:order-2">
           <div className="min-w-[300px] h-[300px] md:min-w-[500px] md:h-[500px]">
             <img
               src={selectedFood}
@@ -77,9 +80,9 @@ export default function FoodTypeSelection() {
           </div>
         </div>
 
-        <div className="space-y-2 col-span-2  place-content-center">
+        {/* <div className="space-y-2 col-span-2  place-content-center">
           <div className="flex flex-col items-center gap-6"></div>
-        </div>
+        </div> */}
       </div>
 
       <p className="text-center text-gray-600">

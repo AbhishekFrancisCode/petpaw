@@ -47,7 +47,7 @@ export default function TempletType1({
                     }}
                   />
                   {steps_count && (
-                    <span className="absolute size-20 top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-70 text-white text-5xl text-center font-semibold place-content-center rounded-full">
+                    <span className="absolute size-14 top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-70 text-white text-3xl text-center font-semibold place-content-center rounded-full">
                       {index + 1}
                     </span>
                   )}
@@ -62,7 +62,7 @@ export default function TempletType1({
 
                 {item.description && (
                   <p
-                    className={`text-[${item.title_color}] w-[330px] text-base font-normal py-1 text-center pt-2 lg:pt-4`}
+                    className={`text-[${item.sub_title_color}] w-[330px] text-sm font-normal py-1 text-center pt-2 lg:pt-2`}
                   >
                     {item.description}
                   </p>

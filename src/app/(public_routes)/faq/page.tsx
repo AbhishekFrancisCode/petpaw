@@ -1,15 +1,70 @@
 "use client";
+import { motion, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 
 const data = [
   {
-    title: "How do you tailor the recipe to my dog?",
+    title: "What makes fresh dog food better than kibble?",
     content:
-      "The proprietary algorithm we designed with a board-certified vet nutritionist ensures that your dog is getting the right portion of food, as we calculate the exact number of calories needed based on weight, activity level and body composition \n \n If the changes prompt a new portion recommendation, you will be given the option to save your changes with the new meal plan, or to keep your existing meal plan without making changes."
+      "Fresh dog food is made with real, high-quality ingredients without artificial preservatives or fillers. It’s more nutritious, easier to digest, and supports better overall health."
   },
   {
-    title: "Can I choose more than one recipe?",
-    content: "Absolutely! You can select up to four of our five Fresh recipes or both Gently Baked recipes for your pup's meal plan. You can even do a mix if you would like!"
+    title: "Is fresh food suitable for all dog breeds and ages?",
+    content:
+      "Yes! Our meal plans are tailored to fit dogs of all breeds, sizes, and life stages—from puppies to seniors."
+  },
+  {
+    title: "How do you determine the right portion for my dog?",
+    content:
+      "Our nutritionists calculate the perfect portion based on your dog’s weight, age, activity level, and any other health needs."
+  },
+  {
+    title: "What ingredients do you use?",
+    content:
+      "We use high-quality, human-grade meats, fresh vegetables, and food toppers, ensuring your dog gets wholesome nutrition."
+  },
+  {
+    title: "Do you use any preservatives or additives?",
+    content:
+      "No! Our meals are free from artificial preservatives, fillers, or by-products. They are gently cooked and refrigerated to maintain freshness."
+  },
+  {
+    title: "Can this food help with sensitive stomachs?",
+    content:
+      "Absolutely! Our recipes are formulated with limited, high-quality ingredients that are easy to digest, making them great for dogs with sensitivities."
+  },
+  {
+    title: "How does the subscription work?",
+    content:
+      "You choose a meal plan, and we deliver fresh, pre-portioned meals for the day to your doorstep on a daily basis."
+  },
+  {
+    title: "Can I try before subscribing?",
+    content:
+      "Yes! We offer a trial pack so your pup can taste and test our meals before committing."
+  },
+  {
+    title: "How is the food packaged and delivered?",
+    content: "Our meals are packed in leaf packaging."
+  },
+  {
+    title: "What if my dog doesn’t like the food?",
+    content:
+      "We have multiple recipes and are open to a certain level of customization (Taking off or replacing a certain ingredient)."
+  },
+  {
+    title: "How should I store the food?",
+    content:
+      "Keep meals refrigerated and take it out 10 minutes before serving. They stay fresh in the fridge for up to 2 days."
+  },
+  {
+    title: "Can I mix fresh food with kibble?",
+    content:
+      "Yes! If you’re transitioning, you can mix fresh food with kibble before fully switching to a fresh diet."
+  },
+  {
+    title: "How long will the food stay fresh?",
+    content: "Our meals stay fresh for up to 4 days in the freezer and 2 days in the fridge."
   }
 ];
 export default function Faq() {
@@ -38,13 +93,33 @@ const Accordion = ({ title, content }: dataFormProps) => {
 
   return (
     <div className="bg-white border-t-[1px] border-[#DADADA] pb-4">
-      <div className="flex justify-between" onClick={() => setIsActive(!isActive)}>
+      <div
+        className="flex justify-between items-center cursor-pointer"
+        onClick={() => setIsActive(!isActive)}
+      >
         <p className="text-base text-[#505050] font-normal pt-6">{title}</p>
-        <p className="text-4xl text-[#505050] pt-4 md:pr-2 cursor-pointer">
+        <motion.span
+          className="text-4xl text-[#505050] pt-4 md:pr-2"
+          animate={{ rotate: isActive ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
           {isActive ? "-" : "+"}
-        </p>
+        </motion.span>
       </div>
-      {isActive && <p className="text-sm text-black font-normal pt-6 max-w-3xl">{content}</p>}
+
+      <AnimatePresence>
+        {isActive && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <p className="text-sm text-black font-normal pt-4 max-w-3xl">{content}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

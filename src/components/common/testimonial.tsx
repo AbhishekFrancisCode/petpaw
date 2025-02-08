@@ -14,7 +14,7 @@ const Testimonials = ({ cards }: { cards: Card[] }) => {
   });
 
   return (
-    <div className="grid grid-cols-3 gap-4 p-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-4">
       {splitCards.map((column, colIndex) => (
         <div key={colIndex} className="space-y-4 max-w-64">
           {column.map((card, index) => (

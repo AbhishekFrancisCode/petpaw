@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation";
 import React from "react";
 
 interface Step {
@@ -36,22 +37,27 @@ const HowItWorks = () => {
     }
   ];
 
+  const router = useRouter();
+  const handleNavigate = () => {
+    router.push(`/onboarding`);
+  };
+
   return (
-    <div className="flex md:flex-col gap-6 mx-auto place-content-center md:max-h-96 min-w-full bg-[#f5f3ee] rounded-3xl py-8">
+    <div className="flex flex-col gap-6 mx-auto place-content-center md:max-h-96 min-w-full bg-[#f5f3ee] rounded-3xl py-8">
       <h1 className="text-3xl text-[#999999] md:text-4xl font-normal text-center md:max-h-16">
         How Pawtful Works
       </h1>
 
-      <div className="grid grid-cols-3 md:grid-rows-3 gap-8 md:max-h-52">
+      <div className="grid md:grid-cols-3 gap-8 md:max-h-52">
         {steps.map((step) => (
           <div key={step.number} className="text-center px-4">
             <div
               className={`
-              w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center text-3xl 
-              ${step.number === 1 ? "bg-[#506D54]" : ""}
-              ${step.number === 2 ? "bg-[#9E6B5D]" : ""}
-              ${step.number === 3 ? "bg-[#5D5650]" : ""}
-            `}
+                w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center text-3xl 
+                ${step.number === 1 ? "bg-[#506D54]" : ""}
+                ${step.number === 2 ? "bg-[#9E6B5D]" : ""}
+                ${step.number === 3 ? "bg-[#5D5650]" : ""}
+              `}
             >
               <span className="text-[#999999] text-xl">{step.number}</span>
             </div>
@@ -79,7 +85,10 @@ const HowItWorks = () => {
       </div>
 
       <div className="text-center">
-        <button className="bg-[#1A1B25] text-[#999999] px-8 py-3 rounded-full hover:bg-opacity-90 transition-colors">
+        <button
+          onClick={handleNavigate}
+          className="bg-[#028391] min-w-[200px] h-16 rounded-md px-10 text-[#ffffff] hover:opacity-80 transition-colors"
+        >
           Get Started
         </button>
       </div>

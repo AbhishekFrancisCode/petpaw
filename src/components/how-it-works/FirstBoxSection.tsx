@@ -11,26 +11,30 @@ const FirstBoxDetails = () => {
       title: "DELICIOUS FOOD",
       description: "All recipes arrive ready to serve or store.",
       imgAlt: "Delicious food packages",
-      imgSrc: "https://ik.imagekit.io/funlogic/how-it-works/firstBoxImage4.webp?updatedAt=1733813690989"
+      imgSrc:
+        "https://ik.imagekit.io/funlogic/how-it-works/firstBoxImage4.webp?updatedAt=1733813690989"
     },
     {
       title: "DIGITAL FEEDING GUIDE",
       description: "Custom instructions ensure a smooth transition and easy feeding.",
       imgAlt: "Digital feeding guide on phones",
-      imgSrc: "https://ik.imagekit.io/funlogic/how-it-works/firstBoxImage4.webp?updatedAt=1733813690989"
+      imgSrc:
+        "https://ik.imagekit.io/funlogic/how-it-works/firstBoxImage4.webp?updatedAt=1733813690989"
     },
     {
       title: "WELCOME KIT",
-      description: "A special scoop and Puptainer to make serving and storing Ollie a breeze.",
+      description: "A special scoop and Puptainer to make serving and storing Pawtful a breeze.",
       imgAlt: "Welcome kit with scoop and container",
-      imgSrc: "https://ik.imagekit.io/funlogic/how-it-works/firstBoxImage4.webp?updatedAt=1733813690989"
+      imgSrc:
+        "https://ik.imagekit.io/funlogic/how-it-works/firstBoxImage4.webp?updatedAt=1733813690989"
     },
     {
       title: "HEALTH SCREENINGS",
       description:
         "Free and informative digestion, dental, and weight screenings from our experts.",
       imgAlt: "Health screening information on phone",
-      imgSrc: "https://ik.imagekit.io/funlogic/how-it-works/firstBoxImage4.webp?updatedAt=1733813690989"
+      imgSrc:
+        "https://ik.imagekit.io/funlogic/how-it-works/firstBoxImage4.webp?updatedAt=1733813690989"
     }
   ];
 

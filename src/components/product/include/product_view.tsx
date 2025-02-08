@@ -55,13 +55,15 @@ export default function ProductView() {
   return (
     <section className="flex flex-col ">
       <div className="flex flex-col mx-auto place-content-center items-center">
-        <h1 className="text-6xl text-[#333333] font-bold leading-normal">Our Products</h1>
+        <h1 className="text-2xl md:text-6xl text-[#333333] font-bold leading-normal">
+          Our Products
+        </h1>
         <p className="text-xl md:max-w-[600px] text-center">
           Freshly prepared, lightly cooked meals packed with human-grade, nutritious, wholefood
           ingredients.
         </p>
       </div>
-      <div className="flex gap-8 justify-between">
+      <div className="flex flex-col md:flex-row gap-8 px-4 md:px-0 justify-between">
         <div className=" flex flex-col gap-8 pt-24 ">
           {productDetails.map((item: ProductDetailsProps, index: number) => (
             <ProductDisplay key={index} productDetails={item} />
