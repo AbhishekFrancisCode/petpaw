@@ -9,6 +9,7 @@ export interface ButtonProps {
 export interface ImagePropsType {
   title?: string;
   title_color?: string;
+  sub_title_color?: string;
   image_link: string;
   link_to?: string;
   color?: string;
