@@ -31,16 +31,13 @@ export default function FoodTypeSelection() {
       </p>
 
       <div className="grid md:grid-cols-8 gap-8 items-start mb-8">
-        <div className="space-y-2  md:col-span-2 bg-slate-400">
+        <div className="space-y-2 md:col-span-2">
           <div className="flex mb-4 w-full place-content-center">
             <h2 className="text-xl">Meals</h2>
           </div>
-          <div className="flex flex-wrap items-center gap-6 max-w-9 md:max-w-auto">
+          <div className="flex md:flex-col items-center gap-6">
             {options.fresh.map((option) => (
-              <div
-                key={`option-${option.name}`}
-                className="sm:min-w-[160px] sm:max-w-[160px]  md:min-w-[160px] md:max-w-[160px]"
-              >
+              <div key={`option-${option.name}`} className="min-w-[160px]">
                 <button
                   onClick={() => {
                     setSelectedType("Vegetarian");

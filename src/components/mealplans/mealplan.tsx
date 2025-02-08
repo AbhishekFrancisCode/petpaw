@@ -9,7 +9,7 @@ export default function MealPlan() {
   return (
     <>
       <FoodTypeSelection />
-      <Marquee />
+      {/* <Marquee /> */}
       <TempletGridSmall />
       <DogMealPlan />
     </>
