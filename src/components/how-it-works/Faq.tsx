@@ -48,8 +48,8 @@ const FAQ = () => {
   };
 
   return (
-    <div className="bg-orange-100 py-12">
-      <div className="bg-white p-8 rounded-2xl shadow-lg max-w-3xl mx-auto">
+    <div className="bg-transprent py-12">
+      <div className="bg-white p-8 rounded-2xl shadow-lg max-w-7xl mx-auto">
         <h1 className="text-2xl font-bold text-center mb-6">Frequently Asked Questions</h1>
         <div className="space-y-4">
           {faqs.map((faq, index) => (

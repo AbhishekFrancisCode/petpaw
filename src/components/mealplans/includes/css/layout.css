@@ -9,7 +9,7 @@
   width: 100%; /* Full width of the wrapper */
   padding-bottom: 56.25%; /* Aspect ratio: 16:9*/
   height: 100%;
-  min-height: 700px;
+  min-height: 400px;
   overflow: hidden;
 }
 

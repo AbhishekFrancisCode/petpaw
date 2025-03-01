@@ -9,7 +9,6 @@ import OfferStrip from "./includes/offer_strip";
 import Banner from "./include/banner";
 import ProductView from "./include/product_view";
 import HowItWorks from "./include/how_it_works";
-import ProductTestimonials from "./include/product_testimonials";
 
 export default function Product() {
   return (
@@ -27,7 +26,6 @@ export default function Product() {
       <div className="min-h-12"></div>
       <HowItWorks />
       <div className="min-h-12"></div>
-      <ProductTestimonials />
       <div className="min-h-12"></div>
       {/* <BannerSection /> */}
       {/* <FoodTypeOffered

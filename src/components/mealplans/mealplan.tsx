@@ -5,6 +5,9 @@ import DogMealPlan from "./includes/banner-2-grid";
 import Marquee from "../common/marquee";
 import TempletGridSmall from "../common/section-templets/templet-grid-small";
 import CardWithHalfAvatar from "./includes/meal-portion";
+import BannerSection from "./includes/banner_section";
+import TestimonialsVideo from "./includes/testimonials";
+import FAQ from "../how-it-works/Faq";
 
 export default function MealPlan() {
   return (
@@ -13,7 +16,9 @@ export default function MealPlan() {
       {/* <Marquee /> */}
       <TempletGridSmall />
       <CardWithHalfAvatar />
-      <DogMealPlan />
+      <BannerSection />
+      <TestimonialsVideo />
+      <FAQ />
     </>
   );
 }
