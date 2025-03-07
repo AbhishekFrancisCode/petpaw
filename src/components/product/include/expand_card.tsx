@@ -58,10 +58,11 @@ const ProductDisplay = ({ productDetails }: { productDetails: ProductDetailsProp
             className="inset-0 bg-transparent p-4 rounded-lg"
           >
             <p className="text-sm text-gray-600">
-              Our Free Range Chicken recipe is complete and balanced for all lifestages, and is
+              {productDetails.description}
+              {/* Our Free Range Chicken recipe is complete and balanced for all lifestages, and is
               suitable for puppies and seniors alike. This nourishing recipe is one of the lowest in
               fat across our range, making it the best choice for those puppers with
-              gastrointestinal issues...
+              gastrointestinal issues... */}
             </p>
           </motion.div>
         </div>

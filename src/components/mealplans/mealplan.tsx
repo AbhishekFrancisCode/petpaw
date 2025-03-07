@@ -8,11 +8,13 @@ import CardWithHalfAvatar from "./includes/meal-portion";
 import BannerSection from "./includes/banner_section";
 import TestimonialsVideo from "./includes/testimonials";
 import FAQ from "../how-it-works/Faq";
+import FullyDynamicFoodCircle from "./includes/testing";
 
 export default function MealPlan() {
   return (
     <>
       <FoodTypeSelection />
+      <FullyDynamicFoodCircle />
       {/* <Marquee /> */}
       <TempletGridSmall />
       <CardWithHalfAvatar />

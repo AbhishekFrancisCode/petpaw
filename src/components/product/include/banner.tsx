@@ -20,7 +20,7 @@ export default function Banner() {
 
   return (
     <BannerSection>
-      <div className="mx-auto max-h-[590px] md:min-h-[590px] grid grid-rows-10 grid-cols-1 lg:grid-rows-1 lg:grid-cols-10">
+      <div className="mx-auto max-h-[590px] md:min-h-[450px] grid grid-rows-10 grid-cols-1 lg:grid-rows-1 lg:grid-cols-10">
         <div className="order-2 lg:order-1 flex flex-col row-span-3 lg:col-span-5 pt-10 md:pt-20 pl-6">
           <div className="lg:px-10">
             <p className={`text-[#028391] text-2xl md:text-4xl font-medium md:py-1 text-left`}>
