@@ -1,10 +1,9 @@
 "use client";
 import Button from "@/sb-ui/button/button";
 import Image from "next/image";
-import DogMealPlan from "./banner-2-grid";
+import DogMealPlan from "../../product-detail/includes/banner-2-grid";
 
 export default function BannerSection() {
-  const url = "https://ik.imagekit.io/funlogic/DifferentDogFoodDog.png?updatedAt=1733585008431";
   const mealOption = [
     {
       name: "Treats",

@@ -9,6 +9,8 @@ export interface ProductDetailsProps {
   subtitle: string;
   description: string;
   image: string;
+  productImage?: string;
+  nutritionValue?: string;
   route_link: string;
   ingredients: string[];
 }

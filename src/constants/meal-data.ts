@@ -113,7 +113,10 @@ export const productDetails: ProductDetailsProps[] = [
     ],
     image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
     route_link: ""
-  },
+  }
+];
+
+export const productDetails1: ProductDetailsProps[] = [
   {
     id: 6,
     title: "Mutton & Sweet Potato Bowl",
@@ -151,10 +154,7 @@ export const productDetails: ProductDetailsProps[] = [
     ],
     image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
     route_link: ""
-  }
-];
-
-export const productDetails1: ProductDetailsProps[] = [
+  },
   {
     id: 8,
     title: "Grain Free Mutton Bowl",
@@ -208,45 +208,47 @@ export const productDetails1: ProductDetailsProps[] = [
     ],
     image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
     route_link: ""
-  },
-  {
-    id: 11,
-    title: "Pumpkin Biscuits",
-    subtitle: "Healthy Vegetarian Treat",
-    description:
-      "A nutritious snack made with pumpkin puree, eggs, and oats flour. Prepared with coconut oil for added health benefits. These biscuits offer a wholesome, vegetarian treat option for dogs, providing a balance of nutrients in a convenient, delicious format.",
-    ingredients: ["Pumpkin Puree", "Eggs", "Oats Flour", "Coconut Oil"],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
-    route_link: ""
-  },
-  {
-    id: 12,
-    title: "Pumpkin, Egg & Chicken Biscuits",
-    subtitle: "Protein-Packed Crunchy Treat",
-    description:
-      "A delightful snack combining pumpkin puree, eggs, oats flour, and chicken broth. Prepared with coconut oil for added nutritional value. These biscuits offer a protein-rich, flavorful treat that provides both nutrition and enjoyment for dogs.",
-    ingredients: ["Pumpkin Puree", "Eggs", "Oats Flour", "Coconut Oil", "Chicken Broth"],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
-    route_link: ""
-  },
-  {
-    id: 13,
-    title: "Pumpkin, Egg & Lamb Biscuits",
-    subtitle: "Lamb-Infused Gourmet Treat",
-    description:
-      "A premium snack featuring pumpkin puree, eggs, oats flour, and mutton broth. Prepared with coconut oil for enhanced flavor and nutrition. These biscuits provide a unique, protein-rich treat option for dogs who enjoy a more robust flavor profile.",
-    ingredients: ["Pumpkin Puree", "Eggs", "Oats Flour", "Coconut Oil", "Mutton Broth"],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
-    route_link: ""
-  },
-  {
-    id: 14,
-    title: "Dehydrated Chicken Jerky",
-    subtitle: "Pure Protein Snack",
-    description:
-      "A high-protein snack made from chicken breast or turkey. Prepared with coconut oil and seasoned with dried parsley or oregano. These dehydrated jerky treats offer a pure, concentrated protein source with minimal processing, perfect for dogs who love a classic meat treat.",
-    ingredients: ["Chicken Breast/Turkey", "Coconut Oil", "Dried Parsley/Oregano"],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
-    route_link: ""
   }
+  // {
+  //   id: 11,
+  //   title: "Pumpkin Biscuits",
+  //   subtitle: "Healthy Vegetarian Treat",
+  //   description:
+  //     "A nutritious snack made with pumpkin puree, eggs, and oats flour. Prepared with coconut oil for added health benefits. These biscuits offer a wholesome, vegetarian treat option for dogs, providing a balance of nutrients in a convenient, delicious format.",
+  //   ingredients: ["Pumpkin Puree", "Eggs", "Oats Flour", "Coconut Oil"],
+  //   image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+  //   route_link: ""
+  // },
+  // {
+  //   id: 12,
+  //   title: "Pumpkin, Egg & Chicken Biscuits",
+  //   subtitle: "Protein-Packed Crunchy Treat",
+  //   description:
+  //     "A delightful snack combining pumpkin puree, eggs, oats flour, and chicken broth. Prepared with coconut oil for added nutritional value. These biscuits offer a protein-rich, flavorful treat that provides both nutrition and enjoyment for dogs.",
+  //   ingredients: ["Pumpkin Puree", "Eggs", "Oats Flour", "Coconut Oil", "Chicken Broth"],
+  //   image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+  //   route_link: ""
+  // },
+  // {
+  //   id: 13,
+  //   title: "Pumpkin, Egg & Lamb Biscuits",
+  //   subtitle: "Lamb-Infused Gourmet Treat",
+  //   description:
+  //     "A premium snack featuring pumpkin puree, eggs, oats flour, and mutton broth. Prepared with coconut oil for enhanced flavor and nutrition. These biscuits provide a unique, protein-rich treat option for dogs who enjoy a more robust flavor profile.",
+  //   ingredients: ["Pumpkin Puree", "Eggs", "Oats Flour", "Coconut Oil", "Mutton Broth"],
+  //   image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+  //   route_link: ""
+  // },
+  // {
+  //   id: 14,
+  //   title: "Dehydrated Chicken Jerky",
+  //   subtitle: "Pure Protein Snack",
+  //   description:
+  //     "A high-protein snack made from chicken breast or turkey. Prepared with coconut oil and seasoned with dried parsley or oregano. These dehydrated jerky treats offer a pure, concentrated protein source with minimal processing, perfect for dogs who love a classic meat treat.",
+  //   ingredients: ["Chicken Breast/Turkey", "Coconut Oil", "Dried Parsley/Oregano"],
+  //   image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+  //   route_link: ""
+  // }
 ];
+
+export const productDetailsData: ProductDetailsProps[] = [...productDetails, ...productDetails1];
