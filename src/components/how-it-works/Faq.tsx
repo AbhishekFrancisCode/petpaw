@@ -48,19 +48,19 @@ const FAQ = () => {
   };
 
   return (
-    <div className="bg-orange-100 py-12">
-      <div className="bg-white p-8 rounded-2xl shadow-lg max-w-3xl mx-auto">
-        <h1 className="text-2xl font-bold text-center mb-6">Frequently Asked Questions</h1>
+    <div className="bg-transprent py-12">
+      <div className="p-8 max-w-7xl mx-auto">
+        <h1 className="text-2xl font-bold text-center mb-6">FAQ's</h1>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="border rounded-xl overflow-hidden">
+            <div key={index} className="border rounded-xl overflow-hidden bg-white">
               <button
-                className="w-full flex justify-between items-center p-4 bg-orange-50 text-left text-lg font-semibold hover:bg-orange-100 rounded-xl transition-all duration-300"
+                className="w-full flex justify-between items-center p-4 bg-white text-left text-sm font-semibold hover:bg-orange-100 rounded-md transition-all duration-300"
                 onClick={() => toggleFAQ(index)}
               >
                 {faq.question}
                 <span
-                  className={`transform transition-transform duration-300 ${
+                  className={`transform transition-transform duration-300 text-xs ${
                     openIndex === index ? "rotate-180" : ""
                   }`}
                 >
@@ -74,7 +74,7 @@ const FAQ = () => {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <p className="text-gray-700">{faq.answer}</p>
+                <p className="text-gray-700 text-sm">{faq.answer}</p>
               </div>
             </div>
           ))}

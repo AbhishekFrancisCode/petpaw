@@ -1,5 +1,6 @@
 "use client";
 
+import { productDetails, productDetails1 } from "@/constants/meal-data";
 import ProductDisplay from "./expand_card";
 
 export interface ProductDetailsProps {
@@ -8,50 +9,53 @@ export interface ProductDetailsProps {
   subtitle: string;
   description: string;
   image: string;
+  productImage?: string;
+  nutritionValue?: string;
   route_link: string;
+  ingredients: string[];
 }
 
 export default function ProductView() {
-  const productDetails: ProductDetailsProps[] = [
-    {
-      id: 0,
-      title: "Chicken Bowl",
-      subtitle: "Free Range Chow Chompin'",
-      description:
-        "Our Free Range Chicken recipe is complete and balanced for all lifestages, and is suitable for puppies and seniors alike. This nourishing recipe is one of the lowest in fat across our range, making it the best choice for those puppers with gastrointestinal issues. It may be appropriate for dogs who have had mild pancreatitis in the past but speak to your vet about this. It is low in carbohydrates, which makes a great choice for diabetic dogs looking to minimise blood sugar fluctuations, and also for overweight dogs looking to lose weight while maintaining muscle mass.",
-      image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
-      route_link: ""
-    },
-    {
-      id: 1,
-      title: "Lamb Bowl",
-      subtitle: "Grass Fed Lip Lickin'",
-      description:
-        " Our Grass Fed Lamb recipe is complete and balanced for all lifestages. This recipe is the richest across our range, making it a great choice for itchy skin, or for puppers looking for a more novel diet. We do not generally recommend this recipe for our golden oldies or puppers with sensitive digestive tracts, as it can be too rich due to its higher fat content.",
-      image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
-      route_link: ""
-    }
-  ];
-  const productDetails1: ProductDetailsProps[] = [
-    {
-      id: 2,
-      title: "Fish Bowl",
-      subtitle: "Free Range Chow Chompin'",
-      description:
-        "Our Free Range Chicken recipe is complete and balanced for all lifestages, and is suitable for puppies and seniors alike. This nourishing recipe is one of the lowest in fat across our range, making it the best choice for those puppers with gastrointestinal issues. It may be appropriate for dogs who have had mild pancreatitis in the past but speak to your vet about this. It is low in carbohydrates, which makes a great choice for diabetic dogs looking to minimise blood sugar fluctuations, and also for overweight dogs looking to lose weight while maintaining muscle mass.",
-      image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
-      route_link: ""
-    },
-    {
-      id: 3,
-      title: "Veg Bowl",
-      subtitle: "Grass Fed Lip Lickin'",
-      description:
-        " Our Grass Fed Lamb recipe is complete and balanced for all lifestages. This recipe is the richest across our range, making it a great choice for itchy skin, or for puppers looking for a more novel diet. We do not generally recommend this recipe for our golden oldies or puppers with sensitive digestive tracts, as it can be too rich due to its higher fat content.",
-      image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
-      route_link: ""
-    }
-  ];
+  // const productDetails: ProductDetailsProps[] = [
+  //   {
+  //     id: 0,
+  //     title: "Chicken Bowl",
+  //     subtitle: "Free Range Chow Chompin'",
+  //     description:
+  //       "Our Free Range Chicken recipe is complete and balanced for all lifestages, and is suitable for puppies and seniors alike. This nourishing recipe is one of the lowest in fat across our range, making it the best choice for those puppers with gastrointestinal issues. It may be appropriate for dogs who have had mild pancreatitis in the past but speak to your vet about this. It is low in carbohydrates, which makes a great choice for diabetic dogs looking to minimise blood sugar fluctuations, and also for overweight dogs looking to lose weight while maintaining muscle mass.",
+  //     image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+  //     route_link: ""
+  //   },
+  //   {
+  //     id: 1,
+  //     title: "Lamb Bowl",
+  //     subtitle: "Grass Fed Lip Lickin'",
+  //     description:
+  //       " Our Grass Fed Lamb recipe is complete and balanced for all lifestages. This recipe is the richest across our range, making it a great choice for itchy skin, or for puppers looking for a more novel diet. We do not generally recommend this recipe for our golden oldies or puppers with sensitive digestive tracts, as it can be too rich due to its higher fat content.",
+  //     image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+  //     route_link: ""
+  //   }
+  // ];
+  // const productDetails1: ProductDetailsProps[] = [
+  //   {
+  //     id: 2,
+  //     title: "Fish Bowl",
+  //     subtitle: "Free Range Chow Chompin'",
+  //     description:
+  //       "Our Free Range Chicken recipe is complete and balanced for all lifestages, and is suitable for puppies and seniors alike. This nourishing recipe is one of the lowest in fat across our range, making it the best choice for those puppers with gastrointestinal issues. It may be appropriate for dogs who have had mild pancreatitis in the past but speak to your vet about this. It is low in carbohydrates, which makes a great choice for diabetic dogs looking to minimise blood sugar fluctuations, and also for overweight dogs looking to lose weight while maintaining muscle mass.",
+  //     image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+  //     route_link: ""
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Veg Bowl",
+  //     subtitle: "Grass Fed Lip Lickin'",
+  //     description:
+  //       " Our Grass Fed Lamb recipe is complete and balanced for all lifestages. This recipe is the richest across our range, making it a great choice for itchy skin, or for puppers looking for a more novel diet. We do not generally recommend this recipe for our golden oldies or puppers with sensitive digestive tracts, as it can be too rich due to its higher fat content.",
+  //     image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+  //     route_link: ""
+  //   }
+  // ];
   return (
     <section className="flex flex-col ">
       <div className="flex flex-col mx-auto place-content-center items-center">

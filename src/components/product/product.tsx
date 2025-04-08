@@ -27,27 +27,28 @@ export default function Product() {
       <div className="min-h-12"></div>
       <HowItWorks />
       <div className="min-h-12"></div>
-      <ProductTestimonials />
       <div className="min-h-12"></div>
       {/* <BannerSection /> */}
       {/* <FoodTypeOffered
         title={"A Bowl for Every Tail: Premium Dog Food for Every Breed, Age, and Need."}
         sub_title="From protein-rich Classic meals, easy-to-digest Grain-free options, allergen-free Sensitive Diet to Biryani for pets that eat like royals, Pawtful's Rich Food has something for everyone."
-      />
-      <HowItsMade
+      /> */}
+      {/* <HowItsMade
         title={"How we made it possible."}
         sub_title="Pawtful's Rich meals are packaged in advanced retort packaging, preserving maximum nutrition and taste without the need for preservatives. Enjoy fresh, flavorful meals anytime."
-      />
-      <IngredientsUsed />
-      <Testimonials />
-      <OfferStrip
+      /> */}
+      {/* <IngredientsUsed /> */}
+      <div className="min-h-12"></div>
+      <div className="min-h-12"></div>
+      <ProductTestimonials />
+      {/* <OfferStrip
         text="Welcome to the Sale!"
         subText="Up to 50% off on all items"
         height="h-8"
         width="w-full"
         bgColor="bg-slate-600"
-      />
-      <Faq /> */}
+      /> */}
+      <Faq />
     </div>
   );
 }

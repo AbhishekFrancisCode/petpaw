@@ -92,7 +92,7 @@ const Accordion = ({ title, content }: dataFormProps) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className="bg-white border-t-[1px] border-[#DADADA] pb-4">
+    <div className="bg-white border-t-[1px] border-[#DADADA] px-4 pb-4">
       <div
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setIsActive(!isActive)}
