@@ -59,7 +59,7 @@ const HowItWorks = () => {
                 ${step.number === 3 ? "bg-[#5D5650]" : ""}
               `}
             >
-              <span className="text-[#999999] text-xl">{step.number}</span>
+              <span className="text-white text-xl">{step.number}</span>
             </div>
 
             <h3 className="text-[#999999] font-medium mb-4 text-sm tracking-wider">{step.title}</h3>

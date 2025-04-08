@@ -38,7 +38,7 @@ const ProductMain = ({ product }: { product: Product }) => {
                 </div>
               </div>
 
-              <button className="w-64 bg-rose-700 text-white py-3 px-6 rounded-full hover:bg-rose-800 transition-colors end-0">
+              <button className="w-[250px] bg-[#028391] text-white py-3 px-6 rounded-md hover:bg-opacity-85  transition-colors">
                 Create a Full Fresh Plan
               </button>
             </div>

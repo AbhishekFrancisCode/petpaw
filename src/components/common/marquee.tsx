@@ -49,7 +49,7 @@ const items: string[] = [
 
 const Marquee = () => {
   return (
-    <div className="relative overflow-hidden w-full h-24 flex items-center bg-yellow-50">
+    <div className="relative overflow-hidden w-full h-24 flex items-center bg-transparent">
       <motion.div
         className="flex gap-4"
         initial={{ x: 0 }} // Start from the initial position
