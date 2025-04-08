@@ -36,7 +36,7 @@ export default function BannerSection() {
           <p className="text-lg font-medium">{mealOption[0].price}</p>
           <p className="mt-2 mb-6">{mealOption[0].description}</p>
 
-          <button className="w-[200px] bg-[#FFF8EF] text-[#333333] py-3 px-6 rounded-md hover:bg-rose-800 transition-colors">
+          <button className="w-[200px] bg-[#FFF8EF] text-[#333333] py-3 px-6 rounded-md hover:bg-[#028391] hover:text-white  transition-colors">
             Get your treats
           </button>
         </div>

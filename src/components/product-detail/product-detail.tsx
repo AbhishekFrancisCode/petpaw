@@ -6,6 +6,7 @@ import { getProductById } from "@/store/services/mock/product_mock";
 import { Product } from "@/store/interfaces/product";
 import Marquee from "../common/marquee";
 import ProductInfo from "./includes/product-info";
+import ProductTestimonials from "../product/include/product_testimonials";
 
 export default function ProductDetail() {
   const params = useParams();
@@ -27,8 +28,11 @@ export default function ProductDetail() {
       {product ? (
         <>
           <DogMealPlan product={product} />
-          {/* <Marquee /> */}
+          <Marquee />
           <ProductInfo product={product} />
+          <div className="min-h-12"></div>
+          <div className="min-h-12"></div>
+          <ProductTestimonials />
         </>
       ) : (
         <div></div>

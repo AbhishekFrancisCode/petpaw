@@ -43,7 +43,7 @@ const ProductInfo = ({ product }: { product: Product }) => {
   ];
   return (
     <div className="min-w-full min-h-auto bg-[#dad0b7]  p-4 md:p-8">
-      <div className="flec flrx-col max-w-7xl mx-auto">
+      <div className="flex flex-col max-w-7xl mx-auto">
         <div className="flex flex-col mx-auto place-content-center items-center my-10">
           <h1 className="text-1xl text-[#333333]leading-normal">Real food with nothing to hide.</h1>
           <p className="text-3xl md:max-w-[700px] text-center">

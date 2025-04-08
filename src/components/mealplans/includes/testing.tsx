@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
+import { DogMeal, Mealdata, mealdatas, MealPlanData } from "../mealdata";
 
 // Define interfaces for our component's data structures
 interface FoodSection {
@@ -14,7 +15,24 @@ interface ColorOption {
 }
 
 const FullyDynamicFoodCircle: React.FC = () => {
+  const options = {
+    fresh: [
+      mealdatas[1],
+      mealdatas[2],
+      mealdatas[3],
+      mealdatas[4],
+      mealdatas[5]
+      // mealdatas[6]
+    ] as const
+  };
   const [sectionCount, setSectionCount] = useState<number>(4);
+  const [selectedOption, setSelectedOption] = useState<Mealdata>(options.fresh[0]);
+
+  const filtredData = useMemo(() => {
+    return MealPlanData.meals.filter((item: DogMeal) => {
+      return item.baseProtin === selectedOption.value;
+    });
+  }, [selectedOption]);
   const colorOptions: ColorOption[] = [
     { bg: "bg-blue-100", text: "text-blue-800" },
     { bg: "bg-amber-100", text: "text-amber-800" },
@@ -115,31 +133,27 @@ const FullyDynamicFoodCircle: React.FC = () => {
       <div className="relative w-[550px] h-[550px] mb-8">
         {/* Circle Container */}
         <div className="absolute inset-0 rounded-full overflow-hidden">
-          <svg width="100%" height="100%" viewBox="0 0 100 100" className="absolute inset-0">
+          <svg width="100%" height="100%" viewBox="0 0 100 100" className="absolute inset-0 ">
             {foodSections.map((section, index) => {
               const arcAngle = 360 / sectionCount;
               const startAngle = index * arcAngle;
               const endAngle = startAngle + arcAngle;
               const midAngle = startAngle + arcAngle / 2;
 
-              // Calculate label position
-              const labelRadius = 35; // Slightly inward from the edge
+              const labelRadius = 35;
               const labelRad = ((midAngle - 90) * Math.PI) / 180;
               const labelX = 50 + labelRadius * Math.cos(labelRad);
               const labelY = 50 + labelRadius * Math.sin(labelRad);
 
               return (
                 <g key={section.id}>
-                  {/* Section slice */}
-                  <path
+                  {/* <path
                     d={createArcPath(startAngle, endAngle, 50)}
-                    // className={section.color.replace("bg-", "fill-")}
                     stroke="#1f2937"
                     strokeWidth="0.5"
-                  />
+                  /> */}
 
-                  {/* Image pattern */}
-                  <clipPath id={`clip-${section.id}`}>
+                  <clipPath id={`clip-${section.id}`} className="bg-transparent">
                     <path d={createArcPath(startAngle, endAngle, 50)} />
                   </clipPath>
                   <foreignObject
@@ -150,7 +164,11 @@ const FullyDynamicFoodCircle: React.FC = () => {
                     clipPath={`url(#clip-${section.id})`}
                   >
                     <div className="w-full h-full">
-                      <img src={section.imageUrl} alt={section.name} className="" />
+                      <img
+                        src={section.imageUrl}
+                        alt={section.name}
+                        className="object-cover w-full h-full"
+                      />
                     </div>
                   </foreignObject>
                 </g>

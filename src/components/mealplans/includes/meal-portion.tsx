@@ -10,19 +10,19 @@ const CardWithHalfAvatar = () => {
     {
       size: "Small Dog",
       weight: "5 to 10 kgs",
-      price: "Rs. 70 - Rs. 100",
+      price: "Rs. 100",
       image: dogsmall
     },
     {
       size: "Medium Dog",
       weight: "10 - 25 kgs",
-      price: "Rs. 145 - Rs. 210",
+      price: "Rs. 210",
       image: dogmeadium
     },
     {
       size: "Large Dog",
       weight: "25 Kgs & above",
-      price: "Rs. 220 - Rs. 300",
+      price: "Rs. 300",
       image: doglarge
     }
   ];
@@ -34,12 +34,11 @@ const CardWithHalfAvatar = () => {
         {dogSizes.map((e: any) => (
           <div key={e} className="relative w-full max-w-sm">
             {/* Card content */}
-            <div className="bg-white rounded-lg shadow-md p-6 pt-16">
+            <div className="bg-white rounded-lg shadow-md p-6 flex flex-col place-content-center">
               {/* Avatar that's exactly half outside the card */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-32 h-32 rounded-md overflow-hidden border-4 border-white shadow-lg">
-                  <Image src={e.image} alt="User avatar" className="w-full h-full" />
-                </div>
+
+              <div className="w-48 h-48 mx-auto">
+                <Image src={e.image} alt="User avatar" className="w-full h-full" />
               </div>
 
               <div className="text-center mb-4 mt-2">

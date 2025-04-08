@@ -47,6 +47,9 @@ const ProductDisplay = ({ productDetails }: { productDetails: ProductDetailsProp
                 variant="default"
                 size="lg"
                 className="mt-4 bg-emerald-700 hover:bg-emerald-800 text-white"
+                onClick={() => {
+                  window.location.href = `/product/${productDetails.id}`;
+                }}
               >
                 Learn More
               </Button>

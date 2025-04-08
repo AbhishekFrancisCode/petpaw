@@ -14,7 +14,7 @@ export default function MealPlan() {
   return (
     <>
       <FoodTypeSelection />
-      <FullyDynamicFoodCircle />
+      {/* <FullyDynamicFoodCircle /> */}
       <Marquee />
       <TempletGridSmall />
       <CardWithHalfAvatar />
