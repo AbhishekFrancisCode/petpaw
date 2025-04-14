@@ -20,26 +20,26 @@ interface ImageSlide {
 
 const imageSlides: ImageSlide[] = [
   {
-    title: "Free-range Chicken",
-    src: "https://ik.imagekit.io/funlogic/meal_bowl_1.png?updatedAt=1730057316888",
+    title: "Chicken",
+    src: "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20pumkin%20meal%20cutout.png?updatedAt=1744636806032",
     indicator_title: "Chicken",
     discription: "Low GI and high in protein, it's great for the gut and gentle on tummies"
   },
   {
-    title: "Grass-Fed Lamb",
-    src: "https://ik.imagekit.io/funlogic/meal_bowl.png?updatedAt=1730057316491",
+    title: "Lamb",
+    src: "https://ik.imagekit.io/funlogic/pawfull/mutton-cutout.png?updatedAt=1744636807052",
     indicator_title: "Mutton",
     discription: "A calorie-dense recipe that's high in zinc and antioxidants for healthy skin."
   },
   {
-    title: "Wild-caught Fish",
-    src: "https://ik.imagekit.io/funlogic/meal_bowl.png?updatedAt=1730057316491",
+    title: "Fish",
+    src: "https://ik.imagekit.io/funlogic/pawfull/Fish%20and%20Brocolli%20meal%20with%20ingredients%20cutout%20.jpg?updatedAt=1744636805971",
     indicator_title: "Fish",
     discription: "Filled with Omega-3s and 6s that boosts the brain and digestive health."
   },
   {
-    title: "Healthy Treats for Happy Tails",
-    src: "https://ik.imagekit.io/funlogic/meal_bowl_1.png?updatedAt=1730057316888",
+    title: "Veg",
+    src: "https://ik.imagekit.io/funlogic/pawfull/soya-cutout.png?updatedAt=1744636807048",
     indicator_title: "Treats",
     discription: "Rich in fermentable fibre, omega-3s and bioactive ingredients for a healthy gut."
   }
@@ -112,12 +112,12 @@ export default function Section_type_2() {
             </div>
           </div>
         </div>
-        <div className="order-2 row-span-3 lg:col-span-3 lg:py-4">
+        <div className="order-2 row-span-3 lg:col-span-3 lg:py-4 ">
           <div className=" flex flex-col w-full place-content-center lg:place-content-end items-center px-2 lg:px-6">
             <div className="order-2 lg:order-1 text-4xl font-bold text-[#028391] text-center">
               {imageSlides[activeTabIndex].title}
             </div>
-            <div className="order-3 lg:order-2 flex flex-col py-4 max-w-[600px] place-content-center items-center">
+            <div className="order-3 lg:order-2 flex flex-col py-4 max-w-[600px] lg:min-w-[600px] place-content-center items-center">
               <div className="w-full min-w-[350px] h-[400px] relative mt-8">
                 <Image
                   key={Math.round.toString()}

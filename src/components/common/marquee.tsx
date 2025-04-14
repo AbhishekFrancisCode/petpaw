@@ -55,7 +55,7 @@ const Marquee = () => {
         initial={{ x: 0 }} // Start from the initial position
         animate={{ x: "-100%" }} // Move one full width to the left
         transition={{
-          duration: 80, // Adjust duration for smoothness
+          duration: 400, // Adjust duration for smoothness
           repeat: Infinity, // Loop infinitely
           ease: "linear" // Constant speed
         }}

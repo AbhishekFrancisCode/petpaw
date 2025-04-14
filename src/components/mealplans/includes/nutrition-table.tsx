@@ -9,7 +9,7 @@ const DogNutritionLabel = ({ meals }: DogNutritionLabelProps) => {
 
   return (
     <div className="flex flex-col space-y-4 w-full max-w-2xl">
-      <div className=" rounded-lg">
+      {/* <div className=" rounded-lg">
         <div className="mb-2 text-xl">{`Select Meal`}</div>
         <select
           className="w-full px-4 py-2 border border-gray-300 rounded-full bg-white text-[12px] focus:ring-none focus:border-gray-400 focus:ring-white "
@@ -22,7 +22,7 @@ const DogNutritionLabel = ({ meals }: DogNutritionLabelProps) => {
             </option>
           ))}
         </select>
-      </div>
+      </div> */}
 
       <div className="bg-black text-white p-6 rounded-lg">
         <NutritionInfo meals={selectedMeal} />

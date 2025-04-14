@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import { DogMeal, FoodOption, FoodType, Mealdata, mealdatas, MealPlanData } from "../mealdata";
 import DogNutritionLabel from "./nutrition-table";
+import FullyDynamicFoodCircle from "./testing";
 
 export default function FoodTypeSelection() {
   const options = {
@@ -70,18 +71,17 @@ export default function FoodTypeSelection() {
         </div>
 
         <div className="flex justify-center col-span-4 order-1 md:order-2">
-          <div className="min-w-[300px] h-[300px] md:min-w-[500px] md:h-[500px]">
-            <img
+          <FullyDynamicFoodCircle />
+          {/* <img
               src={selectedOption.imageUrl}
               alt="Food bowl"
               className="w-full h-full object-cover rounded-full"
-            />
-          </div>
+            /> */}
         </div>
 
-        <div className="space-y-2 col-span-2  place-content-center md:order-3">
+        {/* <div className="space-y-2 col-span-2  place-content-center md:order-3">
           <DogNutritionLabel meals={filtredData} />
-        </div>
+        </div> */}
       </div>
       {/* 
       <p className="text-center text-gray-600">

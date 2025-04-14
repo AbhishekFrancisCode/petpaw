@@ -81,6 +81,7 @@ export interface DogMeal {
   name: string;
   totalWeight: string;
   baseProtin: string;
+  image?: string;
   nutritionData: NutritionValue[];
   macroPercentages: {
     protein: string;
@@ -105,6 +106,8 @@ export const MealPlanData: DogNutritionLabelProps = {
       name: "Chicken & Pumpkin",
       totalWeight: "100g",
       baseProtin: "chicken",
+      image:
+        "https://ik.imagekit.io/funlogic/meal/bowl-chicken-1400.webp?updatedAt=1737923514978?tr=w-600,h-600",
       nutritionData: [
         {
           name: "Energy",
@@ -161,6 +164,8 @@ export const MealPlanData: DogNutritionLabelProps = {
       name: "Chicken & Sweet Potato",
       totalWeight: "99g",
       baseProtin: "chicken",
+      image:
+        "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
       nutritionData: [
         {
           name: "Energy",
@@ -218,6 +223,8 @@ export const MealPlanData: DogNutritionLabelProps = {
       name: "Grain Free Chicken",
       totalWeight: "96g",
       baseProtin: "chicken",
+      image:
+        "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
       nutritionData: [
         {
           name: "Energy",
@@ -273,6 +280,8 @@ export const MealPlanData: DogNutritionLabelProps = {
       name: "Fish and Bottle Gourd",
       totalWeight: "97g",
       baseProtin: "fish",
+      image:
+        "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
       nutritionData: [
         {
           name: "Energy",
@@ -327,6 +336,8 @@ export const MealPlanData: DogNutritionLabelProps = {
       name: "Fish and Brocolli",
       totalWeight: "77g",
       baseProtin: "fish",
+      image:
+        "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
       nutritionData: [
         {
           name: "Energy",
@@ -383,6 +394,8 @@ export const MealPlanData: DogNutritionLabelProps = {
       name: "Grain Free Fish Meal",
       totalWeight: "80g",
       baseProtin: "fish",
+      image:
+        "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
       nutritionData: [
         {
           name: "Energy",
@@ -437,6 +450,8 @@ export const MealPlanData: DogNutritionLabelProps = {
       name: "Mutton and Sweet Potatoe",
       totalWeight: "98g",
       baseProtin: "mutton",
+      image:
+        "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
       nutritionData: [
         {
           name: "Energy",
@@ -493,6 +508,8 @@ export const MealPlanData: DogNutritionLabelProps = {
       name: "Mutton and Pumpkin",
       totalWeight: "101g",
       baseProtin: "mutton",
+      image:
+        "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
       nutritionData: [
         {
           name: "Energy",
@@ -549,6 +566,8 @@ export const MealPlanData: DogNutritionLabelProps = {
       name: "Grain Free Mutton Meal",
       totalWeight: "87g",
       baseProtin: "mutton",
+      image:
+        "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
       nutritionData: [
         {
           name: "Energy",
@@ -604,6 +623,8 @@ export const MealPlanData: DogNutritionLabelProps = {
       name: "Soya and Rice",
       totalWeight: "69g",
       baseProtin: "veg",
+      image:
+        "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
       nutritionData: [
         {
           name: "Energy",
@@ -659,6 +680,8 @@ export const MealPlanData: DogNutritionLabelProps = {
       name: "Paneer and Brown Rice",
       totalWeight: "81g",
       baseProtin: "veg",
+      image:
+        "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
       nutritionData: [
         {
           name: "Energy",
