@@ -6,11 +6,11 @@ import { useRouter } from "next/navigation";
 export default function Section_type_8() {
   const router = useRouter();
   const handleNavigate = () => {
-    router.push(`/product`);
+    router.push(`/mealplan`);
   };
   return (
     <section className="place-content-center bg-[#FFF8EF]">
-      <div className="mx-auto min-h-[800px] grid grid-rows-10 grid-cols-1 lg:grid-rows-1 lg:grid-cols-10">
+      <div className="mx-auto min-h-[500px] grid grid-rows-10 grid-cols-1 lg:grid-rows-1 lg:grid-cols-10">
         <div className="order-2 lg:order-1 flex flex-col row-span-6 lg:col-span-6 bg-[#C4DEE1] p-10 lg:p-20">
           <div className="lg:px-10 xl:px-12">
             <p className={`text-[#028391] text-5xl font-semibold py-1 text-left`}>
@@ -32,12 +32,12 @@ export default function Section_type_8() {
             />
           </div>
         </div>
-        <div className="order-1 lg:order-2 p-0  row-span-4 lg:col-span-4 bg-slate-400">
-          <div className="w-full h-full lg:h-[800px] relative">
+        <div className="order-1 lg:order-2 p-0  row-span-4 lg:col-span-4">
+          <div className="w-full h-full lg:h-[500px] relative">
             <Image
               key={0}
               src={
-                "https://ik.imagekit.io/funlogic/price_plans_1.jpg?updatedAt=1730188452928?tr=w-500"
+                "https://ik.imagekit.io/funlogic/pawfull/dog%20eating%20food%20with%20all%20ingredients.JPG?updatedAt=1744556300649"
               }
               alt={""}
               fill
