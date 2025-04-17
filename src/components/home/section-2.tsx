@@ -40,6 +40,12 @@ const imageSlides: ImageSlide[] = [
   {
     title: "Veg",
     src: "https://ik.imagekit.io/funlogic/pawfull/soya-cutout.png?updatedAt=1744636807048",
+    indicator_title: "Veg",
+    discription: "Rich in fermentable fibre, omega-3s and bioactive ingredients for a healthy gut."
+  },
+  {
+    title: "Treats",
+    src: "https://ik.imagekit.io/funlogic/pawfull/all%20snacks%20in%20picnic%20view%20no%20bg.png?updatedAt=1744634137802",
     indicator_title: "Treats",
     discription: "Rich in fermentable fibre, omega-3s and bioactive ingredients for a healthy gut."
   }

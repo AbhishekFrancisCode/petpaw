@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 
 //
 import "./globals.css";
@@ -9,7 +9,7 @@ import ReduxWrapper from "../store/redux-wrapper";
 import { ToastContainer } from "react-toastify";
 // import Head from "next/head";
 
-const poppins = Poppins({
+const poppins = Inter({
   weight: ["200", "300", "400", "500", "700"],
   subsets: ["latin"],
   display: "swap"
