@@ -17,11 +17,11 @@ const ProductMain = ({ product }: { product: Product }) => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col md:flex-row gap-6">
-            <div className="md:w-1/2 bg-stone-200 rounded-2xl overflow-hidden">
+            <div className="md:w-1/2 rounded-2xl overflow-hidden md:min-h-[750px] max-h-[750px]">
               <img
-                src="https://ik.imagekit.io/funlogic/dogmeal1.webp?updatedAt=1739013597778"
+                src={product.image}
                 alt="Dog eating from bowl"
-                className="w-full h-full max-h-[650px] object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
             <div className="md:w-1/2 flex flex-col bg-stone-200 rounded-2xl p-6 min-h-full justify-between items-center">

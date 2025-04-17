@@ -18,7 +18,7 @@ export const productDetails: ProductDetailsProps[] = [
       "Eggshell Powder"
     ],
     image:
-      "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20pumpkin%20meal%20with%20ingredients.png?updatedAt=1744558667018",
+      "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20pumpkin.JPG?updatedAt=1744916572853",
     route_link: ""
   },
   {
@@ -39,7 +39,8 @@ export const productDetails: ProductDetailsProps[] = [
       "Eggshell Powder",
       "Flaxseed Powder"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20sweet%20potato.JPG?updatedAt=1744914958396",
     route_link: ""
   },
   {
@@ -59,7 +60,8 @@ export const productDetails: ProductDetailsProps[] = [
       "Eggshell Powder",
       "Flaxseed Powder"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20pumpkin%20meal%20with%20ingredients.png?updatedAt=1744558667018",
     route_link: ""
   },
   {
@@ -114,7 +116,8 @@ export const productDetails: ProductDetailsProps[] = [
       "Eggshell Powder",
       "Egg (whole, boiled)"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/Grain%20Free%20Fish%20Bowl.JPG?updatedAt=1744915199219",
     route_link: ""
   }
 ];
@@ -137,7 +140,7 @@ export const productDetails1: ProductDetailsProps[] = [
       "Eggshell Powder"
     ],
     image:
-      "https://ik.imagekit.io/funlogic/pawfull/mutton%20and%20sweet%20potato%20meal%20with%20ingredients.png?updatedAt=1744558667143",
+      "https://ik.imagekit.io/funlogic/pawfull/mutton%20and%20sweet%20potato.png?updatedAt=1744919898013",
     route_link: ""
   },
   {
@@ -175,7 +178,9 @@ export const productDetails1: ProductDetailsProps[] = [
       "French/Cluster/Green Beans",
       "Eggshell Powder"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/mutton%20and%20sweet%20potato%20meal%20with%20ingredients.png?updatedAt=1744558667143",
+
     route_link: ""
   },
   {
@@ -212,7 +217,8 @@ export const productDetails1: ProductDetailsProps[] = [
       "Carrots",
       "Flaxseed Powder"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/paneer%20meal%20with%20paneer.png?updatedAt=1744919710603",
     route_link: ""
   }
 ];
