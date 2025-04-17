@@ -8,6 +8,7 @@ import Section_type_7 from "@/components/home/section-7";
 import Section_type_2 from "@/components/home/section-2";
 import Section_type_6 from "@/components/home/section-6";
 import NewsLetter from "@/components/home/section-8";
+import BlogPosts from "@/components/blog/blog";
 
 export const metadata: Metadata = {
   title: TITLES.home
@@ -24,6 +25,7 @@ export default function Landing() {
         <Section_type_5 />
         <Section_type_6 />
         <Section_type_7 />
+        <BlogPosts />
         <NewsLetter />
       </div>
     </main>
