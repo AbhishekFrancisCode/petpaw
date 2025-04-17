@@ -30,21 +30,21 @@ export const mealdatas: Mealdata[] = [
     name: "Chicken",
     value: "chicken",
     imageUrl:
-      "https://ik.imagekit.io/funlogic/meal/bowl-chicken-1400.webp?updatedAt=1737923514978?tr=w-600,h-600"
+      "https://ik.imagekit.io/funlogic/pawfull/bowl-cutouts/chicken%20bowl_1.png?updatedAt=1744913914651"
   },
   {
     id: "2",
     name: "Mutton",
     value: "mutton",
     imageUrl:
-      "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600"
+      "https://ik.imagekit.io/funlogic/pawfull/bowl-cutouts/mutton%20bowl_1.png?updatedAt=1744913914655"
   },
   {
     id: "3",
     name: "Fish",
     value: "fish",
     imageUrl:
-      "https://ik.imagekit.io/funlogic/meal/bowl-pork-1400.webp?updatedAt=1737923514862?tr=w-600,h-600"
+      "https://ik.imagekit.io/funlogic/pawfull/bowl-cutouts/fish%20bowl_1.png?updatedAt=1744913914541"
   },
   // {
   //   id: "4",
@@ -57,7 +57,7 @@ export const mealdatas: Mealdata[] = [
     name: "Veg",
     value: "veg",
     imageUrl:
-      "https://ik.imagekit.io/funlogic/meal/bowl-veg-1100.webp?updatedAt=1737923515191?tr=w-600,h-600"
+      "https://ik.imagekit.io/funlogic/pawfull/bowl-cutouts/veg%20bowl_1.png?updatedAt=1744913914683"
   },
   {
     id: "5",

@@ -71,12 +71,12 @@ export default function FoodTypeSelection() {
         </div>
 
         <div className="flex justify-center col-span-4 order-1 md:order-2">
-          <FullyDynamicFoodCircle />
-          {/* <img
-              src={selectedOption.imageUrl}
-              alt="Food bowl"
-              className="w-full h-full object-cover rounded-full"
-            /> */}
+          {/* <FullyDynamicFoodCircle /> */}
+          <img
+            src={selectedOption.imageUrl}
+            alt="Food bowl"
+            className="w-full h-full object-cover rounded-full"
+          />
         </div>
 
         {/* <div className="space-y-2 col-span-2  place-content-center md:order-3">

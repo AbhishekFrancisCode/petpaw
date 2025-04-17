@@ -2,6 +2,7 @@
 
 import { ButtonProps, ImagePropsType } from "@/store/interfaces/templete";
 import TempletType1 from "./includes/templet-type-1";
+import BlogPosts from "../blog/blog";
 
 const images: ImagePropsType[] = [
   {

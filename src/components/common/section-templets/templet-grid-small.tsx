@@ -7,7 +7,7 @@ const images: ImagePropsType[] = [
   {
     title: "MADE WITH REAL MEAT, FRUIT, VEGGIES AND GRAINS",
     image_link:
-      "https://ik.imagekit.io/funlogic/made_with_real_food.webp?updatedAt=1737954872904?tr=w-300,h-300",
+      "https://ik.imagekit.io/funlogic/pawfull/chicken%20breast%20cutout.png?updatedAt=1744556299272",
     link_to: "",
     color: "",
     title_color: "#333"

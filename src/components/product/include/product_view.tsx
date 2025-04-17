@@ -68,13 +68,13 @@ export default function ProductView() {
           ingredients.
         </p> */}
       </div>
-      <div className="flex flex-col md:flex-row gap-8 px-4 md:px-0 justify-between">
-        <div className=" flex flex-col gap-8 pt-12 ">
+      <div className="flex flex-col md:flex-row gap-8 px-4 md:px-0">
+        <div className=" flex flex-col gap-8 pt-12 max-w-[50%]">
           {productDetails.map((item: ProductDetailsProps, index: number) => (
             <ProductDisplay key={index} productDetails={item} />
           ))}
         </div>
-        <div className=" flex flex-col gap-8 pt-12 ">
+        <div className=" flex flex-col gap-8 pt-12 max-w-[50%]">
           {productDetails1.map((item: ProductDetailsProps, index: number) => (
             <ProductDisplay key={index} productDetails={item} />
           ))}
