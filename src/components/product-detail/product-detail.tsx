@@ -7,6 +7,7 @@ import { Product } from "@/store/interfaces/product";
 import Marquee from "../common/marquee";
 import ProductInfo from "./includes/product-info";
 import ProductTestimonials from "../product/include/product_testimonials";
+import TempletGridSmall from "../common/section-templets/templet-grid-small";
 
 export default function ProductDetail() {
   const params = useParams();
@@ -31,6 +32,7 @@ export default function ProductDetail() {
           <Marquee />
           <ProductInfo product={product} />
           <div className="min-h-12"></div>
+          <TempletGridSmall />
           <div className="min-h-12"></div>
           <ProductTestimonials />
         </>

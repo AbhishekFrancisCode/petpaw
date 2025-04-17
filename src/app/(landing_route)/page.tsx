@@ -25,7 +25,7 @@ export default function Landing() {
         <Section_type_5 />
         <Section_type_6 />
         <Section_type_7 />
-        {/* <BlogPosts /> */}
+        <BlogPosts />
         <NewsLetter />
       </div>
     </main>
