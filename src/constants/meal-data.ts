@@ -17,7 +17,8 @@ export const productDetails: ProductDetailsProps[] = [
       "Carrots",
       "Eggshell Powder"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20pumpkin.JPG?updatedAt=1744916572853",
     route_link: ""
   },
   {
@@ -38,7 +39,8 @@ export const productDetails: ProductDetailsProps[] = [
       "Eggshell Powder",
       "Flaxseed Powder"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20sweet%20potato.JPG?updatedAt=1744914958396",
     route_link: ""
   },
   {
@@ -58,7 +60,8 @@ export const productDetails: ProductDetailsProps[] = [
       "Eggshell Powder",
       "Flaxseed Powder"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20pumpkin%20meal%20with%20ingredients.png?updatedAt=1744558667018",
     route_link: ""
   },
   {
@@ -75,7 +78,8 @@ export const productDetails: ProductDetailsProps[] = [
       "Bottle Gourd",
       "Eggshell Powder"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/fish%20and%20bottle%20gaurd%20meal.png?updatedAt=1744562305357",
     route_link: ""
   },
   {
@@ -94,7 +98,8 @@ export const productDetails: ProductDetailsProps[] = [
       "Egg (whole, boiled)",
       "Chia Seeds"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/fish%20and%20broccolie.png?updatedAt=1744560337427",
     route_link: ""
   },
   {
@@ -111,7 +116,8 @@ export const productDetails: ProductDetailsProps[] = [
       "Eggshell Powder",
       "Egg (whole, boiled)"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/Grain%20Free%20Fish%20Bowl.JPG?updatedAt=1744915199219",
     route_link: ""
   }
 ];
@@ -133,7 +139,8 @@ export const productDetails1: ProductDetailsProps[] = [
       "French/Green Beans",
       "Eggshell Powder"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/mutton%20and%20sweet%20potato.png?updatedAt=1744919898013",
     route_link: ""
   },
   {
@@ -152,7 +159,8 @@ export const productDetails1: ProductDetailsProps[] = [
       "Spinach",
       "Eggshell Powder"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/mutton%20and%20pumpkin%20with%20ingredients.png?updatedAt=1744558666954",
     route_link: ""
   },
   {
@@ -170,7 +178,9 @@ export const productDetails1: ProductDetailsProps[] = [
       "French/Cluster/Green Beans",
       "Eggshell Powder"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/mutton%20and%20sweet%20potato%20meal%20with%20ingredients.png?updatedAt=1744558667143",
+
     route_link: ""
   },
   {
@@ -188,7 +198,8 @@ export const productDetails1: ProductDetailsProps[] = [
       "Pumpkin",
       "Flaxseed Powder"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/soya%20pumpkin%20veg%20meal%20with%20ingredients.png?updatedAt=1744558667123",
     route_link: ""
   },
   {
@@ -206,19 +217,22 @@ export const productDetails1: ProductDetailsProps[] = [
       "Carrots",
       "Flaxseed Powder"
     ],
-    image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+    image:
+      "https://ik.imagekit.io/funlogic/pawfull/paneer%20meal%20with%20paneer.png?updatedAt=1744919710603",
     route_link: ""
   }
-  // {
-  //   id: 11,
-  //   title: "Pumpkin Biscuits",
-  //   subtitle: "Healthy Vegetarian Treat",
-  //   description:
-  //     "A nutritious snack made with pumpkin puree, eggs, and oats flour. Prepared with coconut oil for added health benefits. These biscuits offer a wholesome, vegetarian treat option for dogs, providing a balance of nutrients in a convenient, delicious format.",
-  //   ingredients: ["Pumpkin Puree", "Eggs", "Oats Flour", "Coconut Oil"],
-  //   image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
-  //   route_link: ""
-  // },
+];
+export const productDetailsTreats: ProductDetailsProps[] = [
+  {
+    id: 11,
+    title: "Pumpkin Biscuits",
+    subtitle: "Healthy Vegetarian Treat",
+    description:
+      "A nutritious snack made with pumpkin puree, eggs, and oats flour. Prepared with coconut oil for added health benefits. These biscuits offer a wholesome, vegetarian treat option for dogs, providing a balance of nutrients in a convenient, delicious format.",
+    ingredients: ["Pumpkin Puree", "Eggs", "Oats Flour", "Coconut Oil"],
+    image: "https://ik.imagekit.io/funlogic/pawfull/DSC_0441-min.png?updatedAt=1744633540830",
+    route_link: ""
+  },
   // {
   //   id: 12,
   //   title: "Pumpkin, Egg & Chicken Biscuits",
@@ -239,16 +253,16 @@ export const productDetails1: ProductDetailsProps[] = [
   //   image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
   //   route_link: ""
   // },
-  // {
-  //   id: 14,
-  //   title: "Dehydrated Chicken Jerky",
-  //   subtitle: "Pure Protein Snack",
-  //   description:
-  //     "A high-protein snack made from chicken breast or turkey. Prepared with coconut oil and seasoned with dried parsley or oregano. These dehydrated jerky treats offer a pure, concentrated protein source with minimal processing, perfect for dogs who love a classic meat treat.",
-  //   ingredients: ["Chicken Breast/Turkey", "Coconut Oil", "Dried Parsley/Oregano"],
-  //   image: "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
-  //   route_link: ""
-  // }
+  {
+    id: 14,
+    title: "Dehydrated Chicken Jerky",
+    subtitle: "Pure Protein Snack",
+    description:
+      "A high-protein snack made from chicken breast or turkey. Prepared with coconut oil and seasoned with dried parsley or oregano. These dehydrated jerky treats offer a pure, concentrated protein source with minimal processing, perfect for dogs who love a classic meat treat.",
+    ingredients: ["Chicken Breast/Turkey", "Coconut Oil", "Dried Parsley/Oregano"],
+    image: "https://ik.imagekit.io/funlogic/pawfull/DSC_0444-min.png?updatedAt=1744633213867",
+    route_link: ""
+  }
 ];
 
 export const productDetailsData: ProductDetailsProps[] = [...productDetails, ...productDetails1];

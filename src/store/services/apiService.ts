@@ -5,7 +5,7 @@ const apiService = createApi({
   reducerPath: "apiService",
   baseQuery: fetchBaseQuery({
     baseUrl: baseURL,
-    prepareHeaders: (headers) => {
+    prepareHeaders: (headers: any) => {
       headers.set("Content-Type", "application/json");
       const token = localStorage.getItem(COOKIE_AUTH!);
       if (token) {

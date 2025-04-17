@@ -10,6 +10,7 @@ import Banner from "./include/banner";
 import ProductView from "./include/product_view";
 import HowItWorks from "./include/how_it_works";
 import ProductTestimonials from "./include/product_testimonials";
+import BannerElevated from "./include/banner-elevated";
 
 export default function Product() {
   return (
@@ -21,7 +22,12 @@ export default function Product() {
         width="w-full"
         bgColor="bg-black"
       /> */}
-      <Banner />
+      <BannerElevated
+        imgUrl="https://ik.imagekit.io/funlogic/pawfull/all%20snacks%20in%20picnic%20view%20no%20bg.png?updatedAt=1744634137802"
+        value={
+          "Freshly cooked daily meals made with nutritionist-formulated recipes and human-grade ingredients, with no additives."
+        }
+      />
       <div className="min-h-12"></div>
       <ProductView />
       <div className="min-h-12"></div>

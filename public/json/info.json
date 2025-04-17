@@ -82,7 +82,8 @@
                 "amount": "1/8 Tsp"
             }
         ],
-        "image": "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+        "image": "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20pumkin%20cutout.png?updatedAt=1744556294608",
+        "imageProduct" : "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20pumkin%20meal%20cutout.png?updatedAt=1744921578638",
         "route_link": ""
     },
     {
@@ -129,7 +130,8 @@
                 "amount": "0.1g"
             }
         ],
-        "image": "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+        "image": "https://ik.imagekit.io/funlogic/pawfull/chicken%20meal%202%20cutout.png?updatedAt=1744556300868",
+        "imageProduct" :  "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20sweet%20potato.JPG?updatedAt=1744914958396",
         "route_link": "",
         "totalWeight": "99g",
         "baseProtein": "chicken",
@@ -209,7 +211,8 @@
                 "amount": "1/8 Tsp"
             }
         ],
-        "image": "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+        "image": "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20beetroot%20cutout.png?updatedAt=1744556294560",
+         "imageProduct" : "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20pumkin%20meal%20cutout.png?updatedAt=1744921578638",
         "route_link": "",
         "totalWeight": "96g",
         "baseProtein": "chicken",
@@ -288,7 +291,8 @@
                 "amount": "1/8 Tsp"
             }
         ],
-        "image": "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+        "image": "https://ik.imagekit.io/funlogic/pawfull/Fish%20meal%20cutout.png?updatedAt=1744556303522",
+         "imageProduct" :        "https://ik.imagekit.io/funlogic/pawfull/fish%20and%20bottle%20gaurd%20meal.png?updatedAt=1744562305357",
         "route_link": "",
         "totalWeight": "97g",
         "baseProtein": "fish",
@@ -374,7 +378,8 @@
                 "amount": "0.1g"
             }
         ],
-        "image": "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+        "image": "https://ik.imagekit.io/funlogic/pawfull/fish%20meal%202%20cutout.png?updatedAt=1744556303833",
+         "imageProduct" : "https://ik.imagekit.io/funlogic/pawfull/Fish%20and%20Brocolli%20meal%20with%20ingredients%20cutout%20.jpg?updatedAt=1744636805971",
         "route_link": "",
         "totalWeight": "77g",
         "baseProtein": "fish",
@@ -450,7 +455,8 @@
                 "cookedAmount": "10g"
             }
         ],
-        "image": "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+        "image": "https://ik.imagekit.io/funlogic/pawfull/veg%20meal%20soya%20bottelgaurd%20cutout.png?updatedAt=1744556314933",
+         "imageProduct" :   "https://ik.imagekit.io/funlogic/pawfull/Grain%20Free%20Fish%20Bowl.JPG?updatedAt=1744915199219",
         "route_link": "",
         "totalWeight": "80g",
         "baseProtein": "fish",
@@ -535,7 +541,8 @@
                 "amount": "1/8 Tsp"
             }
         ],
-        "image": "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+        "image": "https://ik.imagekit.io/funlogic/pawfull/mutton%20meal%20cutout.png?updatedAt=1744556308372",
+         "imageProduct" :  "https://ik.imagekit.io/funlogic/pawfull/mutton%20and%20sweet%20potato.png?updatedAt=1744919898013",
         "route_link": "",
         "totalWeight": "98g",
         "baseProtein": "mutton",
@@ -620,7 +627,8 @@
                 "amount": "1/8 Tsp"
             }
         ],
-        "image": "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+        "image": "https://ik.imagekit.io/funlogic/pawfull/mutton%20meal%202%20cutout.png?updatedAt=1744556307326",
+         "imageProduct" :  "https://ik.imagekit.io/funlogic/pawfull/mutton%20and%20pumpkin%20with%20ingredients.png?updatedAt=1744558666954",
         "route_link": "",
         "totalWeight": "101g",
         "baseProtein": "mutton",
@@ -700,7 +708,8 @@
                 "amount": "1/8 Tsp"
             }
         ],
-        "image": "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+        "image": "https://ik.imagekit.io/funlogic/pawfull/mutton%20meal%20cutout.png?updatedAt=1744556308372",
+         "imageProduct" :   "https://ik.imagekit.io/funlogic/pawfull/mutton%20and%20sweet%20potato%20meal%20with%20ingredients.png?updatedAt=1744558667143",
         "route_link": "",
         "totalWeight": "87g",
         "baseProtein": "mutton",
@@ -781,8 +790,8 @@
                 "amount": "1/8 Tsp"
             }
         ],
-        "image": "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
-        "route_link": "",
+        "image": "https://ik.imagekit.io/funlogic/pawfull/soya%20pumpkin%20veg%20meal%20cutout.png?updatedAt=1744556314304",
+         "imageProduct" :   "https://ik.imagekit.io/funlogic/pawfull/soya%20pumpkin%20veg%20meal%20with%20ingredients.png?updatedAt=1744558667123",
         "totalWeight": "69g",
         "baseProtein": "veg",
         "nutritionData": [
@@ -862,7 +871,8 @@
                 "amount": "1/8 Tsp"
             }
         ],
-        "image": "https://ik.imagekit.io/funlogic/price_plans.png?updatedAt=1730060093850",
+        "image": "https://ik.imagekit.io/funlogic/pawfull/Panneer%20&%20Carrot%20Meal.png?updatedAt=1744556310187",
+         "imageProduct" :  "https://ik.imagekit.io/funlogic/pawfull/paneer%20meal%20with%20paneer.png?updatedAt=1744919710603",
         "route_link": "",
         "totalWeight": "81g",
         "baseProtein": "veg",

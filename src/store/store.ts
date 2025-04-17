@@ -9,16 +9,23 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import authSlice from "./auth/auth-slice";
 import clientsSlice from "./clients/clients-slice";
+import apiService from "./services/apiService";
+import { blogServices } from "./services/blogServices";
 
 const rootReducer = combineReducers({
   auth: authSlice,
-  clients: clientsSlice,
+  clients: clientsSlice
 });
 
 //
 export const store = configureStore({
-  reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware()
+  reducer: {
+    rootReducer,
+    [apiService.reducerPath]: apiService.reducer,
+    [blogServices.reducerPath]: blogServices.reducer
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(apiService.middleware).concat(blogServices.middleware)
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

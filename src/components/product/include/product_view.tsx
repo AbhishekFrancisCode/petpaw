@@ -1,7 +1,8 @@
 "use client";
 
-import { productDetails, productDetails1 } from "@/constants/meal-data";
+import { productDetails, productDetails1, productDetailsTreats } from "@/constants/meal-data";
 import ProductDisplay from "./expand_card";
+import Banner from "./banner";
 
 export interface ProductDetailsProps {
   id: number;
@@ -62,22 +63,32 @@ export default function ProductView() {
         <h1 className="text-2xl md:text-6xl text-[#333333] font-bold leading-normal">
           Our Products
         </h1>
-        <p className="text-xl md:max-w-[600px] text-center">
+        {/* <p className="text-xl md:max-w-[600px] text-center">
           Freshly prepared, lightly cooked meals packed with human-grade, nutritious, wholefood
           ingredients.
-        </p>
+        </p> */}
       </div>
-      <div className="flex flex-col md:flex-row gap-8 px-4 md:px-0 justify-between">
-        <div className=" flex flex-col gap-8 pt-24 ">
+      <div className="flex flex-col md:flex-row gap-8 px-4 md:px-0">
+        <div className=" flex flex-col gap-8 pt-12 max-w-[50%]">
           {productDetails.map((item: ProductDetailsProps, index: number) => (
             <ProductDisplay key={index} productDetails={item} />
           ))}
         </div>
-        <div className=" flex flex-col gap-8 pt-24 ">
+        <div className=" flex flex-col gap-8 pt-12 max-w-[50%]">
           {productDetails1.map((item: ProductDetailsProps, index: number) => (
             <ProductDisplay key={index} productDetails={item} />
           ))}
         </div>
+      </div>
+      <div className="min-h-12" />
+      <Banner
+        url="https://ik.imagekit.io/funlogic/pawfull/DSC_0011-min.png?updatedAt=1744633950628"
+        value={"Fresh treats and no additives"}
+      />
+      <div className="flex flex-col-2 gap-8 pt-12 ">
+        {productDetailsTreats.map((item: ProductDetailsProps, index: number) => (
+          <ProductDisplay key={index} productDetails={item} />
+        ))}
       </div>
     </section>
   );

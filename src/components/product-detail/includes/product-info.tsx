@@ -51,16 +51,16 @@ const ProductInfo = ({ product }: { product: Product }) => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row gap-6">
-          <div className="md:w-1/2 bg-stone-200 rounded-2xl overflow-hidden">
+          <div className="md:w-1/2 bg-transparent rounded-2xl overflow-hidden">
             <img
-              src="https://ik.imagekit.io/funlogic/dogmeal1.webp?updatedAt=1739013597778"
+              src={product.imageProduct}
               alt="Dog eating from bowl"
               className="w-full h-full max-h-[650px] object-cover"
             />
           </div>
           <div className="md:w-1/2 flex flex-col px-10 min-h-full justify-between items-center">
             <div className="flex flex-col place-content-start items-center">
-              <Accordion items={accordionItems} defaultOpenId="1" />
+              <Accordion items={accordionItems} defaultOpenId="2" />
             </div>
 
             {/* <button className="w-64 bg-rose-700 text-white py-3 px-6 rounded-full hover:bg-rose-800 transition-colors end-0">
