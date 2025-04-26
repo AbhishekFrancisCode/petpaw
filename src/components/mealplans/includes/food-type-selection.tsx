@@ -7,15 +7,17 @@ import { DogMeal, FoodOption, FoodType, Mealdata, mealdatas, MealPlanData } from
 import DogNutritionLabel from "./nutrition-table";
 import FullyDynamicFoodCircle from "./testing";
 import { Title } from "@/components/common/title-comp";
+import { MealPlanPageStrings } from "@/constants/title-constants";
 
 export default function FoodTypeSelection() {
+  const data = MealPlanPageStrings.firstSection;
   const options = {
     fresh: [
-      mealdatas[1],
-      mealdatas[2],
-      mealdatas[3],
-      mealdatas[4],
-      mealdatas[5]
+      data.mealdata[1],
+      data.mealdata[2],
+      data.mealdata[3],
+      data.mealdata[4],
+      data.mealdata[5]
       // mealdatas[6]
     ] as const
   };
@@ -35,13 +37,10 @@ export default function FoodTypeSelection() {
         textStyle="primary"
         className={`text-[#028391] py-1 text-center px-6 md:px-4`}
       >
-        A Healthy Choice
+        {data.title}
       </Title>
       {/* <h1 className="text-3xl font-semibold text-center mb-4">A Healthy Choice</h1> */}
-      <p className="text-center text-gray-700 mb-8">
-        Our vet-formulated, human-grade recipes are made to mix and match, giving your pup endless
-        options.
-      </p>
+      <p className="text-center text-gray-700 mb-8">{data.sub_title}</p>
 
       <div className="grid grid-cols-1 md:grid-cols-8 gap-8 items-start mb-8">
         <div className="space-y-2 md:col-span-2 order-2 md:order-1 ">
