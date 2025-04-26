@@ -3,6 +3,7 @@ import dogmeadium from "../../../../public/images/img/dog-small.png";
 import dogsmall from "../../../../public/images/img/dog-meadium.png";
 import doglarge from "../../../../public/images/img/dog-large.png";
 import Image from "next/image";
+import { Title } from "@/components/common/title-comp";
 
 const CardWithHalfAvatar = () => {
   const data = [1, 2, 3];
@@ -28,7 +29,13 @@ const CardWithHalfAvatar = () => {
   ];
   return (
     <div className="flex flex-col min-h-[600px]">
-      <h1 className="text-3xl font-semibold text-center mb-4">Meal Portion Size</h1>
+      <Title
+        variant="h2"
+        textStyle="primary"
+        className={`text-[#028391] py-1 text-center px-6 md:px-4`}
+      >
+        Meal Portion Size
+      </Title>
       <p className="text-center text-gray-700 mb-8"></p>
       <div className="flex sm:flex-col md:flex-row justify-center items-center min-h-[500px] p-4 gap-6">
         {dogSizes.map((e: any) => (

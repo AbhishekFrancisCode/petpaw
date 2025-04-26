@@ -11,6 +11,7 @@ import ProductView from "./include/product_view";
 import HowItWorks from "./include/how_it_works";
 import ProductTestimonials from "./include/product_testimonials";
 import BannerElevated from "./include/banner-elevated";
+import Section_type_7 from "../home/section-7";
 
 export default function Product() {
   return (
@@ -31,7 +32,8 @@ export default function Product() {
       <div className="min-h-12"></div>
       <ProductView />
       <div className="min-h-12"></div>
-      <HowItWorks />
+      <Section_type_7 />
+      {/* <HowItWorks /> */}
       <div className="min-h-12"></div>
       <div className="min-h-12"></div>
       {/* <BannerSection /> */}

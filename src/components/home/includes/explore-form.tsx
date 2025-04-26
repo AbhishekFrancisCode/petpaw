@@ -5,6 +5,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { saveNewsLetter } from "@/store/clients/clients-slice";
 import { sbToasterSuccess } from "@/utils/sb-toaster";
 import { useRouter } from "next/navigation";
+import { HomePageStrings } from "@/constants/title-constants";
 
 type Inputs = {
   name: string;
@@ -41,7 +42,7 @@ export default function ExploreForm() {
   return (
     <div className="flex flex-col gap-2 h-full">
       <div className="text-base font-normal leading-snug lg:mt-[10px] w-full text-center lg:text-left">
-        {"What breed is your dog?!"}
+        {HomePageStrings.askPetname}
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -52,7 +53,7 @@ export default function ExploreForm() {
             type="text"
             id="newsletter"
             required={true}
-            placeholder="eg: Labrador"
+            placeholder="eg: Caesar"
             {...register("name", {
               pattern: {
                 value:

@@ -12,6 +12,7 @@ import { useState } from "react";
 import chevronLeft from "../../../../public/images/svg/chevron_left.svg";
 import chevronRight from "../../../../public/images/svg/chevron_right.svg";
 import SectionHeading from "@/components/common/section-heading";
+import { Title } from "@/components/common/title-comp";
 
 const testimonialsJson = [
   {
@@ -99,7 +100,14 @@ export default function TestimonialsVideo() {
   return (
     <div className="mx-auto bg-transparent min-w-full mt-12">
       <div className=" w-[315px] lg:w-[571px] mx-auto">
-        <SectionHeading title={"Pawtful's Testimonials"} />
+        <Title
+          variant="h2"
+          textStyle="primary"
+          className={`text-[#028391] text-[34px] lg:text-4xl font-bold text-center py-6`}
+        >
+          Pawtful's Testimonials
+        </Title>
+        {/* <SectionHeading title={"Pawtful's Testimonials"} /> */}
       </div>
       <div className="mx-auto">
         <TestimonialsSwiper imageList={testimonialsJson} handleVideoPlayer={handleVideoPlayer} />
