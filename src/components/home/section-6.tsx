@@ -1,4 +1,5 @@
 "use client";
+import { HomePageStrings } from "@/constants/title-constants";
 import Button from "@/sb-ui/button/button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -8,6 +9,7 @@ export default function Section_type_8() {
   const handleNavigate = () => {
     router.push(`/mealplan`);
   };
+  const data: any = HomePageStrings.fifthSection[0];
   return (
     <section className="place-content-center bg-[#FFF8EF]">
       <div className="mx-auto min-h-[500px] grid grid-rows-10 grid-cols-1 lg:grid-rows-1 lg:grid-cols-10">
@@ -21,20 +23,16 @@ export default function Section_type_8() {
             <p
               className={`text-[#028391] text-4xl lg:text-[64px] lg:leading-[68px] font-semibold py-1 text-center md:text-left`}
             >
-              {"Benefits of Eating ,"}
+              {data.title}
             </p>
             <p
               className={`text-[#EE9422] text-4xl lg:text-[64px] lg:leading-[68px] font-semibold py-1 text-center md:text-left`}
             >
-              {"Fresh Food"}
+              {data.sub_title}
             </p>
           </div>
           <div className="flex place-content-center lg:place-content-start lg:px-10 xl:px-12 py-4 w-full lg:w-[550px]">
-            <p className={`text-[#333333] text-base font-normal py-2 text-left`}>
-              {
-                "IMPROVED DIGESTION & ENERGY \n More digestible than kibble, giving your pup more nutrients and pep in their step. ALLERGY & WEIGHT CONTROL Our food helps maintain your pup's ideal weight and is great for allergies and sensitivities. MORE MEALTIMES TOGETHER A fresh, whole food diet has been proven to help dogs live up to 2.5 years longer."
-              }
-            </p>
+            <p className={`text-[#333333] text-sm py-2 text-left`}>{data.description}</p>
           </div>
           <div className="flex place-content-center lg:place-content-start lg:px-10 xl:px-12 ">
             <Button
@@ -48,9 +46,7 @@ export default function Section_type_8() {
           <div className="w-full h-full lg:h-[500px] relative">
             <Image
               key={0}
-              src={
-                "https://ik.imagekit.io/funlogic/pawfull/dog%20eating%20food%20with%20all%20ingredients.JPG?updatedAt=1744556300649"
-              }
+              src={data.image_link}
               alt={""}
               fill
               sizes=""

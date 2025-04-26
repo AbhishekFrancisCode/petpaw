@@ -2,32 +2,7 @@
 
 import { ButtonProps, ImagePropsType } from "@/store/interfaces/templete";
 import TempletType1 from "./includes/templet-type-1";
-const images: ImagePropsType[] = [
-  {
-    title: "FOR SMALL DOGS\n(5-15 Kgs)",
-    image_link: "https://ik.imagekit.io/funlogic/for_small_dogs.png?updatedAt=1730048082405",
-    link_to: "https://example.com/sunset",
-    color: "",
-    title_color: "#028391",
-    description: "Monthly Subscription:\n₹139 /meal On Demand Pricing:\n ₹189/meal"
-  },
-  {
-    title: "FOR MEDIUM DOGS\n(15-25Kgs)",
-    image_link: "https://ik.imagekit.io/funlogic/for_medium_dogs.png?updatedAt=1730048082297",
-    link_to: "https://example.com/forest",
-    color: "",
-    title_color: "#028391",
-    description: "Monthly Subscription:\n₹189 /meal On Demand Pricing:\n ₹249/meal"
-  },
-  {
-    title: "FOR LARGE DOGS\n(Above 25Kgs)",
-    image_link: "https://ik.imagekit.io/funlogic/for_large_dogs.png?updatedAt=1730048082473",
-    link_to: "https://example.com/city",
-    color: "",
-    title_color: "#028391",
-    description: "Monthly Subscription:\n₹279 /meal On Demand Pricing:\n ₹349/meal"
-  }
-];
+import { HomePageStrings } from "@/constants/title-constants";
 
 const buttons: ButtonProps[] = [
   {
@@ -46,7 +21,7 @@ export default function Section_type_3() {
           title="Flexible pricing, personalized nutrition"
           title_color="#028391"
           sub_title="*All pricing shown is  price based on the starting price for plan type and dog size"
-          images={images}
+          images={HomePageStrings.thirdSection as ImagePropsType[]}
           buttons={buttons}
         />
       </div>

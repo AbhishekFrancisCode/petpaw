@@ -1,3 +1,4 @@
+import { Title } from "@/components/common/title-comp";
 import Button from "@/sb-ui/button/button";
 import { ButtonProps, ImagePropsType, TempletProps } from "@/store/interfaces/templete";
 import imageKitLoader from "@/utils/image-kit-loader";
@@ -18,11 +19,13 @@ export default function TempletType1({
   return (
     <div className={`flex flex-col pt-4 ${section_color}`}>
       {title && (
-        <h3
-          className={`text-[${title_color}] text-3xl font-semibold py-1 text-center px-6 md:px-4`}
+        <Title
+          variant="h2"
+          textStyle="primary"
+          className={`text-[${title_color}] py-1 text-center px-6 md:px-4`}
         >
           {title}
-        </h3>
+        </Title>
       )}
       {sub_title && <div className="text-black text-center px-6 md:px-4">{sub_title}</div>}
       {images && (
