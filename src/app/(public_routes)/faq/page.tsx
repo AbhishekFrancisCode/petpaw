@@ -1,4 +1,5 @@
 "use client";
+import { Title } from "@/components/common/title-comp";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 
@@ -71,9 +72,13 @@ export default function Faq() {
   const faqRef = useRef<HTMLDivElement | null>(null);
   return (
     <div ref={faqRef} id="faq" className="container mx-auto px-4 mt-8">
-      <div className="text-2xl lg:text-5xl text-black font-medium lg:leading-[67.20px] pt-12 pb-2 lg:pb-4 text-center lg:text-left">
-        {"FAQs"}
-      </div>
+      <Title
+        variant="h2"
+        textStyle="primary"
+        className={`text-[#028391] lg:leading-[67.20px] pt-12 pb-2 lg:pb-4 text-center lg:text-left`}
+      >
+        FAQ's
+      </Title>
       <div className="pt-6 pb-20">
         {data.map((item, i) => {
           return <Accordion key={i} title={item.title} content={item.content} />;

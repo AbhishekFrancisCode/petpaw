@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Title } from "../common/title-comp";
 
 interface FAQItem {
   question: string;
@@ -50,7 +51,9 @@ const FAQ = () => {
   return (
     <div className="bg-transprent py-12">
       <div className="p-8 max-w-7xl mx-auto">
-        <h1 className="text-2xl font-bold text-center mb-6">FAQ's</h1>
+        <Title variant="h2" textStyle="primary" className={`text-[#028391] text-center mb-6`}>
+          FAQ's
+        </Title>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div key={index} className="border rounded-xl overflow-hidden bg-white">

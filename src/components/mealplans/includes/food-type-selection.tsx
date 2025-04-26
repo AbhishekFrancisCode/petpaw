@@ -6,6 +6,7 @@ import Image from "next/image";
 import { DogMeal, FoodOption, FoodType, Mealdata, mealdatas, MealPlanData } from "../mealdata";
 import DogNutritionLabel from "./nutrition-table";
 import FullyDynamicFoodCircle from "./testing";
+import { Title } from "@/components/common/title-comp";
 
 export default function FoodTypeSelection() {
   const options = {
@@ -29,7 +30,14 @@ export default function FoodTypeSelection() {
 
   return (
     <div className="p-8 max-w-7xl mx-auto">
-      <h1 className="text-3xl font-semibold text-center mb-4">A Healthy Choice</h1>
+      <Title
+        variant="h2"
+        textStyle="primary"
+        className={`text-[#028391] py-1 text-center px-6 md:px-4`}
+      >
+        A Healthy Choice
+      </Title>
+      {/* <h1 className="text-3xl font-semibold text-center mb-4">A Healthy Choice</h1> */}
       <p className="text-center text-gray-700 mb-8">
         Our vet-formulated, human-grade recipes are made to mix and match, giving your pup endless
         options.

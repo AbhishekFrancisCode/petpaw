@@ -3,6 +3,7 @@
 import { productDetails, productDetails1, productDetailsTreats } from "@/constants/meal-data";
 import ProductDisplay from "./expand_card";
 import Banner from "./banner";
+import { Title } from "@/components/common/title-comp";
 
 export interface ProductDetailsProps {
   id: number;
@@ -60,9 +61,10 @@ export default function ProductView() {
   return (
     <section className="flex flex-col ">
       <div className="flex flex-col mx-auto place-content-center items-center">
-        <h1 className="text-2xl md:text-6xl text-[#333333] font-bold leading-normal">
+        <Title variant="h1" textStyle="primary" className={`text-[#028391] leading-normal`}>
           Our Products
-        </h1>
+        </Title>
+
         {/* <p className="text-xl md:max-w-[600px] text-center">
           Freshly prepared, lightly cooked meals packed with human-grade, nutritious, wholefood
           ingredients.
