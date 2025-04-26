@@ -15,7 +15,7 @@ import Section_type_7 from "../home/section-7";
 
 export default function Product() {
   return (
-    <div className=" flex flex-col pt-24 ">
+    <div className=" flex flex-col pt-24">
       {/* <OfferStrip
         text="Welcome to the Sale!"
         subText="Up to 50% off on all items"

@@ -205,3 +205,103 @@ export const HomePageStrings = {
     }
   ]
 };
+
+export const MealPlanPageStrings = {
+  title: "Meal Plan",
+  sub_title: "Meal Plan",
+  description: "",
+  firstSection: {
+    title: "A Healthy Choice",
+    sub_title:
+      "Our vet-formulated, human-grade recipes are made to mix and match, giving your pup endless options.",
+    mealdata: [
+      {
+        id: "0",
+        name: "Empty",
+        value: "empty",
+        imageUrl:
+          "https://ik.imagekit.io/funlogic/meal/empty-bowl-1300.webp?updatedAt=1737923515178?tr=w-600,h-600"
+      },
+      {
+        id: "1",
+        name: "Chicken",
+        value: "chicken",
+        imageUrl:
+          "https://ik.imagekit.io/funlogic/pawfull/bowl-cutouts/chicken%20bowl_1.png?updatedAt=1744913914651"
+      },
+      {
+        id: "2",
+        name: "Mutton",
+        value: "mutton",
+        imageUrl:
+          "https://ik.imagekit.io/funlogic/pawfull/bowl-cutouts/mutton%20bowl_1.png?updatedAt=1744913914655"
+      },
+      {
+        id: "3",
+        name: "Fish",
+        value: "fish",
+        imageUrl:
+          "https://ik.imagekit.io/funlogic/pawfull/bowl-cutouts/fish%20bowl_1.png?updatedAt=1744913914541"
+      },
+      // {
+      //   id: "4",
+      //   name: "Beef",
+      //   imageUrl:
+      //     "https://ik.imagekit.io/funlogic/meal/bowl-beef-1400.webp?updatedAt=1737923514937?tr=w-600,h-600"
+      // },
+      {
+        id: "4",
+        name: "Veg",
+        value: "veg",
+        imageUrl:
+          "https://ik.imagekit.io/funlogic/pawfull/bowl-cutouts/veg%20bowl_1.png?updatedAt=1744913914683"
+      },
+      {
+        id: "5",
+        name: "Treat",
+        value: "treat",
+        imageUrl:
+          "https://ik.imagekit.io/funlogic/meal/bowl-treat-1400.webp?updatedAt=1737923514901?tr=w-600,h-600"
+      }
+    ]
+  },
+  secondSection: {
+    title: "100% Human Grade & Fresh Ingredients",
+    sub_title:
+      "Our responsibly sourced food delivers vitamins and minerals that are as delicious as they are essential to your dog’s health.",
+    data: [
+      {
+        title: "MADE WITH REAL MEAT, FRUIT, VEGGIES AND GRAINS",
+        image_link:
+          "https://ik.imagekit.io/funlogic/pawfull/chicken%20breast%20cutout.png?updatedAt=1744556299272",
+        link_to: "",
+        color: "",
+        title_color: "#333"
+      },
+      {
+        title: "MEAT IS THE FIRST INGREDIENT",
+        image_link:
+          "https://ik.imagekit.io/funlogic/first_ingredient_meat.webp?updatedAt=1737954872657?tr=w-300,h-300",
+        link_to: "",
+        color: "",
+        title_color: "#333"
+      },
+      {
+        title: "NO ADDED HORMONES, BY-PRODUCTS OR FILLERS",
+        image_link:
+          "https://ik.imagekit.io/funlogic/no_hormones.webp?updatedAt=1737954872564?tr=w-300,h-300",
+        link_to: "",
+        color: "",
+        title_color: "#333"
+      },
+      {
+        title: "NO CORN, WHEAT, OR SOY",
+        image_link:
+          "https://ik.imagekit.io/funlogic/no_corn.webp?updatedAt=1737954872368?tr=w-300,h-300",
+        link_to: "",
+        color: "",
+        title_color: "#333"
+      }
+    ]
+  }
+};

@@ -3,15 +3,36 @@ import Button from "@/sb-ui/button/button";
 import { imageUrl } from "@/utils/string-utils";
 import Image from "next/image";
 import styled from "styled-components";
+import { twMerge } from "tailwind-merge";
 
 export default function BannerElevated({
   value,
   url,
-  imgUrl
+  imgUrl,
+  height,
+  width,
+  imagePosition,
+  imageHide = false,
+  backgroundColor,
+  textColor,
+  boerderColor,
+  borderRadius,
+  borderWidth,
+  borderStyle
 }: {
   value: string;
   url?: string;
   imgUrl?: string;
+  height?: string;
+  width?: string;
+  imagePosition?: string; // "left" | "right" | "top" | "bottom"
+  imageHide?: boolean;
+  backgroundColor?: string;
+  textColor?: string;
+  boerderColor?: string;
+  borderRadius?: string;
+  borderWidth?: string;
+  borderStyle?: string;
 }) {
   const urlt = url;
   const BannerSection = styled.section`
@@ -28,16 +49,43 @@ export default function BannerElevated({
   `;
 
   return (
-    <div className="p-4 relative">
+    <div
+      className={twMerge(
+        height ? `max-h-[${height}]` : "md:max-h-[200px]",
+        width ? `w-[${width}]` : "w-full",
+        backgroundColor ? `${backgroundColor}` : "bg-transparent",
+        textColor ? `${textColor}` : "text-[#028391]",
+        boerderColor ? `${boerderColor}` : "border-[#028391]",
+        borderRadius ? `${borderRadius}` : "rounded-3xl",
+        borderWidth ? `${borderWidth}` : "border-0",
+        borderStyle ? `${borderStyle}` : "border-solid",
+        "max-h-[400px] relative  m-2"
+      )}
+    >
       <BannerSection>
-        <div className="mx-auto max-h-[150px] md:min-h-[150px] flex">
-          <div className="flex lg:px-10 place-content-start items-center min-h-full">
-            <p className={`text-[#028391] text-1xl md:text-[28px] leading-8 font-medium text-left`}>
+        <div
+          className={twMerge(
+            height
+              ? `md:max-h-[calc(${height}-50px)] min-h-[calc(${height}-50px)]`
+              : "md:max-h-[150px] min-h-[150px]",
+            "mx-auto flex flex-col md:flex-row   rounded-xl"
+          )}
+        >
+          <div className="flex p-2 lg:px-10 place-content-start items-center min-h-full z-10 md:max-w-[60%] xl:max-w-[75%]">
+            <p
+              className={`text-[#028391] text-[20px] md:text-1xl md:text-[28px] leading-8 font-medium text-center md:text-left`}
+            >
               {value}
             </p>
           </div>
-          <div className="max-h-[150px] md:min-h-[150px] max-w-[150px]">
-            {imgUrl && <img src={imgUrl} />}
+          <div
+            className={twMerge(
+              imagePosition ? `${imagePosition}` : "md:right-0 md:bottom-[70px]",
+              imageHide && "hidden",
+              "md:absolute  md:max-h-[150px]  md:max-w-[350px]"
+            )}
+          >
+            {imgUrl && <img src={imgUrl} className="rounded-b-xl" />}
           </div>
         </div>
       </BannerSection>

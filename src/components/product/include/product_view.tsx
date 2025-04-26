@@ -4,6 +4,7 @@ import { productDetails, productDetails1, productDetailsTreats } from "@/constan
 import ProductDisplay from "./expand_card";
 import Banner from "./banner";
 import { Title } from "@/components/common/title-comp";
+import BannerElevated from "./banner-elevated";
 
 export interface ProductDetailsProps {
   id: number;
@@ -71,23 +72,31 @@ export default function ProductView() {
         </p> */}
       </div>
       <div className="flex flex-col md:flex-row gap-8 px-4 md:px-0">
-        <div className=" flex flex-col gap-8 pt-12 max-w-[50%]">
+        <div className=" flex flex-col gap-8 pt-12 md:max-w-[50%]">
           {productDetails.map((item: ProductDetailsProps, index: number) => (
             <ProductDisplay key={index} productDetails={item} />
           ))}
         </div>
-        <div className=" flex flex-col gap-8 pt-12 max-w-[50%]">
+        <div className=" flex flex-col gap-8 pt-12 md:max-w-[50%]">
           {productDetails1.map((item: ProductDetailsProps, index: number) => (
             <ProductDisplay key={index} productDetails={item} />
           ))}
         </div>
       </div>
       <div className="min-h-12" />
-      <Banner
+      <BannerElevated
+        imgUrl="https://ik.imagekit.io/funlogic/pawfull/DSC_0437.png"
+        value={"Fresh treats and no additives"}
+        height="150px"
+        imagePosition="right-0 bottom-[100px]"
+        imageHide={true}
+        // width="100%"
+      />
+      {/* <Banner
         url="https://ik.imagekit.io/funlogic/pawfull/DSC_0011-min.png?updatedAt=1744633950628"
         value={"Fresh treats and no additives"}
-      />
-      <div className="flex flex-col-2 gap-8 pt-12 ">
+      /> */}
+      <div className="flex flex-col md:flex-col-2 gap-8 md:pt-12 mx-4 md:px-0">
         {productDetailsTreats.map((item: ProductDetailsProps, index: number) => (
           <ProductDisplay key={index} productDetails={item} />
         ))}
