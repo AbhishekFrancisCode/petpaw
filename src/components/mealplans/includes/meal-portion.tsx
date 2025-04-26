@@ -4,6 +4,7 @@ import dogsmall from "../../../../public/images/img/dog-meadium.png";
 import doglarge from "../../../../public/images/img/dog-large.png";
 import Image from "next/image";
 import { Title } from "@/components/common/title-comp";
+import { twMerge } from "tailwind-merge";
 
 const CardWithHalfAvatar = () => {
   const data = [1, 2, 3];
@@ -28,7 +29,7 @@ const CardWithHalfAvatar = () => {
     }
   ];
   return (
-    <div className="flex flex-col min-h-[600px]">
+    <div className="flex flex-col min-h-[550px]">
       <Title
         variant="h2"
         textStyle="primary"
@@ -37,15 +38,26 @@ const CardWithHalfAvatar = () => {
         Meal Portion Size
       </Title>
       <p className="text-center text-gray-700 mb-8"></p>
-      <div className="flex sm:flex-col md:flex-row justify-center items-center min-h-[500px] p-4 gap-6">
+      <div className="flex sm:flex-col md:flex-row justify-center items-center ma-h-[400px] p-4 gap-6">
         {dogSizes.map((e: any) => (
-          <div key={e} className="relative w-full max-w-sm">
+          <div key={e} className="relative w-full max-w-sm max-h-[300px]">
             {/* Card content */}
-            <div className="bg-white rounded-lg shadow-md p-6 flex flex-col place-content-center">
+            <div className="bg-white rounded-lg shadow-md p-6 flex flex-col place-content-center max-h-[350px]">
               {/* Avatar that's exactly half outside the card */}
 
-              <div className="w-48 h-48 mx-auto">
-                <Image src={e.image} alt="User avatar" className="w-full h-full" />
+              <div className="w-48 h-48 mx-auto place-items-center place-content-end">
+                <Image
+                  src={e.image}
+                  alt="User avatar"
+                  className={twMerge(
+                    e.size === "Small Dog"
+                      ? "max-w-32 max-h-32"
+                      : e.size === "Medium Dog"
+                        ? "max-w-32 max-h-32"
+                        : "max-w-44 max-h-44",
+                    "bottom-0"
+                  )}
+                />
               </div>
 
               <div className="text-center mb-4 mt-2">

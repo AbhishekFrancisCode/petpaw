@@ -19,7 +19,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
 }) => {
   return (
     <div
-      className={`${isOpen ? "rounded-xl" : "rounded-full"} mb-2 overflow-hidden min-w-[500px] max-w-[500px]`}
+      className={`${isOpen ? "rounded-xl" : "rounded-full"} mb-2 overflow-hidden min-w-[350px] md:min-w-[500px] md:max-w-[500px]`}
     >
       <div className="flex justify-between p-2 items-center bg-white">
         <h3 className="pl-6 text-xl font-light">{heading}</h3>

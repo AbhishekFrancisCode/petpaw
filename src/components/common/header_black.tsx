@@ -178,21 +178,23 @@ export default function HeaderBlack() {
           >
             <div className="flex flex-col min-h-full w-56">
               <div className="flex-grow">
-                <div className="p-2 min-h-[70px] max-h-[70px]">
+                <div className="p-2 min-h-[70px] max-h-[70px] max-w-[70px]">
                   <Image
                     fill={true}
                     src="/images/logos/logo_round.png"
                     alt="pawtful.com"
-                    className="max-h-[52px] pt-2"
+                    className="max-h-[76px] max-w-[76px] pt-2"
                   />
                 </div>
                 {!user ? (
                   // !user && loading ? (
                   //   <LoadingState loading={loading} />
                   // ) : (
-                  <Link href={"/login?flow=loginflow"}>
-                    <Button text="Login" />
-                  </Link>
+                  <div className="flex flex-row align-middle mb-4">
+                    <Link href={"/login?flow=loginflow"}>
+                      <Button text="Login" />
+                    </Link>
+                  </div>
                 ) : (
                   // )
                   <Link href={"/profile"}>
