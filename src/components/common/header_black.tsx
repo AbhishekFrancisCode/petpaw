@@ -117,7 +117,7 @@ export default function HeaderBlack() {
                   <div className="flex flex-row w-auto gap-12 ">
                     <Link href={`https://pawtful-blog.vercel.app/`}>
                       <Button
-                        text="blog"
+                        text="Blog"
                         // handleRedirect={handleRedirect}
                       />
                     </Link>

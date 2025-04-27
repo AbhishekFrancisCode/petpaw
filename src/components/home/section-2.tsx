@@ -21,7 +21,7 @@ interface ImageSlide {
 const imageSlides: ImageSlide[] = [
   {
     title: "Chicken",
-    src: "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20pumkin%20meal%20cutout.png?updatedAt=1744636806032",
+    src: "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20sweet%20potato.JPG?updatedAt=1745738737447",
     indicator_title: "Chicken",
     discription: "Low GI and high in protein, it's great for the gut and gentle on tummies"
   },
@@ -45,7 +45,7 @@ const imageSlides: ImageSlide[] = [
   },
   {
     title: "Treats",
-    src: "https://ik.imagekit.io/funlogic/pawfull/all%20snacks%20in%20picnic%20view%20no%20bg.png?updatedAt=1744634137802",
+    src: "https://ik.imagekit.io/funlogic/pawfull/all_snacks-cut%20out%20.png",
     indicator_title: "Treats",
     discription: "Rich in fermentable fibre, omega-3s and bioactive ingredients for a healthy gut."
   }
@@ -132,7 +132,7 @@ export default function Section_type_2() {
                   fill
                   sizes=""
                   objectFit="cover"
-                  className="rounded-xl"
+                  // className="rounded-xl"
                   objectPosition="top"
                   onError={(e) => {
                     console.error("Image load failed:", e);

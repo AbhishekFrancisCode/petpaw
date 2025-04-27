@@ -15,7 +15,7 @@ export default function BannerElevated({
   imageHide = false,
   backgroundColor,
   textColor,
-  boerderColor,
+  borderColor,
   borderRadius,
   borderWidth,
   borderStyle
@@ -29,7 +29,7 @@ export default function BannerElevated({
   imageHide?: boolean;
   backgroundColor?: string;
   textColor?: string;
-  boerderColor?: string;
+  borderColor?: string;
   borderRadius?: string;
   borderWidth?: string;
   borderStyle?: string;
@@ -52,14 +52,14 @@ export default function BannerElevated({
     <div
       className={twMerge(
         height ? `max-h-[${height}]` : "md:max-h-[200px]",
-        width ? `w-[${width}]` : "w-full",
+        width ? `w-[${width}]` : "md:w-full",
         backgroundColor ? `${backgroundColor}` : "bg-transparent",
         textColor ? `${textColor}` : "text-[#028391]",
-        boerderColor ? `${boerderColor}` : "border-[#028391]",
+        borderColor ? `border-[${borderColor}]` : "border-[#028391]",
         borderRadius ? `${borderRadius}` : "rounded-3xl",
-        borderWidth ? `${borderWidth}` : "border-0",
+        borderWidth ? `${borderWidth}` : "border-1",
         borderStyle ? `${borderStyle}` : "border-solid",
-        "max-h-[400px] relative  m-2"
+        "max-h-[400px] relative  m-2 mx-auto"
       )}
     >
       <BannerSection>
@@ -67,13 +67,13 @@ export default function BannerElevated({
           className={twMerge(
             height
               ? `md:max-h-[calc(${height}-50px)] min-h-[calc(${height}-50px)]`
-              : "md:max-h-[150px] min-h-[150px]",
+              : "md:max-h-[150px] min-h-[100px] md:min-h-[150px]",
             "mx-auto flex flex-col md:flex-row   rounded-xl"
           )}
         >
           <div className="flex p-2 lg:px-10 place-content-start items-center min-h-full z-10 md:max-w-[60%] xl:max-w-[75%]">
             <p
-              className={`text-[#028391] text-[20px] md:text-1xl md:text-[28px] leading-8 font-medium text-center md:text-left`}
+              className={`text-[#028391] text-[18px] md:text-1xl md:text-[28px] leading-8 font-medium text-center md:text-left min-w-full`}
             >
               {value}
             </p>
@@ -81,7 +81,7 @@ export default function BannerElevated({
           <div
             className={twMerge(
               imagePosition ? `${imagePosition}` : "md:right-0 md:bottom-[70px]",
-              imageHide && "hidden",
+              imageHide ? "hidden" : "hidden md:block",
               "md:absolute  md:max-h-[150px]  md:max-w-[350px]"
             )}
           >
