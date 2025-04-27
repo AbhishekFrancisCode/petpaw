@@ -72,20 +72,6 @@ export default function ProductView() {
             <ProductDisplay key={index} productDetails={item} />
           ))}
         </div>
-        //TODO
-        {/* <BannerElevated
-          imgUrl="https://ik.imagekit.io/funlogic/pawfull/delivery%20cutout.png"
-          value={
-            "Get your first meal Free!!!"
-          }
-          borderColor="#e3ad6b"
-          borderRadius="rounded-3xl"
-          borderWidth="border-2"
-          borderStyle="border-solid"
-          imagePosition="right-0 bottom-[70px]"
-          imageHide={false}
-          // width="100%"
-        /> */}
         <div className=" flex flex-col gap-8 pt-6 md:pt-12 md:max-w-[50%]">
           {productDetails1.map((item: ProductDetailsProps, index: number) => (
             <ProductDisplay key={index} productDetails={item} />
