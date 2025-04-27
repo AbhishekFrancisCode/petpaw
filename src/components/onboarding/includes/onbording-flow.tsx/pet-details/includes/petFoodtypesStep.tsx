@@ -29,7 +29,7 @@ const PetFoodTypesStep = ({ control }: StepProps) => {
   return (
     <div className="flex flex-col max-h-80 mt-8">
       <text className="text-center text-2xl font-semibold mb-6 text-[#EE9422]">
-        {`What has ${formdata.petname + "'s" || "pet's"} been eating?`}
+        {`What has ${formdata.petname || "your pet"} been eating?`}
       </text>
       <div className="grid grid-auto md:grid-cols-1 gap-4 max-h-72">
         {/* Cards with Controller from React Hook Form */}
@@ -40,9 +40,7 @@ const PetFoodTypesStep = ({ control }: StepProps) => {
             if (field.value.length === 0) {
               field.onChange([dogFoodOptions[0]]);
             }
-            return (
-              <ChipView field={field} list={dogFoodOptions}/>
-            );
+            return <ChipView field={field} list={dogFoodOptions} />;
           }}
         />
       </div>

@@ -30,67 +30,79 @@ export enum ServiceType {
 
 export const HomePageStrings = {
   title: "Pwatful",
-  description:
-    "Pwatful is a platform that connects you with the best meal plans, workout plans, and nutrition advice tailored to your needs. Join us today and start your journey towards a healthier lifestyle.",
+  description: "Our meals are made with 100% human-grade ingredients and Crafted by Nutritionist.",
   askPetname: "Put your dogs name",
-  secondSection: [
-    {
-      title: "100% Human Grade & Fresh Ingredients",
-      image_link:
-        "https://ik.imagekit.io/funlogic/pawfull/all%20ingredients%20with%20dog%20looking%20at%20them.JPG?updatedAt=1744556294455",
-      link_to: "https://example.com/sunset",
-      color: "",
-      title_color: "#028391"
-    },
-    {
-      title: "Cooked Daily in hygienic kitchens",
-      image_link: "https://ik.imagekit.io/funlogic/hygienic.png?updatedAt=1745681734861",
-      link_to: "https://example.com/forest",
-      color: "",
-      title_color: "#028391"
-    },
-    {
-      title: "Nutritionist Formulated Recipes",
-      image_link: "https://ik.imagekit.io/funlogic/nutritious.png?updatedAt=1745681663652",
-      link_to: "https://example.com/city",
-      color: "",
-      title_color: "#028391"
-    },
-    {
-      title: "Delivered daily",
-      image_link:
-        "https://ik.imagekit.io/funlogic/pawfull/Try%20IT%20for%20Free_Delivery%20Pic.jpg?updatedAt=1745681546143",
-      link_to: "https://example.com/city",
-      color: "",
-      title_color: "#028391"
-    }
-  ],
-  thirdSection: [
-    {
-      title: "FOR SMALL DOGS\n(5-15 Kgs)",
-      image_link: "https://ik.imagekit.io/funlogic/for_small_dogs.png?updatedAt=1745683429764",
-      link_to: "https://example.com/sunset",
-      color: "",
-      title_color: "#028391",
-      description: "Monthly Subscription:\n₹139 /meal On Demand Pricing:\n ₹189/meal"
-    },
-    {
-      title: "FOR MEDIUM DOGS\n(15-25Kgs)",
-      image_link: "https://ik.imagekit.io/funlogic/for_medium_dogs.png?updatedAt=1745683482134",
-      link_to: "https://example.com/forest",
-      color: "",
-      title_color: "#028391",
-      description: "Monthly Subscription:\n₹189 /meal On Demand Pricing:\n ₹249/meal"
-    },
-    {
-      title: "FOR LARGE DOGS\n(Above 25Kgs)",
-      image_link: "https://ik.imagekit.io/funlogic/for_large_dogs.png?updatedAt=1745683376669",
-      link_to: "https://example.com/city",
-      color: "",
-      title_color: "#028391",
-      description: "Monthly Subscription:\n₹279 /meal On Demand Pricing:\n ₹349/meal"
-    }
-  ],
+  secondSection: {
+    title: "Fresh & Wholesome",
+    sub_title: "",
+    description:
+      "*All pricing shown is  price based on the starting price for plan type and dog size",
+    data: [
+      {
+        title: "100% Human Grade & Fresh Ingredients",
+        image_link:
+          "https://ik.imagekit.io/funlogic/pawfull/all%20ingredients%20with%20dog%20looking%20at%20them.JPG?updatedAt=1744556294455",
+        link_to: "https://example.com/sunset",
+        color: "",
+        title_color: "#028391"
+      },
+      {
+        title: "Cooked Daily in Hygienic Kitchens",
+        image_link: "https://ik.imagekit.io/funlogic/hygienic.png?updatedAt=1745681734861",
+        link_to: "https://example.com/forest",
+        color: "",
+        title_color: "#028391"
+      },
+      {
+        title: "Nutritionist Formulated Recipes",
+        image_link: "https://ik.imagekit.io/funlogic/nutritious.png?updatedAt=1745681663652",
+        link_to: "https://example.com/city",
+        color: "",
+        title_color: "#028391"
+      },
+      {
+        title: "Delivered Daily",
+        image_link:
+          "https://ik.imagekit.io/funlogic/pawfull/Try%20IT%20for%20Free_Delivery%20Pic.jpg?updatedAt=1745681546143",
+        link_to: "https://example.com/city",
+        color: "",
+        title_color: "#028391"
+      }
+    ]
+  },
+  thirdSection: {
+    title: "Flexible pricing, personalized nutrition",
+    sub_title:
+      "*All pricing shown is  price based on the starting price for plan type and dog size",
+    description:
+      "*All pricing shown is  price based on the starting price for plan type and dog size",
+    data: [
+      {
+        title: "FOR SMALL DOGS\n(5-15 Kgs)",
+        image_link: "https://ik.imagekit.io/funlogic/for_small_dogs.png?updatedAt=1745683429764",
+        link_to: "https://example.com/sunset",
+        color: "",
+        title_color: "#028391",
+        description: "Monthly Subscription:\n₹139 /meal On Demand Pricing:\n ₹189/meal"
+      },
+      {
+        title: "FOR MEDIUM DOGS\n(15-25Kgs)",
+        image_link: "https://ik.imagekit.io/funlogic/for_medium_dogs.png?updatedAt=1745683482134",
+        link_to: "https://example.com/forest",
+        color: "",
+        title_color: "#028391",
+        description: "Monthly Subscription:\n₹189 /meal On Demand Pricing:\n ₹249/meal"
+      },
+      {
+        title: "FOR LARGE DOGS\n(Above 25Kgs)",
+        image_link: "https://ik.imagekit.io/funlogic/for_large_dogs.png?updatedAt=1745683376669",
+        link_to: "https://example.com/city",
+        color: "",
+        title_color: "#028391",
+        description: "Monthly Subscription:\n₹279 /meal On Demand Pricing:\n ₹349/meal"
+      }
+    ]
+  },
   fourthSection: [
     {
       title: "Good Gut Health",
@@ -260,8 +272,7 @@ export const MealPlanPageStrings = {
         id: "5",
         name: "Treat",
         value: "treat",
-        imageUrl:
-          "https://ik.imagekit.io/funlogic/meal/bowl-treat-1400.webp?updatedAt=1737923514901?tr=w-600,h-600"
+        imageUrl: "https://ik.imagekit.io/funlogic/pawfull/chicken%20barks%20bowl%20cutout.png"
       }
     ]
   },
@@ -271,33 +282,31 @@ export const MealPlanPageStrings = {
       "Our responsibly sourced food delivers vitamins and minerals that are as delicious as they are essential to your dog’s health.",
     data: [
       {
-        title: "MADE WITH REAL MEAT, FRUIT, VEGGIES AND GRAINS",
-        image_link:
-          "https://ik.imagekit.io/funlogic/pawfull/chicken%20breast%20cutout.png?updatedAt=1744556299272",
+        title: "100% Human-Grade Meat",
+        image_link: "https://ik.imagekit.io/funlogic/pawfull/meat_100.png",
         link_to: "",
         color: "",
         title_color: "#333"
       },
       {
-        title: "MEAT IS THE FIRST INGREDIENT",
+        title: "High Quality Veggies",
         image_link:
-          "https://ik.imagekit.io/funlogic/first_ingredient_meat.webp?updatedAt=1737954872657?tr=w-300,h-300",
+          "https://ik.imagekit.io/funlogic/pawfull/veggies%20good%20quality.PNG?updatedAt=1745748511036",
         link_to: "",
         color: "",
         title_color: "#333"
       },
       {
-        title: "NO ADDED HORMONES, BY-PRODUCTS OR FILLERS",
-        image_link:
-          "https://ik.imagekit.io/funlogic/no_hormones.webp?updatedAt=1737954872564?tr=w-300,h-300",
+        title: "Healthy Ad-ons. Coconut oil, eggshell powder, grains & others",
+        image_link: "https://ik.imagekit.io/funlogic/pawfull/healthy%20adons.png",
         link_to: "",
         color: "",
         title_color: "#333"
       },
       {
-        title: "NO CORN, WHEAT, OR SOY",
+        title: "Sustainable packaging",
         image_link:
-          "https://ik.imagekit.io/funlogic/no_corn.webp?updatedAt=1737954872368?tr=w-300,h-300",
+          "https://ik.imagekit.io/funlogic/pawfull/ssustainable_packaging-removebg-preview.png?updatedAt=1745747624304",
         link_to: "",
         color: "",
         title_color: "#333"

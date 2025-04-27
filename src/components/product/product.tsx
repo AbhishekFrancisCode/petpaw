@@ -24,14 +24,19 @@ export default function Product() {
         bgColor="bg-black"
       /> */}
       <BannerElevated
-        imgUrl="https://ik.imagekit.io/funlogic/pawfull/all%20snacks%20in%20picnic%20view%20no%20bg.png?updatedAt=1744634137802"
+        imgUrl="https://ik.imagekit.io/funlogic/pawfull/all%20ingredients%20as%20dog%20paw%20without%20background.png?updatedAt=1745743545693"
         value={
           "Freshly cooked daily meals made with nutritionist-formulated recipes and human-grade ingredients, with no additives."
         }
+        borderColor="#e3ad6b"
+        borderRadius="rounded-3xl"
+        borderWidth="border-2"
+        borderStyle="border-solid"
+        imagePosition="right-5 bottom-[70px]"
       />
-      <div className="min-h-12"></div>
+      {/* <div className="min-h-6"></div> */}
       <ProductView />
-      <div className="min-h-12"></div>
+      {/* <div className="min-h-6"></div> */}
       <Section_type_7 />
       {/* <HowItWorks /> */}
       <div className="min-h-12"></div>

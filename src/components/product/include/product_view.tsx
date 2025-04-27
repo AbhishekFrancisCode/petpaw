@@ -62,22 +62,31 @@ export default function ProductView() {
   return (
     <section className="flex flex-col ">
       <div className="flex flex-col mx-auto place-content-center items-center">
-        <Title variant="h1" textStyle="primary" className={`text-[#028391] leading-normal`}>
+        <Title variant="h2" textStyle="primary" className={`text-[#028391] leading-normal`}>
           Our Products
         </Title>
-
-        {/* <p className="text-xl md:max-w-[600px] text-center">
-          Freshly prepared, lightly cooked meals packed with human-grade, nutritious, wholefood
-          ingredients.
-        </p> */}
       </div>
       <div className="flex flex-col md:flex-row gap-8 px-4 md:px-0">
-        <div className=" flex flex-col gap-8 pt-12 md:max-w-[50%]">
+        <div className=" flex flex-col gap-8 pt-6 md:pt-12 md:max-w-[50%]">
           {productDetails.map((item: ProductDetailsProps, index: number) => (
             <ProductDisplay key={index} productDetails={item} />
           ))}
         </div>
-        <div className=" flex flex-col gap-8 pt-12 md:max-w-[50%]">
+        //TODO
+        {/* <BannerElevated
+          imgUrl="https://ik.imagekit.io/funlogic/pawfull/delivery%20cutout.png"
+          value={
+            "Get your first meal Free!!!"
+          }
+          borderColor="#e3ad6b"
+          borderRadius="rounded-3xl"
+          borderWidth="border-2"
+          borderStyle="border-solid"
+          imagePosition="right-0 bottom-[70px]"
+          imageHide={false}
+          // width="100%"
+        /> */}
+        <div className=" flex flex-col gap-8 pt-6 md:pt-12 md:max-w-[50%]">
           {productDetails1.map((item: ProductDetailsProps, index: number) => (
             <ProductDisplay key={index} productDetails={item} />
           ))}
@@ -85,18 +94,28 @@ export default function ProductView() {
       </div>
       <div className="min-h-12" />
       <BannerElevated
-        imgUrl="https://ik.imagekit.io/funlogic/pawfull/DSC_0437.png"
-        value={"Fresh treats and no additives"}
-        height="150px"
-        imagePosition="right-0 bottom-[100px]"
-        imageHide={true}
+        imgUrl="https://ik.imagekit.io/funlogic/pawfull/all_snacks-cut%20out%20.png?updatedAt=1745739800517"
+        value={
+          "Treats Made with Fresh Ingredientd with no added preservatives.\nMake snack time a healthy time for your pet babies."
+        }
+        borderColor="#e3ad6b"
+        borderRadius="rounded-3xl"
+        borderWidth="border-2"
+        borderStyle="border-solid"
+        imagePosition="right-0 bottom-[70px]"
+        imageHide={false}
         // width="100%"
       />
       {/* <Banner
         url="https://ik.imagekit.io/funlogic/pawfull/DSC_0011-min.png?updatedAt=1744633950628"
         value={"Fresh treats and no additives"}
       /> */}
-      <div className="flex flex-col md:flex-col-2 gap-8 md:pt-12 mx-4 md:px-0">
+      <div className="flex flex-col mx-auto place-content-center items-center">
+        <Title variant="h2" textStyle="primary" className={`text-[#028391] leading-normal`}>
+          Fresh treats
+        </Title>
+      </div>
+      <div className="flex flex-col md:flex-col-2 gap-8 py-4 md:py-12 mx-4 md:px-0">
         {productDetailsTreats.map((item: ProductDetailsProps, index: number) => (
           <ProductDisplay key={index} productDetails={item} />
         ))}
