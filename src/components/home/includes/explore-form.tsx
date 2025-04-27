@@ -77,7 +77,7 @@ export default function ExploreForm() {
           </div>
         </button>
       </form>
-      <div className="text-base font-normal leading-snug lg:mt-[10px] w-full text-center lg:text-left">
+      <div className="text-base font-normal leading-snug mt-5 lg:mt-[10px] w-full text-center lg:text-left">
         {"Get a meal plan personalized for your dog’s needs"}
       </div>
     </div>

@@ -16,10 +16,10 @@ export default function BannerSection() {
   ];
   return (
     <section
-      className="place-content-center py-8 px-64 max-w-[98%] mx-auto rounded-xl"
+      className="place-content-center py-4 px-64 max-w-[98%] mx-auto rounded-xl"
       style={{
         // backgroundImage: `url(${url})`,
-        backgroundColor: "#EE9422",
+        backgroundColor: "#C4DEE1",
         backgroundPosition: "right bottom",
         backgroundRepeat: "no-repeat"
       }}
@@ -43,9 +43,9 @@ export default function BannerSection() {
 
         <div className="md:w-1/2 bg-transparent rounded-lg overflow-hidden">
           <img
-            src="https://ik.imagekit.io/funlogic/dogmeal1.webp?updatedAt=1739013597778"
+            src="https://ik.imagekit.io/funlogic/pawfull/all_snacks-cut%20out%20.png?updatedAt=1745739800517"
             alt="Dog eating from bowl"
-            className="w-full h-full max-h-[650px] object-cover"
+            className="w-full h-full max-h-[550px] object-cover"
           />
         </div>
       </div>

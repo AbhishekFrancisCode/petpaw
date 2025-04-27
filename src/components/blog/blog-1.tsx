@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { Clock } from "lucide-react";
 import { useGetPostsQuery } from "@/store/services/blogServices";
+import dis from "../../../public/images/bg/bg-image.png";
 
 interface NewsItem {
   source: string;
@@ -13,10 +14,10 @@ interface NewsItem {
 }
 
 const NewsPage: React.FC = () => {
-  const { data: posts, error, isLoading } = useGetPostsQuery();
+  // const { data: posts, error, isLoading } = useGetPostsQuery();
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Something went wrong</p>;
+  // if (isLoading) return <p>Loading...</p>;
+  // if (error) return <p>Something went wrong</p>;
   const newsItems: NewsItem[] = [
     {
       source: "The Guardian",
@@ -56,7 +57,7 @@ const NewsPage: React.FC = () => {
           <div className="flex">
             <div className="flex flex-col w-1/2 pr-1">
               <Image
-                src={posts![0].image}
+                src={dis}
                 alt="Security personnel near car in Kashmir"
                 width={400}
                 height={320}

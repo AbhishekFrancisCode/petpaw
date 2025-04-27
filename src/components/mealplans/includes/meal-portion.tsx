@@ -5,9 +5,11 @@ import doglarge from "../../../../public/images/img/dog-large.png";
 import Image from "next/image";
 import { Title } from "@/components/common/title-comp";
 import { twMerge } from "tailwind-merge";
+import { HomePageStrings } from "@/constants/title-constants";
 
 const CardWithHalfAvatar = () => {
-  const data = [1, 2, 3];
+  const { data, title, sub_title, description } = HomePageStrings.thirdSection;
+
   const dogSizes = [
     {
       size: "Small Dog",
@@ -30,17 +32,19 @@ const CardWithHalfAvatar = () => {
   ];
   return (
     <div className="flex flex-col min-h-[550px]">
-      <Title
-        variant="h2"
-        textStyle="primary"
-        className={`text-[#028391] py-1 text-center px-6 md:px-4`}
-      >
-        Meal Portion Size
-      </Title>
-      <p className="text-center text-gray-700 mb-8"></p>
-      <div className="flex sm:flex-col md:flex-row justify-center items-center ma-h-[400px] p-4 gap-6">
+      {title && (
+        <Title
+          variant="h2"
+          textStyle="primary"
+          className={`text-[#028391] py-1 text-center px-6 md:px-4`}
+        >
+          {title}
+        </Title>
+      )}
+      {sub_title && <div className="text-black text-center px-6 md:px-4">{sub_title}</div>}
+      <div className="flex sm:flex-col md:flex-row justify-center items-center ma-h-[400px] px-4 pt-12 gap-24">
         {dogSizes.map((e: any) => (
-          <div key={e} className="relative w-full max-w-sm max-h-[300px]">
+          <div key={e} className="relative w-full max-w-[20rem] max-h-[300px]">
             {/* Card content */}
             <div className="bg-white rounded-lg shadow-md p-6 flex flex-col place-content-center max-h-[350px]">
               {/* Avatar that's exactly half outside the card */}
@@ -51,9 +55,9 @@ const CardWithHalfAvatar = () => {
                   alt="User avatar"
                   className={twMerge(
                     e.size === "Small Dog"
-                      ? "max-w-32 max-h-32"
+                      ? "max-w-24 max-h-24"
                       : e.size === "Medium Dog"
-                        ? "max-w-32 max-h-32"
+                        ? "max-w-28 max-h-28"
                         : "max-w-44 max-h-44",
                     "bottom-0"
                   )}

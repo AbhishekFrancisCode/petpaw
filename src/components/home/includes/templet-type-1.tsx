@@ -34,7 +34,7 @@ export default function TempletType1({
             return (
               <div key={index} className="flex flex-col">
                 <div
-                  className={`w-[330px] h-[290px] md:w-80 ${grid_height ? `md-h-[${grid_height}px]` : "md:h-40"} relative rounded-xl`}
+                  className={`w-[365px] h-[220px] md:w-80 ${grid_height ? `md-h-[${grid_height}px]` : "md:h-40"} relative rounded-xl mx-auto`}
                 >
                   <Image
                     key={index}
@@ -57,7 +57,7 @@ export default function TempletType1({
                 </div>
                 {item.title && (
                   <h2
-                    className={`text-[${item.title_color}] w-[330px] text-[1.15rem] font-medium py-1 text-center pt-5 lg:pt-4 px-8`}
+                    className={`text-[${item.title_color}] w-[365px] text-[1.15rem] font-medium py-1 text-center pt-5 lg:pt-4 px-8`}
                   >
                     {item.title}
                   </h2>
@@ -65,7 +65,7 @@ export default function TempletType1({
 
                 {item.description && (
                   <p
-                    className={`text-[${item.sub_title_color}] w-[330px] text-sm font-normal py-1 text-center pt-2 lg:pt-2`}
+                    className={`text-[${item.sub_title_color}] w-[365px] text-sm font-normal py-1 text-center pt-2 lg:pt-2`}
                   >
                     {item.description}
                   </p>

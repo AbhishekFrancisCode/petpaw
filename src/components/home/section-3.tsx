@@ -21,7 +21,7 @@ export default function Section_type_3() {
           title="Flexible pricing, personalized nutrition"
           title_color="#028391"
           sub_title="*All pricing shown is  price based on the starting price for plan type and dog size"
-          images={HomePageStrings.thirdSection as ImagePropsType[]}
+          images={HomePageStrings.thirdSection.data as ImagePropsType[]}
           buttons={buttons}
         />
       </div>
