@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Button from "@/sb-ui/button/button";
+import { UserRound, LogOut } from "lucide-react";
 
 export default function HeaderGeneral() {
   return (

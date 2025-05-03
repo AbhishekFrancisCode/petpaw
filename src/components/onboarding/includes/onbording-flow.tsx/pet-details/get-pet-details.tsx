@@ -158,8 +158,8 @@ export default function PetDetails({
 
   const onSubmit = (data: any) => {
     updateFormdata(data);
-    console.log("Submitting data:", formdata);
-    // createUser(data);
+
+    createUser(data);
   };
 
   const createUser = async (data: Formdata) => {
@@ -182,6 +182,7 @@ export default function PetDetails({
       }
     };
     if (payload.name !== "") {
+      console.log("Submitting data:", formdata);
       await addDoc(collection(db, "user"), { ...payload })
         .then((docRef) => {
           console.log("Document written with ID: ", docRef.id);

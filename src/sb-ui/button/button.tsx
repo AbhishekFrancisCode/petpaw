@@ -11,7 +11,7 @@ export default function Button({ text, id, cls, disabled, handleRedirect }: data
     <button
       id={id}
       onClick={handleRedirect}
-      className={`lg:px-4 py-0 min-h-6 lg:min-h-8 rounded-md font-bold ${cls}`}
+      className={`lg:px-4 py-0 min-h-6 lg:min-h-8 rounded-md font-normal text-[18px] text-[#028391] ${cls}`}
     >
       {text}
     </button>

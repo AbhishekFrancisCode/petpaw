@@ -24,9 +24,10 @@ export default function Section_type_5() {
     <section className="bg-[#FFF8EF] place-content-center">
       <div className="container mx-auto">
         <TempletType1
-          title="A Pawtful Promise"
+          title="Pawftul’s Promise"
           title_color="#EE9422"
-          sub_title="Here's what you will experience upon switching to Pawtful Meals"
+          sub_title="Fresh meals every day. A lifetime of health"
+          sub_title_color="#028391"
           images={HomePageStrings.fourthSection as ImagePropsType[]}
           buttons={buttons}
         />
