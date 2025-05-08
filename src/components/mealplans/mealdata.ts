@@ -79,16 +79,22 @@ export interface NutritionValue {
 export interface DogMeal {
   id: number;
   name: string;
+  title: string;
+  subtitle: string;
+  description: string;
   totalWeight: string;
   baseProtin: string;
   image?: string;
+  image1?: string;
   nutritionData: NutritionValue[];
+  allergies: string[];
   macroPercentages: {
     protein: string;
     fats: string;
     carbs: string;
   };
   ingredients: {
+    image: string;
     name: string;
     amount: string;
     cookedAmount?: string;
@@ -108,6 +114,12 @@ export const MealPlanData: DogNutritionLabelProps = {
       baseProtin: "chicken",
       image:
         "https://ik.imagekit.io/funlogic/meal/bowl-chicken-1400.webp?updatedAt=1737923514978?tr=w-600,h-600",
+      title: "Chicken & Pumpkin Bowl",
+      subtitle: "Balanced Protein Nutrition",
+      description:
+        "A carefully crafted meal featuring boneless, skinless chicken breast and chicken liver, complemented by nutrient-rich pumpkin. This recipe includes brown rice for sustained energy, chopped mint for added freshness, and coconut oil for healthy fats. Carrots provide additional vitamins, while eggshell powder ensures optimal calcium intake. Designed to support overall canine health with a balanced blend of proteins, complex carbohydrates, and essential micronutrients.",
+      image1:
+        "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20pumpkin.JPG?updatedAt=1744916572853",
       nutritionData: [
         {
           name: "Energy",
@@ -149,15 +161,16 @@ export const MealPlanData: DogNutritionLabelProps = {
         carbs: "27%"
       },
       ingredients: [
-        { name: "Chicken breast, boneless, skinless", amount: "45g" },
-        { name: "Chicken Liver", amount: "5g" },
-        { name: "Brown rice, medium/long grain", amount: "6g", cookedAmount: "40g" },
-        { name: "Mint, chopped", amount: "1/4 Tsp" },
-        { name: "Coconut oil", amount: "2ml" },
-        { name: "Pumpkin", amount: "25g" },
-        { name: "Carrots", amount: "10g" },
-        { name: "Eggshell powder", amount: "1/8 Tsp" }
-      ]
+        { image: "", name: "Chicken Liver", amount: "5g" },
+        { image: "", name: "Brown rice, medium/long grain", amount: "6g", cookedAmount: "40g" },
+        { image: "", name: "Chicken breast, boneless, skinless", amount: "45g" },
+        { image: "", name: "Mint, chopped", amount: "1/4 Tsp" },
+        { image: "", name: "Coconut oil", amount: "2ml" },
+        { image: "", name: "Pumpkin", amount: "25g" },
+        { image: "", name: "Carrots", amount: "10g" },
+        { image: "", name: "Eggshell powder", amount: "1/8 Tsp" }
+      ],
+      allergies: ["chicken", "rice", "egg"]
     },
     {
       id: 2,
@@ -166,6 +179,13 @@ export const MealPlanData: DogNutritionLabelProps = {
       baseProtin: "chicken",
       image:
         "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
+      title: "Chicken & Sweet Potato Bowl",
+      subtitle: "Grain-Friendly Nutrition",
+      description:
+        "A wholesome meal combining boneless, skinless chicken breast and chicken liver with foxtail millet. Enhanced with chopped mint and coriander, this recipe includes sweet potato for complex carbohydrates and spinach for additional nutrients. Coconut oil provides healthy fats, while eggshell and flaxseed powders contribute essential minerals and omega-3 fatty acids. Perfectly balanced for dogs seeking a nutrient-dense, grain-inclusive diet.",
+      image1:
+        "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20sweet%20potato.JPG?updatedAt=1744914958396",
+
       nutritionData: [
         {
           name: "Energy",
@@ -207,16 +227,17 @@ export const MealPlanData: DogNutritionLabelProps = {
         carbs: "23%"
       },
       ingredients: [
-        { name: "Chicken breast, boneless, skinless", amount: "45g" },
-        { name: "Chicken Liver", amount: "5g" },
-        { name: "Foxtail Millet", amount: "6g", cookedAmount: "20g" },
-        { name: "Mint/Coriander, chopped", amount: "1/4 Tsp" },
-        { name: "Coconut oil", amount: "2g/ml" },
-        { name: "Sweet Potatoes", amount: "10g" },
-        { name: "Spinach", amount: "3g" },
-        { name: "Eggshell powder", amount: "1/8 Tsp" },
-        { name: "Flaxseed powder", amount: "0.1g" }
-      ]
+        { image: "", name: "Chicken breast, boneless, skinless", amount: "45g" },
+        { image: "", name: "Chicken Liver", amount: "5g" },
+        { image: "", name: "Foxtail Millet", amount: "6g", cookedAmount: "20g" },
+        { image: "", name: "Mint/Coriander, chopped", amount: "1/4 Tsp" },
+        { image: "", name: "Coconut oil", amount: "2g/ml" },
+        { image: "", name: "Sweet Potatoes", amount: "10g" },
+        { image: "", name: "Spinach", amount: "3g" },
+        { image: "", name: "Eggshell powder", amount: "1/8 Tsp" },
+        { image: "", name: "Flaxseed powder", amount: "0.1g" }
+      ],
+      allergies: ["chicken", "rice", "egg", "seeds"]
     },
     {
       id: 3,
@@ -225,6 +246,13 @@ export const MealPlanData: DogNutritionLabelProps = {
       baseProtin: "chicken",
       image:
         "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
+      title: "Grain Free Chicken Bowl",
+      subtitle: "Protein-Packed Grain-Free Option",
+      description:
+        "A grain-free alternative featuring boneless, skinless chicken breast and chicken liver. Packed with nutrient-rich ingredients like chopped mint, coriander, coconut oil, pumpkin, and beetroot. Supplemented with eggshell and flaxseed powders for comprehensive nutritional support. Ideal for dogs with grain sensitivities or those preferring a lower-carbohydrate diet while maintaining optimal protein intake.",
+      image1:
+        "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20pumpkin%20meal%20with%20ingredients.png?updatedAt=1744558667018",
+
       nutritionData: [
         {
           name: "Energy",
@@ -266,14 +294,15 @@ export const MealPlanData: DogNutritionLabelProps = {
         carbs: "6%"
       },
       ingredients: [
-        { name: "Chicken breast, boneless, skinless", amount: "60g" },
-        { name: "Chicken Liver", amount: "5g" },
-        { name: "Mint/coriander, chopped", amount: "1/4 Tsp" },
-        { name: "Coconut oil", amount: "2.5g/ml" },
-        { name: "Pumpkin", amount: "25g" },
-        { name: "Beetroot", amount: "3g" },
-        { name: "Eggshell powder", amount: "1/8 Tsp" }
-      ]
+        { image: "", name: "Chicken breast, boneless, skinless", amount: "60g" },
+        { image: "", name: "Chicken Liver", amount: "5g" },
+        { image: "", name: "Mint/coriander, chopped", amount: "1/4 Tsp" },
+        { image: "", name: "Coconut oil", amount: "2.5g/ml" },
+        { image: "", name: "Pumpkin", amount: "25g" },
+        { image: "", name: "Beetroot", amount: "3g" },
+        { image: "", name: "Eggshell powder", amount: "1/8 Tsp" }
+      ],
+      allergies: ["chicken", "rice", "egg"]
     },
     {
       id: 4,
@@ -282,6 +311,13 @@ export const MealPlanData: DogNutritionLabelProps = {
       baseProtin: "fish",
       image:
         "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
+      title: "Fish & Bottle Gourd Bowl",
+      subtitle: "Gentle Aquatic Protein Blend",
+      description:
+        "A delicate meal featuring boneless white fish paired with little/foxtail millet and white rice. Enriched with coconut oil and bottle gourd, this recipe provides a mild, easily digestible protein source. Eggshell powder ensures calcium supplementation. Perfect for dogs with sensitive stomachs or those requiring a lighter protein option.",
+      image1:
+        "https://ik.imagekit.io/funlogic/pawfull/fish%20and%20bottle%20gaurd%20meal.png?updatedAt=1744562305357",
+
       nutritionData: [
         {
           name: "Energy",
@@ -323,13 +359,14 @@ export const MealPlanData: DogNutritionLabelProps = {
         carbs: "48%"
       },
       ingredients: [
-        { name: "White fish, boneless", amount: "25g", cookedAmount: "25g" },
-        { name: "Little/Foxtail Millet", amount: "6g", cookedAmount: "25g" },
-        { name: "White rice, medium", amount: "6g", cookedAmount: "20g" },
-        { name: "Coconut oil", amount: "2g/ml" },
-        { name: "Bottlegourd", amount: "25g" },
-        { name: "Eggshell powder", amount: "1/8 Tsp" }
-      ]
+        { image: "", name: "White fish, boneless", amount: "25g", cookedAmount: "25g" },
+        { image: "", name: "Little/Foxtail Millet", amount: "6g", cookedAmount: "25g" },
+        { image: "", name: "Rice", amount: "6g", cookedAmount: "20g" },
+        { image: "", name: "Coconut oil", amount: "2g/ml" },
+        { image: "", name: "Bottlegourd", amount: "25g" },
+        { image: "", name: "Eggshell powder", amount: "1/8 Tsp" }
+      ],
+      allergies: ["fish", "rice", "egg"]
     },
     {
       id: 5,
@@ -338,6 +375,13 @@ export const MealPlanData: DogNutritionLabelProps = {
       baseProtin: "fish",
       image:
         "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
+      title: "Fish & Broccoli Bowl",
+      subtitle: "Nutrient-Dense Seafood Meal",
+      description:
+        "A nutritionally complete dish combining boneless white fish with little/foxtail millet and white rice. Enhanced with coconut oil, fresh broccoli, and a whole boiled egg. Eggshell powder and chia seeds provide additional minerals and omega-3 fatty acids. An excellent choice for dogs seeking a varied, nutrient-rich protein source with added green vegetables.",
+      image1:
+        "https://ik.imagekit.io/funlogic/pawfull/fish%20and%20broccolie.png?updatedAt=1744560337427",
+
       nutritionData: [
         {
           name: "Energy",
@@ -379,15 +423,16 @@ export const MealPlanData: DogNutritionLabelProps = {
         carbs: "32%"
       },
       ingredients: [
-        { name: "White fish, boneless", amount: "25g" },
-        { name: "Little/Foxtail Millet", amount: "6g", cookedAmount: "20g" },
-        { name: "White rice, medium", amount: "4.5g", cookedAmount: "15g" },
-        { name: "Coconut oil", amount: "2g/ml" },
-        { name: "Broccoli", amount: "5g" },
-        { name: "Eggshell powder", amount: "1/8 Tsp" },
-        { name: "Egg, whole, boiled", amount: "", cookedAmount: "10g" },
-        { name: "Chia seeds", amount: "0.1g" }
-      ]
+        { image: "", name: "White fish", amount: "25g" },
+        { image: "", name: "Little/Foxtail Millet", amount: "6g", cookedAmount: "20g" },
+        { image: "", name: "Rice", amount: "4.5g", cookedAmount: "15g" },
+        { image: "", name: "Coconut oil", amount: "2g/ml" },
+        { image: "", name: "Broccoli", amount: "5g" },
+        { image: "", name: "Eggshell powder", amount: "1/8 Tsp" },
+        { image: "", name: "Egg, whole, boiled", amount: "", cookedAmount: "10g" },
+        { image: "", name: "Chia seeds", amount: "0.1g" }
+      ],
+      allergies: ["fish", "rice", "egg", "seeds"]
     },
     {
       id: 6,
@@ -396,6 +441,14 @@ export const MealPlanData: DogNutritionLabelProps = {
       baseProtin: "fish",
       image:
         "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
+      title: "Grain Free Fish Bowl",
+      subtitle: "Lean Seafood Alternative",
+      description:
+        "A grain-free fish meal featuring boneless white fish with coconut oil. Complemented by sweet potatoes or white potatoes and carrots, this recipe provides a nutrient-dense, low-grain option. Eggshell powder and a whole boiled egg ensure calcium and protein supplementation. Ideal for dogs with grain sensitivities or those preferring a lighter, vegetable-enhanced diet.",
+
+      image1:
+        "https://ik.imagekit.io/funlogic/pawfull/Grain%20Free%20Fish%20Bowl.JPG?updatedAt=1744915199219",
+
       nutritionData: [
         {
           name: "Energy",
@@ -437,21 +490,29 @@ export const MealPlanData: DogNutritionLabelProps = {
         carbs: "18%"
       },
       ingredients: [
-        { name: "White fish, boneless", amount: "38g" },
-        { name: "Coconut oil", amount: "2g/ml" },
-        { name: "Sweet Potatoes/Potatoes", amount: "20g" },
-        { name: "Carrots", amount: "10g" },
-        { name: "Eggshell powder", amount: "1/8 Tsp" },
-        { name: "Egg, whole, boiled", amount: "", cookedAmount: "10g" }
-      ]
+        { image: "", name: "White fish, boneless", amount: "38g" },
+        { image: "", name: "Coconut oil", amount: "2g/ml" },
+        { image: "", name: "Sweet Potatoes/Potatoes", amount: "20g" },
+        { image: "", name: "Carrots", amount: "10g" },
+        { image: "", name: "Eggshell powder", amount: "1/8 Tsp" },
+        { image: "", name: "Egg, whole, boiled", amount: "", cookedAmount: "10g" }
+      ],
+      allergies: ["fish", "rice", "egg"]
     },
     {
       id: 7,
-      name: "Mutton and Sweet Potatoe",
+      name: "Mutton and Sweet Potato",
       totalWeight: "98g",
       baseProtin: "mutton",
       image:
         "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
+      title: "Mutton & Sweet Potato Bowl",
+      subtitle: "Rich Protein Traditional Blend",
+      description:
+        "A hearty meal featuring lean, boneless mutton and mutton liver with brown rice. Enhanced with chopped coriander, coconut oil, sweet potatoes, and French green beans. Eggshell powder provides essential calcium. This recipe offers a traditional protein source with complex carbohydrates and varied vegetable nutrition, suitable for dogs seeking a robust, nutrient-rich meal.",
+      image1:
+        "https://ik.imagekit.io/funlogic/pawfull/mutton%20and%20sweet%20potato.png?updatedAt=1744919898013",
+
       nutritionData: [
         {
           name: "Energy",
@@ -493,15 +554,16 @@ export const MealPlanData: DogNutritionLabelProps = {
         carbs: "28%"
       },
       ingredients: [
-        { name: "Mutton, boneless, lean", amount: "50g" },
-        { name: "Mutton Liver", amount: "5g" },
-        { name: "Brown rice (medium/long grain)", amount: "4.5g", cookedAmount: "15g" },
-        { name: "Coriander, chopped", amount: "1/4 Tsp" },
-        { name: "Coconut oil", amount: "2ml" },
-        { name: "Sweet Potatoes/White Potatoes", amount: "20g" },
-        { name: "French/Green beans", amount: "6g" },
-        { name: "Eggshell powder", amount: "1/8 Tsp" }
-      ]
+        { image: "", name: "Mutton, boneless, lean", amount: "50g" },
+        { image: "", name: "Mutton Liver", amount: "5g" },
+        { image: "", name: "Brown rice (medium/long grain)", amount: "4.5g", cookedAmount: "15g" },
+        { image: "", name: "Coriander, chopped", amount: "1/4 Tsp" },
+        { image: "", name: "Coconut oil", amount: "2ml" },
+        { image: "", name: "Sweet Potatoes/White Potatoes", amount: "20g" },
+        { image: "", name: "French/Green beans", amount: "6g" },
+        { image: "", name: "Eggshell powder", amount: "1/8 Tsp" }
+      ],
+      allergies: ["Mutton", "rice", "egg"]
     },
     {
       id: 8,
@@ -510,6 +572,13 @@ export const MealPlanData: DogNutritionLabelProps = {
       baseProtin: "mutton",
       image:
         "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
+      title: "Mutton & Pumpkin Bowl",
+      subtitle: "Seasonal Protein Comfort",
+      description:
+        "A nourishing combination of lean, boneless mutton and mutton liver with brown rice. Flavored with chopped coriander and coconut oil, this recipe includes nutrient-rich pumpkin and spinach. Eggshell powder ensures balanced mineral intake. A perfect blend of protein, complex carbohydrates, and seasonal vegetables for optimal canine nutrition.",
+      image1:
+        "https://ik.imagekit.io/funlogic/pawfull/mutton%20and%20pumpkin%20with%20ingredients.png?updatedAt=1744558666954",
+
       nutritionData: [
         {
           name: "Energy",
@@ -551,15 +620,16 @@ export const MealPlanData: DogNutritionLabelProps = {
         carbs: "26%"
       },
       ingredients: [
-        { name: "Mutton, boneless, lean", amount: "50g" },
-        { name: "Mutton Liver", amount: "5g" },
-        { name: "Brown rice, medium/long grain", amount: "7.5g", cookedAmount: "25g" },
-        { name: "Coriander, chopped", amount: "1/4 Tsp" },
-        { name: "Coconut oil", amount: "2g/ml" },
-        { name: "Pumpkin", amount: "15g" },
-        { name: "Spinach", amount: "4g" },
-        { name: "Eggshell powder", amount: "1/8 Tsp" }
-      ]
+        { image: "", name: "Mutton, boneless, lean", amount: "50g" },
+        { image: "", name: "Mutton Liver", amount: "5g" },
+        { image: "", name: "Brown rice, medium/long grain", amount: "7.5g", cookedAmount: "25g" },
+        { image: "", name: "Coriander, chopped", amount: "1/4 Tsp" },
+        { image: "", name: "Coconut oil", amount: "2g/ml" },
+        { image: "", name: "Pumpkin", amount: "15g" },
+        { image: "", name: "Spinach", amount: "4g" },
+        { image: "", name: "Eggshell powder", amount: "1/8 Tsp" }
+      ],
+      allergies: ["Mutton", "rice", "egg"]
     },
     {
       id: 9,
@@ -568,6 +638,13 @@ export const MealPlanData: DogNutritionLabelProps = {
       baseProtin: "mutton",
       image:
         "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
+      title: "Grain Free Mutton Bowl",
+      subtitle: "Pure Protein Grain-Free Option",
+      description:
+        "A grain-free mutton meal featuring lean, boneless mutton and mutton liver. Enhanced with chopped coriander and mint, coconut oil, sweet potatoes, and French green beans. Eggshell powder provides essential minerals. Designed for dogs requiring a high-protein, grain-free diet with diverse vegetable nutrition.",
+      image1:
+        "https://ik.imagekit.io/funlogic/pawfull/mutton%20and%20sweet%20potato%20meal%20with%20ingredients.png?updatedAt=1744558667143",
+
       nutritionData: [
         {
           name: "Energy",
@@ -609,14 +686,15 @@ export const MealPlanData: DogNutritionLabelProps = {
         carbs: "8%"
       },
       ingredients: [
-        { name: "Mutton, boneless, lean", amount: "65g" },
-        { name: "Mutton Liver", amount: "5g" },
-        { name: "Coriander/Mint, chopped", amount: "1/4 Tsp" },
-        { name: "Coconut oil", amount: "3g/ml" },
-        { name: "Sweet potatoes", amount: "10g" },
-        { name: "French/Cluster/Green beans", amount: "4g" },
-        { name: "Eggshell powder", amount: "1/8 Tsp" }
-      ]
+        { image: "", name: "Mutton, boneless, lean", amount: "65g" },
+        { image: "", name: "Mutton Liver", amount: "5g" },
+        { image: "", name: "Coriander/Mint, chopped", amount: "1/4 Tsp" },
+        { image: "", name: "Coconut oil", amount: "3g/ml" },
+        { image: "", name: "Sweet potatoes", amount: "10g" },
+        { image: "", name: "French/Cluster/Green beans", amount: "4g" },
+        { image: "", name: "Eggshell powder", amount: "1/8 Tsp" }
+      ],
+      allergies: ["Mutton", "rice", "egg"]
     },
     {
       id: 10,
@@ -625,6 +703,13 @@ export const MealPlanData: DogNutritionLabelProps = {
       baseProtin: "veg",
       image:
         "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
+      title: "Soya & Rice Bowl",
+      subtitle: "Plant-Powered Vegetarian Option",
+      description:
+        "A vegetarian meal combining soya chunks and white rice. Enriched with coriander, green peas, mint, and coconut oil. Includes sweet potatoes, white potatoes, and pumpkin for varied nutrition. Flaxseed powder adds omega-3 fatty acids. An excellent option for dogs requiring a plant-based protein source with comprehensive nutritional profile.",
+      image1:
+        "https://ik.imagekit.io/funlogic/pawfull/soya%20pumpkin%20veg%20meal%20with%20ingredients.png?updatedAt=1744558667123",
+
       nutritionData: [
         {
           name: "Energy",
@@ -666,14 +751,15 @@ export const MealPlanData: DogNutritionLabelProps = {
         carbs: "48%"
       },
       ingredients: [
-        { name: "Soya chunks", amount: "10g" },
-        { name: "White rice, medium/long grain", amount: "7.5g", cookedAmount: "25g" },
-        { name: "Coriander/Green Peas/Mint", amount: "for garnishing" },
-        { name: "Coconut oil", amount: "4g/ml" },
-        { name: "Sweet Potatoes/White Potatoes", amount: "20g" },
-        { name: "Pumpkin", amount: "6g" },
-        { name: "Flaxseed Powder", amount: "1/8 Tsp" }
-      ]
+        { image: "", name: "Soya chunks", amount: "10g" },
+        { image: "", name: "White rice, medium/long grain", amount: "7.5g", cookedAmount: "25g" },
+        { image: "", name: "Coriander/Green Peas/Mint", amount: "for garnishing" },
+        { image: "", name: "Coconut oil", amount: "4g/ml" },
+        { image: "", name: "Sweet Potatoes/White Potatoes", amount: "20g" },
+        { image: "", name: "Pumpkin", amount: "6g" },
+        { image: "", name: "Flaxseed Powder", amount: "1/8 Tsp" }
+      ],
+      allergies: ["Soya", "rice", "egg"]
     },
     {
       id: 11,
@@ -682,6 +768,13 @@ export const MealPlanData: DogNutritionLabelProps = {
       baseProtin: "veg",
       image:
         "https://ik.imagekit.io/funlogic/meal/bowl-lamb-1400.webp?updatedAt=1737923514907?tr=w-600,h-600",
+      title: "Paneer & Brown Rice Bowl",
+      subtitle: "Vegetarian Protein Blend",
+      description:
+        "A vegetarian meal featuring paneer with white or brown rice. Enhanced with coriander and mint, coconut oil, bottle gourd, and carrots. Flaxseed powder provides additional nutritional benefits. A lighter protein option for dogs seeking a vegetarian diet with varied vegetable nutrition.",
+      image1:
+        "https://ik.imagekit.io/funlogic/pawfull/paneer%20meal%20with%20paneer.png?updatedAt=1744919710603",
+
       nutritionData: [
         {
           name: "Energy",
@@ -723,14 +816,20 @@ export const MealPlanData: DogNutritionLabelProps = {
         carbs: "47%"
       },
       ingredients: [
-        { name: "Paneer", amount: "15g" },
-        { name: "White/Brown rice, medium/long grain", amount: "14g", cookedAmount: "45g" },
-        { name: "Coriander/Mint", amount: "for garnishing" },
-        { name: "Coconut oil", amount: "2g/ml" },
-        { name: "Bottlegourd", amount: "15g" },
-        { name: "Carrots", amount: "4g" },
-        { name: "Flaxseed Powder", amount: "1/8 Tsp" }
-      ]
+        { image: "", name: "Paneer", amount: "15g" },
+        {
+          image: "",
+          name: "White/Brown rice, medium/long grain",
+          amount: "14g",
+          cookedAmount: "45g"
+        },
+        { image: "", name: "Coriander/Mint", amount: "for garnishing" },
+        { image: "", name: "Coconut oil", amount: "2g/ml" },
+        { image: "", name: "Bottlegourd", amount: "15g" },
+        { image: "", name: "Carrots", amount: "4g" },
+        { image: "", name: "Flaxseed Powder", amount: "1/8 Tsp" }
+      ],
+      allergies: ["dairy", "seeds", "rice"]
     }
   ]
 };
