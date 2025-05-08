@@ -2,7 +2,7 @@
 import React, { useMemo } from "react";
 import { useGetPostsQuery } from "@/store/services/blogServices";
 import { Blog } from "@/store/interfaces/blog";
-import { BLOG_LOAD_URL } from "@/config";
+import { BLOG_LOAD_IMG_URL } from "@/config";
 
 interface NewsItem {
   source: string;
@@ -49,7 +49,7 @@ export const BlogPage = () => {
           >
             <div className="relative">
               <img
-                src={`${BLOG_LOAD_URL!}${mainItem.heroImage.src}`}
+                src={`${BLOG_LOAD_IMG_URL!}${mainItem.heroImage.src}`}
                 alt={mainItem.title}
                 className="w-full h-64 md:h-full md:max-h-[400px] object-cover"
               />
@@ -74,7 +74,7 @@ export const BlogPage = () => {
                   <div className="flex flex-col h-full">
                     <div className="h-1/2">
                       <img
-                        src={`${BLOG_LOAD_URL!}${sideItems[0].heroImage.src}`}
+                        src={`${BLOG_LOAD_IMG_URL!}${sideItems[0].heroImage.src}`}
                         alt={sideItems[0].title}
                         className="w-full h-full object-cover md:max-h-[400px] "
                       />
@@ -103,7 +103,7 @@ export const BlogPage = () => {
                     <div className="flex h-full">
                       <div className="h-48">
                         <img
-                          src={`${BLOG_LOAD_URL!}${sideItems[0].heroImage.src}`}
+                          src={`${BLOG_LOAD_IMG_URL!}${sideItems[0].heroImage.src}`}
                           alt={sideItems[0].title}
                           className="w-full h-full object-cover"
                         />
@@ -127,7 +127,7 @@ export const BlogPage = () => {
                     <div className="flex flex-col md:flex-row">
                       <div className="sm:w-1/3 md:w-full">
                         <img
-                          src={`${BLOG_LOAD_URL!}${sideItems[1].heroImage.src}`}
+                          src={`${BLOG_LOAD_IMG_URL!}${sideItems[1].heroImage.src}`}
                           alt={sideItems[1].title}
                           className="w-full h-32 object-cover"
                         />
@@ -154,7 +154,7 @@ export const BlogPage = () => {
                       <div className="flex flex-col md:flex-row">
                         <div className="sm:w-1/3 md:w-full">
                           <img
-                            src={`${BLOG_LOAD_URL!}${item.heroImage.src}`}
+                            src={`${BLOG_LOAD_IMG_URL!}${item.heroImage.src}`}
                             alt={item.title}
                             className="w-full h-40 object-cover"
                           />
