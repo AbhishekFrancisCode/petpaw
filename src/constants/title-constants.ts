@@ -30,10 +30,11 @@ export enum ServiceType {
 
 export const HomePageStrings = {
   title: "Pwatful",
-  description: "Our meals are made with 100% human-grade ingredients and Crafted by Nutritionist.",
-  askPetname: "Put your dogs name",
+  description:
+    "Formulated by a Nutritionist, our meals are made with 100% humane-grade ingredients",
+  askPetname: "What's your dog's name?",
   secondSection: {
-    title: "Fresh & Wholesome",
+    title: "Freshly Cooked & Wholesome Meals For Dogs",
     sub_title: "",
     description:
       "*All pricing shown is  price based on the starting price for plan type and dog size",
@@ -55,7 +56,8 @@ export const HomePageStrings = {
       },
       {
         title: "Nutritionist Formulated Recipes",
-        image_link: "https://ik.imagekit.io/funlogic/nutritious.png?updatedAt=1745681663652",
+        image_link:
+          "https://ik.imagekit.io/funlogic/pawfull/nutrionist.jpg?updatedAt=1746294241250",
         link_to: "https://example.com/city",
         color: "",
         title_color: "#028391"
@@ -71,9 +73,8 @@ export const HomePageStrings = {
     ]
   },
   thirdSection: {
-    title: "Flexible pricing, personalized nutrition",
-    sub_title:
-      "*All pricing shown is  price based on the starting price for plan type and dog size",
+    title: "Personalized meal plans for your dogs' needs",
+    sub_title: "Starting Prices. Rates will vary based on your plan and your dog’s size",
     description:
       "*All pricing shown is  price based on the starting price for plan type and dog size",
     data: [
@@ -105,28 +106,28 @@ export const HomePageStrings = {
   },
   fourthSection: [
     {
-      title: "Good Gut Health",
+      title: "Strong Gut Health",
       image_link: "https://ik.imagekit.io/funlogic/gut_health.png?updatedAt=1745681925897",
       link_to: "https://example.com/sunset",
       color: "",
       title_color: ""
     },
     {
-      title: "Good Poops",
+      title: "Firm Poop",
       image_link: "https://ik.imagekit.io/funlogic/Good%20Poop.png?updatedAt=1745682273463",
       link_to: "https://example.com/forest",
       color: "",
       title_color: ""
     },
     {
-      title: "Healthier Skin & Coat",
+      title: "Lustrous Coat",
       image_link: "https://ik.imagekit.io/funlogic/dog_poop.png?updatedAt=1745681983038",
       link_to: "https://example.com/city",
       color: "",
       title_color: ""
     },
     {
-      title: "Healthy Weight",
+      title: "Ideal Weight",
       image_link: "https://ik.imagekit.io/funlogic/healthy_weight.png?updatedAt=1745682023440",
       link_to: "https://example.com/city",
       color: "",
@@ -148,7 +149,7 @@ export const HomePageStrings = {
   ],
   sixthSection: [
     {
-      title: "Tell Us About Your Pup",
+      title: "Tell Us About Your Dog",
       image_link: "https://ik.imagekit.io/funlogic/about_your_pup.jpg?updatedAt=1739015868088",
       link_to: "https://example.com/sunset",
       color: "",
@@ -167,25 +168,23 @@ export const HomePageStrings = {
         "Based on expert nutritionist recommendations, we’ll suggest the perfect portion size and meal options tailored to your dog."
     },
     {
-      title: "Try It for Free!",
+      title: "Try a Free Sample",
       image_link:
         "https://ik.imagekit.io/funlogic/pawfull/Try%20IT%20for%20Free_Delivery%20Pic.jpg?updatedAt=1745681546143",
       link_to: "https://example.com/city",
       color: "",
       title_color: "#EE9422",
       sub_title_color: "#999999",
-      description:
-        "Get a complimentary trial pack to see if your pup loves the meals and digests them well."
+      description: "Give your dog a taster and see how they respond to it."
     },
     {
-      title: "Subscribe & Serve",
+      title: "Get Started",
       image_link: "https://ik.imagekit.io/funlogic/serve-food.webp?updatedAt=1739015868258",
       link_to: "https://example.com/city",
       color: "",
       title_color: "#EE9422",
       sub_title_color: "#999999",
-      description:
-        "Choose a meal plan from our carefully crafted recipes and start feeding your furry friend fresh, nutritious meals!"
+      description: "19. Subscribe and feed your dog nourishing meals every day."
     }
   ],
   seventhSection: [

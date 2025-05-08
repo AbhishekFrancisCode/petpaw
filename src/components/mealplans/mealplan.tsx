@@ -10,6 +10,7 @@ import TestimonialsVideo from "./includes/testimonials";
 import FAQ from "../how-it-works/Faq";
 import FullyDynamicFoodCircle from "./includes/testing";
 import BannerElevated from "../product/include/banner-elevated";
+import UploadMeal from "@/backend/setMealTable";
 
 export default function MealPlan() {
   return (

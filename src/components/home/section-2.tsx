@@ -89,16 +89,16 @@ export default function Section_type_2() {
     <section className="place-content-center bg-[#FFF8EF] py-8">
       <div className="container mx-auto lg:min-h-[700px] grid grid-rows-5 grid-cols-1 lg:grid-rows-1 lg:grid-cols-5">
         <div className="order-1 flex flex-col items-center row-span-2 lg:col-span-2 bg-[#FFF8EF] py-10">
-          <div className="flex flex-col md:px-4 lg:px-10 xl:pl-12 xl:px-0">
+          <div className="flex flex-col  lg:px-4 md:max-w-[550px]">
             <p
               className={`text-[#EE9422] text-4xl lg:text-[64px] lg:leading-[68px] font-semibold py-1 text-center md:text-left`}
             >
-              {"Crafted with Science,"}
+              {"Backed by science,"}
             </p>
             <p
               className={`text-[#028391] text-4xl lg:text-[64px] lg:leading-[68px] font-semibold py-1 text-center md:text-left`}
             >
-              {"Improved with Love"}
+              {"Cooked with love"}
             </p>
           </div>
           <div className="flex-1 place-content-center lg:place-content-start lg:px-10 xl:px-12 py-4">
@@ -106,7 +106,7 @@ export default function Section_type_2() {
               className={`text-[#333333] text-base font-normal py-1 text-center lg:text-left px-6 md:px-0`}
             >
               {
-                "Pawtful's meals are expertly crafted by a team of board-certified veterinary nutritionists, using the finest locally and sustainably sourced ingredients. Our recipes are designed to enhance nutrient absorption through carefully controlled cooking methods, ensuring that your dog enjoys the wholesome goodness of real, flavourful food."
+                "Formulated by nutritionists, Pawftul’s freshly cooked meals are designed to be gentle on your dog’s gut while providing a balanced diet that meets their daily nutritional needs - helping them stay strong, healthy and fit."
               }
             </p>
             <div className="flex place-content-center lg:place-content-start mt-5">

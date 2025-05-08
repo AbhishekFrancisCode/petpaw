@@ -27,7 +27,7 @@ export default function TempletType1({
           {title}
         </Title>
       )}
-      {sub_title && <div className="text-black text-center px-6 md:px-4">{sub_title}</div>}
+      {sub_title && <div className="text-[#028391]  text-center px-6 md:px-4">{sub_title}</div>}
       {images && (
         <div className="flex flex-wrap place-content-center py-14 justify-evenly gap-8 lg:gap-0">
           {images.map((item: ImagePropsType, index: number) => {
@@ -50,14 +50,14 @@ export default function TempletType1({
                     }}
                   />
                   {steps_count && (
-                    <span className="absolute size-14 top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-70 text-white text-3xl text-center font-semibold place-content-center rounded-full">
+                    <span className="absolute size-14 top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-[#028391] bg-opacity-70 text-white text-3xl text-center font-semibold place-content-center rounded-full">
                       {index + 1}
                     </span>
                   )}
                 </div>
                 {item.title && (
                   <h2
-                    className={`text-[${item.title_color}] w-[365px] text-[1.15rem] font-medium py-1 text-center pt-5 lg:pt-4 px-8`}
+                    className={`text-[#028391]  w-[365px] text-[1.15rem] py-1 text-center pt-5 lg:pt-4 px-8`}
                   >
                     {item.title}
                   </h2>

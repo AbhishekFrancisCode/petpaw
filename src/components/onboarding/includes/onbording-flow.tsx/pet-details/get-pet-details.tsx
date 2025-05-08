@@ -49,8 +49,8 @@ export default function PetDetails({
   const { control, handleSubmit, setValue, getValues, formState, trigger } = useForm<Formdata>({
     defaultValues: {
       name: "Abhishek",
-      email: "abhi09shek@gmail.com",
-      phone: "9845449281",
+      email: "abhi0",
+      phone: "",
       street: "",
       city: "",
       state: "",
@@ -74,8 +74,8 @@ export default function PetDetails({
   const name = useMemo(() => searchParams.get("name"), [searchParams]);
 
   useEffect(() => {
-    console.log(name);
-  }, [name]);
+    console.log("innerStep", innerStep);
+  }, [innerStep]);
 
   useEffect(() => {
     if (name) {
@@ -158,8 +158,8 @@ export default function PetDetails({
 
   const onSubmit = (data: any) => {
     updateFormdata(data);
-    console.log("Submitting data:", formdata);
-    // createUser(data);
+
+    createUser(data);
   };
 
   const createUser = async (data: Formdata) => {
@@ -181,16 +181,22 @@ export default function PetDetails({
         allergies: data.allergies
       }
     };
-    if (payload.name !== "") {
-      await addDoc(collection(db, "user"), { ...payload })
-        .then((docRef) => {
-          console.log("Document written with ID: ", docRef.id);
-          router.push("/profile");
-        })
-        .catch((error) => {
-          console.error("Error adding document: ", error);
-        });
-    }
+    console.log(payload);
+    // if (payload.name !== "") {
+    //   console.log("Submitting data:", formdata);
+    //   await addDoc(collection(db, "user"), { ...payload })
+    //     .then((docRef) => {
+    //       console.log("Document written with ID: ", docRef.id);
+    //       router.push("/profile");
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error adding document: ", error);
+    //     });
+    // }
+  };
+
+  const handleRoute = () => {
+    router.push(`/onboarding?name=${getValues("petname")}`);
   };
 
   return (
@@ -206,21 +212,23 @@ export default function PetDetails({
           exit={{ opacity: 0 }}
           className="min-h-full"
         >
-          <StepComponent control={control} />
+          <StepComponent control={control} getValues={getValues} />
         </motion.div>
         <div className="fixed py-4 md:py-12 bottom-0 max-h-28 min-h-28 md:max-h-52 md:min-h-52">
           <div className="flex mx-auto justify-center">
             <section className="flex gap-2 px-6 py-2 md:py-4 flex-row-reverse">
-              <button
-                type="submit"
-                // onClick={goToNextStep}
-                className="bg-[#EE9422] text-white text-base md:text-lg py-2 px-4 min-w-[200px] md:min-w-[300px] max-h-16 md:max-h-full rounded-full hover:text-xl"
-              >
-                Continue
-              </button>
+              {innerStep !== 8 && (
+                <button
+                  type="submit"
+                  // onClick={goToNextStep}
+                  className="bg-[#EE9422] text-white text-base md:text-lg py-2 px-4 min-w-[200px] md:min-w-[300px] max-h-16 md:max-h-full rounded-full hover:text-xl"
+                >
+                  Continue
+                </button>
+              )}
               <button
                 type="button"
-                onClick={goToPreviousStep}
+                onClick={innerStep !== 8 ? goToPreviousStep : handleRoute}
                 className="flex items-center justify-center size-24 text-xl max-h-16 md:max-h-full hover:text-3xl rounded-full bg-gray-200 text-gray-700"
               >
                 <MdArrowBack />
