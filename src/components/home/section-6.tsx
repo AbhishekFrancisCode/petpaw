@@ -1,6 +1,7 @@
 "use client";
 import { HomePageStrings } from "@/constants/title-constants";
 import Button from "@/sb-ui/button/button";
+import WhatsAppButton from "@/utils/whatsapp-connect";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -34,12 +35,13 @@ export default function Section_type_8() {
           <div className="flex place-content-center lg:place-content-start lg:px-10 xl:px-12 py-4 w-full lg:w-[550px]">
             <p className={`text-[#333333] text-sm py-2 text-left`}>{data.description}</p>
           </div>
-          <div className="flex place-content-center lg:place-content-start lg:px-10 xl:px-12 ">
+          <div className="flex place-content-center lg:place-content-start lg:px-10 xl:px-12 gap-4">
             <Button
               text={"Explore Pricing Plans"}
               handleRedirect={handleNavigate}
               cls="bg-[#EE9422] min-w-[200px] h-16 rounded-md px-10 text-[#FFF8EF] hover:opacity-80 "
             />
+            <WhatsAppButton />
           </div>
         </div>
         <div className="order-1 lg:order-2 p-0  row-span-4 lg:col-span-4">
