@@ -56,7 +56,7 @@ export const BlogPage = () => {
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-4">
                 <h2 className="text-white text-xl font-bold">{mainItem.title}</h2>
                 <a
-                  href={`/posts/${mainItem.slug}`}
+                  href={`${BLOG_LOAD_IMG_URL!}post/${mainItem.slug}`}
                   className="text-blue-300 hover:text-blue-200 mt-2 inline-block"
                 >
                   Read more
