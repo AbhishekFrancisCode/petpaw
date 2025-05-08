@@ -14,7 +14,7 @@ export default function Section_type_8() {
   return (
     <section className="place-content-center bg-[#FFF8EF]">
       <div className="mx-auto min-h-[500px] grid grid-rows-10 grid-cols-1 lg:grid-rows-1 lg:grid-cols-10">
-        <div className="order-2 lg:order-1 flex flex-col row-span-6 lg:col-span-6 bg-[#C4DEE1] p-10 lg:px-20 lg:py-10">
+        <div className="order-2 lg:order-1 flex flex-col row-span-6 lg:col-span-6 bg-[#C4DEE1] p-10 lg:pl-40 lg:py-10">
           {/* <div className="lg:px-10 xl:px-12">
             <p className={`text-[#028391] text-5xl font-semibold py-1 text-left`}>
               {"Benefits of Eating Fresh Food"}

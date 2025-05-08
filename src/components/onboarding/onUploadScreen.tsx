@@ -38,16 +38,12 @@ export default function OnLoadingingPage({ control, getValues }: StepProps) {
     console.log("allergies", allergies);
 
     return mealPlans.filter((meal) => {
-      // Filter out meals that include allergens
-      if (allergies.length === 0 || allergies.includes("None")) return meal;
       const containsAllergen = meal.allergies.some((ingredient) =>
         allergies.some((allergy) => ingredient.toLowerCase().includes(allergy))
       );
       if (containsAllergen) return false;
 
-      // Additional filtering based on weight, age, activity
       if (isOverweight || lowActivity) {
-        // Prefer lower-fat and lower-carb options
         return meal.name.toLowerCase().includes("grain free");
       } else if (isSenior) {
         return (pet.preferred_foods ?? []).includes("Senior Dog Food");
