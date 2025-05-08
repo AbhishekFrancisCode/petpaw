@@ -26,4 +26,4 @@ export const IMG_LOAD_URL =
     : process.env.NEXT_PUBLIC_URL_ENDPOINT;
 
 export const BLOG_LOAD_URL =
-  ENVIRONMENT === "dev" ? process.env.NEXT_BLOG_URL_DEV : process.env.NEXT_BLOG_URL_PROD;
+  ENVIRONMENT === "dev" ? process.env.NEXT_PUBLIC_BLOG_URL_DEV : process.env.NEXT_PUBLIC_BLOG_URL_PROD;
