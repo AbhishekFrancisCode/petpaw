@@ -10,8 +10,8 @@ export const MealGrid = ({ meals }: MealGridProps) => {
   return (
     <div className="p-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 gap-6 max-w-[1280px]">
-        {meals.map((meal) => (
-          <Link href={"/mealplan"}>
+        {meals.map((meal, index) => (
+          <Link href={"/mealplan"} key={index}>
             <div
               key={meal.id}
               className="bg-white rounded-2xl shadow hover:shadow-lg transition p-4"
