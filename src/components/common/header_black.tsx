@@ -9,6 +9,7 @@ import ProfileIcon from "../../../public/images/svg/profile_icon_black.svg";
 import { AuthContext, AuthContextType } from "@/contexts/auth-context";
 import SyncLoader from "react-spinners/ClipLoader";
 import LoadingState from "@/utils/loading-state";
+import { UserRound, LogIn } from "lucide-react";
 
 const override: CSSProperties = {
   display: "block",
@@ -145,18 +146,20 @@ export default function HeaderBlack() {
                       //   <LoadingState loading={loading} />
                       // ) : (
                       <Link href={"/login?flow=loginflow"}>
-                        <Button text="Login" />
+                        <LogIn size={24} className="mt-2 text-[#EE9422]" />
+                        {/* <Button text="Login" /> */}
                       </Link>
                     ) : (
                       // )
                       <Link href={"/profile"}>
-                        <Image
+                        <UserRound size={24} className="mt-2  text-[#EE9422]" />
+                        {/* <Image
                           src={ProfileIcon}
                           alt=""
                           width={18}
                           height={18}
                           className="mr-6 py-2"
-                        />
+                        /> */}
                       </Link>
                     )}
                   </div>

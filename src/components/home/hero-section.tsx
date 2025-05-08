@@ -29,7 +29,7 @@ export default function HeroSection() {
                 autoPlay
                 loop
                 muted
-                className="w-full h-full aspect-video object-top lg:object-top p-0"
+                className="w-full min-h-full object-top lg:object-cover p-0"
               ></video>
               <button
                 onClick={toggleMute}
@@ -49,11 +49,11 @@ export default function HeroSection() {
           </div>
           <div className="order-2 lg:order-1 grid grid-rows-12 col-span-2">
             <div className="hidden md:block row-span-2 max-h-3 "></div>
-            <div className="row-span-4 px-6 md:px-0 lg:pl-16 ">
+            <div className="row-span-4 px-6 md:px-0 lg:pl-24 ">
               <HeroTitle />
             </div>
-            <div className="row-span-2 max-h-3 "></div>
-            <div className="row-span-4 px-6 md:px-0 flex place-content-center lg:place-content-start lg:pl-16 xl:24 ">
+            <div className="row-span-1 max-h-3 "></div>
+            <div className="row-span-5 px-6 md:px-0 flex place-content-center lg:place-content-start lg:pl-24 ">
               <ExploreForm />
             </div>
           </div>

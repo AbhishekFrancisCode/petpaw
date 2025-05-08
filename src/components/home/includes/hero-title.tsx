@@ -13,7 +13,7 @@ export default function HeroTitle() {
           <p
             className={`text-[#EE9422] text-4xl lg:text-[64px] lg:leading-[68px] font-semibold py-1 text-center md:text-left`}
           >
-            {"Meals for Pets!"}
+            {"Meals for Dogs!"}
           </p>
         </div>
         <p className="text-base font-medium mt-6 md:pr-32">{HomePageStrings.description}</p>

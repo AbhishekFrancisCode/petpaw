@@ -5,10 +5,10 @@ import { MdCheck } from "react-icons/md";
 import { MdBrightness1 } from "react-icons/md";
 import ChipView from "./chip-view";
 
-const dogAllergens = [
+export const dogAllergens = [
   "None",
   "Wheat",
-  "Soy",
+  "Soya",
   "Corn",
   "Chicken",
   "Beef",
@@ -16,7 +16,8 @@ const dogAllergens = [
   "Eggs",
   "Lamb",
   "Fish",
-  "Pork"
+  "Pork",
+  "Rice"
 ];
 
 interface StepProps {
