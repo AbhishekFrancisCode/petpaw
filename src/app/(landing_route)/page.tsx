@@ -9,9 +9,9 @@ import Section_type_2 from "@/components/home/section-2";
 import Section_type_6 from "@/components/home/section-6";
 import NewsLetter from "@/components/home/section-8";
 import BlogPosts from "@/components/blog/blog";
-import NewsPage from "@/components/blog/blog-1";
 import CardWithHalfAvatar from "@/components/mealplans/includes/meal-portion";
 import MealPortionSize from "@/components/home/section-4";
+import { BlogPage } from "@/components/blog/blog-1";
 
 export const metadata: Metadata = {
   title: TITLES.home
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function Landing() {
   return (
     <main>
-      <div>
+      <div className="bg-[#FFF8EF]">
         <HeroSection />
         <Section_type_1 />
         <Section_type_2 />
@@ -29,8 +29,7 @@ export default function Landing() {
         <Section_type_5 />
         <Section_type_6 />
         <Section_type_7 />
-        {/* <NewsPage /> */}
-        {/* <BlogPosts /> */}
+        <BlogPage />
         <NewsLetter />
       </div>
     </main>
