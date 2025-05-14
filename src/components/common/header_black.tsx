@@ -69,7 +69,7 @@ export default function HeaderBlack() {
   return (
     <div>
       <div
-        className="fixed float-start pl-0 lg:bg-transparent backdrop-blur-[40px] w-screen z-20 min-h-[90px] max-h-[90px]"
+        className="fixed float-start pl-0 lg:bg-transparent backdrop-blur-[40px] w-screen z-20 min-h-[70px] max-h-[70px] lg:min-h-[90px] lg:max-h-[90px]"
         onBlur={(e) => e.currentTarget.focus()}
       >
         <div className="px-2 md:px-6 text-sm text-black rounded-xl font-medium text-right">
@@ -95,7 +95,7 @@ export default function HeaderBlack() {
                     fill={true}
                     src="/images/logos/logo_round.png"
                     alt="pawtful.com"
-                    className="max-h-full max-w-[90px] ml-6"
+                    className="max-h-full max-w-[100px] ml-6"
                   />
                 </Link>
                 <div className=" ">

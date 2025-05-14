@@ -9,6 +9,7 @@ import { DogMeal, MealPlanData } from "../mealplans/mealdata";
 import { MealGrid } from "./includes/mealGrid";
 import { dogAllergens } from "./includes/onbording-flow.tsx/pet-details/includes/petAllergiestypesStep";
 import { useRouter } from "next/navigation";
+import DogMealSuggester from "./includes/portionGrid";
 
 export interface StepProps {
   control: Control<Formdata>;
@@ -64,7 +65,15 @@ export default function OnLoadingingPage({ control, getValues }: StepProps) {
       <div className="flex flex-col min-w-full min-h-screen place-items-center max-h-screen overflow-x-auto">
         <div className="flex min-w-full place-content-center">
           {recommendMeals.length > 0 ? (
-            <MealGrid meals={recommendMeals} />
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <DogMealSuggester age={4} weight={35} activity={"high"} />
+              </div>
+
+              <div>
+                <MealGrid meals={recommendMeals} />
+              </div>
+            </div>
           ) : (
             <div className="p-6">
               <h2 className="text-xl font-bold mb-4">Review Your Pet's Info</h2>
