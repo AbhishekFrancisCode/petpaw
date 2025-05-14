@@ -14,51 +14,45 @@ export default function Section_type_8() {
   return (
     <section className="place-content-center bg-[#FFF8EF]">
       <div className="mx-auto min-h-[500px] grid grid-rows-10 grid-cols-1 lg:grid-rows-1 lg:grid-cols-10">
-        <div className="order-2 lg:order-1 flex flex-col row-span-6 lg:col-span-6 bg-[#C4DEE1] p-10 lg:pl-40 lg:py-10">
-          {/* <div className="lg:px-10 xl:px-12">
-            <p className={`text-[#028391] text-5xl font-semibold py-1 text-left`}>
-              {"Benefits of Eating Fresh Food"}
-            </p>
-          </div> */}
-          <div className="flex flex-col md:px-4 lg:px-10 xl:pl-12 xl:px-0">
-            <p
-              className={`text-[#028391] text-4xl lg:text-[64px] lg:leading-[68px] font-semibold py-1 text-center md:text-left`}
-            >
-              {data.title}
-            </p>
-            <p
-              className={`text-[#EE9422] text-4xl lg:text-[64px] lg:leading-[68px] font-semibold py-1 text-center md:text-left`}
-            >
-              {data.sub_title}
-            </p>
-          </div>
-          <div className="flex place-content-center lg:place-content-start lg:px-10 xl:px-12 py-4 w-full lg:w-[550px]">
-            <p className={`text-[#333333] text-sm py-2 text-left`}>{data.description}</p>
-          </div>
-          <div className="flex place-content-center lg:place-content-start lg:px-10 xl:px-12 gap-4">
-            <Button
-              text={"Explore Pricing Plans"}
-              handleRedirect={handleNavigate}
-              cls="bg-[#EE9422] min-w-[200px] h-16 rounded-md px-10 text-[#FFF8EF] hover:opacity-80 "
-            />
-            <WhatsAppButton />
-          </div>
-        </div>
-        <div className="order-1 lg:order-2 p-0  row-span-4 lg:col-span-4">
-          <div className="w-full h-full lg:h-[500px] relative">
+        {/* Image Section */}
+        <div className="order-1 lg:order-2 row-span-4 lg:col-span-4">
+          <div className="w-full h-full relative">
             <Image
               key={0}
               src={data.image_link}
-              alt={""}
+              alt="Visual Representation"
               fill
-              sizes=""
-              objectFit="letf"
-              className=""
-              objectPosition="left"
-              onError={(e) => {
-                console.error("Image load failed:", e);
-              }}
+              className="object-cover object-left"
+              onError={(e) => console.error("Image load failed:", e)}
             />
+          </div>
+        </div>
+
+        {/* Text and CTA Section */}
+        <div className="order-2 lg:order-1 flex flex-col row-span-6 lg:col-span-6 bg-[#C4DEE1] p-6 lg:p-10 xl:pl-48 h-full">
+          {/* Title & Subtitle */}
+          <div className="flex flex-col px-4 md:px-4 lg:px-10 xl:pl-12 xl:px-0">
+            <p className="text-[#028391] text-4xl lg:text-[64px] lg:leading-[68px] font-semibold py-1 text-center md:text-left">
+              {data.title}
+            </p>
+            <p className="text-[#EE9422] text-4xl lg:text-[64px] lg:leading-[68px] font-semibold py-1 text-center md:text-left">
+              {data.sub_title}
+            </p>
+          </div>
+
+          {/* Description */}
+          <div className="flex justify-center lg:justify-start px-4 lg:px-10 xl:px-12 py-4 w-full lg:w-[550px]">
+            <p className="text-[#333333] text-sm py-2 text-left">{data.description}</p>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex justify-center lg:justify-start px-4 lg:px-10 xl:px-12 gap-4 mt-auto">
+            <Button
+              text="Explore Pricing Plans"
+              handleRedirect={handleNavigate}
+              cls="bg-[#EE9422] min-w-[200px] h-16 rounded-md px-10 text-[#FFF8EF] hover:opacity-80"
+            />
+            <WhatsAppButton />
           </div>
         </div>
       </div>
