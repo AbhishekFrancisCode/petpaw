@@ -15,7 +15,7 @@ import Section_type_7 from "../home/section-7";
 
 export default function Product() {
   return (
-    <div className=" flex flex-col pt-24">
+    <div className=" flex flex-col pt-32">
       {/* <OfferStrip
         text="Welcome to the Sale!"
         subText="Up to 50% off on all items"
@@ -28,7 +28,7 @@ export default function Product() {
         value={
           "Freshly cooked daily meals made with nutritionist-formulated recipes and human-grade ingredients, with no additives."
         }
-        borderColor="#e3ad6b"
+        borderColor="#EE9422"
         borderRadius="rounded-3xl"
         borderWidth="border-2"
         borderStyle="border-solid"
