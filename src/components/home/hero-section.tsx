@@ -18,7 +18,7 @@ export default function HeroSection() {
   };
   return (
     <section className="bg-[#FFF8EF]">
-      <div className="flex h-[900px] md:min-h-screen justify-center">
+      <div className="flex h-[900px] md:min-h-[calc(100vh-0px)] justify-center">
         <div className="grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-4 w-full h-full mx-auto">
           <div className="order-1 lg:order-2 relative col-span-2">
             <div className="flex inline-block max-w-full mx-auto pt-[70px] h-full place-content-center relative bg-transparent">

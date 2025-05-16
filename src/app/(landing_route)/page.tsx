@@ -19,19 +19,17 @@ export const metadata: Metadata = {
 
 export default function Landing() {
   return (
-    <main>
-      <div className="bg-[#FFF8EF]">
-        <HeroSection />
-        <Section_type_1 />
-        <Section_type_2 />
-        {/* <Section_type_3 /> */}
-        <MealPortionSize />
-        <Section_type_5 />
-        <Section_type_6 />
-        <Section_type_7 />
-        <BlogPage />
-        <NewsLetter />
-      </div>
+    <main className="flex flex-col bg-[#FFF8EF]">
+      <HeroSection />
+      <Section_type_1 />
+      <Section_type_2 />
+      {/* <Section_type_3 /> */}
+      <MealPortionSize />
+      <Section_type_5 />
+      <Section_type_6 />
+      <Section_type_7 />
+      <BlogPage />
+      <NewsLetter />
     </main>
   );
 }
