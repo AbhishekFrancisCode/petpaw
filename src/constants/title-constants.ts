@@ -2,7 +2,7 @@ import { Subtitles } from "lucide-react";
 import { describe } from "node:test";
 
 export const TITLES = {
-  home: "Pwatful",
+  home: "Pawtful",
   product: "Product",
   mealplan: "Meal Plan",
   howitworks: "How it Works"
@@ -29,15 +29,14 @@ export enum ServiceType {
 }
 
 export const HomePageStrings = {
-  title: "Pwatful",
+  title: "Pawtful",
   description:
     "Formulated by a Nutritionist, our meals are made with 100% humane-grade ingredients",
   askPetname: "What's your dog's name?",
   secondSection: {
     title: "Freshly Cooked & Wholesome Meals For Dogs",
     sub_title: "",
-    description:
-      "*All pricing shown is  price based on the starting price for plan type and dog size",
+    description: "",
     data: [
       {
         title: "100% Human Grade & Fresh Ingredients",

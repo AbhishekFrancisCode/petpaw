@@ -29,13 +29,13 @@ export default function Section_type_8() {
         </div>
 
         {/* Text and CTA Section */}
-        <div className="order-2 lg:order-1 flex flex-col row-span-6 lg:col-span-6 bg-[#C4DEE1] p-6 lg:p-10 xl:pl-48 h-full">
+        <div className="order-2 lg:order-1 flex flex-col row-span-6 lg:col-span-6 bg-[#C4DEE1] p-6 lg:p-10 2xl:pl-48 h-full">
           {/* Title & Subtitle */}
           <div className="flex flex-col px-4 md:px-4 lg:px-10 xl:pl-12 xl:px-0">
-            <p className="text-[#028391] text-4xl lg:text-[64px] lg:leading-[68px] font-semibold py-1 text-center md:text-left">
+            <p className="text-[#028391] text-4xl lg:text-6xl font-semibold py-1 text-center md:text-left">
               {data.title}
             </p>
-            <p className="text-[#EE9422] text-4xl lg:text-[64px] lg:leading-[68px] font-semibold py-1 text-center md:text-left">
+            <p className="text-[#EE9422] text-4xl lg:text-6xl font-semibold py-1 text-center md:text-left">
               {data.sub_title}
             </p>
           </div>

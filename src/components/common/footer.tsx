@@ -30,7 +30,7 @@ export default function Footer({ _isBlack, _isMargin }: any) {
             </div>
           </div>
           <div className="text-[#000000] opacity-70 text-[11px]">
-            Pwatful. &copy; 2024. All Rights Reserved
+            Pawtful. &copy; 2024. All Rights Reserved
           </div>
         </div>
         <div className="flex space-x-4">

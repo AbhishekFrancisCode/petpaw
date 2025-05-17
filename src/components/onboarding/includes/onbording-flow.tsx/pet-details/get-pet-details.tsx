@@ -200,10 +200,10 @@ export default function PetDetails({
   };
 
   return (
-    <div className="place-content-center pt-16">
+    <div className="flex justify-center pt-12 md:pt-6 px-4 sm:px-6 md:px-8">
       <form
         onSubmit={handleSubmit(innerStep === steps.length - 1 ? onSubmit : handleNext)}
-        className="flex min-w-full place-content-center"
+        className="w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-7xl pb-24 lg:pb-0"
       >
         <motion.div
           key={innerStep}
@@ -214,26 +214,30 @@ export default function PetDetails({
         >
           <StepComponent control={control} getValues={getValues} />
         </motion.div>
-        <div className="fixed py-4 md:py-12 bottom-0 max-h-28 min-h-28 md:max-h-52 md:min-h-52">
-          <div className="flex mx-auto justify-center">
-            <section className="flex gap-2 px-6 py-2 md:py-4 flex-row-reverse">
+
+        {/* Bottom Navigation */}
+        <div className="fixed bottom-0 left-0 right-0 bg-transparent py-4 sm:py-5 md:py-3 lg:py-6 z-10 max-h-20 lg:max-h-40">
+          <div className="flex justify-center">
+            <div className="flex flex-row-reverse items-center gap-3 sm:gap-4 px-4 sm:px-6">
+              {/* Continue Button */}
               {innerStep !== 8 && (
                 <button
                   type="submit"
-                  // onClick={goToNextStep}
-                  className="bg-[#EE9422] text-white text-base md:text-lg py-2 px-4 min-w-[200px] md:min-w-[300px] max-h-16 md:max-h-full rounded-full hover:text-xl"
+                  className="bg-[#EE9422] text-white text-sm sm:text-base lg:text-lg px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full min-w-[140px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[280px] hover:scale-105 transition-transform duration-200"
                 >
                   Continue
                 </button>
               )}
+
+              {/* Back Button */}
               <button
                 type="button"
                 onClick={innerStep !== 8 ? goToPreviousStep : handleRoute}
-                className="flex items-center justify-center size-24 text-xl max-h-16 md:max-h-full hover:text-3xl rounded-full bg-gray-200 text-gray-700"
+                className="flex items-center justify-center text-gray-700 bg-gray-200 rounded-full size-10 sm:size-12 md:size-14 hover:scale-110 transition-transform duration-200"
               >
-                <MdArrowBack />
+                <MdArrowBack size={20} className="sm:size-6 md:size-7" />
               </button>
-            </section>
+            </div>
           </div>
         </div>
       </form>
