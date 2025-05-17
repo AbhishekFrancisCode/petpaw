@@ -19,7 +19,7 @@ const PetAgeStep = ({ control }: StepProps) => {
         render={({ field, fieldState }) => (
           <>
             <GenderToggle value={field.value} onChange={field.onChange} />
-            {fieldState?.error && (<></>)}
+            {fieldState?.error && <></>}
           </>
         )}
       />
@@ -35,7 +35,7 @@ const PetAgeStep = ({ control }: StepProps) => {
                 {...field}
                 type="text"
                 placeholder="e.g., 2"
-                className="w-full h-16 pl-8 pr-4 py-2 text-xs md:text-md border-[#f2d4ad] rounded-full shadow-md focus:border-[#f2c386] focus:ring-0"
+                className="w-full h-12 sm:h-14 lg:h-16 px-4 py-2 border border-[#f2d4ad] rounded-full shadow-md focus:border-[#f2c386] focus:ring-0 text-sm sm:text-base"
               />
               <span className="absolute inset-y-0 right-4 flex items-center font-semibold text-gray-500 text-xs md:text-md">
                 years

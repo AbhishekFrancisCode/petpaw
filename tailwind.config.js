@@ -20,10 +20,10 @@ module.exports = {
           active: "#E8ECF1",
           background: "#E8ECF1"
         }
-      }
+      },
       // screens: {
       //   "xs": "340px",
-      //   "3xl": "1920px"
+      //   "2xl": "1920px"
       // }
     }
   },

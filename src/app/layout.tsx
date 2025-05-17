@@ -29,7 +29,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className}`}>
+      <body className={`${poppins.className} bg-[#FFF8EF]`}>
         <ReduxWrapper>{children}</ReduxWrapper>
         <ToastContainer />
       </body>

@@ -35,7 +35,7 @@ const PetBreedStep = ({ control }: StepProps) => {
           <label className="block mb-2 text-base md:text-lg text-center">{`What's ${formdata.petname + "'s" || "pet's"} Breed?`}</label>
           <select
             {...field}
-            className="w-full h-16 pl-8 pr-4 py-2 border-[#f2d4ad] rounded-full shadow-md focus:border-[#f2c386] focus:ring-0 relative"
+            className="w-full h-12 sm:h-14 lg:h-16 px-4 py-2 border border-[#f2d4ad] rounded-full shadow-md focus:border-[#f2c386] focus:ring-0 text-sm sm:text-base"
           >
             <option value="">Select Breed</option>
             {breedOptions.map((breed) => (

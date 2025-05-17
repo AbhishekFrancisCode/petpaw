@@ -43,21 +43,21 @@ const PetActivityStatusStep = ({ control }: StepProps) => {
     }
   ];
   return (
-    <div className="flex flex-col md:max-h-80 md:mt-8 ">
-       <text className="text-center text:lg md:text-2xl font-semibold mb-6 text-[#EE9422]">
-        {`How active is ${formdata.petname + "'s" || "pet's"} each day?`}
-      </text>
-      <div className="grid grid-auto md:grid-cols-3 gap-4 md:max-h-72 mx-auto mb-32 md:mb-0">
-        {/* Cards with Controller from React Hook Form */}
+    <div className="flex flex-col items-center px-4 sm:px-6 md:px-8 md:mt-8">
+      <h2 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mb-6 text-[#EE9422]">
+        {`What is ${formdata.petname ? `${formdata.petname}'s` : "your pet's"} body shape?`}
+      </h2>
+
+      <div className="flex flex-wrap justify-center gap-4 w-full max-w-6xl mb-28 md:mb-0">
         <Controller
-          name="activity_level"
+          name="body_shape"
           control={control}
-          rules={{ required: "Please select a card" }} // Validation rule
+          rules={{ required: "Please select a card" }}
           render={({ field, fieldState }) => (
             <>
-<CardView step={innerStep} list={steps} field={field} handleClick={handleCardClick}/>
+              <CardView step={innerStep} list={steps} field={field} handleClick={handleCardClick} />
               {fieldState?.error && (
-                <p className="text-sm text-red-500 text-center mt-24">
+                <p className="text-sm text-red-500 text-center w-full mt-6 md:mt-24">
                   {fieldState?.error.message}
                 </p>
               )}
