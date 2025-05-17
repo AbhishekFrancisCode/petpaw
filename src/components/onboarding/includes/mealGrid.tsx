@@ -1,6 +1,7 @@
 import { DogMeal } from "@/components/mealplans/mealdata";
 import Link from "next/link";
 import React from "react";
+import DogMealSuggester from "./portionGrid";
 
 type MealGridProps = {
   meals: DogMeal[];
@@ -8,18 +9,20 @@ type MealGridProps = {
 
 export const MealGrid = ({ meals }: MealGridProps) => {
   return (
-    <div className="p-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 gap-6 max-w-[1280px]">
+    <div className="p-0">
+      <div className="flex flex-wrap justify-center gap-6  mx-auto">
+        <DogMealSuggester age={4} weight={35} activity={"high"} />
         {meals.map((meal, index) => (
-          <Link href={"/mealplan"} key={index}>
-            <div
-              key={meal.id}
-              className="bg-white rounded-2xl shadow hover:shadow-lg transition p-4"
-            >
+          <Link
+            href="/mealplan"
+            key={index}
+            className="sm:w-[calc(50%-12px)] md:w-[calc(73.333%-16px)] lg:w-[calc(53.333%-16px)] xl:w-[calc(30.333%-16px)]"
+          >
+            <div className="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 min-h-full w-full">
               <img
                 src={meal.image}
                 alt={meal.title}
-                className="w-full h-32 object-cover rounded-xl mb-4"
+                className="w-full h-44 object-cover rounded-xl mb-4"
               />
               <h2 className="text-xl font-semibold text-gray-800">{meal.title}</h2>
               <p className="text-sm text-gray-500 mb-2">{meal.subtitle}</p>

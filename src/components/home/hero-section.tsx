@@ -40,13 +40,17 @@ export default function HeroSection() {
               </button>
             </div>
           </div>
-          <div className="order-2 lg:order-1 grid grid-rows-12 col-span-2">
-            <div className="hidden md:block row-span-2 max-h-3 "></div>
-            <div className="row-span-6 md:row-span-4 px-6 md:px-0 lg:pl-12 xl:pl-44 ">
+          <div className="order-2 lg:order-1 flex flex-col col-span-2 lg:mt-44">
+            {/* Spacer for top margin on medium and up */}
+            <div className="hidden md:block h-8"></div>
+
+            {/* Hero title section */}
+            <div className="px-6 md:px-0 lg:pl-12 xl:pl-44 mb-8">
               <HeroTitle />
             </div>
-            {/* <div className="row-span-1 max-h-3 "></div> */}
-            <div className="row-span-6 md:row-span-5 px-6 md:px-0 flex place-content-center lg:place-content-start lg:pl-12 xl:pl-44">
+
+            {/* Explore form section */}
+            <div className="px-6 md:px-0 flex justify-center lg:justify-start lg:pl-12 xl:pl-44">
               <ExploreForm />
             </div>
           </div>

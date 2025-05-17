@@ -7,7 +7,7 @@ export default function HeroTitle() {
         <p
           className="text-[#028391] font-semibold py-1"
           style={{
-            fontSize: "clamp(2rem, 5vw, 4rem)",
+            fontSize: "clamp(2.5rem, 5vw, 4rem)",
             lineHeight: "1.2"
           }}
         >
@@ -16,7 +16,7 @@ export default function HeroTitle() {
         <p
           className="text-[#EE9422] font-semibold py-1"
           style={{
-            fontSize: "clamp(2.5rem, 6vw, 4rem)",
+            fontSize: "clamp(2.5rem, 5vw, 4rem)",
             lineHeight: "1.2"
           }}
         >

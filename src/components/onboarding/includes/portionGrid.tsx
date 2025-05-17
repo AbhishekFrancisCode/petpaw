@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Flame, Drumstick, Droplet, Leaf, Utensils } from "lucide-react";
+import { twMerge } from "tailwind-merge";
 type ActivityLevel = "low" | "medium" | "high";
 
 interface DogInput {
@@ -58,8 +59,8 @@ const DogMealSuggester = ({ age, weight, activity }: DogInput) => {
   }, []);
 
   return (
-    <div className="p-4 max-w-md mx-auto bg-white rounded shadow">
-      <h2 className="text-xl font-bold mb-4">Dog Meal Portion Suggester</h2>
+    <div className="p-4 max-w-md shadow bg-[#EE9422] rounded-2xl min-w-full md:min-w-[400px]">
+      <h2 className="text-xl text-[#333333] font-bold mb-4">Dog Meal Portion Suggester</h2>
       {/* <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label>Age (years):</label>
@@ -94,56 +95,52 @@ const DogMealSuggester = ({ age, weight, activity }: DogInput) => {
             <option value="high">High</option>
           </select>
         </div>
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+        <button type="submit" className="bg-blue-500 text-#333333 px-4 py-2 rounded">
           Get Recommendation
         </button>
       </form> */}
 
       {nutrition && (
-        <div className="mt-8">
-          <h3 className="text-2xl font-bold mb-6 text-gray-800">🐶 Daily Nutritional Needs</h3>
+        <div className="mt-4">
+          <h3 className="text-1xl font-bold mb-6 text-[#333333]">
+            Your 🐶 Daily Nutritional Needs
+          </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <div className="bg-white border rounded-xl p-5 shadow-sm hover:shadow-md transition">
-              <div className="flex items-center gap-2 text-gray-600">
-                <Flame className="w-5 h-5 text-orange-400" />
-                <span className="text-sm font-medium">Calories</span>
-              </div>
-              <p className="text-2xl font-bold text-gray-800 mt-2">{nutrition.calories} kcal</p>
-            </div>
+            <NutritionCard
+              icon={<Flame className="w-8 h-8" color="#EE9422" />}
+              label="Calories"
+              value={nutrition.calories}
+              unit="kcal"
+            />
 
-            <div className="bg-white border rounded-xl p-5 shadow-sm hover:shadow-md transition">
-              <div className="flex items-center gap-2 text-gray-600">
-                <Drumstick className="w-5 h-5" />
-                <span className="text-sm font-medium">Protein</span>
-              </div>
-              <p className="text-2xl font-bold text-gray-800 mt-2">{nutrition.protein} g</p>
-            </div>
+            <NutritionCard
+              icon={<Drumstick className="w-8 h-8" color="#028391" />}
+              label="Protein"
+              value={nutrition.protein}
+              unit="g"
+            />
 
-            <div className="bg-white border rounded-xl p-5 shadow-sm hover:shadow-md transition">
-              <div className="flex items-center gap-2 text-gray-600">
-                <Droplet className="w-5 h-5" />
-                <span className="text-sm font-medium">Fat</span>
-              </div>
-              <p className="text-2xl font-bold text-gray-800 mt-2">{nutrition.fat} g</p>
-            </div>
+            <NutritionCard
+              icon={<Droplet className="w-8 h-8" color="#028391" />}
+              label="Fat"
+              value={nutrition.fat}
+              unit="g"
+            />
 
-            <div className="bg-white border rounded-xl p-5 shadow-sm hover:shadow-md transition">
-              <div className="flex items-center gap-2 text-gray-600">
-                <Leaf className="w-5 h-5" />
-                <span className="text-sm font-medium">Carbs</span>
-              </div>
-              <p className="text-2xl font-bold text-gray-800 mt-2">{nutrition.carbs} g</p>
-            </div>
+            <NutritionCard
+              icon={<Leaf className="w-8 h-8" color="#028391" />}
+              label="Carbs"
+              value={nutrition.carbs}
+              unit="g"
+            />
 
-            <div className="bg-white border rounded-xl p-5 shadow-sm hover:shadow-md transition sm:col-span-2 md:col-span-1 lg:col-span-4">
-              <div className="flex items-center gap-2 text-gray-600">
-                <Utensils className="w-5 h-5" />
-                <span className="text-sm font-medium">Total Portion</span>
-              </div>
-              <p className="text-2xl font-bold text-gray-800 mt-2">
-                {nutrition.portionGrams} g/day
-              </p>
-            </div>
+            <NutritionCard
+              icon={<Utensils className="w-8 h-8" color="#028391" />}
+              label="Total Portion"
+              value={nutrition.portionGrams}
+              unit="g/day"
+              className="sm:col-span-2 md:col-span-1 lg:col-span-4"
+            />
           </div>
         </div>
       )}
@@ -152,3 +149,30 @@ const DogMealSuggester = ({ age, weight, activity }: DogInput) => {
 };
 
 export default DogMealSuggester;
+
+type NutritionCardProps = {
+  icon: React.ReactNode;
+  label: string;
+  value: string | number;
+  unit?: string;
+  className?: string;
+};
+
+const NutritionCard = ({ icon, label, value, unit, className }: NutritionCardProps) => {
+  return (
+    <div
+      className={twMerge(
+        "bg-white border rounded-xl shadow-sm hover:shadow-md transition pt-4 pb-2",
+        className
+      )}
+    >
+      <div className="flex flex-col items-center gap-2 text-gray-600">
+        {icon}
+        <span className="text-sm font-medium">{label}</span>
+      </div>
+      <p className="text-2xl text-center font-bold text-gray-800 mt-2 min-w-full">
+        {value} {unit}
+      </p>
+    </div>
+  );
+};

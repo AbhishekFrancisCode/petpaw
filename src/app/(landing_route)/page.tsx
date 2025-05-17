@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function Landing() {
   return (
-    <main className="flex flex-col bg-[#FFF8EF]">
+    <main className="container mx-auto flex flex-col">
       <HeroSection />
       <Section_type_1 />
       <Section_type_2 />

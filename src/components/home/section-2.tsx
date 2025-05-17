@@ -87,12 +87,12 @@ export default function Section_type_2() {
 
   return (
     <section className="bg-[#FFF8EF] py-8">
-      <div className="container mx-auto grid grid-rows-5 grid-cols-1 lg:grid-rows-1 lg:grid-cols-5 lg:min-h-[700px]">
+      <div className="container mx-auto grid grid-rows-5 grid-cols-1 lg:grid-rows-1 lg:grid-cols-8 lg:min-h-[700px]">
         {/* Left Content Block */}
-        <div className="order-1 flex flex-col items-center row-span-2 lg:col-span-2 bg-[#FFF8EF] py-10 px-4 sm:px-6">
-          <div className="flex flex-col md:max-w-[550px] w-full">
+        <div className="order-1 flex flex-col place-content-center items-center row-span-2 lg:col-span-4 bg-transparent py-10 sm:px-6">
+          <div className="flex flex-col lg:max-w-[700px] w-full lg:pl-12">
             <p
-              className="text-[#EE9422] font-semibold py-1 text-center md:text-left"
+              className="text-[#EE9422] font-semibold py-1 text-center lg:text-left"
               style={{
                 fontSize: "clamp(2rem, 5vw, 4rem)",
                 lineHeight: "1.2"
@@ -101,7 +101,7 @@ export default function Section_type_2() {
               Backed by science,
             </p>
             <p
-              className="text-[#028391] font-semibold py-1 text-center md:text-left"
+              className="text-[#028391] font-semibold py-1 text-center lg:text-left"
               style={{
                 fontSize: "clamp(2rem, 5vw, 4rem)",
                 lineHeight: "1.2"
@@ -109,27 +109,28 @@ export default function Section_type_2() {
             >
               Cooked with love
             </p>
-          </div>
 
-          <div className="flex-1 w-full lg:px-10 xl:px-12 py-4">
-            <p className="text-[#333333] text-base font-normal text-center lg:text-left px-6 md:px-0">
-              Formulated by nutritionists, Pawftul’s freshly cooked meals are designed to be gentle
-              on your dog’s gut while providing a balanced diet that meets their daily nutritional
-              needs – helping them stay strong, healthy and fit.
-            </p>
-            <div className="flex justify-center lg:justify-start mt-5">
-              <Button
-                text="Explore Meals"
-                handleRedirect={handleNavigate}
-                cls="bg-[#028391] min-w-[200px] h-16 rounded-md px-10 text-white hover:opacity-80"
-              />
+            <div className="flex-1 w-full  py-4">
+              <p className="text-[#333333] text-base font-normal text-center lg:text-left px-6 md:px-0">
+                Formulated by nutritionists, Pawftul’s freshly cooked meals are designed to be
+                gentle on your dog’s gut while providing a balanced diet that meets their daily
+                nutritional needs – helping them stay strong, healthy and fit.
+              </p>
+              <div className="flex justify-center lg:justify-start mt-5">
+                <Button
+                  text="Explore Meals"
+                  handleRedirect={handleNavigate}
+                  cls="bg-[#028391] min-w-[200px] h-16 rounded-md px-10 text-white hover:opacity-80"
+                />
+              </div>
             </div>
           </div>
         </div>
 
         {/* Right Content Block */}
-        <div className="order-2 row-span-3 lg:col-span-3 py-4 px-4 lg:px-6">
-          <div className="flex flex-col w-full items-center lg:items-start">
+        <div className="order-2 row-span-3 lg:col-span-4 py-4 px-4 lg:px-6 flex flex-col items-center lg:items-center">
+          {" "}
+          <div className="flex flex-col w-full items-center lg:items-center">
             {/* Slide Title */}
             <div
               className="order-2 lg:order-1 text-center lg:text-left text-[#028391] font-bold"
