@@ -55,67 +55,73 @@ export default function OnLoadingingPage({ control, getValues }: StepProps) {
   }
 
   const handleGenrate = () => {
-    const recommended = filterMeals(values!, MealPlanData.meals);
-    console.log("recommended", recommended);
-    setRecommendMeals(recommended);
+    if (!values) return;
+
+    try {
+      // Save pet data to localStorage
+      localStorage.setItem("petData", JSON.stringify(values));
+
+      const recommended = filterMeals(values, MealPlanData.meals);
+      console.log("recommended", recommended);
+
+      // Save recommended meals
+      localStorage.setItem("recommendedMeals", JSON.stringify(recommended));
+
+      // If saving is successful, update state and redirect
+      setRecommendMeals(recommended);
+      router.push("/onboarding/portion-suggest");
+    } catch (error) {
+      console.error("Failed to store data in localStorage:", error);
+      // Don't do anything else if storage fails
+    }
   };
 
   return (
     <div className="flex flex-col min-w-full min-h-screen place-items-center max-h-screen overflow-x-auto">
       <div className="flex min-w-full place-content-center">
-        {recommendMeals.length > 0 ? (
-          <div className="flex gap-4 p-6">
-            {/* <div className="ml-6 mt-6">
-              <DogMealSuggester age={4} weight={35} activity={"high"} />
-            </div> */}
-
-            <MealGrid meals={recommendMeals} />
-          </div>
-        ) : (
-          <div className="p-6">
-            <h2 className="text-xl font-bold mb-4">Review Your Pet's Info</h2>
-            <ul className="space-y-2">
-              {/* <li>
+        <div className="p-6">
+          <h2 className="text-xl font-bold mb-4">Review Your Pet's Info</h2>
+          <ul className="space-y-2">
+            {/* <li>
                 <strong>Name:</strong> {values!.name}
               </li>
               <li>
                 <strong>Email:</strong> {values!.email}
               </li> */}
-              <li>
-                <strong>Pet Name:</strong> {values!.petname}
-              </li>
-              <li>
-                <strong>Gender:</strong> {values!.gender}
-              </li>
-              <li>
-                <strong>Age:</strong> {values!.age}
-              </li>
-              <li>
-                <strong>Breed:</strong> {values!.breed}
-              </li>
-              <li>
-                <strong>Weight:</strong> {values!.weight}
-              </li>
-              <li>
-                <strong>Activity Level:</strong> {values!.activity_level}
-              </li>
-              <li>
-                <strong>Preferred Foods:</strong> {values!.preferred_foods?.join(", ")}
-              </li>
-              <li>
-                <strong>Allergies:</strong> {values!.allergies?.join(", ")}
-              </li>
-            </ul>
-            <div className="flex justify-center mt-8">
-              <button
-                onClick={handleGenrate}
-                className="bg-[#EE9422] hover:bg-gray-300 text-white px-4 py-2 rounded-md transition-colors duration-300"
-              >
-                Genarate Meal Plan
-              </button>
-            </div>
+            <li>
+              <strong>Pet Name:</strong> {values!.petname}
+            </li>
+            <li>
+              <strong>Gender:</strong> {values!.gender}
+            </li>
+            <li>
+              <strong>Age:</strong> {values!.age}
+            </li>
+            <li>
+              <strong>Breed:</strong> {values!.breed}
+            </li>
+            <li>
+              <strong>Weight:</strong> {values!.weight}
+            </li>
+            <li>
+              <strong>Activity Level:</strong> {values!.activity_level}
+            </li>
+            <li>
+              <strong>Preferred Foods:</strong> {values!.preferred_foods?.join(", ")}
+            </li>
+            <li>
+              <strong>Allergies:</strong> {values!.allergies?.join(", ")}
+            </li>
+          </ul>
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={handleGenrate}
+              className="bg-[#EE9422] hover:bg-gray-300 text-white px-4 py-2 rounded-md transition-colors duration-300"
+            >
+              Genarate Meal Plan
+            </button>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
