@@ -16,7 +16,7 @@ export const MealGrid = ({ meals }: MealGridProps) => {
           <Link
             href="/mealplan"
             key={index}
-            className="sm:w-[calc(50%-12px)] md:w-[calc(73.333%-16px)] lg:w-[calc(53.333%-16px)] xl:w-[calc(30.333%-16px)]"
+            className="sm:w-[calc(50%-12px)] md:w-[calc(30.333%-16px)] lg:w-[calc(30.333%-16px)] xl:w-[calc(30.333%-16px)]"
           >
             <div className="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 min-h-full w-full">
               <img

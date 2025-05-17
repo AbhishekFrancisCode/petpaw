@@ -59,8 +59,8 @@ const DogMealSuggester = ({ age, weight, activity }: DogInput) => {
   }, []);
 
   return (
-    <div className="p-4 max-w-md shadow bg-[#EE9422] rounded-2xl min-w-full md:min-w-[400px]">
-      <h2 className="text-xl text-[#333333] font-bold mb-4">Dog Meal Portion Suggester</h2>
+    <div className="p-4 max-w-[33rem] shadow bg-[#EE9422] rounded-2xl min-w-full md:min-w-[430px]">
+      <h2 className="text-xl text-[#333333] font-bold mb-4">Dog Meal Portion Analyzer</h2>
       {/* <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label>Age (years):</label>
