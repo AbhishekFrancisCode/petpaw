@@ -7,6 +7,7 @@ import { Title } from "@/components/common/title-comp";
 import { twMerge } from "tailwind-merge";
 import Link from "next/link";
 import { HomePageStrings } from "@/constants/title-constants";
+import WhatsAppButton from "@/utils/whatsapp-connect";
 
 const MealPortionSize = () => {
   const { data, title, sub_title, description } = HomePageStrings.thirdSection;
@@ -31,7 +32,7 @@ const MealPortionSize = () => {
     }
   ];
   return (
-    <div className="flex flex-col min-h-[550px] bg-[#C4DEE1] pt-8">
+    <div className="flex flex-col min-h-[600px] bg-[#C4DEE1] pt-8">
       {/* <Title
         variant="h2"
         textStyle="primary"
@@ -92,6 +93,10 @@ const MealPortionSize = () => {
             </div>
           </div>
         ))}
+      </div>
+      {/* CTA Buttons */}
+      <div className="flex justify-center items-center p-6 gap-4 mt-auto">
+        <WhatsAppButton />
       </div>
     </div>
   );
