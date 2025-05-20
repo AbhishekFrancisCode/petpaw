@@ -52,7 +52,7 @@ export default function Section_type_8() {
               handleRedirect={handleNavigate}
               cls="bg-[#EE9422] min-w-[200px] h-16 rounded-md px-10 text-[#FFF8EF] hover:opacity-80"
             />
-            <WhatsAppButton />
+            {/* <WhatsAppButton /> */}
           </div>
         </div>
       </div>

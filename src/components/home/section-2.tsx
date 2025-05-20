@@ -142,7 +142,7 @@ export default function Section_type_2() {
             </div>
 
             {/* Slide Image & Description */}
-            <div className="order-3 lg:order-2 flex flex-col items-center py-4 max-w-[600px]">
+            <div className="order-3 lg:order-3 flex flex-col items-center py-4 max-w-[600px]">
               <div className="w-full min-w-[300px] h-[400px] relative mt-8">
                 <Image
                   key={Math.round.toString()}
@@ -161,13 +161,13 @@ export default function Section_type_2() {
             </div>
 
             {/* Tabs */}
-            <div className="order-1 lg:order-3 relative w-full mt-6 lg:mt-10 mb-6 lg:mb-0">
+            <div className="order-1 lg:order-2 relative w-full mt-6 lg:mt-10 mb-6 lg:mb-0">
               <div className="flex justify-evenly border-b border-[#028391] border-opacity-60">
                 {imageSlides.map((tab, idx) => (
                   <button
                     key={idx}
                     ref={(el) => (tabsRef.current[idx] = el)}
-                    className={`pt-2 pb-3 min-w-[80px] sm:min-w-[150px] text-sm transition-opacity ${
+                    className={`pt-2 pb-3 min-w-[80px] sm:min-w-[100px] text-sm transition-opacity ${
                       idx === activeTabIndex
                         ? "text-[#028391] font-medium"
                         : "text-[#028391] opacity-50"
