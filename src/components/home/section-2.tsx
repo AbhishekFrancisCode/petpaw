@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Button from "@/sb-ui/button/button";
 import { useRouter } from "next/navigation";
+import HeroTitle from "./includes/hero-title";
 
 interface ImageSlide {
   title: string;
@@ -89,28 +90,13 @@ export default function Section_type_2() {
     <section className="bg-[#FFF8EF] py-8">
       <div className="container mx-auto grid grid-rows-5 grid-cols-1 lg:grid-rows-1 lg:grid-cols-8 lg:min-h-[700px]">
         {/* Left Content Block */}
-        <div className="order-1 flex flex-col place-content-center items-center row-span-2 lg:col-span-4 bg-transparent py-10 sm:px-6">
-          <div className="flex flex-col lg:max-w-[700px] w-full lg:pl-12">
-            <p
-              className="text-[#EE9422] font-semibold py-1 text-center lg:text-left"
-              style={{
-                fontSize: "clamp(2rem, 5vw, 4rem)",
-                lineHeight: "1.2"
-              }}
-            >
-              Backed by science,
-            </p>
-            <p
-              className="text-[#028391] font-semibold py-1 text-center lg:text-left"
-              style={{
-                fontSize: "clamp(2rem, 5vw, 4rem)",
-                lineHeight: "1.2"
-              }}
-            >
-              Cooked with love
-            </p>
+        <div className="order-1 flex flex-col place-content-center items-center row-span-2 lg:col-span-4 bg-transparent py-10`">
+          <div className="flex flex-col w-full lg:pl-12 ">
+            <div className="px-6 md:px-0 mb-8">
+              <HeroTitle title="Backed by science," description="Cooked with love" />
+            </div>
 
-            <div className="flex-1 w-full  py-4">
+            <div className="flex-1 w-full lg:pr-24 py-4">
               <p className="text-[#333333] text-base font-normal text-center lg:text-left px-6 md:px-0">
                 Formulated by nutritionists, Pawftul’s freshly cooked meals are designed to be
                 gentle on your dog’s gut while providing a balanced diet that meets their daily
@@ -129,7 +115,6 @@ export default function Section_type_2() {
 
         {/* Right Content Block */}
         <div className="order-2 row-span-3 lg:col-span-4 py-4 px-4 lg:px-6 flex flex-col items-center lg:items-center">
-          {" "}
           <div className="flex flex-col w-full items-center lg:items-center">
             {/* Slide Title */}
             <div

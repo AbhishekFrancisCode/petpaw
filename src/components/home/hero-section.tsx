@@ -45,12 +45,12 @@ export default function HeroSection() {
             <div className="hidden md:block h-8"></div>
 
             {/* Hero title section */}
-            <div className="px-6 md:px-0 lg:pl-12 xl:pl-44 mb-8">
-              <HeroTitle />
+            <div className="md:px-0 lg:pl-12  mb-8">
+              <HeroTitle title="Freshly Cooked," description="Meals for Dogs!" />
             </div>
 
             {/* Explore form section */}
-            <div className="px-6 md:px-0 flex justify-center lg:justify-start lg:pl-12 xl:pl-44">
+            <div className="px-6 md:px-0 flex justify-center lg:justify-start lg:pl-12">
               <ExploreForm />
             </div>
           </div>
