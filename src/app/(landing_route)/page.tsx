@@ -21,7 +21,7 @@ export default function Landing() {
   return (
     <main className="container mx-auto flex flex-col">
       <HeroSection />
-      <Section_type_1 />
+      {/* <Section_type_1 /> */}
       <Section_type_2 />
       {/* <Section_type_3 /> */}
       <MealPortionSize />
