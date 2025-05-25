@@ -46,7 +46,7 @@ export default function ExploreForm() {
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col xl:flex-row  gap-4 items-center lg:items-start mt-0"
+        className="flex flex-col gap-4 items-center lg:items-start mt-0"
       >
         <div className="flex max-h-12">
           <input
