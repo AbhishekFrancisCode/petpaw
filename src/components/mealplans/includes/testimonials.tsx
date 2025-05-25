@@ -59,33 +59,6 @@ const testimonialsJson = [
     star: "",
     instagram: "",
     desc: `JbTbM9c4urI`
-  },
-  {
-    type: "video",
-    name: "Ali Saiger",
-    who: "Founder, Pastelfeathers <br /> Tinsukia, Assam",
-    img: "/images/img/ali.png",
-    star: "",
-    instagram: "",
-    desc: `JbTbM9c4urI`
-  },
-  {
-    type: "video",
-    name: "Sreekanth",
-    who: "Founder, Pastelfeathers <br /> Tinsukia, Assam",
-    img: "/images/img/sreekanth.png",
-    star: "",
-    instagram: "",
-    desc: `JbTbM9c4urI`
-  },
-  {
-    type: "video",
-    name: "Priyanka",
-    who: "Founder, Pastelfeathers <br /> Tinsukia, Assam",
-    img: "/images/img/priyanka.png",
-    star: "",
-    instagram: "",
-    desc: `JbTbM9c4urI`
   }
 ];
 
@@ -98,30 +71,20 @@ export default function TestimonialsVideo() {
     setShow(true);
   };
   return (
-    <div className="mx-auto bg-transparent min-w-full mt-12">
-      <div className=" w-[315px] lg:w-[571px] mx-auto">
+    <div className="w-full bg-transparent mt-12 px-4 sm:px-6">
+      <div className="max-w-md sm:max-w-lg lg:max-w-2xl mx-auto">
         <Title
           variant="h2"
           textStyle="primary"
-          className={`text-[#028391] text-[34px] lg:text-4xl font-bold text-center py-6`}
+          className="text-[#028391] text-[28px] sm:text-[32px] lg:text-4xl font-bold text-center py-6"
         >
           Pawtful's Testimonials
         </Title>
-        {/* <SectionHeading title={"Pawtful's Testimonials"} /> */}
       </div>
-      <div className="mx-auto">
+
+      <div className="max-w-7xl mx-auto w-full">
         <TestimonialsSwiper imageList={testimonialsJson} handleVideoPlayer={handleVideoPlayer} />
       </div>
-      {/* <div className="flex items-center justify-center gap-6 py-6">
-        <div className="flex items-center">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-            alt="Instagram Logo"
-            className="size-16"
-          />
-        </div>
-        <div className="text-3xl font-semibold text-[#EE9422]">#pawtful</div>
-      </div> */}
     </div>
   );
 }
@@ -133,15 +96,15 @@ const TestimonialsSwiper = ({
   imageList: any;
   handleVideoPlayer: Function;
 }) => (
-  <div className="flex place-items-center relative">
-    <div className="swiper-button-prev px-4">
-      <Image alt="" width={28} height={28} src={chevronLeft} className="cursor-pointer" />
+  <div className="flex items-center relative">
+    {/* Left arrow - visible on mobile only, vertically centered */}
+    <div className="swiper-button-prev absolute left-0 z-10 md:hidden top-1/2 transform -translate-y-1/2 px-2">
+      <Image alt="Previous" width={28} height={28} src={chevronLeft} className="cursor-pointer" />
     </div>
+
     <div className="w-full max-w-7xl mx-auto">
       <Swiper
         modules={[Navigation, Pagination]}
-        slidesPerView={3}
-        spaceBetween={35}
         cssMode={true}
         navigation={{
           nextEl: ".swiper-button-next",
@@ -149,22 +112,31 @@ const TestimonialsSwiper = ({
         }}
         mousewheel={true}
         keyboard={true}
-        pagination={{ clickable: true }}
-        initialSlide={1} // Starts from the second slide
-        className=""
+        pagination={{ el: ".swiper-pagination", clickable: true }}
+        initialSlide={1}
+        breakpoints={{
+          320: { slidesPerView: 1, spaceBetween: 20 },
+          640: { slidesPerView: 1, spaceBetween: 20 },
+          768: { slidesPerView: 2, spaceBetween: 30 },
+          1024: { slidesPerView: 3, spaceBetween: 35 }
+        }}
       >
         {imageList.map((slide: any, index: number) => (
           <SwiperSlide key={index} className="flex justify-center">
-            <div key={index} className="relative">
+            <div className="relative">
               <YouTubePlayer videoId="JbTbM9c4urI" />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
     </div>
-    <div className="swiper-button-next px-4">
-      <Image alt="" width={28} height={28} src={chevronRight} className="cursor-pointer " />
+
+    {/* Right arrow - visible on mobile only, vertically centered */}
+    <div className="swiper-button-next absolute right-0 z-10 md:hidden top-1/2 transform -translate-y-1/2 px-2">
+      <Image alt="Next" width={28} height={28} src={chevronRight} className="cursor-pointer" />
     </div>
+
+    <div className="swiper-pagination"></div>
   </div>
 );
 
@@ -172,17 +144,14 @@ const YouTubePlayer = ({ videoId }: { videoId: any }) => {
   const src = `https://www.youtube.com/embed/${videoId}?loop=1&mute=1`;
 
   return (
-    <div className="youtube-wrapper1">
-      <div className="youtube-container1">
+    <div className="youtube-wrapper1 w-full max-w-[350px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] mx-auto">
+      <div className="youtube-container1 aspect-w-16 aspect-h-9">
         <iframe
           src={src}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
           allowFullScreen
           title="YouTube Video Player"
-          style={{
-            border: "6px solid #ddd",
-            borderRadius: "8px"
-          }}
+          className="w-full h-full rounded-lg border-[6px] border-gray-300"
         ></iframe>
       </div>
     </div>

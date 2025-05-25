@@ -7,6 +7,7 @@ import { Title } from "@/components/common/title-comp";
 import { twMerge } from "tailwind-merge";
 import Link from "next/link";
 import { HomePageStrings } from "@/constants/title-constants";
+import WhatsAppButton from "@/utils/whatsapp-connect";
 
 const MealPortionSize = () => {
   const { data, title, sub_title, description } = HomePageStrings.thirdSection;
@@ -31,33 +32,23 @@ const MealPortionSize = () => {
     }
   ];
   return (
-    <div className="flex flex-col min-h-[550px] bg-[#C4DEE1] pt-8">
-      {/* <Title
-        variant="h2"
-        textStyle="primary"
-        className={`text-[#028391] py-1 text-center px-6 md:px-4`}
-      >
-        Meal Portion Size
-      </Title>
-      <p className="text-center text-gray-700 mb-8"></p> */}
+    <div className="flex flex-col min-h-[600px] bg-[#C4DEE1] pt-8">
       {title && (
         <Title
           variant="h2"
           textStyle="primary"
-          className={`text-[#028391] py-1 text-center px-6 md:px-4`}
+          className="text-[#028391] py-1 text-center px-4 sm:px-6"
         >
           {title}
         </Title>
       )}
-      {sub_title && <div className="text-black text-center px-6 md:px-4">{sub_title}</div>}
-      <div className="flex sm:flex-col md:flex-row justify-center items-center ma-h-[400px] px-4 pt-8 gap-24">
-        {dogSizes.map((e: any) => (
-          <div key={e} className="relative w-full max-w-[20rem] max-h-[300px]">
-            {/* Card content */}
-            <div className="bg-white rounded-lg shadow-md p-6 flex flex-col place-content-center max-h-[350px]">
-              {/* Avatar that's exactly half outside the card */}
+      {sub_title && <div className="text-black text-center px-4 sm:px-6">{sub_title}</div>}
 
-              <div className="w-48 h-48 mx-auto place-items-center place-content-end">
+      <div className="flex flex-wrap justify-center items-center min-h-[400px] px-4 pt-8 gap-8 lg:gap-24">
+        {dogSizes.map((e: any) => (
+          <div key={e} className="relative w-full sm:w-72 md:w-64 lg:w-80 max-h-[350px]">
+            <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center max-h-[350px]">
+              <div className="w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 mx-auto">
                 <Image
                   src={e.image}
                   alt="User avatar"
@@ -67,7 +58,7 @@ const MealPortionSize = () => {
                       : e.size === "Medium Dog"
                         ? "max-w-28 max-h-28"
                         : "max-w-44 max-h-44",
-                    "bottom-0"
+                    "mx-auto"
                   )}
                 />
               </div>
@@ -83,7 +74,6 @@ const MealPortionSize = () => {
 
               <div className="flex justify-center">
                 <Link href={"/mealplan"}>
-                  {/* Button */}
                   <button className="bg-[#EE9422] hover:bg-gray-300 text-white px-4 py-2 rounded-md transition-colors duration-300">
                     View Meal
                   </button>
@@ -92,6 +82,10 @@ const MealPortionSize = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="flex justify-center items-center p-6 gap-4 mt-auto">
+        <WhatsAppButton />
       </div>
     </div>
   );

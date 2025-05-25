@@ -50,7 +50,7 @@ export default function TempletType1({
                     }}
                   />
                   {steps_count && (
-                    <span className="absolute size-14 top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-[#028391] bg-opacity-70 text-white text-3xl text-center font-semibold place-content-center rounded-full">
+                    <span className="absolute size-14 top-0 left-5 md:left-4 lg:left-0 transform -translate-x-1/2 -translate-y-1/2 bg-[#028391] bg-opacity-70 text-white text-3xl text-center font-semibold place-content-center rounded-full">
                       {index + 1}
                     </span>
                   )}

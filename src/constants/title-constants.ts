@@ -183,7 +183,7 @@ export const HomePageStrings = {
       color: "",
       title_color: "#EE9422",
       sub_title_color: "#999999",
-      description: "19. Subscribe and feed your dog nourishing meals every day."
+      description: "Subscribe and feed your dog nourishing meals every day."
     }
   ],
   seventhSection: [

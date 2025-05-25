@@ -26,12 +26,27 @@
 /* Style the navigation arrows */
 .swiper-button-prev-nav1,
 .swiper-button-next-nav1 {
-    background-color: #eaa124;
-    border-radius: 100%;
-    max-width: 48px;
-    max-height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
+  background-color: #eaa124;
+  border-radius: 100%;
+  max-width: 48px;
+  max-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.swiper-pagination {
+  position: relative;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  background: #028391;
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
 }
