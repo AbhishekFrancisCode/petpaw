@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { productDetails, productDetails1, productDetailsTreats } from "@/constants/meal-data";
+import { useEffect, useState } from "react";
 import ProductDisplay from "./expand_card";
 import BannerElevated from "./banner-elevated";
 import { Title } from "@/components/common/title-comp";
+import { fetchProducts } from "@/store/products";
 
 export interface ProductDetailsProps {
   id: number;
@@ -31,6 +32,32 @@ export default function ProductView() {
       }
     }
   }, [scrollTo]);
+  const [products, setProducts] = useState<ProductDetailsProps[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        const data = await fetchProducts();
+        setProducts(data);
+      } catch (error) {
+        console.error("Error loading products:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadProducts();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center min-h-[400px]">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-emerald-700"></div>
+      </div>
+    );
+  }
+
 
   return (
     <section className="flex flex-col">
@@ -68,9 +95,8 @@ export default function ProductView() {
         imagePosition="right-0 bottom-[70px]"
         imageHide={false}
       />
-
       <div className="flex flex-col mx-auto place-content-center items-center" id="treatsec">
-        <Title variant="h2" textStyle="primary" className="text-[#028391] leading-normal">
+        <Title variant="h2" textStyle="primary" className={`text-[#028391] leading-normal`}>
           Fresh treats
         </Title>
       </div>
