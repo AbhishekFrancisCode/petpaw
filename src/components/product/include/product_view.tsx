@@ -5,6 +5,8 @@ import ProductDisplay from "./expand_card";
 import Banner from "./banner";
 import { Title } from "@/components/common/title-comp";
 import BannerElevated from "./banner-elevated";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
 export interface ProductDetailsProps {
   id: number;
@@ -59,6 +61,17 @@ export default function ProductView() {
   //     route_link: ""
   //   }
   // ];
+  const searchParams = useSearchParams();
+  const scrollTo = searchParams.get("scrollTo");
+
+  useEffect(() => {
+    if (scrollTo) {
+      const el = document.getElementById(scrollTo);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [scrollTo]);
   return (
     <section className="flex flex-col ">
       <div className="flex flex-col mx-auto place-content-center items-center">
@@ -96,7 +109,7 @@ export default function ProductView() {
         url="https://ik.imagekit.io/funlogic/pawfull/DSC_0011-min.png?updatedAt=1744633950628"
         value={"Fresh treats and no additives"}
       /> */}
-      <div className="flex flex-col mx-auto place-content-center items-center">
+      <div className="flex flex-col mx-auto place-content-center items-center" id="treatsec">
         <Title variant="h2" textStyle="primary" className={`text-[#028391] leading-normal`}>
           Fresh treats
         </Title>

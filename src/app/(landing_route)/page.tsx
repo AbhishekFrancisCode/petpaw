@@ -25,10 +25,10 @@ export default function Landing() {
       <Section_type_2 />
       {/* <Section_type_3 /> */}
       <MealPortionSize />
-      <Section_type_5 />
+      <Section_type_7 />
       {/* <Section_type_6 /> */}
       <BlogPage />
-      <Section_type_7 />
+      <Section_type_5 />
       <NewsLetter />
     </main>
   );
