@@ -1,12 +1,12 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { productDetails, productDetails1, productDetailsTreats } from "@/constants/meal-data";
 import { useEffect, useState } from "react";
 import ProductDisplay from "./expand_card";
 import BannerElevated from "./banner-elevated";
 import { Title } from "@/components/common/title-comp";
 import { fetchProducts } from "@/store/products";
+import { productDetailsTreats } from "@/constants/meal-data";
 
 export interface ProductDetailsProps {
   id: number;
@@ -53,11 +53,10 @@ export default function ProductView() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center min-h-[400px]">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-emerald-700"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-700"></div>
       </div>
     );
   }
-
 
   return (
     <section className="flex flex-col">
@@ -66,19 +65,10 @@ export default function ProductView() {
           Our Products
         </Title>
       </div>
-
-      <div className="flex flex-col md:flex-row gap-8 px-4 md:px-0">
-        <div className="flex flex-col gap-8 pt-6 md:pt-12 md:max-w-[50%]">
-          {productDetails.map((item: ProductDetailsProps, index: number) => (
-            <ProductDisplay key={index} productDetails={item} />
-          ))}
-        </div>
-
-        <div className="flex flex-col gap-8 pt-6 md:pt-12 md:max-w-[50%]">
-          {productDetails1.map((item: ProductDetailsProps, index: number) => (
-            <ProductDisplay key={index} productDetails={item} />
-          ))}
-        </div>
+      <div className="grid gap-8 px-4 md:px-0 pt-6 md:pt-12 grid-cols-1 md:grid-cols-2">
+        {products.map((item: ProductDetailsProps, index: number) => (
+          <ProductDisplay key={index} productDetails={item} />
+        ))}
       </div>
 
       <div className="min-h-12" />
@@ -100,7 +90,6 @@ export default function ProductView() {
           Fresh treats
         </Title>
       </div>
-
       <div className="flex flex-col md:flex-col-2 gap-8 py-4 md:py-12 mx-4 md:px-0">
         {productDetailsTreats.map((item: ProductDetailsProps, index: number) => (
           <ProductDisplay key={index} productDetails={item} />

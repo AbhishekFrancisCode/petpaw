@@ -22,7 +22,7 @@ export const fetchProducts = async (): Promise<ProductDetailsProps[]> => {
         title: data.title,
         subtitle: data.subtitle,
         description: data.description,
-        image: data.image,
+        image: data.image1,
         productImage: data.image1,
         route_link: "",
         ingredients: data.ingredients.map((ing: any) => ing.name)
