@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function BannerSection() {
   const mealOption = [
@@ -12,6 +13,12 @@ export default function BannerSection() {
       recipes: ["Chicken Dish with Carrots", "Lamb Dish with Cranberries", "Pork Dish with Apples"]
     }
   ];
+
+  const router = useRouter();
+
+  const goToTeamSection = () => {
+    router.push("/product?scrollTo=treatsec");
+  };
 
   return (
     <section
@@ -35,7 +42,10 @@ export default function BannerSection() {
           <p className="text-lg font-medium">{mealOption[0].price}</p>
           <p className="mt-2 mb-6 text-sm sm:text-base">{mealOption[0].description}</p>
 
-          <button className="w-full sm:w-[200px] bg-[#FFF8EF] text-[#333333] py-3 px-6 rounded-md hover:bg-[#028391] hover:text-white transition-colors">
+          <button
+            onClick={goToTeamSection}
+            className="w-full sm:w-[200px] bg-[#FFF8EF] text-[#333333] py-3 px-6 rounded-md hover:bg-[#028391] hover:text-white transition-colors"
+          >
             Get your treats
           </button>
         </div>

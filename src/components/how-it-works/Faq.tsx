@@ -12,7 +12,7 @@ const FAQ = () => {
 
   const faqs: FAQItem[] = [
     {
-      question: "How is OlPawtful made?",
+      question: "How is Pawtful made?",
       answer:
         "Short answer: with a whole lotta love. Longer answer: We started by working with a veterinary nutritionist who helped us formulate our balanced and complete, human-grade recipes, abiding by the AAFCO standards. Then we carefully sourced our ingredients (more on this below), cook them at low temperatures in small batches at our facility in Minnesota, and hand-pack them. We personally know the people who are making the food—and our dogs can attest to how delicious it is."
     },
