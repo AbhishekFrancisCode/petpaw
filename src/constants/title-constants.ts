@@ -38,7 +38,7 @@ export const HomePageStrings = {
     description: "",
     data: [
       {
-        title: "100% Human Grade & Fresh Ingredients",
+        title: "100% Human Grade & Ingredients",
         image_link:
           "https://ik.imagekit.io/funlogic/pawfull/all%20ingredients%20with%20dog%20looking%20at%20them.JPG?updatedAt=1744556294455",
         link_to: "https://example.com/sunset",
@@ -134,12 +134,12 @@ export const HomePageStrings = {
   ],
   fifthSection: [
     {
-      title: "Benefits of Eating ,",
-      sub_title: "Fresh Food",
+      title: "All Natural",
+      sub_title: "Treats",
       description:
-        "IMPROVED DIGESTION & ENERGY \n More digestible than kibble, giving your pup more nutrients and pep in their step. ALLERGY & WEIGHT CONTROL Our food helps maintain your pup's ideal weight and is great for allergies and sensitivities. MORE MEALTIMES TOGETHER A fresh, whole food diet has been proven to help dogs live up to 2.5 years longer.",
+        "The pinnacle of quality and nutrition, Pawtful's Fresh recipes are made from real meat, fruits, veggies, and grains, so you can give your pup the best of the best each and every day.",
       image_link:
-        "https://ik.imagekit.io/funlogic/pawfull/dog%20eating%20food%20with%20all%20ingredients.JPG?updatedAt=1744556300649",
+        "https://ik.imagekit.io/funlogic/pawfull/all_snacks-cut%20out%20.png?updatedAt=1745739800517",
       link_to: "https://example.com/city",
       color: "",
       title_color: "#EE9422"
@@ -252,12 +252,6 @@ export const MealPlanPageStrings = {
         imageUrl:
           "https://ik.imagekit.io/funlogic/pawfull/bowl-cutouts/fish%20bowl_1.png?updatedAt=1744913914541"
       },
-      // {
-      //   id: "4",
-      //   name: "Beef",
-      //   imageUrl:
-      //     "https://ik.imagekit.io/funlogic/meal/bowl-beef-1400.webp?updatedAt=1737923514937?tr=w-600,h-600"
-      // },
       {
         id: "4",
         name: "Veg",

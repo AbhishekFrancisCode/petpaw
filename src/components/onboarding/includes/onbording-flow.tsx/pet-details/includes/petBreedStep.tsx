@@ -11,11 +11,9 @@ const breedOptions = [
   "Beagle",
   "Rottweiler",
   "Siberian Husky",
-  "Persian Cat",
-  "Maine Coon",
-  "Bengal Cat",
-  "Sphynx Cat",
-  "British Shorthair"
+  "Indie",
+  "Shih Tzu",
+  "Others"
 ];
 
 interface StepProps {

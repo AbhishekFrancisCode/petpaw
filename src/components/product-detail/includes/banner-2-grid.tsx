@@ -39,7 +39,7 @@ const ProductMain = ({ product }: { product: Product }) => {
               </div>
 
               <button className="w-[250px] bg-[#028391] text-white py-3 px-6 rounded-md hover:bg-opacity-85  transition-colors">
-                Create a Full Fresh Plan
+                Order Now
               </button>
             </div>
           </div>

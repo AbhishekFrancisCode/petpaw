@@ -25,6 +25,7 @@ export default function OnLoadingingPage({ control, getValues }: StepProps) {
     console.log("values", values);
   }, [values]);
 
+  //TODO
   function filterMeals(pet: Formdata, mealPlans: DogMeal[]) {
     const age = parseInt(pet.age?.toString() || "0");
     const weight = parseFloat(pet.weight || "0");
@@ -107,7 +108,10 @@ export default function OnLoadingingPage({ control, getValues }: StepProps) {
               <strong>Activity Level:</strong> {values!.activity_level}
             </li>
             <li>
-              <strong>Preferred Foods:</strong> {values!.preferred_foods?.join(", ")}
+              <strong>Body Type:</strong> {values!.body_shape}
+            </li>
+            <li>
+              <strong>Preferred Food:</strong> {values!.preferred_foods?.join(", ")}
             </li>
             <li>
               <strong>Allergies:</strong> {values!.allergies?.join(", ")}

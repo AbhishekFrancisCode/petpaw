@@ -12,6 +12,7 @@ export default function TempletGridSmall() {
           title="100% Human-Grade Ingredients"
           title_color="#028391"
           sub_title="Our responsibly sourced food delivers nutrients that are as delicious as they are essential to your dog’s health."
+          sub_title_color="#EE9422"
           images={MealPlanPageStrings.secondSection.data}
           grid_height="100px"
         />

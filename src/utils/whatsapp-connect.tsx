@@ -5,7 +5,7 @@ import React from "react";
 import wicon from "../../public/images/icons/whatsapp-icon.png";
 import Image from "next/image";
 const WhatsAppButton = ({
-  phoneNumber = "1234567890", // International format, no '+'
+  phoneNumber = "+917019596309", // International format, no '+'
   message = "Hello! I have a question."
 }: {
   phoneNumber?: string;
