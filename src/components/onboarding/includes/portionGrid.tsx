@@ -17,7 +17,9 @@ interface Nutrition {
   portionGrams: number; // total food in grams/day
 }
 
+//TODO formula check
 const getMealRecommendation = ({ age, weight, activity }: DogInput): Nutrition => {
+  console.log(age, weight, activity);
   // Step 1: Base calorie requirement per kg of body weight
   let kcalPerKg = 0;
 

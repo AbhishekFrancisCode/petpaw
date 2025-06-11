@@ -9,7 +9,7 @@ export interface Mealdata {
 }
 
 export type FoodType = "Vegetarian" | "Non-Vegetarian" | "";
-export type FoodOption = "Beef" | "Chicken" | "Turkey" | "Lamb" | "Pork" | "Veg" | "Treat";
+export type FoodOption = "Chicken" | "Turkey" | "Lamb" | "Pork" | "Veg" | "Treat";
 
 export type FoodOptions = {
   [key: string]: {
@@ -46,12 +46,6 @@ export const mealdatas: Mealdata[] = [
     imageUrl:
       "https://ik.imagekit.io/funlogic/pawfull/bowl-cutouts/fish%20bowl_1.png?updatedAt=1744913914541"
   },
-  // {
-  //   id: "4",
-  //   name: "Beef",
-  //   imageUrl:
-  //     "https://ik.imagekit.io/funlogic/meal/bowl-beef-1400.webp?updatedAt=1737923514937?tr=w-600,h-600"
-  // },
   {
     id: "4",
     name: "Veg",

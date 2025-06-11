@@ -27,7 +27,9 @@ export default function TempletType1({
           {title}
         </Title>
       )}
-      {sub_title && <div className="text-[#028391]  text-center px-6 md:px-4">{sub_title}</div>}
+      {sub_title && (
+        <div className={`text-[${sub_title_color}]  text-center px-6 md:px-4`}>{sub_title}</div>
+      )}
       {images && (
         <div className="flex flex-wrap place-content-center py-14 justify-evenly gap-8 lg:gap-0">
           {images.map((item: ImagePropsType, index: number) => {

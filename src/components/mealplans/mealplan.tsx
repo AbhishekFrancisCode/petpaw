@@ -11,6 +11,8 @@ import FAQ from "../how-it-works/Faq";
 import FullyDynamicFoodCircle from "./includes/testing";
 import BannerElevated from "../product/include/banner-elevated";
 import UploadMeal from "@/backend/setMealTable";
+import MealPortionSize from "../home/section-4";
+import Section_type_8 from "../home/section-6";
 
 export default function MealPlan() {
   return (
@@ -19,7 +21,7 @@ export default function MealPlan() {
       {/* <FullyDynamicFoodCircle /> */}
       <Marquee />
       <TempletGridSmall />
-      <div className="w-[100%]">
+      <div className="w-[95%] mx-auto">
         <BannerElevated
           imgUrl="https://ik.imagekit.io/funlogic/pawfull/Fish%20and%20Brocolli%20meal%20with%20ingredients%20cutout%20.jpg?updatedAt=1744636805971"
           value={"Get your first meal Free!!!"}
@@ -33,8 +35,9 @@ export default function MealPlan() {
         />
       </div>
       <div className="min-h-12" />
-      <CardWithHalfAvatar />
-      <BannerSection />
+      <MealPortionSize isMealplanPage={true} />
+      <Section_type_8 />
+      {/* <BannerSection /> */}
       <TestimonialsVideo />
       <FAQ />
     </>

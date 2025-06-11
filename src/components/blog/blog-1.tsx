@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 import { useGetPostsQuery } from "@/store/services/blogServices";
 import { Blog } from "@/store/interfaces/blog";
 import { BLOG_LOAD_IMG_URL } from "@/config";
+import { Title } from "../common/title-comp";
 
 interface NewsItem {
   source: string;
@@ -41,6 +42,18 @@ export const BlogPage = () => {
   return (
     blogList && (
       <div className="container relative mx-auto p-4 place-content-center max-h-[500px]">
+        <div className="flex flex-col mb-4">
+          <Title
+            variant="h2"
+            textStyle="primary"
+            className={`text-[#028391] text-center px-6 md:px-4`}
+          >
+            {"Paw Diaries"}
+          </Title>
+          <div className="text-[#EE9422]  text-center px-6 md:px-4">
+            {"Because wellness begins in the bowl"}
+          </div>
+        </div>
         <div className={`grid ${getGridLayout()} gap-6 max-h-[400px]`}>
           {/* First column - spans all 3 rows on desktop by default */}
           {/* If there are no side items, it takes full width (col span 2) */}
