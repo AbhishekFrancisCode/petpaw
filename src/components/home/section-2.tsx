@@ -21,34 +21,34 @@ interface ImageSlide {
 
 const imageSlides: ImageSlide[] = [
   {
-    title: "Chicken",
+    title: "Chicken - Low GI Chicken Meal",
     src: "https://ik.imagekit.io/funlogic/pawfull/chicken%20and%20sweet%20potato.JPG?updatedAt=1745738737447",
     indicator_title: "Chicken",
-    discription: "Low GI and high in protein, it's great for the gut and gentle on tummies"
+    discription: "Great for the gut and gentle on the tummy"
   },
   {
-    title: "Lamb",
+    title: "Mutton - Protein Rich Mutton Meal",
     src: "https://ik.imagekit.io/funlogic/pawfull/mutton-cutout.png?updatedAt=1744636807052",
     indicator_title: "Mutton",
-    discription: "A calorie-dense recipe that's high in zinc and antioxidants for healthy skin."
+    discription: "Rich in essenitial Amino Acids which boost muscle growth & repair"
   },
   {
-    title: "Fish",
+    title: "Fish - Omega 3 Rich Fish",
     src: "https://ik.imagekit.io/funlogic/pawfull/Fish%20and%20Brocolli%20meal%20with%20ingredients%20cutout%20.jpg?updatedAt=1744636805971",
     indicator_title: "Fish",
-    discription: "Filled with Omega-3s and 6s that boosts the brain and digestive health."
+    discription: "Promotes healthy skin and coat"
   },
   {
-    title: "Veg",
+    title: "Veg - Veg Protein",
     src: "https://ik.imagekit.io/funlogic/pawfull/soya-cutout.png?updatedAt=1744636807048",
     indicator_title: "Veg",
-    discription: "Rich in fermentable fibre, omega-3s and bioactive ingredients for a healthy gut."
+    discription: "Balanced diet veg meals"
   },
   {
-    title: "Treats",
+    title: "Treats - All Natural",
     src: "https://ik.imagekit.io/funlogic/pawfull/all_snacks-cut%20out%20.png",
     indicator_title: "Treats",
-    discription: "Rich in fermentable fibre, omega-3s and bioactive ingredients for a healthy gut."
+    discription: "Small Batch, naturally short shelf life treats"
   }
 ];
 
@@ -98,9 +98,9 @@ export default function Section_type_2() {
 
             <div className="flex-1 w-full lg:pr-24 py-4">
               <p className="text-[#333333] text-base font-normal text-center lg:text-left px-6 md:px-0">
-                Formulated by nutritionist, Pawftul’s freshly cooked meals are designed to be gentle
-                on your dog’s gut while providing a balanced diet that meets their daily nutritional
-                needs – helping them stay strong, healthy and fit.
+                Made with high quality human-grade ingredients, Pawftul’s freshly cooked meals are
+                designed to be gentle on your dog’s gut while providing a balanced diet that meets
+                their daily nutritional needs – helping them stay strong, healthy and fit.
               </p>
               <div className="flex justify-center lg:justify-start mt-5">
                 <Button
@@ -120,14 +120,14 @@ export default function Section_type_2() {
             <div
               className="order-2 lg:order-1 text-center lg:text-left text-[#028391] font-bold"
               style={{
-                fontSize: "clamp(1.75rem, 3vw, 2.5rem)"
+                fontSize: "clamp(1.75rem, 3vw, 2rem)"
               }}
             >
               {imageSlides[activeTabIndex].title}
             </div>
 
             {/* Slide Image & Description */}
-            <div className="order-3 lg:order-3 flex flex-col items-center py-4 max-w-[600px]">
+            <div className="order-3 lg:order-3 flex flex-col items-center py-4 min-w-[350px] md:min-w-[600px]">
               <div className="w-full min-w-[300px] h-[400px] relative mt-8">
                 <Image
                   key={Math.round.toString()}

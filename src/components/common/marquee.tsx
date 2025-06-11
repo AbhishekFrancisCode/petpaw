@@ -3,48 +3,33 @@ import Image from "next/image";
 import React from "react";
 
 const items: string[] = [
-  "high quality",
-  "no fillers",
-  "human grade",
-  "vet approved",
-  "all natural",
-  "fresh cooked",
-  "grain free",
-  "balanced diet",
-  "premium",
-  "wholesome",
-  "made with love",
-  "slow cooked",
-  "farm fresh",
-  "limited ingredient",
-  "minimally processed",
-  "real meat",
-  "pasture raised",
-  "organic",
-  "gluten free",
-  "single protein",
-  "non gmo",
-  "holistic",
-  "clean eating",
-  "superfood blend",
-  "chef crafted",
-  "home cooked",
-  "gently steamed",
-  "ancestral diet",
-  "natural flavor",
-  "no byproducts",
-  "slow cooked",
-  "fresh cooked",
-  "gently steamed",
-  "minimally processed",
-  "air dried",
-  "freeze dried",
-  "raw",
-  "dehydrated",
-  "home cooked",
-  "batch made",
-  "hand mixed",
-  "small batch"
+  "Freshly Cooked",
+  "Daily Delivered",
+  "Freshly Sourced",
+  "Human Grade",
+  "Preservative Free",
+  "Sustainable Packaging",
+  "Clean Eating",
+  "Wholesome",
+  "Natural Flavor",
+  "Freshly Cooked",
+  "Daily Delivered",
+  "Freshly Sourced",
+  "Human Grade",
+  "Preservative Free",
+  "Sustainable Packaging",
+  "Clean Eating",
+  "Wholesome",
+  "Natural Flavor",
+  "Freshly Cooked",
+  "Daily Delivered",
+  "Freshly Sourced",
+  "Human Grade",
+  "Preservative Free",
+  "Sustainable Packaging",
+  "Clean Eating",
+  "Wholesome",
+  "Natural Flavor"
 ];
 
 const Marquee = () => {
@@ -55,7 +40,7 @@ const Marquee = () => {
         initial={{ x: 0 }} // Start from the initial position
         animate={{ x: "-100%" }} // Move one full width to the left
         transition={{
-          duration: 400, // Adjust duration for smoothness
+          duration: 200, // Adjust duration for smoothness
           repeat: Infinity, // Loop infinitely
           ease: "linear" // Constant speed
         }}

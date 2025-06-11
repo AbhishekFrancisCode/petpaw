@@ -35,7 +35,7 @@ const ProductInfo = ({ product }: { product: Product }) => {
       detail: "Solutions for common problems and issues",
       content: (
         <div>
-          <h4 className="font-bold mb-2">Common Issues</h4>
+          {/* <h4 className="font-bold mb-2">Common Issues</h4> */}
           <DogNutritionTable nutritionData={product.macroPercentages!} />
         </div>
       )
@@ -47,7 +47,7 @@ const ProductInfo = ({ product }: { product: Product }) => {
         <div className="flex flex-col mx-auto place-content-center items-center my-10">
           <h1 className="text-1xl text-[#333333]leading-normal">Real food with nothing to hide.</h1>
           <p className="text-3xl md:max-w-[700px] text-center">
-            Everything else you need to know about Beef.
+            Everything else you need to know about the meal.
           </p>
         </div>
         <div className="flex flex-col md:flex-row gap-6">

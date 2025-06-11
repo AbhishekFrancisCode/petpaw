@@ -6,17 +6,17 @@ import { MdBrightness1 } from "react-icons/md";
 import ChipView from "./chip-view";
 
 const dogFoodOptions = [
-  "None",
   "Dry Kibble",
   "Canned Food",
   "Raw Meat",
   "Freeze-Dried",
   "Grain-Free",
-  "Organic",
+  "Home Cooked",
   "Puppy Food",
   "Senior Dog Food",
   "High-Protein",
-  "Gluten-Free"
+  "Gluten-Free",
+  "Others"
 ];
 
 interface StepProps {

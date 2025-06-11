@@ -24,7 +24,7 @@ export const productDetails: ProductDetailsProps[] = [
   {
     id: 1,
     title: "Chicken & Sweet Potato Bowl",
-    subtitle: "Grain-Friendly Nutrition",
+    subtitle: "Balanced Protein Nutrition",
     description:
       "A wholesome meal combining boneless, skinless chicken breast and chicken liver with foxtail millet. Enhanced with chopped mint and coriander, this recipe includes sweet potato for complex carbohydrates and spinach for additional nutrients. Coconut oil provides healthy fats, while eggshell and flaxseed powders contribute essential minerals and omega-3 fatty acids. Perfectly balanced for dogs seeking a nutrient-dense, grain-inclusive diet.",
     ingredients: [
@@ -67,7 +67,7 @@ export const productDetails: ProductDetailsProps[] = [
   {
     id: 3,
     title: "Fish & Bottle Gourd Bowl",
-    subtitle: "Gentle Aquatic Protein Blend",
+    subtitle: "Lean Seafood Protein Blend",
     description:
       "A delicate meal featuring boneless white fish paired with little/foxtail millet and white rice. Enriched with coconut oil and bottle gourd, this recipe provides a mild, easily digestible protein source. Eggshell powder ensures calcium supplementation. Perfect for dogs with sensitive stomachs or those requiring a lighter protein option.",
     ingredients: [
@@ -105,7 +105,7 @@ export const productDetails: ProductDetailsProps[] = [
   {
     id: 5,
     title: "Grain Free Fish Bowl",
-    subtitle: "Lean Seafood Alternative",
+    subtitle: "Grain Free Seafood Alternative",
     description:
       "A grain-free fish meal featuring boneless white fish with coconut oil. Complemented by sweet potatoes or white potatoes and carrots, this recipe provides a nutrient-dense, low-grain option. Eggshell powder and a whole boiled egg ensure calcium and protein supplementation. Ideal for dogs with grain sensitivities or those preferring a lighter, vegetable-enhanced diet.",
     ingredients: [
@@ -126,7 +126,7 @@ export const productDetails1: ProductDetailsProps[] = [
   {
     id: 6,
     title: "Mutton & Sweet Potato Bowl",
-    subtitle: "Rich Protein Traditional Blend",
+    subtitle: "High Protein Blend",
     description:
       "A hearty meal featuring lean, boneless mutton and mutton liver with brown rice. Enhanced with chopped coriander, coconut oil, sweet potatoes, and French green beans. Eggshell powder provides essential calcium. This recipe offers a traditional protein source with complex carbohydrates and varied vegetable nutrition, suitable for dogs seeking a robust, nutrient-rich meal.",
     ingredients: [
@@ -146,7 +146,7 @@ export const productDetails1: ProductDetailsProps[] = [
   {
     id: 7,
     title: "Mutton & Pumpkin Bowl",
-    subtitle: "Seasonal Protein Comfort",
+    subtitle: "High Protein Blend",
     description:
       "A nourishing combination of lean, boneless mutton and mutton liver with brown rice. Flavored with chopped coriander and coconut oil, this recipe includes nutrient-rich pumpkin and spinach. Eggshell powder ensures balanced mineral intake. A perfect blend of protein, complex carbohydrates, and seasonal vegetables for optimal canine nutrition.",
     ingredients: [
@@ -166,7 +166,7 @@ export const productDetails1: ProductDetailsProps[] = [
   {
     id: 8,
     title: "Grain Free Mutton Bowl",
-    subtitle: "Pure Protein Grain-Free Option",
+    subtitle: "High Protein Grain-Free Option",
     description:
       "A grain-free mutton meal featuring lean, boneless mutton and mutton liver. Enhanced with chopped coriander and mint, coconut oil, sweet potatoes, and French green beans. Eggshell powder provides essential minerals. Designed for dogs requiring a high-protein, grain-free diet with diverse vegetable nutrition.",
     ingredients: [
@@ -226,7 +226,7 @@ export const productDetailsTreats: ProductDetailsProps[] = [
   {
     id: 11,
     title: "Pumpkin Biscuits",
-    subtitle: "Healthy Vegetarian Treat",
+    subtitle: "Healthy Baked Treats",
     description:
       "A nutritious snack made with pumpkin puree, eggs, and oats flour. Prepared with coconut oil for added health benefits. These biscuits offer a wholesome, vegetarian treat option for dogs, providing a balance of nutrients in a convenient, delicious format.",
     ingredients: ["Pumpkin Puree", "Eggs", "Oats Flour", "Coconut Oil"],
@@ -256,7 +256,7 @@ export const productDetailsTreats: ProductDetailsProps[] = [
   {
     id: 14,
     title: "Dehydrated Chicken Jerky",
-    subtitle: "Pure Protein Snack",
+    subtitle: "Natural all Protein Snack",
     description:
       "A high-protein snack made from chicken breast or turkey. Prepared with coconut oil and seasoned with dried parsley or oregano. These dehydrated jerky treats offer a pure, concentrated protein source with minimal processing, perfect for dogs who love a classic meat treat.",
     ingredients: ["Chicken Breast/Turkey", "Coconut Oil", "Dried Parsley/Oregano"],

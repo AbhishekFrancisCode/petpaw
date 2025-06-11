@@ -22,21 +22,21 @@ const PetActivityStatusStep = ({ control }: StepProps) => {
   const steps: SelectCardProps[] = [
     {
       id: 1,
-      title: "Chilled out",
+      title: "Low",
       subtitle: "Mellow and loves sleep",
       subtitle1: "<30 minutes exercies",
       image: slimDog
     },
     {
       id: 2,
-      title: "Low to play",
-      subtitle: "Energetic, small walks.",
+      title: "Moderate",
+      subtitle: "Energetic, small walks",
       subtitle1: "30-90 minutes exercies",
       image: fitDog
     },
     {
       id: 3,
-      title: "Ball of energy",
+      title: "High",
       subtitle: "Athletic, long walks & runs",
       subtitle1: ">90 minutes exercies",
       image: overwaightDog
@@ -45,7 +45,7 @@ const PetActivityStatusStep = ({ control }: StepProps) => {
   return (
     <div className="flex flex-col items-center px-4 sm:px-6 md:px-8 md:mt-8">
       <h2 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mb-6 text-[#EE9422]">
-        {`What is ${formdata.petname ? `${formdata.petname}'s` : "your pet's"} body shape?`}
+        {`What is ${formdata.petname ? `${formdata.petname}'s` : "your pet's"} activity level?`}
       </h2>
 
       <div className="flex flex-wrap justify-center gap-4 w-full max-w-6xl mb-28 md:mb-0">

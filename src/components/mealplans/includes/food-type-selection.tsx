@@ -40,7 +40,7 @@ export default function FoodTypeSelection() {
         {data.title}
       </Title>
       {/* <h1 className="text-3xl font-semibold text-center mb-4">A Healthy Choice</h1> */}
-      <p className="text-center text-gray-700 mb-8">{data.sub_title}</p>
+      <p className="text-center text-[#EE9422] mb-8">{data.sub_title}</p>
 
       <div className="grid grid-cols-1 md:grid-cols-8 gap-8 items-start mb-8">
         <div className="space-y-2 md:col-span-2 order-2 md:order-1 ">

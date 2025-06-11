@@ -29,7 +29,7 @@ export default function HeroSection() {
                 autoPlay
                 loop
                 muted
-                className="w-full h-full object-cover p-0"
+                className="w-full object-contain  p-0"
               ></video>
               <button
                 onClick={toggleMute}

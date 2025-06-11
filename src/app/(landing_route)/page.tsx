@@ -24,7 +24,7 @@ export default function Landing() {
       <Section_type_1 />
       <Section_type_2 />
       {/* <Section_type_3 /> */}
-      <MealPortionSize />
+      <MealPortionSize isMealplanPage={false} />
       <Section_type_7 />
       {/* <Section_type_6 /> */}
       <BlogPage />

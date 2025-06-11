@@ -5,9 +5,9 @@ import { useRef, useState } from "react";
 
 const data = [
   {
-    title: "What makes fresh dog food better than kibble?",
+    title: "What makes freshly prepared food for dogs a better option?",
     content:
-      "Fresh dog food is made with real, high-quality ingredients without artificial preservatives or fillers. It’s more nutritious, easier to digest, and supports better overall health."
+      "Freshly prepared food is made with real, high-quality ingredients without artificial preservatives or fillers. It’s more nutritious, easier to digest, and supports better overall health."
   },
   {
     title: "Is fresh food suitable for all dog breeds and ages?",
