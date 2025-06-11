@@ -12,6 +12,7 @@ import HowItWorks from "./include/how_it_works";
 import ProductTestimonials from "./include/product_testimonials";
 import BannerElevated from "./include/banner-elevated";
 import Section_type_7 from "../home/section-7";
+import { Suspense } from "react";
 
 export default function Product() {
   return (
@@ -35,7 +36,9 @@ export default function Product() {
         imagePosition="right-5 bottom-[70px]"
       />
       {/* <div className="min-h-6"></div> */}
-      <ProductView />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ProductView />
+      </Suspense>
       {/* <div className="min-h-6"></div> */}
       <Section_type_7 />
       {/* <HowItWorks /> */}

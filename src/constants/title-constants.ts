@@ -30,11 +30,10 @@ export enum ServiceType {
 
 export const HomePageStrings = {
   title: "Pawtful",
-  description:
-    "Formulated by a Nutritionist, our meals are made with 100% humane-grade ingredients",
+  description: "Formulated by a Nutritionist, our meals are made with 100% human-grade ingredients",
   askPetname: "What's your dog's name?",
   secondSection: {
-    title: "Freshly Cooked & Wholesome Meals For Dogs",
+    title: "Freshly Cooked, Wholesome Meals For Dogs",
     sub_title: "",
     description: "",
     data: [

@@ -98,9 +98,9 @@ export default function Section_type_2() {
 
             <div className="flex-1 w-full lg:pr-24 py-4">
               <p className="text-[#333333] text-base font-normal text-center lg:text-left px-6 md:px-0">
-                Formulated by nutritionists, Pawftul’s freshly cooked meals are designed to be
-                gentle on your dog’s gut while providing a balanced diet that meets their daily
-                nutritional needs – helping them stay strong, healthy and fit.
+                Formulated by nutritionist, Pawftul’s freshly cooked meals are designed to be gentle
+                on your dog’s gut while providing a balanced diet that meets their daily nutritional
+                needs – helping them stay strong, healthy and fit.
               </p>
               <div className="flex justify-center lg:justify-start mt-5">
                 <Button
