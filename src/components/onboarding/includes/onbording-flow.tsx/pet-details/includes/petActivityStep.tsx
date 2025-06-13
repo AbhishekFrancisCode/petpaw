@@ -50,7 +50,7 @@ const PetActivityStatusStep = ({ control }: StepProps) => {
 
       <div className="flex flex-wrap justify-center gap-4 w-full max-w-6xl mb-28 md:mb-0">
         <Controller
-          name="body_shape"
+          name="activity_level"
           control={control}
           rules={{ required: "Please select a card" }}
           render={({ field, fieldState }) => (

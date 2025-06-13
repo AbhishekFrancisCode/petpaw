@@ -1,17 +1,24 @@
 import { DogMeal } from "@/components/mealplans/mealdata";
 import Link from "next/link";
 import React from "react";
-import DogMealSuggester from "./portionGrid";
+import DogMealSuggester, { ActivityLevel } from "./portionGrid";
+import { Formdata } from "@/store/interfaces/form-data";
 
 type MealGridProps = {
   meals: DogMeal[];
+  petdata: Formdata;
 };
 
-export const MealGrid = ({ meals }: MealGridProps) => {
+export const MealGrid = ({ meals, petdata }: MealGridProps) => {
   return (
     <div className="p-0">
       <div className="flex flex-wrap justify-center gap-6  mx-auto">
-        <DogMealSuggester age={4} weight={35} activity={"high"} />
+        <DogMealSuggester
+          name={petdata.petname!}
+          age={Number(petdata.age)}
+          weight={Number(petdata.weight)}
+          activity={petdata.activity_level as ActivityLevel}
+        />
         {meals.map((meal, index) => (
           <Link
             href="/mealplan"

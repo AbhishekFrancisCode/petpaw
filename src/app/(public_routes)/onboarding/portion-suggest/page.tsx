@@ -1,21 +1,24 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { DogMeal } from "@/components/mealplans/mealdata";
 import { MealGrid } from "@/components/onboarding/includes/mealGrid";
 
 export default function MealPortionSuggest() {
   const router = useRouter();
-  const [mealsString, setMealsString] = useState<string | null>(null);
+  const [mealsString, setMealsString] = useState<any>(null);
+  const [petdata, setPetdata] = useState<any>({});
 
   useEffect(() => {
     const recommendedMealsString = localStorage.getItem("recommendedMeals");
+    const petDataString = localStorage.getItem("petData");
 
     if (!recommendedMealsString) {
       router.push("/onboarding");
     } else {
       setMealsString(recommendedMealsString);
+      setPetdata(JSON.parse(petDataString!));
     }
   }, [router]);
 
@@ -34,7 +37,7 @@ export default function MealPortionSuggest() {
 
   return (
     <div className="container mx-auto flex flex-col pt-[90px]">
-      <MealGrid meals={recommendedMeals} />
+      <MealGrid meals={recommendedMeals} petdata={petdata} />
     </div>
   );
 }
