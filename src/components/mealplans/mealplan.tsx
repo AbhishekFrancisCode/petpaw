@@ -13,6 +13,7 @@ import BannerElevated from "../product/include/banner-elevated";
 import UploadMeal from "@/backend/setMealTable";
 import MealPortionSize from "../home/section-4";
 import Section_type_8 from "../home/section-6";
+import { mealsPlanFaqData } from "@/faq-data/meals-plan-faq-data";
 
 export default function MealPlan() {
   return (
@@ -39,7 +40,7 @@ export default function MealPlan() {
       <Section_type_8 />
       {/* <BannerSection /> */}
       <TestimonialsVideo />
-      <FAQ />
+      <FAQ items={mealsPlanFaqData} />
     </>
   );
 }
