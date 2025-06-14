@@ -75,7 +75,7 @@ const ProductTestimonials = () => {
   return (
     <div className="flex flex-col max-w-6xl mx-auto gap-4">
       <p className="text-3xl text-[#999999] md:text-4xl font-normal text-center md:max-h-16">
-        Real real reviews about Pawtful's meal plans
+        Real reviews about Pawtful's meal plans
       </p>
       <p className="text-sm text-center text-[#999999] ">See what real customers are saying</p>
       <Testimonials cards={cards} />

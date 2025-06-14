@@ -19,7 +19,7 @@ export default function HowItWorksPage() {
       <NutritionSection />
       <FirstBoxDetails />
       <SubscriptionSection />
-      <Faq />
+
     </div>
   );
 }

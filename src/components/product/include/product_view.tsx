@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { productDetails, productDetails1, productDetailsTreats } from "@/constants/meal-data";
+import { useEffect, useState } from "react";
 import ProductDisplay from "./expand_card";
 import BannerElevated from "./banner-elevated";
 import { Title } from "@/components/common/title-comp";
+import { fetchProducts } from "@/store/products";
+import { productDetailsTreats } from "@/constants/meal-data";
 
 export interface ProductDetailsProps {
   id: number;
@@ -31,25 +32,52 @@ export default function ProductView() {
       }
     }
   }, [scrollTo]);
+  const [products, setProducts] = useState<ProductDetailsProps[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        const data = await fetchProducts();
+        setProducts(data);
+      } catch (error) {
+        console.error("Error loading products:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadProducts();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center min-h-[400px]">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-700"></div>
+      </div>
+    );
+  }
+
+  // Split products into two columns
+  const leftColumn = products.filter((_, i) => i % 2 === 0);
+  const rightColumn = products.filter((_, i) => i % 2 !== 0);
 
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col overflow-visible">
       <div className="flex flex-col mx-auto place-content-center items-center">
         <Title variant="h2" textStyle="primary" className="text-[#028391] leading-normal">
           Our Products
         </Title>
       </div>
-
-      <div className="flex flex-col md:flex-row gap-8 px-4 md:px-0">
-        <div className="flex flex-col gap-8 pt-6 md:pt-12 md:max-w-[50%]">
-          {productDetails.map((item: ProductDetailsProps, index: number) => (
-            <ProductDisplay key={index} productDetails={item} />
+      <div className="flex flex-row gap-12 px-4 md:px-0 pt-6 md:pt-12">
+        <div className="flex flex-col gap-12 flex-1">
+          {leftColumn.map((item, idx) => (
+            <ProductDisplay key={idx} productDetails={item} />
           ))}
         </div>
-
-        <div className="flex flex-col gap-8 pt-6 md:pt-12 md:max-w-[50%]">
-          {productDetails1.map((item: ProductDetailsProps, index: number) => (
-            <ProductDisplay key={index} productDetails={item} />
+        <div className="flex flex-col gap-12 flex-1">
+          {rightColumn.map((item, idx) => (
+            <ProductDisplay key={idx} productDetails={item} />
           ))}
         </div>
       </div>
@@ -68,13 +96,11 @@ export default function ProductView() {
         imagePosition="right-0 bottom-[70px]"
         imageHide={false}
       />
-
       <div className="flex flex-col mx-auto place-content-center items-center" id="treatsec">
-        <Title variant="h2" textStyle="primary" className="text-[#028391] leading-normal">
+        <Title variant="h2" textStyle="primary" className={`text-[#028391] leading-normal`}>
           Fresh treats
         </Title>
       </div>
-
       <div className="flex flex-col md:flex-col-2 gap-8 py-4 md:py-12 mx-4 md:px-0">
         {productDetailsTreats.map((item: ProductDetailsProps, index: number) => (
           <ProductDisplay key={index} productDetails={item} />
