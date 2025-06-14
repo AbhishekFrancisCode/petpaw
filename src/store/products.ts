@@ -31,6 +31,9 @@ export const fetchProducts = async (): Promise<ProductDetailsProps[]> => {
       products.push(product);
     });
 
+    // Sort products by ID in ascending order
+    products.sort((a, b) => Number(a.id) - Number(b.id));
+
     return products;
   } catch (error) {
     return [];
