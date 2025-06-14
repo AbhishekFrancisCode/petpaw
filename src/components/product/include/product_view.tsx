@@ -58,17 +58,28 @@ export default function ProductView() {
     );
   }
 
+  // Split products into two columns
+  const leftColumn = products.filter((_, i) => i % 2 === 0);
+  const rightColumn = products.filter((_, i) => i % 2 !== 0);
+
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col overflow-visible">
       <div className="flex flex-col mx-auto place-content-center items-center">
         <Title variant="h2" textStyle="primary" className="text-[#028391] leading-normal">
           Our Products
         </Title>
       </div>
-      <div className="grid gap-8 px-4 md:px-0 pt-6 md:pt-12 grid-cols-1 md:grid-cols-2">
-        {products.map((item: ProductDetailsProps, index: number) => (
-          <ProductDisplay key={index} productDetails={item} />
-        ))}
+      <div className="flex flex-row gap-12 px-4 md:px-0 pt-6 md:pt-12">
+        <div className="flex flex-col gap-12 flex-1">
+          {leftColumn.map((item, idx) => (
+            <ProductDisplay key={idx} productDetails={item} />
+          ))}
+        </div>
+        <div className="flex flex-col gap-12 flex-1">
+          {rightColumn.map((item, idx) => (
+            <ProductDisplay key={idx} productDetails={item} />
+          ))}
+        </div>
       </div>
 
       <div className="min-h-12" />
