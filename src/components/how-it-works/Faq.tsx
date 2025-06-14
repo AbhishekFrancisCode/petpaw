@@ -1,83 +1,82 @@
 "use client";
 import React, { useState } from "react";
 import { Title } from "../common/title-comp";
+import { ChevronDown } from "lucide-react";
 
-interface FAQItem {
+export interface FAQItem {
   question: string;
-  answer: string;
+  answer: string | React.ReactNode;
 }
 
-const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+interface FAQProps {
+  title?: string;
+  items: FAQItem[];
+  className?: string;
+}
 
-  const faqs: FAQItem[] = [
-    {
-      question: "How is Pawtful made?",
-      answer:
-        "Short answer: with a whole lotta love. Longer answer: We started by working with a veterinary nutritionist who helped us formulate our balanced and complete, human-grade recipes, abiding by the AAFCO standards. Then we carefully sourced our ingredients (more on this below), cook them at low temperatures in small batches at our facility in Minnesota, and hand-pack them. We personally know the people who are making the food—and our dogs can attest to how delicious it is."
-    },
-    {
-      question: "Where are the ingredients sourced from?",
-      answer:
-        "Our ingredients are sourced from trusted suppliers with a focus on quality and sustainability."
-    },
-    {
-      question: "When is it shipped?",
-      answer: "We ship your orders every week on the same day to ensure freshness."
-    },
-    {
-      question: "When am I charged?",
-      answer: "You'll be charged at the time of your order confirmation."
-    },
-    {
-      question: "What if I'm not home when it's delivered?",
-      answer:
-        "Our packaging is designed to keep the food fresh for several hours, even if you're not home."
-    },
-    {
-      question: "How long will the food stay fresh after it's delivered?",
-      answer: "The food will stay fresh for 24-48 hours if kept in the original packaging."
-    },
-    {
-      question: "What if I don't have enough room in my fridge to store the trays?",
-      answer: "You can portion the trays into smaller containers or freeze the trays for later use."
-    }
-  ];
+const FAQ: React.FC<FAQProps> = ({
+  title = "Frequently Asked Questions",
+  items,
+  className = ""
+}) => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <div className="bg-transprent py-12">
+    <div className={`bg-transparent py-16 ${className}`}>
       <div className="p-8 max-w-7xl mx-auto">
-        <Title variant="h2" textStyle="primary" className={`text-[#028391] text-center mb-6`}>
-          FAQ's
-        </Title>
+        {title && (
+          <Title variant="h2" textStyle="primary" className="text-[#028391] text-center mb-12">
+            {title}
+          </Title>
+        )}
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div key={index} className="border rounded-xl overflow-hidden bg-white">
+          {items.map((faq, index) => (
+            <div
+              key={index}
+              className={`border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-lg hover:shadow-[#028391]/10 hover:border-[#028391]/20 transition-all duration-300 transform hover:scale-[1.01] ${
+                openIndex === index ? 'border-[#028391]/30' : ''
+              }`}
+            >
               <button
-                className="w-full flex justify-between items-center p-4 bg-white text-left text-sm font-semibold hover:bg-orange-100 rounded-md transition-all duration-300"
+                className={`w-full flex justify-between items-center p-4 bg-white text-left text-lg font-medium rounded-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#028391]/20 ${
+                  openIndex !== index ? 'hover:bg-[#028391]/5' : ''
+                }`}
                 onClick={() => toggleFAQ(index)}
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
               >
-                {faq.question}
-                <span
-                  className={`transform transition-transform duration-300 text-xs ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
-                >
-                  ▼
+                <span className={`text-gray-800 font-semibold ${openIndex === index ? 'text-[#028391]' : ''}`}>
+                  {faq.question}
                 </span>
+                <ChevronDown
+                  className={`w-5 h-5 text-[#028391] transition-all duration-300 ${
+                    openIndex === index ? "rotate-180 transform scale-110" : ""
+                  }`}
+                />
               </button>
               <div
-                className={`transition-all duration-400 ease-out ${
+                id={`faq-answer-${index}`}
+                className={`grid transition-all duration-300 ease-in-out ${
                   openIndex === index
-                    ? "max-h-[1000px] opacity-100 p-4 bg-gray-50"
-                    : "max-h-0 opacity-0"
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
                 }`}
               >
-                <p className="text-gray-700 text-sm">{faq.answer}</p>
+                <div className="overflow-hidden">
+                  <div className={`p-4 transition-colors duration-300 ${
+                    openIndex === index ? 'bg-[#028391]/5' : 'bg-transparent'
+                  }`}>
+                    {typeof faq.answer === 'string' ? (
+                      <p className="text-gray-600 text-base leading-relaxed">{faq.answer}</p>
+                    ) : (
+                      faq.answer
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
