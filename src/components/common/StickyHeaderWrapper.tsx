@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import OfferBanner from "@/components/common/offer_strip";
 import HeaderBlack from "@/components/common/header_black";
+import { offerBannerConfig } from "@/config/offerBannerConfig";
 
 export default function StickyHeaderWrapper({ children }: { children: React.ReactNode }) {
   const [isHeaderFixed, setIsHeaderFixed] = useState(false);
@@ -19,13 +20,20 @@ export default function StickyHeaderWrapper({ children }: { children: React.Reac
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const showBanner = !pathname.startsWith("/onboarding");
+  const shouldShowBanner =
+    offerBannerConfig.visible &&
+    offerBannerConfig.showOnRoutes.some((route) => pathname.startsWith(route)) &&
+    !(offerBannerConfig.hideOnRoutes?.some((route) => pathname.startsWith(route)));
 
   return (
     <>
-      {showBanner && (
+      {shouldShowBanner && (
         <div ref={bannerRef} id="offer-banner-wrapper">
-          <OfferBanner />
+          <OfferBanner
+            text={offerBannerConfig.text}
+            link={offerBannerConfig.link}
+            linkLabel={offerBannerConfig.linkLabel}
+          />
         </div>
       )}
       <HeaderBlack isFixed={isHeaderFixed} />
