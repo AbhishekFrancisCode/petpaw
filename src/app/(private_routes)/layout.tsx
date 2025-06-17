@@ -1,6 +1,5 @@
 "use client";
 import Footer from "@/components/common/footer";
-import HeaderBlack from "@/components/common/header_black";
 import AuthProvider from "@/contexts/auth-context";
 
 export default function PrivateLayout({ children }: { children: React.ReactNode }) {
