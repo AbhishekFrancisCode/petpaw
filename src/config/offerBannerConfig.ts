@@ -11,7 +11,7 @@ export const offerBannerConfig: OfferBannerConfig = {
   visible: true,
   text: "The Semi-Annual Sale: 60% off your first box!",
   link: "/onboarding",
-  linkLabel: "Try now!!!!!!",
+  linkLabel: "Try now",
   showOnRoutes: ["/", "/mealplan", "/faq", "/product", "/how-it-works"],
   hideOnRoutes: ["/onboarding"],
 };
