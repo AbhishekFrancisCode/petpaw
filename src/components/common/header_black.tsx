@@ -128,12 +128,6 @@ export default function HeaderBlack() {
                         // handleRedirect={handleRedirect}
                       />
                     </Link>
-                    <Link href={``}>
-                      <Button
-                        text="Contact us"
-                        // handleRedirect={handleRedirect}
-                      />
-                    </Link>
                     <Link href={`/onboarding`}>
                       <Button
                         cls="w-32 h-9 text-sm text-white font-normal text-center bg-[#EE9422]"
@@ -227,14 +221,6 @@ export default function HeaderBlack() {
                     <a href="/faq" className="block text-gray-400 hover:text-[#333333]">
                       <Button
                         text="FAQ's"
-                        // handleRedirect={handleRedirect}
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="" className="block text-gray-400 hover:text-[#333333]">
-                      <Button
-                        text="Contact us"
                         // handleRedirect={handleRedirect}
                       />
                     </a>
