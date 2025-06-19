@@ -48,8 +48,8 @@ export default function PetDetails({
   const { user } = useContext(AuthContext) as AuthContextType;
   const { control, handleSubmit, setValue, getValues, formState, trigger } = useForm<Formdata>({
     defaultValues: {
-      name: "Abhishek",
-      email: "abhi0",
+      name: "",
+      email: "",
       phone: "",
       street: "",
       city: "",
@@ -134,14 +134,12 @@ export default function PetDetails({
   };
   const goToPreviousStep = () => {
     if (innerStep === 0 && currentStep === 0) {
-      console.log(innerStep, currentStep);
       if (document.referrer) {
         router.back();
       } else {
         router.push("/"); // Navigate to a fallback page
       }
     } else {
-      console.log(innerStep, currentStep);
       try {
         if (innerStep === 4 || innerStep === 7) {
           setCurrentStep((prev: number) => (prev <= 0 ? prev : prev - 1));
@@ -219,7 +217,6 @@ export default function PetDetails({
         <div className="fixed bottom-0 left-0 right-0 bg-transparent py-4 sm:py-5 md:py-3 lg:py-6 z-10 max-h-20 lg:max-h-40">
           <div className="flex justify-center">
             <div className="flex flex-row-reverse items-center gap-3 sm:gap-4 px-4 sm:px-6">
-              {/* Continue Button */}
               {innerStep !== 8 && (
                 <button
                   type="submit"
@@ -228,8 +225,6 @@ export default function PetDetails({
                   Continue
                 </button>
               )}
-
-              {/* Back Button */}
               <button
                 type="button"
                 onClick={innerStep !== 8 ? goToPreviousStep : handleRoute}

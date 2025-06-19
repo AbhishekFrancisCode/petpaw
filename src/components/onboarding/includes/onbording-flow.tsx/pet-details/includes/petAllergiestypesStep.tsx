@@ -12,7 +12,7 @@ export const dogAllergens = [
   "Chicken",
   "Dairy",
   "Eggs",
-  "Lamb",
+  "Mutton",
   "Fish",
   "Pork",
   "Rice",
