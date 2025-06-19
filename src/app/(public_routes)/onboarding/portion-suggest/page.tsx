@@ -36,7 +36,7 @@ export default function MealPortionSuggest() {
   if (!recommendedMeals) return null; // Optionally show a loader here
 
   return (
-    <div className="container mx-auto flex flex-col pt-[90px]">
+    <div className="container mx-auto flex flex-col pt-[100px] lg:pt-[120px]">
       <MealGrid meals={recommendedMeals} petdata={petdata} />
     </div>
   );

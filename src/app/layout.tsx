@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ReduxWrapper from "../store/redux-wrapper";
 import { ToastContainer } from "react-toastify";
 import OfferBanner from "@/components/common/offer_strip";
-import StickyHeaderWrapper from "@/components/common/StickyHeaderWrapper";
+import ConditionalHeaderWrapper from "@/components/common/ConditionalHeaderWrapper";
 import AuthProvider from "@/contexts/auth-context";
 
 const poppins = Inter({
@@ -31,9 +31,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${poppins.className} bg-[#FFF8EF]`}>
         <AuthProvider>
-          <StickyHeaderWrapper>
+          <ConditionalHeaderWrapper>
             <ReduxWrapper>{children}</ReduxWrapper>
-          </StickyHeaderWrapper>
+          </ConditionalHeaderWrapper>
         </AuthProvider>
         <ToastContainer />
       </body>
