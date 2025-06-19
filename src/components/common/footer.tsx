@@ -24,8 +24,8 @@ export default function Footer({ _isBlack, _isMargin }: any) {
           <div className="lg:max-w-[100%]  sm:px-2 md:p-0 flex flex-col justify-between">
             <div className="flex flex-col">
               <div className="text-[#000000] text-sm opacity-70 mb-4 leading-7">
-                <Link href="">About Us</Link> |<Link href=""> Contact Us</Link> |
-                <Link href=""> Privacy Policy</Link> |<Link href=""> Terms and Conditions</Link>
+                <Link href="/about-us">About Us</Link> |<Link href="/contact-us"> Contact Us</Link> |
+                <Link href="/privacy-policy"> Privacy Policy</Link> |<Link href="/terms-and-conditions"> Terms and Conditions</Link>
               </div>
             </div>
           </div>

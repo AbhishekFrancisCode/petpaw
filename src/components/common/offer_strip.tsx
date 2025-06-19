@@ -1,36 +1,21 @@
-// "use client";
-// import { ENVIRONMENT } from "@/config";
-// import Link from "next/link";
-// import { useEffect } from "react";
-// import { hotjar } from "react-hotjar";
-// import SocialIcons from "./social_link";
+"use client";
+import Link from "next/link";
 
-// interface HotStripProps {
-//   text: string;
-//   subText?: string;
-//   height: string;
-//   width: string;
-//   bgColor?: string;
-//   bgImageLink?: string;
-//   link?: string;
-//   buttonlable?: string;
-//   buttoncolor?: string;
-// }
-
-// export default function OfferStrip({
-//   text,
-//   subText,
-//   height,
-//   width,
-//   bgColor,
-//   bgImageLink,
-//   link,
-//   buttonlable,
-//   buttoncolor
-// }: HotStripProps) {
-//   return (
-//     <div className={`min-w-[${width}] min-h-[${height}] bg-[${bgColor}]`}>
-//       <text>{text}</text>
-//     </div>
-//   );
-// }
+export default function OfferBanner({
+  text,
+  link,
+  linkLabel,
+}: {
+  text: string;
+  link: string;
+  linkLabel: string;
+}) {
+  return (
+    <div className="w-full bg-[#F88E8E] text-white text-center py-2 px-4 flex items-center justify-center text-sm font-medium">
+      <span className="mr-2">{text}</span>
+      <Link href={link} className="underline font-semibold hover:text-[#fff] focus:outline-none ml-2">
+        {linkLabel}
+      </Link>
+    </div>
+  );
+}

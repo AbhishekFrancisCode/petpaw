@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Flame, Drumstick, Droplet, Leaf, Utensils } from "lucide-react";
 import { twMerge } from "tailwind-merge";
-type ActivityLevel = "low" | "medium" | "high";
+export type ActivityLevel = "Low" | "Moderate" | "High";
 
 interface DogInput {
+  name: string;
   age: number; // in years
   weight: number; // in kg
   activity: ActivityLevel;
@@ -17,14 +18,13 @@ interface Nutrition {
   portionGrams: number; // total food in grams/day
 }
 
-//TODO formula check
 const getMealRecommendation = ({ age, weight, activity }: DogInput): Nutrition => {
   console.log(age, weight, activity);
   // Step 1: Base calorie requirement per kg of body weight
   let kcalPerKg = 0;
 
-  if (activity === "low") kcalPerKg = 70;
-  else if (activity === "medium") kcalPerKg = 90;
+  if (activity === "Low") kcalPerKg = 70;
+  else if (activity === "Moderate") kcalPerKg = 90;
   else kcalPerKg = 110;
 
   // Puppies need more energy
@@ -46,8 +46,9 @@ const getMealRecommendation = ({ age, weight, activity }: DogInput): Nutrition =
   return { calories, protein, fat, carbs, portionGrams };
 };
 
-const DogMealSuggester = ({ age, weight, activity }: DogInput) => {
+const DogMealSuggester = ({ name, age, weight, activity }: DogInput) => {
   const [form, setForm] = useState<DogInput>({
+    name: name,
     age: age,
     weight: weight,
     activity: activity
@@ -56,13 +57,14 @@ const DogMealSuggester = ({ age, weight, activity }: DogInput) => {
   const [nutrition, setNutrition] = useState<Nutrition | null>(null);
 
   useEffect(() => {
+    console.log(name);
     const result = getMealRecommendation(form);
     setNutrition(result);
   }, []);
 
   return (
     <div className="p-4 max-w-[33rem] shadow bg-[#EE9422] rounded-2xl min-w-full md:min-w-[430px]">
-      <h2 className="text-xl text-[#333333] font-bold mb-4">Dog Meal Portion Analyzer</h2>
+      <h2 className="text-xl text-[#333333] font-bold mb-4">{`${name}'s Meal Portion`}</h2>
       {/* <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label>Age (years):</label>
@@ -104,9 +106,7 @@ const DogMealSuggester = ({ age, weight, activity }: DogInput) => {
 
       {nutrition && (
         <div className="mt-4">
-          <h3 className="text-1xl font-bold mb-6 text-[#333333]">
-            Your 🐶 Daily Nutritional Needs
-          </h3>
+          <h3 className="text-1xl font-bold mb-6 text-[#333333]">Daily Nutritional Needs</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             <NutritionCard
               icon={<Flame className="w-8 h-8" color="#EE9422" />}

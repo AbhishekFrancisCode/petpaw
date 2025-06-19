@@ -9,7 +9,7 @@ import { DogMeal, MealPlanData } from "../mealplans/mealdata";
 import { MealGrid } from "./includes/mealGrid";
 import { dogAllergens } from "./includes/onbording-flow.tsx/pet-details/includes/petAllergiestypesStep";
 import { useRouter } from "next/navigation";
-import DogMealSuggester from "./includes/portionGrid";
+import DogMealSuggester, { ActivityLevel } from "./includes/portionGrid";
 
 export interface StepProps {
   control: Control<Formdata>;
@@ -25,33 +25,46 @@ export default function OnLoadingingPage({ control, getValues }: StepProps) {
     console.log("values", values);
   }, [values]);
 
-  //TODO
-  function filterMeals(pet: Formdata, mealPlans: DogMeal[]) {
+  function filterMeals(pet: Formdata, mealPlans: DogMeal[]): DogMeal[] {
     const age = parseInt(pet.age?.toString() || "0");
     const weight = parseFloat(pet.weight || "0");
     const isSenior = age >= 7;
     const isOverweight = weight > 40;
-    const lowActivity = (pet.activity_level ?? "").toLowerCase().includes("low");
+    const activityLevel = (pet.activity_level ?? "") as ActivityLevel;
+    const lowActivity = activityLevel === "Low";
 
-    const allergyKeywords = [...dogAllergens];
+    // Normalize and filter allergies based on known list
     const allergies = (pet.allergies ?? [])
-      .filter((item) => allergyKeywords.includes(item.toLowerCase()))
-      .map((a) => a.toLowerCase());
-    console.log("allergies", allergies);
+      .map((a) => a.trim().toLowerCase())
+      .filter((a) => dogAllergens.map((d) => d.toLowerCase()).includes(a));
+
+    // Normalize preferred foods to lowercase
+    const preferredFoods = (pet.preferred_foods ?? []).map((f) => f.toLowerCase());
 
     return mealPlans.filter((meal) => {
+      // Check if meal contains any known allergens
       const containsAllergen = meal.allergies.some((ingredient) =>
         allergies.some((allergy) => ingredient.toLowerCase().includes(allergy))
       );
       if (containsAllergen) return false;
 
+      // Check if any of the preferred foods are matched in meal name or description
+      const matchesPreference = preferredFoods.some(
+        (pref) =>
+          meal.name.toLowerCase().includes(pref) || meal.description.toLowerCase().includes(pref)
+      );
+
+      // Filter logic based on pet profile
       if (isOverweight || lowActivity) {
-        return meal.name.toLowerCase().includes("grain free");
-      } else if (isSenior) {
-        return (pet.preferred_foods ?? []).includes("Senior Dog Food");
-      } else {
-        return true; // Allow all if no special needs
+        return meal.name.toLowerCase().includes("grain free") || matchesPreference;
       }
+
+      if (isSenior) {
+        return matchesPreference || meal.name.toLowerCase().includes("senior");
+      }
+
+      // Default: allow if it matches any preference or no special condition
+      return matchesPreference || true;
     });
   }
 
