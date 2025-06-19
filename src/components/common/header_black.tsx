@@ -17,7 +17,7 @@ const override: CSSProperties = {
   borderColor: "red"
 };
 
-export default function HeaderBlack() {
+export default function HeaderBlack({ isFixed = false }: { isFixed?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   let [loading, setLoading] = useState(true);
 
@@ -69,7 +69,7 @@ export default function HeaderBlack() {
   return (
     <div>
       <div
-        className="fixed float-start pl-0 lg:bg-transparent backdrop-blur-[40px] w-screen z-20 min-h-[70px] max-h-[70px] lg:min-h-[90px] lg:max-h-[90px]"
+        className={`${isFixed ? "fixed top-0 left-0 w-full z-20" : ""} float-start pl-0 lg:bg-transparent backdrop-blur-[40px] w-screen lg:min-h-[90px]`}
         onBlur={(e) => e.currentTarget.focus()}
       >
         <div className="px-2 md:px-6 text-sm text-black rounded-xl font-medium text-right">

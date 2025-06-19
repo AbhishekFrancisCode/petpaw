@@ -1,3 +1,5 @@
+"use client";
+
 import { COOKIE_NAME } from "@/config";
 import { getCookieValue } from "@/utils/session";
 import { getCookie } from "cookies-next";
