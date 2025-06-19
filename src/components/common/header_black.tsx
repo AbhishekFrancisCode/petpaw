@@ -69,7 +69,9 @@ export default function HeaderBlack({ isFixed = false }: { isFixed?: boolean }) 
   return (
     <div>
       <div
-        className={`${isFixed ? "fixed top-0 left-0 w-full z-20" : ""} float-start pl-0 lg:bg-transparent backdrop-blur-[40px] w-screen lg:min-h-[90px]`}
+        className={`${
+          isFixed ? "fixed top-0 left-0 w-full z-50 bg-white/80" : ""
+        } float-start pl-0 lg:bg-transparent backdrop-blur-[40px] w-screen lg:min-h-[90px]`}
         onBlur={(e) => e.currentTarget.focus()}
       >
         <div className="px-2 md:px-6 text-sm text-black rounded-xl font-medium text-right">
