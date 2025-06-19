@@ -17,7 +17,7 @@ import { Suspense } from "react";
 
 export default function Product() {
   return (
-    <div className=" flex flex-col pt-32">
+    <div className=" flex flex-col md:pt-32">
       {/* <OfferStrip
         text="Welcome to the Sale!"
         subText="Up to 50% off on all items"

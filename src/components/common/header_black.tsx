@@ -10,6 +10,8 @@ import { AuthContext, AuthContextType } from "@/contexts/auth-context";
 import SyncLoader from "react-spinners/ClipLoader";
 import LoadingState from "@/utils/loading-state";
 import { UserRound, LogIn } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import MobileDrawer from "./drawer-panel";
 
 const override: CSSProperties = {
   display: "block",
@@ -164,84 +166,13 @@ export default function HeaderBlack({ isFixed = false }: { isFixed?: boolean }) 
             </div>
           )}
         </div>
-        {/* Drawer */}
       </div>
-      {isMobile && isDrawerOpen && (
-        <div
-          className="fixed inset-0 z-50 bg-black bg-opacity-50"
-          onClick={toggleDrawer} // Close drawer when clicking outside
-        >
-          <div
-            className="fixed left-0 top-0 min-h-full w-64 bg-[#FFF8EF] shadow-lg p-4 rounded-r-lg"
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
-          >
-            <div className="flex flex-col min-h-full w-56">
-              <div className="flex-grow">
-                <div className="p-2 min-h-[70px] max-h-[70px] max-w-[70px]">
-                  <Image
-                    fill={true}
-                    src="/images/logos/logo_round.png"
-                    alt="pawtful.com"
-                    className="max-h-[76px] max-w-[76px] pt-2"
-                  />
-                </div>
-                {!user ? (
-                  // !user && loading ? (
-                  //   <LoadingState loading={loading} />
-                  // ) : (
-                  <div className="flex flex-row align-middle mb-4">
-                    <Link href={"/login?flow=loginflow"}>
-                      <Button text="Login" />
-                    </Link>
-                  </div>
-                ) : (
-                  // )
-                  <Link href={"/profile"}>
-                    <div className="flex flex-row align-middle mb-4">
-                      <Image src={ProfileIcon} alt="" width={18} height={18} className="" />
-                      <text className="px-4"> Profile </text>
-                    </div>
-                  </Link>
-                )}
-                <ul className="space-y-4">
-                  {/* <li>
-                    <a href="/" className="block text-gray-400 hover:text-[#333333]">
-                      <Button text="How it Works" handleRedirect={goToDateSection} />
-                    </a>
-                  </li> */}
-                  <li>
-                    <a href="/mealplan" className="block text-gray-400 hover:text-[#333333]">
-                      <Button text="Meal plan" handleRedirect={goToDateSection} />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/product" className="block text-gray-400 hover:text-[#333333]">
-                      <Button text="Our Products" handleRedirect={goToDateSection} />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/faq" className="block text-gray-400 hover:text-[#333333]">
-                      <Button
-                        text="FAQ's"
-                        // handleRedirect={handleRedirect}
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/onboarding" className="block text-gray-400 hover:text-[#333333]">
-                      <Button
-                        cls="w-32 h-9 text-sm text-white font-normal text-center bg-[#EE9422]"
-                        text="Get Started"
-                        handleRedirect={goToDateSection}
-                      />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      <MobileDrawer
+        isOpen={isDrawerOpen}
+        toggleDrawer={toggleDrawer}
+        user={user}
+        goToDateSection={goToDateSection}
+      />
     </div>
   );
 }

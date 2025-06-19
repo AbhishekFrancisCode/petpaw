@@ -4,15 +4,9 @@ import StickyHeaderWrapper from "./StickyHeaderWrapper";
 
 export default function ConditionalHeaderWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-
-  // Check if the current route is an onboarding route
-  const isOnboardingRoute = pathname.startsWith('/onboarding');
-
+  const isOnboardingRoute = pathname.startsWith("/onboarding");
   if (isOnboardingRoute) {
-    // For onboarding routes, render children without StickyHeaderWrapper
     return <>{children}</>;
   }
-
-  // For all other routes, render with StickyHeaderWrapper
   return <StickyHeaderWrapper>{children}</StickyHeaderWrapper>;
 }

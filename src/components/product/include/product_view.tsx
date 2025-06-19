@@ -32,6 +32,7 @@ export default function ProductView() {
       }
     }
   }, [scrollTo]);
+
   const [products, setProducts] = useState<ProductDetailsProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -69,13 +70,15 @@ export default function ProductView() {
           Our Products
         </Title>
       </div>
-      <div className="flex flex-row gap-12 px-4 md:px-0 pt-6 md:pt-12">
-        <div className="flex flex-col gap-12 flex-1">
+
+      {/* Responsive Columns */}
+      <div className="flex flex-col md:flex-row gap-6 md:gap-12 px-4 md:px-0 pt-6 md:pt-12">
+        <div className="flex flex-col gap-6 md:gap-12 flex-1">
           {leftColumn.map((item, idx) => (
             <ProductDisplay key={idx} productDetails={item} />
           ))}
         </div>
-        <div className="flex flex-col gap-12 flex-1">
+        <div className="flex flex-col gap-6 md:gap-12 flex-1">
           {rightColumn.map((item, idx) => (
             <ProductDisplay key={idx} productDetails={item} />
           ))}
@@ -96,12 +99,15 @@ export default function ProductView() {
         imagePosition="right-0 bottom-[70px]"
         imageHide={false}
       />
-      <div className="flex flex-col mx-auto place-content-center items-center" id="treatsec">
-        <Title variant="h2" textStyle="primary" className={`text-[#028391] leading-normal`}>
+
+      <div className="flex flex-col mx-auto place-content-center items-center mt-12" id="treatsec">
+        <Title variant="h2" textStyle="primary" className="text-[#028391] leading-normal">
           Fresh treats
         </Title>
       </div>
-      <div className="flex flex-col md:flex-col-2 gap-8 py-4 md:py-12 mx-4 md:px-0">
+
+      {/* Treats Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4 md:py-12 px-4 md:px-0">
         {productDetailsTreats.map((item: ProductDetailsProps, index: number) => (
           <ProductDisplay key={index} productDetails={item} />
         ))}

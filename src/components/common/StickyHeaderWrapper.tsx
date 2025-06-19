@@ -16,22 +16,24 @@ export default function StickyHeaderWrapper({ children }: { children: React.Reac
       const bannerRect = bannerRef.current.getBoundingClientRect();
       setIsHeaderFixed(bannerRect.bottom <= 0);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Check if offer banner config exists and is enabled
   const isOfferBannerEnabled = offerBannerConfig && offerBannerConfig.visible;
 
-  const shouldShowBanner = isOfferBannerEnabled &&
+  const shouldShowBanner =
+    isOfferBannerEnabled &&
     offerBannerConfig.showOnRoutes?.some((route) => pathname.startsWith(route)) &&
-    !(offerBannerConfig.hideOnRoutes?.some((route) => pathname.startsWith(route)));
+    !offerBannerConfig.hideOnRoutes?.some((route) => pathname.startsWith(route));
+  const reservedHeight = 90;
 
   return (
     <>
       <div className="relative">
         {shouldShowBanner && (
-          <div ref={bannerRef} id="offer-banner-wrapper" className="relative">
+          <div ref={bannerRef} id="offer-banner-wrapper">
             <OfferBanner
               text={offerBannerConfig.text}
               link={offerBannerConfig.link}
@@ -39,11 +41,20 @@ export default function StickyHeaderWrapper({ children }: { children: React.Reac
             />
           </div>
         )}
+      </div>
+      <div
+        style={{
+          position: isHeaderFixed ? "fixed" : "relative",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 50
+        }}
+      >
         <HeaderBlack isFixed={isHeaderFixed} />
       </div>
-      <div className={`relative ${shouldShowBanner ? 'mt-[100px]' : 'mt-[80px]'}`}>
-        {children}
-      </div>
+      <div style={{ height: reservedHeight }} />
+      <div>{children}</div>
     </>
   );
 }

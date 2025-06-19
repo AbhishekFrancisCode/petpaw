@@ -18,10 +18,10 @@ export default function HeroSection() {
   };
   return (
     <section className="bg-[#FFF8EF]">
-      <div className="flex h-[900px] md:min-h-[calc(100vh-0px)] justify-center">
+      <div className="flex md:min-h-[calc(100vh-0px)] justify-center">
         <div className="grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-4 w-full h-full mx-auto">
           <div className="order-1 lg:order-2 relative col-span-2">
-            <div className="flex inline-block max-w-full mx-auto pt-[70px] h-full place-content-center relative bg-transparent">
+            <div className="flex max-w-full mx-auto md:pt-[70px] h-full place-content-center relative bg-transparent">
               <video
                 ref={videoRef}
                 src="https://ik.imagekit.io/funlogic/Pawtful%20Final%20With%20Text_1280x960.mp4?updatedAt=1738081202132"
