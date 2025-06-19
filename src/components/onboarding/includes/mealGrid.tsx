@@ -11,7 +11,7 @@ type MealGridProps = {
 
 export const MealGrid = ({ meals, petdata }: MealGridProps) => {
   return (
-    <div className="p-0">
+    <div className="px-2 md:px-0 md:pt-10 pb-20">
       <div className="flex flex-wrap justify-center gap-6  mx-auto">
         <DogMealSuggester
           name={petdata.petname!}
@@ -21,7 +21,7 @@ export const MealGrid = ({ meals, petdata }: MealGridProps) => {
         />
         {meals.map((meal, index) => (
           <Link
-            href="/mealplan"
+            href={`/product/${meal.id}`}
             key={index}
             className="sm:w-[calc(50%-12px)] md:w-[calc(30.333%-16px)] lg:w-[calc(30.333%-16px)] xl:w-[calc(30.333%-16px)]"
           >

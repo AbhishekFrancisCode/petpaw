@@ -10,9 +10,11 @@ export default function ContactUsPage() {
     message: ""
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value
     }));
@@ -33,14 +35,12 @@ export default function ContactUsPage() {
   };
 
   return (
-    <div className="flex flex-col pt-32 pb-16">
+    <div className="flex flex-col pb-16">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#028391] to-[#EE9422] text-white py-20">
         <div className="sb-container px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Get in Touch
-            </h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Get in Touch</h1>
             <p className="text-xl md:text-2xl opacity-90 leading-relaxed">
               We're here to help with all your pet nutrition questions and concerns
             </p>
@@ -59,7 +59,10 @@ export default function ContactUsPage() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Full Name *
                       </label>
                       <input
@@ -74,7 +77,10 @@ export default function ContactUsPage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Email Address *
                       </label>
                       <input
@@ -92,7 +98,10 @@ export default function ContactUsPage() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Phone Number
                       </label>
                       <input
@@ -106,7 +115,10 @@ export default function ContactUsPage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="subject"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Subject *
                       </label>
                       <select
@@ -130,7 +142,10 @@ export default function ContactUsPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Message *
                     </label>
                     <textarea
@@ -165,8 +180,10 @@ export default function ContactUsPage() {
                     <div>
                       <h3 className="text-lg font-semibold text-[#028391] mb-2">Our Location</h3>
                       <p className="text-gray-700">
-                        123 Pet Nutrition Way<br />
-                        San Francisco, CA 94105<br />
+                        123 Pet Nutrition Way
+                        <br />
+                        San Francisco, CA 94105
+                        <br />
                         United States
                       </p>
                     </div>
@@ -179,10 +196,17 @@ export default function ContactUsPage() {
                     <div>
                       <h3 className="text-lg font-semibold text-[#028391] mb-2">Email Us</h3>
                       <p className="text-gray-700">
-                        <a href="mailto:hello@pawtful.com" className="text-[#EE9422] hover:underline">
+                        <a
+                          href="mailto:hello@pawtful.com"
+                          className="text-[#EE9422] hover:underline"
+                        >
                           hello@pawtful.com
-                        </a><br />
-                        <a href="mailto:support@pawtful.com" className="text-[#EE9422] hover:underline">
+                        </a>
+                        <br />
+                        <a
+                          href="mailto:support@pawtful.com"
+                          className="text-[#EE9422] hover:underline"
+                        >
                           support@pawtful.com
                         </a>
                       </p>
@@ -198,8 +222,12 @@ export default function ContactUsPage() {
                       <p className="text-gray-700">
                         <a href="tel:+1-800-PAWTFUL" className="text-[#EE9422] hover:underline">
                           1-800-PAWTFUL
-                        </a><br />
-                        <span className="text-sm text-gray-500">Monday - Friday: 9 AM - 6 PM PST</span><br />
+                        </a>
+                        <br />
+                        <span className="text-sm text-gray-500">
+                          Monday - Friday: 9 AM - 6 PM PST
+                        </span>
+                        <br />
                         <span className="text-sm text-gray-500">Saturday: 10 AM - 4 PM PST</span>
                       </p>
                     </div>
@@ -212,7 +240,8 @@ export default function ContactUsPage() {
                     <div>
                       <h3 className="text-lg font-semibold text-[#028391] mb-2">Live Chat</h3>
                       <p className="text-gray-700">
-                        Available 24/7 for urgent inquiries<br />
+                        Available 24/7 for urgent inquiries
+                        <br />
                         <button className="text-[#EE9422] hover:underline font-semibold">
                           Start Chat Now
                         </button>
@@ -258,7 +287,8 @@ export default function ContactUsPage() {
                   How quickly will I receive a response?
                 </h3>
                 <p className="text-gray-700">
-                  We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly or use our live chat feature.
+                  We typically respond to all inquiries within 24 hours during business days. For
+                  urgent matters, please call us directly or use our live chat feature.
                 </p>
               </div>
 
@@ -267,7 +297,9 @@ export default function ContactUsPage() {
                   Can I get nutrition advice for my specific dog?
                 </h3>
                 <p className="text-gray-700">
-                  Absolutely! Our team includes certified veterinary nutritionists who can provide personalized advice based on your dog's breed, age, health conditions, and dietary needs.
+                  Absolutely! Our team includes certified veterinary nutritionists who can provide
+                  personalized advice based on your dog's breed, age, health conditions, and dietary
+                  needs.
                 </p>
               </div>
 
@@ -276,7 +308,8 @@ export default function ContactUsPage() {
                   What if I have a complaint or feedback?
                 </h3>
                 <p className="text-gray-700">
-                  We take all feedback seriously. Please contact us through any of our channels, and we'll address your concerns promptly. Your satisfaction is our top priority.
+                  We take all feedback seriously. Please contact us through any of our channels, and
+                  we'll address your concerns promptly. Your satisfaction is our top priority.
                 </p>
               </div>
 
@@ -285,7 +318,9 @@ export default function ContactUsPage() {
                   Do you offer emergency support?
                 </h3>
                 <p className="text-gray-700">
-                  For urgent health-related questions about your dog, we recommend contacting your veterinarian immediately. For product-related emergencies, our support team is available 24/7.
+                  For urgent health-related questions about your dog, we recommend contacting your
+                  veterinarian immediately. For product-related emergencies, our support team is
+                  available 24/7.
                 </p>
               </div>
             </div>

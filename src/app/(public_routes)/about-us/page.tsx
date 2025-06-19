@@ -4,16 +4,15 @@ import Image from "next/image";
 
 export default function AboutUsPage() {
   return (
-    <div className="flex flex-col pt-32 pb-16">
+    <div className="flex flex-col pb-16">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#028391] to-[#EE9422] text-white py-20">
         <div className="sb-container px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              About Pawtful
-            </h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">About Pawtful</h1>
             <p className="text-xl md:text-2xl opacity-90 leading-relaxed">
-              Revolutionizing pet nutrition with fresh, healthy, and personalized meals for your beloved dogs
+              Revolutionizing pet nutrition with fresh, healthy, and personalized meals for your
+              beloved dogs
             </p>
           </div>
         </div>
@@ -27,13 +26,20 @@ export default function AboutUsPage() {
               <div>
                 <h2 className="text-4xl font-bold text-[#028391] mb-6">Our Story</h2>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Founded in 2024, Pawtful was born from a simple belief: every dog deserves fresh, nutritious, and delicious food that's tailored to their unique needs. Our journey began when our founder's own dog struggled with health issues due to poor nutrition from commercial pet foods.
+                  Founded in 2024, Pawtful was born from a simple belief: every dog deserves fresh,
+                  nutritious, and delicious food that's tailored to their unique needs. Our journey
+                  began when our founder's own dog struggled with health issues due to poor
+                  nutrition from commercial pet foods.
                 </p>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  After extensive research and collaboration with veterinary nutritionists, we developed a revolutionary approach to pet nutrition. We combine human-grade ingredients with scientific precision to create meals that not only taste amazing but also support your dog's health and vitality.
+                  After extensive research and collaboration with veterinary nutritionists, we
+                  developed a revolutionary approach to pet nutrition. We combine human-grade
+                  ingredients with scientific precision to create meals that not only taste amazing
+                  but also support your dog's health and vitality.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Today, we're proud to serve thousands of happy dogs and their families across the country, helping them live longer, healthier, and more vibrant lives.
+                  Today, we're proud to serve thousands of happy dogs and their families across the
+                  country, helping them live longer, healthier, and more vibrant lives.
                 </p>
               </div>
               <div className="relative">
@@ -66,7 +72,9 @@ export default function AboutUsPage() {
                 <div className="text-4xl mb-4">🌱</div>
                 <h3 className="text-2xl font-bold text-[#028391] mb-4">Fresh Ingredients</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  We use only the finest human-grade ingredients, sourced from trusted local suppliers. No artificial preservatives, colors, or fillers - just pure, natural nutrition.
+                  We use only the finest human-grade ingredients, sourced from trusted local
+                  suppliers. No artificial preservatives, colors, or fillers - just pure, natural
+                  nutrition.
                 </p>
               </div>
 
@@ -74,7 +82,8 @@ export default function AboutUsPage() {
                 <div className="text-4xl mb-4">🔬</div>
                 <h3 className="text-2xl font-bold text-[#028391] mb-4">Science-Based</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Every recipe is formulated by veterinary nutritionists to meet AAFCO standards and provide complete, balanced nutrition for your dog's specific life stage and needs.
+                  Every recipe is formulated by veterinary nutritionists to meet AAFCO standards and
+                  provide complete, balanced nutrition for your dog's specific life stage and needs.
                 </p>
               </div>
 
@@ -82,7 +91,8 @@ export default function AboutUsPage() {
                 <div className="text-4xl mb-4">❤️</div>
                 <h3 className="text-2xl font-bold text-[#028391] mb-4">Personalized Care</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  We understand every dog is unique. Our personalized meal plans are tailored to your dog's breed, age, weight, activity level, and health requirements.
+                  We understand every dog is unique. Our personalized meal plans are tailored to
+                  your dog's breed, age, weight, activity level, and health requirements.
                 </p>
               </div>
             </div>
@@ -109,7 +119,8 @@ export default function AboutUsPage() {
                 <h3 className="text-xl font-bold text-[#028391] mb-2">Dr. Sarah Johnson</h3>
                 <p className="text-gray-600 mb-2">Chief Veterinary Nutritionist</p>
                 <p className="text-sm text-gray-500">
-                  Board-certified veterinary nutritionist with 15+ years of experience in pet nutrition and diet formulation.
+                  Board-certified veterinary nutritionist with 15+ years of experience in pet
+                  nutrition and diet formulation.
                 </p>
               </div>
 
@@ -120,7 +131,8 @@ export default function AboutUsPage() {
                 <h3 className="text-xl font-bold text-[#028391] mb-2">Chef Michael Chen</h3>
                 <p className="text-gray-600 mb-2">Head of Culinary Operations</p>
                 <p className="text-sm text-gray-500">
-                  Former executive chef with a passion for creating delicious, nutritious meals that dogs love.
+                  Former executive chef with a passion for creating delicious, nutritious meals that
+                  dogs love.
                 </p>
               </div>
 
@@ -131,7 +143,8 @@ export default function AboutUsPage() {
                 <h3 className="text-xl font-bold text-[#028391] mb-2">Lisa Rodriguez</h3>
                 <p className="text-gray-600 mb-2">Customer Success Manager</p>
                 <p className="text-sm text-gray-500">
-                  Dedicated to ensuring every customer and their furry friend have the best experience possible.
+                  Dedicated to ensuring every customer and their furry friend have the best
+                  experience possible.
                 </p>
               </div>
             </div>
@@ -173,7 +186,8 @@ export default function AboutUsPage() {
               Ready to Transform Your Dog's Life?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Join thousands of happy dogs and their families who have already discovered the Pawtful difference.
+              Join thousands of happy dogs and their families who have already discovered the
+              Pawtful difference.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-[#EE9422] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#d6851e] transition-colors">

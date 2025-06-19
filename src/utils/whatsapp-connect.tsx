@@ -14,7 +14,7 @@ const WhatsAppButton = ({
   const openWhatsApp = () => {
     const encodedMessage = encodeURIComponent(message);
     const appUrl = `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`;
-    const webUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    const webUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 
     // Detect if mobile
     const isMobile =
