@@ -20,24 +20,30 @@ export default function StickyHeaderWrapper({ children }: { children: React.Reac
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const shouldShowBanner =
-    offerBannerConfig.visible &&
-    offerBannerConfig.showOnRoutes.some((route) => pathname.startsWith(route)) &&
+  // Check if offer banner config exists and is enabled
+  const isOfferBannerEnabled = offerBannerConfig && offerBannerConfig.visible;
+
+  const shouldShowBanner = isOfferBannerEnabled &&
+    offerBannerConfig.showOnRoutes?.some((route) => pathname.startsWith(route)) &&
     !(offerBannerConfig.hideOnRoutes?.some((route) => pathname.startsWith(route)));
 
   return (
     <>
-      {shouldShowBanner && (
-        <div ref={bannerRef} id="offer-banner-wrapper">
-          <OfferBanner
-            text={offerBannerConfig.text}
-            link={offerBannerConfig.link}
-            linkLabel={offerBannerConfig.linkLabel}
-          />
-        </div>
-      )}
-      <HeaderBlack isFixed={isHeaderFixed} />
-      <div>{children}</div>
+      <div className="relative">
+        {shouldShowBanner && (
+          <div ref={bannerRef} id="offer-banner-wrapper" className="relative">
+            <OfferBanner
+              text={offerBannerConfig.text}
+              link={offerBannerConfig.link}
+              linkLabel={offerBannerConfig.linkLabel}
+            />
+          </div>
+        )}
+        <HeaderBlack isFixed={isHeaderFixed} />
+      </div>
+      <div className={`relative ${shouldShowBanner ? 'mt-[100px]' : 'mt-[80px]'}`}>
+        {children}
+      </div>
     </>
   );
 }

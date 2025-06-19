@@ -5,7 +5,7 @@ import { faqData } from "@/faq-data/FAQ-faq-data";
 
 export default function FaqPage() {
   return (
-    <div className="flex flex-col pt-32">
+    <div className="flex flex-col">
       <FAQ items={faqData} />
     </div>
   );
