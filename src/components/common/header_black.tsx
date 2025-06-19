@@ -119,7 +119,7 @@ export default function HeaderBlack({ isFixed = false }: { isFixed?: boolean }) 
 
               <div className="block">
                 <div className="justify-center place-content-center ">
-                  <div className="flex flex-row w-auto gap-12 ">
+                  <div className="flex flex-row w-auto gap-12 place-content-center items-center ">
                     <Link href={`https://pawtful-blog.vercel.app/`}>
                       <Button
                         text="Blog"
@@ -134,7 +134,7 @@ export default function HeaderBlack({ isFixed = false }: { isFixed?: boolean }) 
                     </Link>
                     <Link href={`/onboarding`}>
                       <Button
-                        cls="w-32 h-9 text-sm text-white font-normal text-center bg-[#EE9422]"
+                        cls="w-32 h-9 text-[1rem] text-white font-normal text-center bg-[#EE9422]"
                         text="Get Started"
                         handleRedirect={goToDateSection}
                       />
