@@ -79,7 +79,7 @@ export default function TempletType1({
       )}
 
       {buttons && (
-        <div className="flex flex-wrap place-content-center pb-6 gap-3 lg:pt-6 lg:gap-24">
+        <div className="flex flex-wrap place-content-center pb-6 gap-3 md:gap-6 lg:pt-6">
           {buttons.map((item: ButtonProps, index: number) => {
             return (
               <div key={index} className="">
@@ -87,7 +87,7 @@ export default function TempletType1({
                   <button
                     key={index}
                     onClick={() => {}}
-                    className={`bg-[${item.outlineButton ? "transprent" : item.color}] rounded-md min-h-16 px-10 text-[#FFF8EF] font-bold hover:opacity-80 ${item.outlineButton && "border-2"} border-[#999999] } `}
+                    className={`bg-[${item.outlineButton ? "transprent" : item.color}] rounded-md min-h-16 px-10 text-[#FFF8EF] font-bold hover:opacity-80 ${item.outlineButton && "border-2"} border-[#999999] min-w-[220px] } `}
                   >
                     {item.title}
                   </button>
