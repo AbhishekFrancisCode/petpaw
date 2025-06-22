@@ -87,3 +87,7 @@ export const getChipList = (data: any) => {
     );
   return y;
 };
+
+export function sortStringsAlphabetically(strings: string[]): string[] {
+  return strings.slice().sort((a, b) => a.localeCompare(b));
+}

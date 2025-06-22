@@ -28,7 +28,7 @@ export default function MobileDrawer({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.3 }}
           onClick={toggleDrawer}
         >
           <motion.aside
@@ -37,7 +37,7 @@ export default function MobileDrawer({
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed left-0 top-0 h-full w-64 bg-[#FFF8EF] shadow-xl p-6 rounded-r-2xl"
+            className="fixed left-0 top-0 h-full w-64 bg-[#FFF8EF] shadow-xl p-2 rounded-r-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Logo */}
@@ -45,14 +45,14 @@ export default function MobileDrawer({
               <Image
                 src="/images/logos/logo_round.png"
                 alt="pawtful logo"
-                width={48}
-                height={48}
+                width={64}
+                height={64}
                 className="rounded-full"
               />
             </div>
 
             {/* Auth */}
-            <div className="mb-6">
+            <div className="pl-3 mb-6">
               {!user ? (
                 <div onClick={toggleDrawer}>
                   <Link

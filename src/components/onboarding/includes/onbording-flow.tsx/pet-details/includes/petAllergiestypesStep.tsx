@@ -4,6 +4,7 @@ import { Controller, Control } from "react-hook-form";
 import { MdCheck } from "react-icons/md";
 import { MdBrightness1 } from "react-icons/md";
 import ChipView from "./chip-view";
+import { sortStringsAlphabetically } from "@/utils/string-utils";
 
 export const dogAllergens = [
   "Wheat",
@@ -16,8 +17,7 @@ export const dogAllergens = [
   "Fish",
   "Pork",
   "Rice",
-  "Liver / Organ meats",
-  "Others"
+  "Liver / Organ meats"
 ];
 
 interface StepProps {
@@ -32,7 +32,7 @@ const PetAllergiesTypesStep = ({ control }: StepProps) => {
       <text className="text-center text-2xl font-semibold mb-6 text-[#EE9422]">
         {`Dose ${formdata.petname || "your pet"} have any allergies?`}
       </text>
-      <div className="grid grid-rows-3 md:grid-cols-1 gap-4 max-h-72">
+      <div className="grid grid-rows-3 md:grid-cols-1 gap-4 max-h-72 mx-auto">
         {/* Cards with Controller from React Hook Form */}
         <Controller
           control={control}
@@ -41,7 +41,12 @@ const PetAllergiesTypesStep = ({ control }: StepProps) => {
             if (field.value.length === 0) {
               field.onChange([dogAllergens[0]]);
             }
-            return <ChipView field={field} list={dogAllergens} />;
+            return (
+              <ChipView
+                field={field}
+                list={[...sortStringsAlphabetically(dogAllergens), "Others"]}
+              />
+            );
           }}
         />
       </div>
