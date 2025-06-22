@@ -12,6 +12,7 @@ const ProductDisplay = ({ productDetails }: { productDetails: ProductDetailsProp
   const [isHovered, setIsHovered] = useState(false);
   return (
     <>
+      {/* Mobile Card */}
       <div className="flex flex-col md:hidden rounded-3xl bg-[#f1e8dc] pb-2 border-0 text-card-foreground shadow-sm">
         <div className="row-span-3 relative h-[256px]">
           <Image
@@ -23,21 +24,21 @@ const ProductDisplay = ({ productDetails }: { productDetails: ProductDetailsProp
           />
         </div>
 
-        <div className={`justify-start px-4 `}>
+        <div className="justify-start px-4">
           <div className="flex justify-between">
             <div className="flex flex-col p-4">
-              <div className="uppercase text-sm font-medium tracking-wide text-gray-600">
+              <div className="uppercase text-[0.875rem] font-medium tracking-wide text-gray-600">
                 {productDetails.subtitle}
               </div>
-              <p className="text-3xl font-bold text-gray-900">{productDetails.title}</p>
+              <p className="text-[1.875rem] font-bold text-gray-900">{productDetails.title}</p>
             </div>
           </div>
-          <p className="text-sm text-gray-600">{productDetails.description}</p>
+          <p className="text-[0.875rem] text-gray-600">{productDetails.description}</p>
         </div>
         <Button
           variant="default"
           size="lg"
-          className="mt-4 mx-2  bg-emerald-700 hover:bg-emerald-800 text-white rounded-b-3xl"
+          className="mt-4 mx-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-b-3xl"
           onClick={() => {
             window.location.href = `/product/${productDetails.id}`;
           }}
@@ -45,6 +46,8 @@ const ProductDisplay = ({ productDetails }: { productDetails: ProductDetailsProp
           Learn More
         </Button>
       </div>
+
+      {/* Desktop Card */}
       <motion.div
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
@@ -57,20 +60,22 @@ const ProductDisplay = ({ productDetails }: { productDetails: ProductDetailsProp
               src={url}
               alt="Dog eating from bowl with ingredients"
               fill
-              className="object-cover rounded-3xl "
+              className="object-cover rounded-3xl"
               sizes="(max-width: 506px) 100vw, 50vw"
               priority
             />
           </div>
           <div
-            className={`min-h-[162px] max-h-[162px] justify-start px-4 ${isHovered ? "min-h-[228px] max-h-[228px]" : ""}`}
+            className={`min-h-[162px] max-h-[162px] justify-start ${
+              isHovered ? "min-h-[228px] max-h-[228px]" : ""
+            }`}
           >
             <div className="flex justify-between">
               <div className="flex flex-col p-4">
-                <div className="uppercase text-sm font-medium tracking-wide text-gray-600">
+                <div className="uppercase text-[0.875rem] font-medium tracking-wide text-gray-600">
                   {productDetails.subtitle}
                 </div>
-                <p className="text-3xl font-bold text-gray-900">{productDetails.title}</p>
+                <p className="text-[1.875rem] font-bold text-gray-900">{productDetails.title}</p>
               </div>
               <motion.div
                 animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : -10 }}
@@ -94,13 +99,7 @@ const ProductDisplay = ({ productDetails }: { productDetails: ProductDetailsProp
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="inset-0 bg-transparent p-4 rounded-lg"
             >
-              <p className="text-sm text-gray-600">
-                {productDetails.description}
-                {/* Our Free Range Chicken recipe is complete and balanced for all lifestages, and is
-              suitable for puppies and seniors alike. This nourishing recipe is one of the lowest in
-              fat across our range, making it the best choice for those puppers with
-              gastrointestinal issues... */}
-              </p>
+              <p className="text-[0.875rem] text-gray-600">{productDetails.description}</p>
             </motion.div>
           </div>
         </div>

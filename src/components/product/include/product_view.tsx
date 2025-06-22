@@ -72,7 +72,7 @@ export default function ProductView() {
       </div>
 
       {/* Responsive Columns */}
-      <div className="flex flex-col md:flex-row gap-6 md:gap-12 px-4 md:px-0 pt-6 md:pt-12">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-12 pt-6 md:pt-12">
         <div className="flex flex-col gap-6 md:gap-12 flex-1">
           {leftColumn.map((item, idx) => (
             <ProductDisplay key={idx} productDetails={item} />
@@ -107,7 +107,7 @@ export default function ProductView() {
       </div>
 
       {/* Treats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4 md:py-12 px-4 md:px-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4 md:py-12 ">
         {productDetailsTreats.map((item: ProductDetailsProps, index: number) => (
           <ProductDisplay key={index} productDetails={item} />
         ))}

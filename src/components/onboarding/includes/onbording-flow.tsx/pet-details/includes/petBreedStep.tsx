@@ -10,6 +10,7 @@ import {
   SelectItem
 } from "@/components/ui/select";
 import { UserDataContext, UserDataContextType } from "@/contexts/userdata-context";
+import { sortStringsAlphabetically } from "@/utils/string-utils";
 
 const breedOptions = [
   "Labrador Retriever",
@@ -48,7 +49,7 @@ const PetBreedStep = ({ control }: StepProps) => {
               <SelectValue placeholder="Select Breed" />
             </SelectTrigger>
             <SelectContent className="max-h-60 overflow-auto z-50">
-              {breedOptions.map((breed) => (
+              {sortStringsAlphabetically(breedOptions).map((breed) => (
                 <SelectItem key={breed} value={breed}>
                   {breed}
                 </SelectItem>
