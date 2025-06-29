@@ -2,6 +2,19 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 
+const items1 = [
+  { title: "Freshly Cooked", clipart: "" },
+  { title: "Daily Delivered", clipart: "" },
+  { title: "Freshly Sourced", clipart: "" },
+  { title: "Human Grade", clipart: "" },
+  { title: "Preservative Free", clipart: "" },
+  { title: "Sustainable Packaging", clipart: "" },
+  { title: "Clean Eating", clipart: "" },
+  { title: "Wholesome", clipart: "" },
+  { title: "Natural Flavor", clipart: "" },
+  { title: "Freshly Cooked", clipart: "" }
+];
+
 const items: string[] = [
   "Freshly Cooked",
   "Daily Delivered",

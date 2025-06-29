@@ -40,15 +40,21 @@ export default function ExploreForm() {
   };
 
   return (
-    <div className="flex flex-col gap-2 h-full">
-      <div className="text-base font-normal leading-snug lg:mt-[10px] w-full text-center lg:text-left">
+    <div className="flex flex-col gap-3 sm:gap-4 h-full w-full pb-6 sm:pb-8 lg:pb-0">
+      <div
+        className="text-sm sm:text-base md:text-lg lg:text-xl font-normal leading-relaxed w-full text-center lg:text-left"
+        style={{
+          fontSize: "clamp(0.875rem, 2vw, 1.25rem)",
+          lineHeight: "1.5"
+        }}
+      >
         {HomePageStrings.askPetname}
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-4 items-center lg:items-start mt-0"
+        className="flex flex-col gap-4 sm:gap-5 items-center lg:items-start mt-2 sm:mt-3 w-full"
       >
-        <div className="flex max-h-12">
+        <div className="flex w-full max-w-sm lg:max-w-md">
           <input
             type="text"
             id="newsletter"
@@ -64,21 +70,32 @@ export default function ExploreForm() {
             onChange={(e) => {
               handleEmailOnChange(e);
             }}
-            className="w-[292px] h-12 bg-transparent rounded-md rounded-br-md border focus:ring-0 focus:border-none"
+            className="w-full h-12 sm:h-14 bg-transparent rounded-md rounded-br-md border focus:ring-0 focus:border-none px-4 text-sm sm:text-base"
           />
         </div>
         <button
           type="submit"
-          className="flex w-[224px] lg:w-[172px] h-12 rounded-md place-content-center items-center gap-4 bg-[#EE9422]"
+          className="flex w-full sm:w-[180px] lg:w-[140px] h-10 sm:h-11 rounded-md place-content-center items-center gap-2 sm:gap-3 bg-[#EE9422] hover:bg-[#d6851e] transition-colors"
           onClick={() => navigateWithQuery()}
         >
-          <div className="text-center text-white text-base font-normal leading-7">
+          <div
+            className="text-center text-white font-medium leading-6"
+            style={{
+              fontSize: "clamp(0.75rem, 1.5vw, 0.875rem)"
+            }}
+          >
             Get your plan
           </div>
         </button>
       </form>
-      <div className="text-base font-normal leading-snug mt-5 lg:mt-[10px] w-full text-center lg:text-left">
-        {"Get a meal plan personalized for your dog’s needs"}
+      <div
+        className="text-sm sm:text-base md:text-lg font-normal leading-relaxed mt-4 sm:mt-5 lg:mt-6 w-full text-center lg:text-left"
+        style={{
+          fontSize: "clamp(0.875rem, 1.8vw, 1.125rem)",
+          lineHeight: "1.5"
+        }}
+      >
+        {"Get a meal plan personalized for your dog's needs"}
       </div>
     </div>
   );

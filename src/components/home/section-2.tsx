@@ -88,7 +88,7 @@ export default function Section_type_2() {
 
   return (
     <section className="bg-[#FFF8EF] py-8">
-      <div className="container mx-auto grid grid-rows-5 grid-cols-1 lg:grid-rows-1 lg:grid-cols-8 lg:min-h-[700px]">
+      <div className="sb-container mx-auto grid grid-rows-5 grid-cols-1 lg:grid-rows-1 lg:grid-cols-8 lg:min-h-[700px]">
         {/* Left Content Block */}
         <div className="order-1 flex flex-col place-content-center items-center row-span-2 lg:col-span-4 bg-transparent py-10`">
           <div className="flex flex-col w-full lg:pl-12 ">

@@ -1,5 +1,6 @@
 import { Title } from "@/components/common/title-comp";
 import Button from "@/sb-ui/button/button";
+import Heading from "@/sb-ui/h1/h1";
 import { ButtonProps, ImagePropsType, TempletProps } from "@/store/interfaces/templete";
 import imageKitLoader from "@/utils/image-kit-loader";
 import Image from "next/image";
@@ -17,16 +18,8 @@ export default function TempletType1({
   grid_height
 }: TempletProps) {
   return (
-    <div className={`flex flex-col pt-4 ${section_color}`}>
-      {title && (
-        <Title
-          variant="h2"
-          textStyle="primary"
-          className={`text-[${title_color}] py-1 text-center px-6 md:px-4`}
-        >
-          {title}
-        </Title>
-      )}
+    <div className={`flex flex-col py-4 ${section_color}`}>
+      <Heading text={title} cls={`text-[${title_color ?? "#000000"}]`} />
       {sub_title && (
         <div className={`text-[${sub_title_color}]  text-center px-6 md:px-4`}>{sub_title}</div>
       )}
@@ -36,7 +29,7 @@ export default function TempletType1({
             return (
               <div key={index} className="flex flex-col">
                 <div
-                  className={`w-[365px] h-[220px] md:w-80 ${grid_height ? `md-h-[${grid_height}px]` : "md:h-40"} relative rounded-xl mx-auto`}
+                  className={`relative w-full sm:w-72 md:w-64 lg:w-80 xl:w-72 h-[260px] ${grid_height ? `md-h-[${grid_height}px]` : "md:h-60"} relative rounded-xl mx-auto`}
                 >
                   <Image
                     key={index}
@@ -79,7 +72,7 @@ export default function TempletType1({
       )}
 
       {buttons && (
-        <div className="flex flex-wrap place-content-center pb-6 gap-3 md:gap-6 lg:pt-6">
+        <div className="flex flex-wrap place-content-center gap-3 md:gap-6 lg:pt-6">
           {buttons.map((item: ButtonProps, index: number) => {
             return (
               <div key={index} className="">

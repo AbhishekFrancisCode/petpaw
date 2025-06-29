@@ -45,6 +45,7 @@
     "react-spinners": "^0.14.1",
     "react-toastify": "^10.0.4",
     "sharp": "^0.33.5",
+    "spellchecker": "^3.7.1",
     "styled-components": "^6.1.11",
     "swiper": "^11.1.14",
     "tailwind-merge": "^2.6.0",
