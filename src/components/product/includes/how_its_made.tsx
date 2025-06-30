@@ -1,10 +1,10 @@
 "use client";
 import YouTubePlayer from "@/components/common/video/youtube_player";
 import Button from "@/sb-ui/button/button";
-import { ImagePropsType, TempletProps } from "@/store/interfaces/templete";
+import { ImagePropsType, TemplateProps } from "@/store/interfaces/templete";
 import Image from "../../../../public/images/img/background-veg.jpg";
 
-export default function HowItsMade({ title, sub_title, section_color }: TempletProps) {
+export default function HowItsMade({ title, sub_title, section_color }: TemplateProps) {
   const images1: ImagePropsType[] = [
     {
       title: "Chicken",

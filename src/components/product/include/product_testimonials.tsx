@@ -1,4 +1,5 @@
 import Testimonials, { Card } from "@/components/common/testimonial";
+import Heading from "@/sb-ui/h1/h1";
 import React from "react";
 
 interface Step {
@@ -74,9 +75,7 @@ const ProductTestimonials = () => {
 
   return (
     <div className="flex flex-col max-w-6xl mx-auto gap-4">
-      <p className="text-3xl text-[#999999] md:text-4xl font-normal text-center md:max-h-16">
-        Real reviews about Pawtful's meal plans
-      </p>
+      <Heading text={"Real reviews about Pawtful's meal plans"} cls={`text-[#028391] pt-4`} />
       <p className="text-sm text-center text-[#999999] ">See what real customers are saying</p>
       <Testimonials cards={cards} />
     </div>

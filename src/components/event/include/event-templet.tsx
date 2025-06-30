@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-interface TempletProps {
+interface TemplateProps {
   title: string;
   image: string;
   address: string;
@@ -8,7 +8,7 @@ interface TempletProps {
   time: string;
 }
 
-export default function Eventemplet({ title, image, address, date, time }: TempletProps) {
+export default function Eventemplet({ title, image, address, date, time }: TemplateProps) {
   return (
     <div className="flex justify-between p-6">
       <div className="flex basis-4/5 gap-6">

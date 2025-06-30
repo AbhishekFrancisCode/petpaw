@@ -8,6 +8,7 @@ import DogNutritionLabel from "./nutrition-table";
 import FullyDynamicFoodCircle from "./testing";
 import { Title } from "@/components/common/title-comp";
 import { MealPlanPageStrings } from "@/constants/title-constants";
+import Heading from "@/sb-ui/h1/h1";
 
 export default function FoodTypeSelection() {
   const data = MealPlanPageStrings.firstSection;
@@ -31,14 +32,8 @@ export default function FoodTypeSelection() {
   }, [selectedOption]);
 
   return (
-    <div className="p-8 max-w-7xl mx-auto">
-      <Title
-        variant="h2"
-        textStyle="primary"
-        className={`text-[#028391] py-1 text-center px-6 md:px-4`}
-      >
-        {data.title}
-      </Title>
+    <div className="px-8 pt-8 max-w-7xl mx-auto">
+      <Heading text={data.title} cls={`text-[${"#028391"}]`} />
       {/* <h1 className="text-3xl font-semibold text-center mb-4">A Healthy Choice</h1> */}
       <p className="text-center text-[#EE9422] mb-8">{data.sub_title}</p>
 

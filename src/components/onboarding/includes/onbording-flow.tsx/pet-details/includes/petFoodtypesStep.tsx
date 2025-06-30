@@ -27,7 +27,7 @@ const PetFoodTypesStep = ({ control }: StepProps) => {
   const { formdata } = useContext(UserDataContext) as UserDataContextType;
 
   return (
-    <div className="flex flex-col max-h-80 mt-8">
+    <div className="flex flex-col max-h-80">
       <text className="text-center text-2xl font-semibold mb-6 text-[#EE9422]">
         {`What has ${formdata.petname || "your pet"} been eating?`}
       </text>

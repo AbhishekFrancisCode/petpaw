@@ -14,21 +14,21 @@ export default function OnboardingPage() {
   return (
     <div className="flex flex-col h-screen w-full bg-[#FFF8EF] overflow-hidden">
       {/* Header */}
-      <div className="shrink-0 flex flex-col items-center px-4 pt-6 sm:pt-8 pb-4 bg-[#FFF8EF] z-10">
+      <div className="shrink-0 flex flex-col items-center px-4 pt-2 sm:pt-4 pb-4 md:pb-6 bg-[#FFF8EF] z-10 w-full max-w-full">
         <Image
           width={100}
           height={100}
           src="/images/logos/logo_round.png"
           alt="pawtful.com"
-          className="w-20 sm:w-24 md:w-28"
+          className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-12 object-contain mx-auto"
         />
-        <div className="w-full mt-2">
+        <div className="w-full mt-2 max-w-lg mx-auto">
           <ProgressTracker currentStep={currentStep} />
         </div>
       </div>
 
       {/* PetDetails section — only scrolls if content overflows */}
-      <div className="flex-grow min-h-0 overflow-y-auto md:px-8">
+      <div className="sb-container flex-grow min-h-0 overflow-y-auto">
         <Suspense fallback={<div>Loading...</div>}>
           <PetDetails
             currentStep={currentStep}

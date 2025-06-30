@@ -12,47 +12,47 @@ export default function Section_type_8() {
   };
   const data: any = HomePageStrings.fifthSection[0];
   return (
-    <section className="place-content-center bg-[#C4DEE1]">
-      <div className="mx-auto min-h-[500px] grid grid-rows-10 grid-cols-1 lg:grid-rows-1 lg:grid-cols-10">
-        {/* Image Section */}
-        <div className="order-1 lg:order-2 row-span-4 lg:col-span-5">
-          <div className="w-full h-full relative">
-            <Image
-              key={0}
-              src={data.image_link}
-              alt="Visual Representation"
-              fill
-              className="object-cover object-right max-w-[800px]"
-              onError={(e) => console.error("Image load failed:", e)}
-            />
-          </div>
+    <section className="bg-[#C4DEE1] py-10 relative overflow-hidden">
+      <div className="sb-container mx-auto flex flex-col min-h-[500px] justify-center items-center relative">
+        <div className="w-full h-64 sm:h-80 md:h-96 flex justify-center items-center relative lg:absolute lg:w-full lg:h-full lg:z-0">
+          <Image
+            key={0}
+            src={data.image_link}
+            alt="Visual Representation"
+            fill
+            className="object-cover object-center w-full h-full max-w-full max-h-full"
+            style={{ objectPosition: "right" }}
+            onError={(e) => console.error("Image load failed:", e)}
+            priority
+          />
         </div>
 
-        {/* Text and CTA Section */}
-        <div className="order-2 lg:order-1 flex flex-col row-span-6 lg:col-span-5 bg-[#C4DEE1] p-6 lg:p-10 2xl:pl-48 h-full">
-          {/* Title & Subtitle */}
-          <div className="flex flex-col px-4 md:px-4 lg:px-10 xl:pl-12 xl:px-0">
-            <p className="text-[#028391] text-4xl lg:text-6xl font-semibold py-1 text-center md:text-left">
-              {data.title}
-            </p>
-            <p className="text-[#EE9422] text-4xl lg:text-6xl font-semibold py-1 text-center md:text-left">
-              {data.sub_title}
+        <div
+          className="relative z-10 flex flex-col justify-center gap-4 px-4 sm:px-8 
+        lg:px-10 xl:pl-16 h-full min-w-full max-w-3xl mx-auto lg:mx-0 text-center lg:text-left items-center 
+        lg:items-start min-h-[400px] lg:min-h-[500px] lg:justify-left"
+        >
+          <div className="flex gap-2 justify-center lg:justify-start w-full">
+            <p className="text-[#028391] font-semibold text-2xl md:text-4xl lg:text-6xl text-center lg:text-left drop-shadow-lg">
+              {data.title}{" "}
+              <span className="text-[#EE9422] font-semibold text-2xl md:text-4xl lg:text-6xl text-center lg:text-left">
+                {data.sub_title}
+              </span>
             </p>
           </div>
 
-          {/* Description */}
-          <div className="flex justify-center lg:justify-start px-4 lg:px-10 xl:px-12 py-4 w-full lg:w-[550px]">
-            <p className="text-[#333333] text-sm py-2 text-left">{data.description}</p>
+          <div className="flex justify-center lg:justify-start w-full max-w-2xl mx-auto lg:mx-0">
+            <p className="text-[#FFF8EF] text-base md:text-lg py-2 text-center lg:text-left drop-shadow-lg">
+              {data.description}
+            </p>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex justify-center lg:justify-start px-4 lg:px-10 xl:px-12 gap-4 mt-auto">
+          <div className="flex justify-center lg:justify-start gap-4 mt-4 w-full">
             <Button
               text="Explore Pricing Plans"
               handleRedirect={handleNavigate}
-              cls="bg-[#EE9422] min-w-[200px] h-16 rounded-md px-10 text-[#FFF8EF] hover:opacity-80"
+              cls="bg-[#EE9422] min-w-[180px] h-14 md:h-16 rounded-md px-8 md:px-10 text-[#FFF8EF] hover:opacity-80 text-base md:text-lg"
             />
-            {/* <WhatsAppButton /> */}
           </div>
         </div>
       </div>

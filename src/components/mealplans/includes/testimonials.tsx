@@ -13,6 +13,7 @@ import chevronLeft from "../../../../public/images/svg/chevron_left.svg";
 import chevronRight from "../../../../public/images/svg/chevron_right.svg";
 import SectionHeading from "@/components/common/section-heading";
 import { Title } from "@/components/common/title-comp";
+import Heading from "@/sb-ui/h1/h1";
 
 const testimonialsJson = [
   {
@@ -72,15 +73,7 @@ export default function TestimonialsVideo() {
   };
   return (
     <div className="w-full bg-transparent mt-12 px-4 sm:px-6">
-      <div className="max-w-md sm:max-w-lg lg:max-w-2xl mx-auto">
-        <Title
-          variant="h2"
-          textStyle="primary"
-          className="text-[#028391] text-[28px] sm:text-[32px] lg:text-4xl font-bold text-center py-6"
-        >
-          Pawtful's Testimonials
-        </Title>
-      </div>
+      <Heading text={"Pawtful's Testimonials"} cls={`text-[${"#028391"}] pb-4`} />
 
       <div className="max-w-7xl mx-auto w-full">
         <TestimonialsSwiper imageList={testimonialsJson} handleVideoPlayer={handleVideoPlayer} />

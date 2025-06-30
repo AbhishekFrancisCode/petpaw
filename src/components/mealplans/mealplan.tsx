@@ -22,8 +22,12 @@ export default function MealPlan() {
       {/* <FullyDynamicFoodCircle /> */}
       <Marquee />
       <TempletGridSmall />
-      <div className="w-[95%] mx-auto">
-        <BannerElevated
+      <div className=" mx-auto">
+        <img
+          src={"https://ik.imagekit.io/funlogic/pawfull/banners/a.jpg?updatedAt=1750957794653"}
+          className="rounded-b-xl"
+        />
+        {/* <BannerElevated
           imgUrl="https://ik.imagekit.io/funlogic/pawfull/Fish%20and%20Brocolli%20meal%20with%20ingredients%20cutout%20.jpg?updatedAt=1744636805971"
           value={"Get your first meal Free!!!"}
           borderColor="#EE9422"
@@ -33,9 +37,9 @@ export default function MealPlan() {
           imagePosition="right-0 bottom-[70px]"
           imageHide={false}
           width="90%"
-        />
+        /> */}
       </div>
-      <div className="min-h-12" />
+      {/* <div className="min-h-12" /> */}
       <MealPortionSize isMealplanPage={true} />
       <Section_type_8 />
       {/* <BannerSection /> */}

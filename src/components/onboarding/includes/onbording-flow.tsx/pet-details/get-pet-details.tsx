@@ -169,7 +169,7 @@ export default function PetDetails({
   };
 
   return (
-    <div className="flex flex-col h-full w-full">
+    <div className="sb-container flex flex-col h-full w-full">
       {/* Scrollable content (only if needed) */}
       <div className="flex-1 min-h-0 overflow-y-auto px-4 sm:px-6 md:px-8 pt-12 md:pt-6">
         <form
