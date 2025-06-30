@@ -10,11 +10,52 @@ import { MealGrid } from "./includes/mealGrid";
 import { dogAllergens } from "./includes/onbording-flow.tsx/pet-details/includes/petAllergiestypesStep";
 import { useRouter } from "next/navigation";
 import DogMealSuggester, { ActivityLevel } from "./includes/portionGrid";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import {
+  PawPrint,
+  User,
+  Heart,
+  Calendar,
+  Weight,
+  Activity,
+  Utensils,
+  AlertTriangle,
+  Sparkles
+} from "lucide-react";
 
 export interface StepProps {
   control: Control<Formdata>;
   getValues?: UseFormGetValues<Formdata>; // 👈 Add this line
 }
+
+const InfoItem = ({ icon: Icon, label, value, variant = "default" }: any) => (
+  <div className="flex items-center space-x-3 p-2 rounded-lg bg-gradient-to-r from-slate-50 to-slate-100 hover:from-slate-100 hover:to-slate-200 transition-all duration-200 border border-slate-200/50">
+    <div
+      className={`p-2 rounded-full ${
+        variant === "primary"
+          ? "bg-blue-100 text-blue-600"
+          : variant === "secondary"
+            ? "bg-purple-100 text-purple-600"
+            : variant === "success"
+              ? "bg-green-100 text-green-600"
+              : variant === "warning"
+                ? "bg-amber-100 text-amber-600"
+                : variant === "danger"
+                  ? "bg-red-100 text-red-600"
+                  : "bg-slate-100 text-slate-600"
+      }`}
+    >
+      <Icon size={14} />
+    </div>
+    <div className="flex-1">
+      <p className="text-[12px] font-medium text-slate-600 mb-1">{label}</p>
+      <p className="text-[12px] font-semibold text-slate-900">{value}</p>
+    </div>
+  </div>
+);
 
 export default function OnLoadingingPage({ control, getValues }: StepProps) {
   const [currentStep, setCurrentStep] = useState(0);
@@ -68,7 +109,7 @@ export default function OnLoadingingPage({ control, getValues }: StepProps) {
     });
   }
 
-  const handleGenrate = () => {
+  const handleGenerate = () => {
     if (!values) return;
 
     try {
@@ -91,54 +132,100 @@ export default function OnLoadingingPage({ control, getValues }: StepProps) {
   };
 
   return (
-    <div className="flex flex-col min-w-full min-h-screen place-items-center max-h-screen overflow-x-auto">
-      <div className="flex min-w-full place-content-center">
-        <div className="p-6">
-          <h2 className="text-xl font-bold mb-4">Review Your Pet's Info</h2>
-          <ul className="space-y-2">
-            {/* <li>
-                <strong>Name:</strong> {values!.name}
-              </li>
-              <li>
-                <strong>Email:</strong> {values!.email}
-              </li> */}
-            <li>
-              <strong>Pet Name:</strong> {values!.petname}
-            </li>
-            <li>
-              <strong>Gender:</strong> {values!.gender}
-            </li>
-            <li>
-              <strong>Age:</strong> {values!.age}
-            </li>
-            <li>
-              <strong>Breed:</strong> {values!.breed}
-            </li>
-            <li>
-              <strong>Weight:</strong> {values!.weight}
-            </li>
-            <li>
-              <strong>Activity Level:</strong> {values!.activity_level}
-            </li>
-            <li>
-              <strong>Body Type:</strong> {values!.body_shape}
-            </li>
-            <li>
-              <strong>Preferred Food:</strong> {values!.preferred_foods?.join(", ")}
-            </li>
-            <li>
-              <strong>Allergies:</strong> {values!.allergies?.join(", ")}
-            </li>
-          </ul>
-          <div className="flex justify-center mt-8">
-            <button
-              onClick={handleGenrate}
-              className="bg-[#EE9422] hover:bg-gray-300 text-white px-4 py-2 rounded-md transition-colors duration-300"
-            >
-              Genarate Meal Plan
-            </button>
-          </div>
-        </div>
+    <div className="flex flex-col w-full">
+      <div className="w-full max-w-4xl mx-auto p-4 flex justify-center">
+        <Card className="sb-container shadow-xl bg-transparent w-full">
+          <CardHeader className="text-center pb-6">
+            <CardTitle className="text-2xl font-bold bg-[#028391] bg-clip-text text-transparent">
+              Review Your Pet's Info
+            </CardTitle>
+            <p className="text-slate-600 mt-2">
+              Let's make sure everything looks perfect for your furry friend
+            </p>
+          </CardHeader>
+
+          <CardContent className="space-y-6">
+            <div className="grid gap-4 md:grid-cols-3">
+              <InfoItem icon={User} label="Pet Name" value={values!.petname} variant="primary" />
+              <InfoItem icon={Heart} label="Gender" value={values!.gender} variant="secondary" />
+              <InfoItem icon={Calendar} label="Age" value={values!.age} variant="success" />
+              <InfoItem icon={PawPrint} label="Breed" value={values!.breed} variant="primary" />
+              <InfoItem icon={Weight} label="Weight" value={values!.weight} variant="warning" />
+              <InfoItem
+                icon={Activity}
+                label="Activity Level"
+                value={values!.activity_level}
+                variant="success"
+              />
+            </div>
+
+            <Separator className="my-6" />
+
+            <div className="space-y-4">
+              <InfoItem
+                icon={User}
+                label="Body Type"
+                value={values!.body_shape}
+                variant="secondary"
+              />
+
+              <div className="p-4 rounded-lg bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200/50">
+                <div className="flex items-center space-x-3 mb-2">
+                  <div className="p-2 bg-green-100 rounded-full">
+                    <Utensils className="text-green-600" size={18} />
+                  </div>
+                  <div>
+                    <p className="text-[12px] font-medium text-green-700">Preferred Foods</p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {values!.preferred_foods?.map((food, index) => (
+                    <Badge
+                      key={index}
+                      variant="secondary"
+                      className="bg-green-100 text-green-800 hover:bg-green-200"
+                    >
+                      {food}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-4 rounded-lg bg-gradient-to-r from-red-50 to-pink-50 border border-red-200/50">
+                <div className="flex items-center space-x-3 mb-2">
+                  <div className="p-2 bg-red-100 rounded-full">
+                    <AlertTriangle className="text-red-600" size={18} />
+                  </div>
+                  <div>
+                    <p className="text-[12px] font-medium text-red-700">Allergies</p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {values!.allergies?.map((allergy, index) => (
+                    <Badge
+                      key={index}
+                      variant="destructive"
+                      className="bg-red-100 text-red-800 hover:bg-red-200"
+                    >
+                      {allergy}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-center pt-6">
+              <Button
+                onClick={handleGenerate}
+                className="bg-[#EE9422] text-white rounded-md min-h-16 px-10"
+                size="lg"
+              >
+                <Sparkles className="mr-2" size={20} />
+                Generate Meal Plan
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

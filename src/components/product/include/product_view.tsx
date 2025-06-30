@@ -7,6 +7,7 @@ import BannerElevated from "./banner-elevated";
 import { Title } from "@/components/common/title-comp";
 import { fetchProducts } from "@/store/products";
 import { productDetailsTreats } from "@/constants/meal-data";
+import Heading from "@/sb-ui/h1/h1";
 
 export interface ProductDetailsProps {
   id: number;
@@ -64,15 +65,13 @@ export default function ProductView() {
   const rightColumn = products.filter((_, i) => i % 2 !== 0);
 
   return (
-    <section className="flex flex-col overflow-visible">
-      <div className="flex flex-col mx-auto place-content-center items-center">
-        <Title variant="h2" textStyle="primary" className="text-[#028391] leading-normal">
-          Our Products
-        </Title>
+    <section className="sb-container flex flex-col overflow-visible">
+      <div className="flex flex-col mx-auto place-content-center items-center pt-4">
+        <Heading text={" Our Products"} cls={`text-[#028391]`} />
       </div>
 
       {/* Responsive Columns */}
-      <div className="flex flex-col md:flex-row gap-6 md:gap-12 px-4 md:px-0 pt-6 md:pt-12">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-12 pt-6 md:pt-12">
         <div className="flex flex-col gap-6 md:gap-12 flex-1">
           {leftColumn.map((item, idx) => (
             <ProductDisplay key={idx} productDetails={item} />
@@ -85,9 +84,14 @@ export default function ProductView() {
         </div>
       </div>
 
-      <div className="min-h-12" />
-
-      <BannerElevated
+      <div className="min-h-6" />
+      <div className="sb-container flex min-w-full place-content-center bg-transparent">
+        <img
+          src={"https://ik.imagekit.io/funlogic/pawfull/banners/c.jpg?updatedAt=1750957794722"}
+          className="object-fill bg-transparent"
+        />
+      </div>
+      {/* <BannerElevated
         imgUrl="https://ik.imagekit.io/funlogic/pawfull/all_snacks-cut%20out%20.png?updatedAt=17457398316361351500517"
         value={
           "Treats Made with Fresh Ingredients with no added preservatives.\nMake snack time a healthy time for your pet babies."
@@ -98,16 +102,14 @@ export default function ProductView() {
         borderStyle="border-solid"
         imagePosition="right-0 bottom-[70px]"
         imageHide={false}
-      />
+      /> */}
 
-      <div className="flex flex-col mx-auto place-content-center items-center mt-12" id="treatsec">
-        <Title variant="h2" textStyle="primary" className="text-[#028391] leading-normal">
-          Fresh treats
-        </Title>
+      <div className="flex flex-col mx-auto place-content-center items-center mt-4" id="treatsec">
+        <Heading text={"Fresh treats"} cls={`text-[${"#028391"}]`} />
       </div>
 
       {/* Treats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4 md:py-12 px-4 md:px-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4 md:py-12 ">
         {productDetailsTreats.map((item: ProductDetailsProps, index: number) => (
           <ProductDisplay key={index} productDetails={item} />
         ))}

@@ -16,7 +16,7 @@ export interface ImagePropsType {
   description?: string;
 }
 
-export interface TempletProps {
+export interface TemplateProps {
   title: string;
   title_color?: string;
   sub_title?: string;

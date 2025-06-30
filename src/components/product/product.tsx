@@ -17,15 +17,15 @@ import { Suspense } from "react";
 
 export default function Product() {
   return (
-    <div className=" flex flex-col md:pt-32">
-      {/* <OfferStrip
-        text="Welcome to the Sale!"
-        subText="Up to 50% off on all items"
-        height="h-10"
-        width="w-full"
-        bgColor="bg-black"
-      /> */}
-      <BannerElevated
+    <div className=" flex flex-col md:pt-12 px-5">
+      <div className="sb-container flex min-w-full place-content-center">
+        <img
+          src={"https://ik.imagekit.io/funlogic/pawfull/banners/b.jpg?updatedAt=1750957794769"}
+          className="object-fill"
+        />
+      </div>
+
+      {/* <BannerElevated
         imgUrl="https://ik.imagekit.io/funlogic/pawfull/all%20ingredients%20as%20dog%20paw%20without%20background.png?updatedAt=1745743545693"
         value={
           "Freshly cooked daily meals made with nutritionist-formulated recipes and human-grade ingredients, with no additives."
@@ -35,16 +35,27 @@ export default function Product() {
         borderWidth="border-2"
         borderStyle="border-solid"
         imagePosition="right-5 bottom-[70px]"
-      />
-      {/* <div className="min-h-6"></div> */}
+      /> */}
       <Suspense fallback={<div>Loading...</div>}>
         <ProductView />
       </Suspense>
-      {/* <div className="min-h-6"></div> */}
       <Section_type_7 />
-      {/* <HowItWorks /> */}
-      <div className="min-h-12"></div>
-      <div className="min-h-12"></div>
+      <ProductTestimonials />
+      <Faq items={productFaqData} />
+      {/* <OfferStrip
+        text="Welcome to the Sale!"
+        subText="Up to 50% off on all items"
+        height="h-8"
+        width="w-full"
+        bgColor="bg-slate-600"
+      /> */}
+      {/* <OfferStrip
+        text="Welcome to the Sale!"
+        subText="Up to 50% off on all items"
+        height="h-10"
+        width="w-full"
+        bgColor="bg-black"
+      /> */}
       {/* <BannerSection /> */}
       {/* <FoodTypeOffered
         title={"A Bowl for Every Tail: Premium Dog Food for Every Breed, Age, and Need."}
@@ -55,17 +66,6 @@ export default function Product() {
         sub_title="Pawtful's Rich meals are packaged in advanced retort packaging, preserving maximum nutrition and taste without the need for preservatives. Enjoy fresh, flavorful meals anytime."
       /> */}
       {/* <IngredientsUsed /> */}
-      <div className="min-h-12"></div>
-      <div className="min-h-12"></div>
-      <ProductTestimonials />
-      {/* <OfferStrip
-        text="Welcome to the Sale!"
-        subText="Up to 50% off on all items"
-        height="h-8"
-        width="w-full"
-        bgColor="bg-slate-600"
-      /> */}
-      <Faq items={productFaqData} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { UserDataContext, UserDataContextType } from "@/contexts/userdata-context";
 import { User } from "@/store/interfaces/user";
@@ -19,6 +19,7 @@ import OnLoadingingPage from "@/components/onboarding/onUploadScreen";
 import { useRouter, useSearchParams } from "next/navigation";
 import PetAgeStep from "./includes/petdobStep";
 import { AuthContext, AuthContextType } from "@/contexts/auth-context";
+import { useCallback as reactUseCallback } from "react";
 
 const steps = [
   PetNameStep,
@@ -31,6 +32,9 @@ const steps = [
   PetAllergiesTypesStep,
   OnLoadingingPage
 ];
+
+const MAX_STEP = steps.length - 1;
+const MIN_STEP = 0;
 
 export default function PetDetails({
   currentStep,
@@ -46,7 +50,11 @@ export default function PetDetails({
   setInnerStep: (prev: any) => void;
 }) {
   const { user } = useContext(AuthContext) as AuthContextType;
-  const { control, handleSubmit, setValue, getValues, formState, trigger } = useForm<Formdata>({
+  const { formdata, updateFormdata } = useContext(UserDataContext) as UserDataContextType;
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const { control, handleSubmit, setValue, getValues, trigger } = useForm<Formdata>({
     defaultValues: {
       name: "",
       email: "",
@@ -67,97 +75,55 @@ export default function PetDetails({
     }
   });
 
-  const { formdata, updateFormdata } = useContext(UserDataContext) as UserDataContextType;
+  const nameParam = useMemo(() => searchParams.get("name"), [searchParams]);
   const StepComponent = steps[innerStep];
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const name = useMemo(() => searchParams.get("name"), [searchParams]);
 
   useEffect(() => {
-    console.log("innerStep", innerStep);
-  }, [innerStep]);
-
-  useEffect(() => {
-    if (name) {
-      updateFormdata({ petname: name });
+    if (nameParam) {
+      updateFormdata({ petname: nameParam });
       setInnerStep(1);
       setCurrentStep(0);
     }
-  }, [name]);
+  }, [nameParam]);
 
   useEffect(() => {
-    if (formdata) {
-      // setValue("name", formdata.name);
-      // setValue("email", formdata.email);
-      // setValue("phone", formdata.phone);
-      setValue("petname", formdata.petname);
-      setValue("gender", formdata.gender);
-      setValue("age", formdata.age);
-      setValue("weight", formdata.weight);
-      setValue("breed", formdata.breed);
-    }
-  }, [formdata, setValue]);
+    Object.entries(formdata).forEach(([key, value]) => {
+      setValue(key as keyof Formdata, value);
+    });
+  }, [formdata]);
 
-  const MAX_COUNT = 8;
-  const MIN_COUNT = 0;
-
-  const goToNextStep = async () => {
+  const goToNextStep = useCallback(async () => {
     const isValid = await trigger();
-    // switch (currentStep) {
-    //   case 1:
-    //     isValid = await trigger("name"); // Only validate "name" on Step 1
-    //     break;
-    //   case 2:
-    //     isValid = await trigger("gender"); // Only validate "gender" on Step 2
-    //     break;
-    //   case 3:
-    //     isValid = await trigger("age"); // Only validate "age" on Step 3
-    //     break;
-    //   case 4:
-    //     isValid = await trigger(["phone", "email"]); // Only validate "phone" and "email" on Step 4
-    //     break;
-    //   default:
-    //     isValid = true;
-    // }
-    if (isValid) {
-      if (innerStep === 0 && !user) {
-        router.push("/login?flow=onboardingflow");
-      } else {
-        try {
-          if (innerStep === 3 || innerStep === 6) {
-            setCurrentStep((prev: number) => (prev === NUMBER_OF_STEPS - 1 ? prev : prev + 1));
-          }
-          setInnerStep((prev: number) => Math.min(MAX_COUNT, prev + 1));
-        } catch (error) {}
-      }
-    }
-  };
-  const goToPreviousStep = () => {
-    if (innerStep === 0 && currentStep === 0) {
-      if (document.referrer) {
-        router.back();
-      } else {
-        router.push("/"); // Navigate to a fallback page
-      }
-    } else {
-      try {
-        if (innerStep === 4 || innerStep === 7) {
-          setCurrentStep((prev: number) => (prev <= 0 ? prev : prev - 1));
-        }
-        setInnerStep((prev: number) => Math.max(MIN_COUNT, prev - 1));
-      } catch (error) {}
-    }
-  };
+    if (!isValid) return;
 
-  const handleNext = (data: any) => {
+    if (innerStep === 0 && !user) {
+      router.push("/login?flow=onboardingflow");
+      return;
+    }
+
+    if ([3, 6].includes(innerStep)) {
+      setCurrentStep((prev: number) => Math.min(prev + 1, NUMBER_OF_STEPS - 1));
+    }
+
+    setInnerStep((prev: number) => Math.min(prev + 1, MAX_STEP));
+  }, [innerStep, user]);
+
+  const goToPreviousStep = useCallback(() => {
+    if (innerStep === 0 && currentStep === 0) {
+      document.referrer ? router.back() : router.push("/");
+      return;
+    }
+
+    if ([4, 7].includes(innerStep)) {
+      setCurrentStep((prev: number) => Math.max(prev - 1, 0));
+    }
+
+    setInnerStep((prev: number) => Math.max(prev - 1, MIN_STEP));
+  }, [innerStep, currentStep]);
+
+  const handleNext = (data: Formdata) => {
     updateFormdata(data);
     goToNextStep();
-  };
-
-  const onSubmit = (data: any) => {
-    updateFormdata(data);
-
-    createUser(data);
   };
 
   const createUser = async (data: Formdata) => {
@@ -179,63 +145,72 @@ export default function PetDetails({
         allergies: data.allergies
       }
     };
-    console.log(payload);
-    // if (payload.name !== "") {
-    //   console.log("Submitting data:", formdata);
-    //   await addDoc(collection(db, "user"), { ...payload })
-    //     .then((docRef) => {
-    //       console.log("Document written with ID: ", docRef.id);
-    //       router.push("/profile");
-    //     })
-    //     .catch((error) => {
-    //       console.error("Error adding document: ", error);
-    //     });
+
+    // Debug only:
+    console.log("Payload for submission:", payload);
+
+    // Uncomment to enable Firebase submission:
+    // try {
+    //   const docRef = await addDoc(collection(db, "user"), payload);
+    //   console.log("Document written with ID:", docRef.id);
+    //   router.push("/profile");
+    // } catch (error) {
+    //   console.error("Error adding document:", error);
     // }
   };
 
-  const handleRoute = () => {
+  const onSubmit = (data: Formdata) => {
+    updateFormdata(data);
+    createUser(data);
+  };
+
+  const handleBackRoute = () => {
     router.push(`/onboarding?name=${getValues("petname")}`);
   };
 
   return (
-    <div className="flex justify-center pt-12 md:pt-6 px-4 sm:px-6 md:px-8">
-      <form
-        onSubmit={handleSubmit(innerStep === steps.length - 1 ? onSubmit : handleNext)}
-        className="w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-7xl pb-24 lg:pb-0"
-      >
-        <motion.div
-          key={innerStep}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="min-h-full"
+    <div className="sb-container flex flex-col h-full w-full">
+      {/* Scrollable content (only if needed) */}
+      <div className="flex-1 min-h-0 overflow-y-auto px-4 sm:px-6 md:px-8 pt-12 md:pt-6">
+        <form
+          onSubmit={handleSubmit(innerStep === MAX_STEP ? onSubmit : handleNext)}
+          className="mx-auto w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-6xl pb-40"
+          id="onboarding-form"
         >
-          <StepComponent control={control} getValues={getValues} />
-        </motion.div>
+          <motion.div
+            key={innerStep}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <StepComponent control={control} getValues={getValues} />
+          </motion.div>
+        </form>
+      </div>
 
-        {/* Bottom Navigation */}
-        <div className="fixed bottom-0 left-0 right-0 bg-transparent py-4 sm:py-5 md:py-3 lg:py-6 z-10 max-h-20 lg:max-h-40">
-          <div className="flex justify-center">
-            <div className="flex flex-row-reverse items-center gap-3 sm:gap-4 px-4 sm:px-6">
-              {innerStep !== 8 && (
-                <button
-                  type="submit"
-                  className="bg-[#EE9422] text-white text-sm sm:text-base lg:text-lg px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full min-w-[140px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[280px] hover:scale-105 transition-transform duration-200"
-                >
-                  Continue
-                </button>
-              )}
+      {/* Fixed bottom nav */}
+      <div className="sticky bottom-0 left-0 right-0 bg-white shadow-md py-4 sm:py-5 md:py-6 z-50">
+        <div className="flex justify-center">
+          <div className="flex flex-row-reverse items-center gap-3 sm:gap-4 px-4 sm:px-6">
+            {innerStep !== MAX_STEP && (
               <button
-                type="button"
-                onClick={innerStep !== 8 ? goToPreviousStep : handleRoute}
-                className="flex items-center justify-center text-gray-700 bg-gray-200 rounded-full size-10 sm:size-12 md:size-14 hover:scale-110 transition-transform duration-200"
+                type="submit"
+                form="onboarding-form"
+                className="bg-[#EE9422] text-white text-sm sm:text-base lg:text-lg px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full min-w-[140px] sm:min-w-[200px] md:min-w-[240px] lg:min-w-[280px] hover:scale-105 transition-transform duration-200"
               >
-                <MdArrowBack size={20} className="sm:size-6 md:size-7" />
+                Continue
               </button>
-            </div>
+            )}
+            <button
+              type="button"
+              onClick={innerStep !== MAX_STEP ? goToPreviousStep : handleBackRoute}
+              className="flex items-center justify-center text-gray-700 bg-gray-200 rounded-full size-10 sm:size-12 md:size-14 hover:scale-110 transition-transform duration-200"
+            >
+              <MdArrowBack size={20} className="sm:size-6 md:size-7" />
+            </button>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   );
 }

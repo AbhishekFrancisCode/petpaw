@@ -138,8 +138,7 @@ export const HomePageStrings = {
       sub_title: "Treats",
       description:
         "The pinnacle of quality and nutrition, Pawtful's Fresh recipes are made from real meat, fruits, veggies, and grains, so you can give your pup the best of the best each and every day.",
-      image_link:
-        "https://ik.imagekit.io/funlogic/pawfull/all_snacks-cut%20out%20.png?updatedAt=1745739800517",
+      image_link: "https://ik.imagekit.io/funlogic/pawfull/banners/D.png?updatedAt=1750957798388",
       link_to: "https://example.com/city",
       color: "",
       title_color: "#EE9422"
