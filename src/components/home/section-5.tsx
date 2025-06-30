@@ -1,7 +1,7 @@
 "use client";
 
 import { ButtonProps, ImagePropsType } from "@/store/interfaces/templete";
-import TempletType1 from "./includes/templet-type-1";
+import TemplateType1 from "./includes/templet-type-1";
 import { HomePageStrings } from "@/constants/title-constants";
 
 const buttons: ButtonProps[] = [
@@ -23,7 +23,7 @@ export default function Section_type_5() {
   return (
     <section className="bg-[#FFF8EF] place-content-center">
       <div className="sb-container mx-auto">
-        <TempletType1
+        <TemplateType1
           title="Pawftul’s Promise"
           title_color="#EE9422"
           sub_title="Fresh meals every day. A lifetime of health"

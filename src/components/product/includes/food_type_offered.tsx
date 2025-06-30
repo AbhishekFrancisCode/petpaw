@@ -1,6 +1,6 @@
 "use client";
 import Button from "@/sb-ui/button/button";
-import { ImagePropsType, TempletProps } from "@/store/interfaces/templete";
+import { ImagePropsType, TemplateProps } from "@/store/interfaces/templete";
 import Image from "next/image";
 
 export default function FoodTypeOffered({
@@ -12,7 +12,7 @@ export default function FoodTypeOffered({
   images,
   buttons,
   steps_count
-}: TempletProps) {
+}: TemplateProps) {
   const images1: ImagePropsType[] = [
     {
       title: "Chicken",

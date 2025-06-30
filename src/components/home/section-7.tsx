@@ -1,7 +1,7 @@
 "use client";
 
 import { ButtonProps, ImagePropsType } from "@/store/interfaces/templete";
-import TempletType1 from "./includes/templet-type-1";
+import TemplateType1 from "./includes/templet-type-1";
 import BlogPosts from "../blog/blog";
 import { HomePageStrings } from "@/constants/title-constants";
 
@@ -24,7 +24,7 @@ export default function Section_type_7() {
   return (
     <section className="bg-[#FFF8EF] place-content-center">
       <div className="sb-container mx-auto">
-        <TempletType1
+        <TemplateType1
           title="How it works?"
           title_color="#EE9422"
           images={HomePageStrings.sixthSection as ImagePropsType[]}

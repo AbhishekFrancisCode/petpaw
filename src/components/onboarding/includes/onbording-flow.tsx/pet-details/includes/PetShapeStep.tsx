@@ -40,7 +40,7 @@ const PetShapeStep = ({ control }: StepProps) => {
     }
   ];
   return (
-    <div className="flex flex-col items-center px-4 sm:px-6 md:px-8 md:mt-8">
+    <div className="flex flex-col items-center px-4 sm:px-6 md:px-8 ">
       <h2 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mb-6 text-[#EE9422]">
         {`What is ${formdata.petname ? `${formdata.petname}'s` : "your pet's"} body type?`}
       </h2>

@@ -28,6 +28,7 @@ const CardView = ({ step, list, field, handleClick }: CardViewProps) => {
         handleClick(item.id);
         field.onChange(item.title);
       }}
+      className=""
     />
   ));
 };

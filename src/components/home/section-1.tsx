@@ -1,7 +1,7 @@
 "use client";
 
 import { ImagePropsType } from "@/store/interfaces/templete";
-import TempletType1 from "./includes/templet-type-1";
+import TemplateType1 from "./includes/templet-type-1";
 import { HomePageStrings } from "@/constants/title-constants";
 
 export default function Section_type_1() {
@@ -9,7 +9,7 @@ export default function Section_type_1() {
   return (
     <section className="bg-[#C4DEE1] place-content-center">
       <div className="sb-container mx-auto">
-        <TempletType1
+        <TemplateType1
           title={title}
           title_color="#028391"
           sub_title={description}
