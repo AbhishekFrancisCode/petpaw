@@ -22,7 +22,7 @@ const buttons: ButtonProps[] = [
 export default function Section_type_5() {
   return (
     <section className="bg-[#FFF8EF] place-content-center">
-      <div className="sb-container mx-auto">
+      <div className="sb-container mx-auto py-4">
         <TemplateType1
           title="Pawftul’s Promise"
           title_color="#EE9422"
