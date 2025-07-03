@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import DogMealSuggester, { ActivityLevel } from "./portionGrid";
 import { Formdata } from "@/store/interfaces/form-data";
+import WhatsAppButton from "@/utils/whatsapp-connect";
 
 type MealGridProps = {
   meals: DogMeal[];
@@ -11,31 +12,37 @@ type MealGridProps = {
 
 export const MealGrid = ({ meals, petdata }: MealGridProps) => {
   return (
-    <div className="px-2">
-      <div className="flex items-center mx-auto gap-4 bg-slate-500">
-        <DogMealSuggester
-          name={petdata.petname!}
-          age={Number(petdata.age)}
-          weight={Number(petdata.weight)}
-          activity={petdata.activity_level as ActivityLevel}
-        />
-        <div className="w-full overflow-x-auto">
-          <div className="flex flex-nowrap gap-6">
+    <div className="sb-container md:p-2 min-h-[calc(100vh-120px)] flex flex-col">
+      <div className="flex flex-col md:flex-row gap-2 flex-1">
+        <div className="md:flex-shrink-0 h-fit">
+          <DogMealSuggester
+            name={petdata.petname!}
+            age={Number(petdata.age)}
+            weight={Number(petdata.weight)}
+            activity={petdata.activity_level as ActivityLevel}
+          />
+        </div>
+        <div className="w-full pb-4 h-fit overflow-x-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200 hover:scrollbar-thumb-blue-600 scrollbar-thumb-rounded-full">
+          <div className="flex flex-col md:flex-row md:flex-nowrap gap-2 h-full">
             {meals.map((meal, index) => (
               <Link
                 href={`/product/${meal.id}`}
                 key={index}
                 className="min-w-[280px] max-w-xs w-[80vw] sm:w-[320px] md:w-[340px] lg:w-[360px] xl:w-[380px] min-h-full"
               >
-                <div className="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 min-h-full w-full">
-                  <img
-                    src={meal.image}
-                    alt={meal.title}
-                    className="w-full h-44 object-cover rounded-xl mb-4"
-                  />
-                  <h2 className="text-xl font-semibold text-gray-800">{meal.title}</h2>
-                  <p className="text-sm text-gray-500 mb-2">{meal.subtitle}</p>
-                  <div className="text-sm text-gray-700 mb-4 line-clamp-3">{meal.description}</div>
+                <div className="flex flex-col justify-between bg-white rounded-2xl shadow hover:shadow-lg transition p-4 min-h-full w-full">
+                  <div className="flex flex-col gap-2">
+                    <img
+                      src={meal.image}
+                      alt={meal.title}
+                      className="max-w-full max-h-60 object-fit rounded-xl mb-2"
+                    />
+                    <p className="text-md font-semibold text-[#EE9422]">{meal.title}</p>
+                    <p className="text-sm text-[#028391]">{meal.subtitle}</p>
+                    <div className="text-xs text-gray-700 mb-4 line-clamp-3">
+                      {meal.description}
+                    </div>
+                  </div>
                   <div className="flex justify-between text-xs text-gray-600">
                     <div>
                       <span className="font-medium text-gray-800">Protein: </span>
@@ -55,6 +62,16 @@ export const MealGrid = ({ meals, petdata }: MealGridProps) => {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Bottom Buttons */}
+      <div className="flex flex-col sm:flex-row justify-center items-center px-4 sm:px-6 gap-3 md:gap-6 py-6 max-w-[85%] mx-auto">
+        <WhatsAppButton />
+        <Link href="/mealplan">
+          <button className="bg-[#EE9422] rounded-md min-h-16 px-10 text-[#FFF8EF] font-medium hover:opacity-80 min-w-[220px]">
+            Know More
+          </button>
+        </Link>
       </div>
     </div>
   );
