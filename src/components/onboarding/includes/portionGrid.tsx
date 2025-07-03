@@ -78,7 +78,7 @@ const DogMealSuggester = ({ name, age, weight, activity }: DogInput) => {
   return (
     <div
       ref={componentRef}
-      className="p-4 max-w-[33rem] shadow bg-[#028391] rounded-2xl min-w-full md:min-w-[430px]"
+      className="p-4 max-w-[33rem] shadow bg-[#028391] rounded-2xl min-w-full md:min-w-[430px] !m-0"
     >
       <div className="flex justify-between">
         <h2 className="text-xl text-[#ffffff] font-bold mb-4">{`${name}'s Meal Portion`}</h2>

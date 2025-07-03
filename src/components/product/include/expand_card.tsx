@@ -51,8 +51,11 @@ const ProductDisplay = ({ productDetails }: { productDetails: ProductDetailsProp
       <motion.div
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
+        animate={{ opacity: isHovered ? 1 : 0.9 }} // Or whatever effect you want
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className={`${isHovered ? "bg-[#f5f3ee]" : "bg-[#f1e8dc]"} hidden md:block rounded-3xl border-0 text-card-foreground shadow-sm h-[668px] transition-all duration-300 ease-in-out hover:h-[734px] max-w-1/2 max-h-[734px]`}
+        className={`hidden md:block rounded-3xl border-0 text-card-foreground shadow-sm h-[668px] transition-all duration-300 ease-in-out hover:h-[734px] max-w-1/2 max-h-[734px] ${
+          isHovered ? "bg-[#028391]/15" : "bg-[#EE9422]/25"
+        }`}
       >
         <div className="grid grid-rows-[3fr_auto] items-center max-h-full max-w-full">
           <div className="row-span-3 relative h-[506px]">
@@ -85,7 +88,7 @@ const ProductDisplay = ({ productDetails }: { productDetails: ProductDetailsProp
                 <Button
                   variant="default"
                   size="lg"
-                  className="mt-4 bg-emerald-700 hover:bg-emerald-800 text-white"
+                  className="mt-4 bg-[#EE9422]/35 hover:bg-[#EE9422]/20 text-white"
                   onClick={() => {
                     window.location.href = `/product/${productDetails.id}`;
                   }}
