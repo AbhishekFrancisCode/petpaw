@@ -50,10 +50,12 @@ export const MealPortionSize = ({ isMealplanPage = false }: { isMealplanPage: bo
   ];
 
   return (
-    <div className={twMerge(!isMealplanPage && "bg-[#C4DEE1]", "py-4 m-2 md:m-0")}>
+    <div className={twMerge(!isMealplanPage && "bg-[#C4DEE1]", "py-4 md:m-0")}>
       <div className="sb-container mx-auto flex flex-col">
         <Heading text={title} cls="text-[#028391]" />
-        {sub_title && <div className="text-[#EE9422] text-center px-4 sm:px-6">{sub_title}</div>}
+        {sub_title && (
+          <div className="text-[#EE9422] text-center px-4 sm:px-6 pt-1">{sub_title}</div>
+        )}
 
         <div className="flex flex-wrap justify-center items-center px-4 pt-8 gap-4 sm:gap-6 lg:gap-8 xl:gap-24">
           {dogSizes.map((e: any) => (

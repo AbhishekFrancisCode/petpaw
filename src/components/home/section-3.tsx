@@ -16,7 +16,7 @@ const buttons: ButtonProps[] = [
 export default function Section_type_3() {
   return (
     <section className="bg-[#C4DEE1] place-content-center">
-      <div className="container mx-auto">
+      <div className="container mx-auto py-4">
         <TemplateType1
           title="Flexible pricing, personalized nutrition"
           title_color="#028391"
