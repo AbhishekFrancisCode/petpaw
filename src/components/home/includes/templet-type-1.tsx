@@ -17,9 +17,7 @@ export default function TemplateType1({
   return (
     <div className={`flex flex-col ${section_color}`}>
       <Heading text={title} cls={`text-[${title_color ?? "#000000"}]`} />
-      {sub_title && (
-        <div className={`text-[${sub_title_color}]  text-center pt-1`}>{sub_title}</div>
-      )}
+      {sub_title && <div className={`text-black  text-center pt-1`}>{sub_title}</div>}
       {images && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 px-12 md:px-0 gap-x-6 justify-center pt-8">
           {images.map((item: ImagePropsType, index: number) => {

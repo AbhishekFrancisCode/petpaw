@@ -40,14 +40,15 @@ export const HomePageStrings = {
       {
         title: "100% Human Grade & Ingredients",
         image_link:
-          "https://ik.imagekit.io/funlogic/pawfull/all%20ingredients%20with%20dog%20looking%20at%20them.JPG?updatedAt=1744556294455",
+          "https://ik.imagekit.io/funlogic/pawfull/Freshly%20Cooked,%20Wholesome%20Meals%20For%20Dogs/1.png?updatedAt=1751740278859",
         link_to: "https://example.com/sunset",
         color: "",
         title_color: "#028391"
       },
       {
         title: "Cooked Daily in Hygienic Kitchens",
-        image_link: "https://ik.imagekit.io/funlogic/hygienic.png?updatedAt=1745681734861",
+        image_link:
+          "https://ik.imagekit.io/funlogic/pawfull/Freshly%20Cooked,%20Wholesome%20Meals%20For%20Dogs/2.png?updatedAt=1751740278802",
         link_to: "https://example.com/forest",
         color: "",
         title_color: "#028391"
@@ -55,7 +56,7 @@ export const HomePageStrings = {
       {
         title: "Nutritionist Formulated Recipes",
         image_link:
-          "https://ik.imagekit.io/funlogic/pawfull/nutrionist.jpg?updatedAt=1746294241250",
+          "https://ik.imagekit.io/funlogic/pawfull/Freshly%20Cooked,%20Wholesome%20Meals%20For%20Dogs/3.png?updatedAt=1751740278977",
         link_to: "https://example.com/city",
         color: "",
         title_color: "#028391"
@@ -63,7 +64,7 @@ export const HomePageStrings = {
       {
         title: "Delivered Daily",
         image_link:
-          "https://ik.imagekit.io/funlogic/pawfull/Try%20IT%20for%20Free_Delivery%20Pic.jpg?updatedAt=1745681546143",
+          "https://ik.imagekit.io/funlogic/pawfull/Freshly%20Cooked,%20Wholesome%20Meals%20For%20Dogs/4.png?updatedAt=1751740279093",
         link_to: "https://example.com/city",
         color: "",
         title_color: "#028391"
@@ -105,28 +106,32 @@ export const HomePageStrings = {
   fourthSection: [
     {
       title: "Strong Gut Health",
-      image_link: "https://ik.imagekit.io/funlogic/gut_health.png?updatedAt=1745681925897",
+      image_link:
+        "https://ik.imagekit.io/funlogic/pawfull/Pawftul_s%20Promise/1.png?updatedAt=1751740200750",
       link_to: "https://example.com/sunset",
       color: "",
       title_color: ""
     },
     {
       title: "Firm Poop",
-      image_link: "https://ik.imagekit.io/funlogic/Good%20Poop.png?updatedAt=1745682273463",
+      image_link:
+        "https://ik.imagekit.io/funlogic/pawfull/Pawftul_s%20Promise/2.png?updatedAt=1751740200747",
       link_to: "https://example.com/forest",
       color: "",
       title_color: ""
     },
     {
       title: "Lustrous Coat",
-      image_link: "https://ik.imagekit.io/funlogic/dog_poop.png?updatedAt=1745681983038",
+      image_link:
+        "https://ik.imagekit.io/funlogic/pawfull/Pawftul_s%20Promise/3.png?updatedAt=1751740200781",
       link_to: "https://example.com/city",
       color: "",
       title_color: ""
     },
     {
       title: "Ideal Weight",
-      image_link: "https://ik.imagekit.io/funlogic/healthy_weight.png?updatedAt=1745682023440",
+      image_link:
+        "https://ik.imagekit.io/funlogic/pawfull/Pawftul_s%20Promise/4.png?updatedAt=1751740200754",
       link_to: "https://example.com/city",
       color: "",
       title_color: ""
@@ -147,7 +152,8 @@ export const HomePageStrings = {
   sixthSection: [
     {
       title: "Tell Us About Your Dog",
-      image_link: "https://ik.imagekit.io/funlogic/about_your_pup.jpg?updatedAt=1739015868088",
+      image_link:
+        "https://ik.imagekit.io/funlogic/pawfull/How%20it%20works_/1.png?updatedAt=1751740245696",
       link_to: "https://example.com/sunset",
       color: "",
       title_color: "#EE9422",
@@ -156,7 +162,8 @@ export const HomePageStrings = {
     },
     {
       title: "Personalized Meal Plan & Pricing",
-      image_link: "https://ik.imagekit.io/funlogic/meal_plan.png?updatedAt=1745683022143",
+      image_link:
+        "https://ik.imagekit.io/funlogic/pawfull/How%20it%20works_/2.png?updatedAt=1751740245842",
       link_to: "https://example.com/forest",
       color: "",
       title_color: "#EE9422",
@@ -167,7 +174,7 @@ export const HomePageStrings = {
     {
       title: "Try a Free Sample",
       image_link:
-        "https://ik.imagekit.io/funlogic/pawfull/Try%20IT%20for%20Free_Delivery%20Pic.jpg?updatedAt=1745681546143",
+        "https://ik.imagekit.io/funlogic/pawfull/How%20it%20works_/3.png?updatedAt=1751740245974",
       link_to: "https://example.com/city",
       color: "",
       title_color: "#EE9422",
@@ -176,7 +183,8 @@ export const HomePageStrings = {
     },
     {
       title: "Get Started",
-      image_link: "https://ik.imagekit.io/funlogic/serve-food.webp?updatedAt=1739015868258",
+      image_link:
+        "https://ik.imagekit.io/funlogic/pawfull/How%20it%20works_/4.png?updatedAt=1751740246028",
       link_to: "https://example.com/city",
       color: "",
       title_color: "#EE9422",
@@ -273,7 +281,8 @@ export const MealPlanPageStrings = {
     data: [
       {
         title: "100% Human-Grade Meat",
-        image_link: "https://ik.imagekit.io/funlogic/pawfull/meat_100.png",
+        image_link:
+          "https://ik.imagekit.io/funlogic/pawfull/100_%20Human-Grade%20Ingredients/1.png?updatedAt=1751739589093",
         link_to: "",
         color: "",
         title_color: "#333"
@@ -281,14 +290,15 @@ export const MealPlanPageStrings = {
       {
         title: "High Quality Veggies",
         image_link:
-          "https://ik.imagekit.io/funlogic/pawfull/veggies%20good%20quality.PNG?updatedAt=1745748511036",
+          "https://ik.imagekit.io/funlogic/pawfull/100_%20Human-Grade%20Ingredients/2.png?updatedAt=1751739589066",
         link_to: "",
         color: "",
         title_color: "#333"
       },
       {
         title: "Healthy Ad-ons. Coconut oil, eggshell powder, grains & others",
-        image_link: "https://ik.imagekit.io/funlogic/pawfull/healthy%20adons.png",
+        image_link:
+          "https://ik.imagekit.io/funlogic/pawfull/100_%20Human-Grade%20Ingredients/3.png?updatedAt=1751739589045",
         link_to: "",
         color: "",
         title_color: "#333"
@@ -296,7 +306,7 @@ export const MealPlanPageStrings = {
       {
         title: "Sustainable packaging",
         image_link:
-          "https://ik.imagekit.io/funlogic/pawfull/ssustainable_packaging-removebg-preview.png?updatedAt=1745747624304",
+          "https://ik.imagekit.io/funlogic/pawfull/100_%20Human-Grade%20Ingredients/4.png?updatedAt=1751739589100",
         link_to: "",
         color: "",
         title_color: "#333"

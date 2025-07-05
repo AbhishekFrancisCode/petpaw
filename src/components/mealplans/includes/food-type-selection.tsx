@@ -56,14 +56,14 @@ export default function FoodTypeSelection() {
                   }}
                   className={`flex min-w-full px-3 py-2 md:px-6 md:py-4 rounded-full transition-colors place-content-start items-center ${
                     selectedType === "Vegetarian" && selectedOption.name === option.name
-                      ? "bg-blue-500 text-white"
-                      : "bg-white hover:bg-gray-100 border border-gray-300"
+                      ? "bg-[#028391] text-primary-foreground"
+                      : "bg-[#f1e8dc] hover:bg-accent border border-border"
                   }`}
                 >
                   <input
                     type="radio"
                     checked={selectedOption.name === option.name}
-                    className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 focus:ring-2"
+                    className="w-4 h-4 text-[#028391]/35 border-[#f1e8dc]/35 focus:[#EE9422]/35 focus:ring-2"
                   />
                   <div className="pl-2 md:pl-8">{option.name}</div>
                 </button>
