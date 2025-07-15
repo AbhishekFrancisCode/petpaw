@@ -15,62 +15,62 @@ interface Step {
 const ProductTestimonials = () => {
   const cards: Card[] = [
     {
-      title: "Jack",
+      title: "Pawtful",
       content: "Short content card",
       color: "bg-[#f5f3ee]",
-      petInfo: "4-year-old Golden Retriever"
-    },
-    {
-      title: "Chris Rayan",
-      content:
-        "Medium length content with some extra text to show how it handles longer content blocks.",
-      color: "bg-[#f5f3ee]",
-      petInfo: "4-year-old Golden Retriever"
-    },
-    {
-      title: "Preethi",
-      content: "Another short card",
-      color: "bg-purple-500",
-      petInfo: "4-year-old Golden Retriever"
-    },
-    {
-      title: "Riya Ashely",
-      content:
-        "This card has a bit more content to display and show how the grid handles different heights.",
-      color: "bg-red-500",
-      petInfo: "4-year-old Golden Retriever"
-    },
-    {
-      title: "Aaron",
-      content: "Short and sweet",
-      color: "bg-yellow-500",
-      petInfo: "4-year-old Golden Retriever"
-    },
-    {
-      title: "Divya",
-      content: "The final card with normal content length",
-      color: "bg-indigo-500",
-      petInfo: "4-year-old Golden Retriever"
-    },
-    {
-      title: "Robin",
-      content:
-        "This card has a bit more content to display and show how the grid handles different heights, This card has a bit more content to display and show how the grid handles different heights.",
-      color: "bg-red-500",
-      petInfo: "4-year-old Golden Retriever"
-    },
-    {
-      title: "Anto",
-      content: "Short and sweet",
-      color: "bg-yellow-500",
-      petInfo: "4-year-old Golden Retriever"
-    },
-    {
-      title: "Francis",
-      content: "The final card with normal content length",
-      color: "bg-indigo-500",
-      petInfo: "4-year-old Golden Retriever"
+      petInfo: "3year-old Golden Retriever"
     }
+    // {
+    //   title: "Chris Rayan",
+    //   content:
+    //     "Medium length content with some extra text to show how it handles longer content blocks.",
+    //   color: "bg-[#f5f3ee]",
+    //   petInfo: "4-year-old Golden Retriever"
+    // },
+    // {
+    //   title: "Preethi",
+    //   content: "Another short card",
+    //   color: "bg-purple-500",
+    //   petInfo: "4-year-old Golden Retriever"
+    // },
+    // {
+    //   title: "Riya Ashely",
+    //   content:
+    //     "This card has a bit more content to display and show how the grid handles different heights.",
+    //   color: "bg-red-500",
+    //   petInfo: "4-year-old Golden Retriever"
+    // },
+    // {
+    //   title: "Aaron",
+    //   content: "Short and sweet",
+    //   color: "bg-yellow-500",
+    //   petInfo: "4-year-old Golden Retriever"
+    // },
+    // {
+    //   title: "Divya",
+    //   content: "The final card with normal content length",
+    //   color: "bg-indigo-500",
+    //   petInfo: "4-year-old Golden Retriever"
+    // },
+    // {
+    //   title: "Robin",
+    //   content:
+    //     "This card has a bit more content to display and show how the grid handles different heights, This card has a bit more content to display and show how the grid handles different heights.",
+    //   color: "bg-red-500",
+    //   petInfo: "4-year-old Golden Retriever"
+    // },
+    // {
+    //   title: "Anto",
+    //   content: "Short and sweet",
+    //   color: "bg-yellow-500",
+    //   petInfo: "4-year-old Golden Retriever"
+    // },
+    // {
+    //   title: "Francis",
+    //   content: "The final card with normal content length",
+    //   color: "bg-indigo-500",
+    //   petInfo: "4-year-old Golden Retriever"
+    // }
   ];
 
   return (

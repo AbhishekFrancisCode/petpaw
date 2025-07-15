@@ -88,7 +88,7 @@ const ProductDisplay = ({ productDetails }: { productDetails: ProductDetailsProp
                 <Button
                   variant="default"
                   size="lg"
-                  className="mt-4 bg-[#EE9422]/35 hover:bg-[#EE9422]/20 text-white"
+                  className="mt-4 bg-[#EE9422]/75 hover:bg-[#EE9422] text-white"
                   onClick={() => {
                     window.location.href = `/product/${productDetails.id}`;
                   }}

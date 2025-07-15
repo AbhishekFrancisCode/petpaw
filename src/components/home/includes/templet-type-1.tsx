@@ -17,7 +17,7 @@ export default function TemplateType1({
   return (
     <div className={`flex flex-col ${section_color}`}>
       <Heading text={title} cls={`text-[${title_color ?? "#000000"}]`} />
-      {sub_title && <div className={`text-black  text-center pt-1`}>{sub_title}</div>}
+      {sub_title && <div className={`text-black  text-center pt-2 px-2 md:px-0`}>{sub_title}</div>}
       {images && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 px-12 md:px-0 gap-x-6 justify-center pt-8">
           {images.map((item: ImagePropsType, index: number) => {
@@ -50,15 +50,14 @@ export default function TemplateType1({
                 </div>
                 {item.title && (
                   <h2
-                    className={`text-[#028391] w-full text-[1.15rem] py-1 text-center pt-3 sm:pt-4 lg:pt-5 px-2 sm:px-4 md:px-6 lg:px-8`}
+                    className={`text-[#028391] w-full text-[1.15rem] text-center pt-3 pb-2 md:pb-0 md:pt-4 px-2 sm:px-4 md:px-6 lg:px-8`}
                   >
                     {item.title}
                   </h2>
                 )}
-
                 {item.description && (
                   <p
-                    className={`text-[${item.sub_title_color}] w-full text-sm font-normal py-1 text-center pt-1 sm:pt-2 lg:pt-2 px-2 sm:px-4 md:px-6 lg:px-8`}
+                    className={`text-[${item.sub_title_color}] w-full text-sm font-normal text-center sm:pt-2 lg:pt-2 pb-2 md:pb-0 px-2 sm:px-4 md:px-6 lg:px-8`}
                   >
                     {item.description}
                   </p>

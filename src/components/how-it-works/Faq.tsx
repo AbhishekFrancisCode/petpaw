@@ -27,8 +27,8 @@ const FAQ: React.FC<FAQProps> = ({
   };
 
   return (
-    <div className={`bg-transparent py-4 ${className}`}>
-      <div className="p-8 max-w-7xl mx-auto">
+    <div className={`bg-transparent py-4 mx-4 md:mx-auto  ${className}`}>
+      <div className="pt-8 md:p-8 max-w-7xl mx-auto">
         {title && <Heading text={title} cls={`text-[${"#028391"}] pb-4`} />}
         <div className="space-y-4">
           {items.map((faq, index) => (
