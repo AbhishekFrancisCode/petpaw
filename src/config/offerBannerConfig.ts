@@ -9,9 +9,9 @@ export interface OfferBannerConfig {
 
 export const offerBannerConfig: OfferBannerConfig = {
   visible: true,
-  text: "The Semi-Annual Sale: 60% off your first box!",
+  text: "The Semi-Annual Sale: 40% off your first box!",
   link: "/onboarding",
-  linkLabel: "Try now",
+  linkLabel: "",
   showOnRoutes: ["/", "/mealplan", "/faq", "/product", "/how-it-works"],
-  hideOnRoutes: ["/onboarding"],
+  hideOnRoutes: ["/onboarding"]
 };

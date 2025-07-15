@@ -7,7 +7,7 @@ import { ImagePropsType } from "@/store/interfaces/templete";
 export default function TempletGridSmall() {
   return (
     <section className="bg-transparent place-content-center">
-      <div className="container mx-auto py-4">
+      <div className="container mx-auto px-2 md:px-0 py-4">
         <TemplateType1
           title="100% Human-Grade Ingredients"
           title_color="#028391"
