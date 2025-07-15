@@ -87,7 +87,9 @@ export default function ProductView() {
       <div className="min-h-6" />
       <div className="sb-container flex min-w-full place-content-center bg-transparent">
         <img
-          src={"https://ik.imagekit.io/funlogic/pawfull/banners/c.jpg?updatedAt=1750957794722"}
+          src={
+            "https://ik.imagekit.io/funlogic/pawfull/banners/background%20removed/c.png?updatedAt=1752423159566"
+          }
           className="object-fill bg-transparent"
         />
       </div>

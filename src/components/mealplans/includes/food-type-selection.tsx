@@ -32,16 +32,15 @@ export default function FoodTypeSelection() {
   }, [selectedOption]);
 
   return (
-    <div className="px-8 pt-8 max-w-7xl mx-auto">
+    <div className="px-8 max-w-7xl mx-auto">
       <Heading text={data.title} cls={`text-[${"#028391"}]`} />
-      {/* <h1 className="text-3xl font-semibold text-center mb-4">A Healthy Choice</h1> */}
-      <p className="text-center text-[#EE9422] mb-8">{data.sub_title}</p>
+      {data.sub_title && <div className={`text-black  text-center pt-2`}>{data.sub_title}</div>}
 
-      <div className="grid grid-cols-1 md:grid-cols-8 gap-8 items-start mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-8 gap-8 items-center mt-8">
         <div className="space-y-2 md:col-span-2 order-2 md:order-1 ">
-          <div className="flex mb-4 md:w-full place-content-end">
+          {/* <div className="flex mb-4 md:w-full place-content-end">
             <h2 className="text-xl md:max-w-[180px] md:min-w-[160px] text-center">Meals</h2>
-          </div>
+          </div> */}
           <div className="flex flex-wrap md:flex-col place-content-center md:place-content-end items-center gap-6 min-w-[360px] md:min-w-full">
             {options.fresh.map((option: Mealdata) => (
               <div
@@ -63,7 +62,7 @@ export default function FoodTypeSelection() {
                   <input
                     type="radio"
                     checked={selectedOption.name === option.name}
-                    className="w-4 h-4 text-[#028391]/35 border-[#f1e8dc]/35 focus:[#EE9422]/35 focus:ring-2"
+                    className="w-4 h-4 text-[#028391] border-[#f1e8dc]/35 focus:[#EE9422]/35 focus:ring-2"
                   />
                   <div className="pl-2 md:pl-8">{option.name}</div>
                 </button>

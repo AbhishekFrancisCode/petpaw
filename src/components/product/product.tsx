@@ -17,30 +17,22 @@ import { Suspense } from "react";
 
 export default function Product() {
   return (
-    <div className=" flex flex-col md:pt-12 px-5">
-      <div className="sb-container flex min-w-full place-content-center">
-        <img
-          src={"https://ik.imagekit.io/funlogic/pawfull/banners/b.jpg?updatedAt=1750957794769"}
-          className="object-fill"
-        />
+    <div className=" flex flex-col">
+      <div className=" flex flex-col px-5">
+        <div className="sb-container flex min-w-full place-content-center mx-4 md:mx-0">
+          <img
+            src={
+              "https://ik.imagekit.io/funlogic/pawfull/banners/background%20removed/b.png?updatedAt=1752423159752"
+            }
+            className="object-fill"
+          />
+        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProductView />
+        </Suspense>
+        <Section_type_7 />
+        <ProductTestimonials />
       </div>
-
-      {/* <BannerElevated
-        imgUrl="https://ik.imagekit.io/funlogic/pawfull/all%20ingredients%20as%20dog%20paw%20without%20background.png?updatedAt=1745743545693"
-        value={
-          "Freshly cooked daily meals made with nutritionist-formulated recipes and human-grade ingredients, with no additives."
-        }
-        borderColor="#EE9422"
-        borderRadius="rounded-3xl"
-        borderWidth="border-2"
-        borderStyle="border-solid"
-        imagePosition="right-5 bottom-[70px]"
-      /> */}
-      <Suspense fallback={<div>Loading...</div>}>
-        <ProductView />
-      </Suspense>
-      <Section_type_7 />
-      <ProductTestimonials />
       <Faq items={productFaqData} />
       {/* <OfferStrip
         text="Welcome to the Sale!"

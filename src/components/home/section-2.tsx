@@ -87,16 +87,16 @@ export default function Section_type_2() {
   };
 
   return (
-    <section className="bg-[#FFF8EF] py-4">
-      <div className="sb-container mx-auto grid grid-rows-5 grid-cols-1 lg:grid-rows-1 lg:grid-cols-8 lg:min-h-[700px]">
+    <section className="bg-[#FFF8EF] py-8">
+      <div className="sb-container mx-auto grid grid-rows-5 grid-cols-1 lg:grid-rows-1 lg:grid-cols-8 lg:min-h-full">
         {/* Left Content Block */}
-        <div className="order-1 flex flex-col place-content-center items-center row-span-2 lg:col-span-4 bg-transparent py-10`">
+        <div className="order-1 flex flex-col place-content-center items-center row-span-2 lg:col-span-4 bg-transparent pt-10`">
           <div className="flex flex-col w-full lg:pl-12 ">
             <div className="px-6 md:px-0 mb-8">
               <HeroTitle title="Backed by science," description="Cooked with love" />
             </div>
 
-            <div className="flex-1 w-full lg:pr-24 py-4">
+            <div className="flex-1 w-full lg:pr-24 pt-4">
               <p className="text-[#333333] text-base font-normal text-center lg:text-left px-6 md:px-0">
                 Made with high quality human-grade ingredients, Pawftul’s freshly cooked meals are
                 designed to be gentle on your dog’s gut while providing a balanced diet that meets
@@ -114,7 +114,7 @@ export default function Section_type_2() {
         </div>
 
         {/* Right Content Block */}
-        <div className="order-2 row-span-3 lg:col-span-4 py-4 px-4 lg:px-6 flex flex-col items-center lg:items-center">
+        <div className="order-2 row-span-3 lg:col-span-4  px-4 lg:px-6 flex flex-col items-center lg:items-center">
           <div className="flex flex-col w-full items-center lg:items-center">
             {/* Slide Title */}
             <div
@@ -127,7 +127,7 @@ export default function Section_type_2() {
             </div>
 
             {/* Slide Image & Description */}
-            <div className="order-3 lg:order-3 flex flex-col items-center py-4 min-w-[350px] md:min-w-[600px]">
+            <div className="order-3 lg:order-3 flex flex-col items-center pt-4 min-w-[350px] md:min-w-[600px]">
               <div className="w-full min-w-[300px] h-[400px] relative mt-8">
                 <Image
                   key={Math.round.toString()}
@@ -146,13 +146,13 @@ export default function Section_type_2() {
             </div>
 
             {/* Tabs */}
-            <div className="order-1 lg:order-2 relative w-full mt-6 lg:mt-10 mb-6 lg:mb-0">
+            <div className="order-1 lg:order-2 relative w-full mt-6 lg:mt-10 lg:mb-0">
               <div className="flex justify-evenly border-b border-[#028391] border-opacity-60">
                 {imageSlides.map((tab, idx) => (
                   <button
                     key={idx}
                     ref={(el) => (tabsRef.current[idx] = el)}
-                    className={`pt-2 pb-3 min-w-[80px] sm:min-w-[100px] text-sm transition-opacity ${
+                    className={`pt-2 min-w-[80px] sm:min-w-[100px] text-sm transition-opacity ${
                       idx === activeTabIndex
                         ? "text-[#028391] font-medium"
                         : "text-[#028391] opacity-50"

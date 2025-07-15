@@ -78,16 +78,16 @@ export default function HeaderBlack({ isFixed = false }: { isFixed?: boolean }) 
       >
         <div className="px-2 md:px-6 text-sm text-black rounded-xl font-medium text-right">
           {isMobile ? (
-            <div className="flex flex-row justify-between items-center min-h-[70px]">
-              <Link href="/">
+            <div className="flex flex-row  items-center min-h-[48px]">
+              <Link href="/" className="min-w-[90%]">
                 <Image
-                  fill={true}
                   src="/images/logos/logo_round.png"
                   alt="pawtful.com"
-                  className="max-h-[64px] max-w-[64px] ml-2"
+                  fill
+                  className="max-w-[52px] max-h-[48px] min-h-[48px]"
                 />
               </Link>
-              <div onClick={() => toggleDrawer()} className="p-2 z-20">
+              <div onClick={() => toggleDrawer()} className="z-20 max-w-[10%]">
                 <Image src={Hamburger} alt="" width={18} height={18} className="mr-6 py-2" />
               </div>
             </div>

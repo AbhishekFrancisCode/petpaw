@@ -12,7 +12,7 @@ export default function Section_type_8() {
   };
   const data: any = HomePageStrings.fifthSection[0];
   return (
-    <section className="bg-[#C4DEE1] py-10 relative overflow-hidden">
+    <section className="bg-[#C4DEE1] mx-4 md:mx-0 py-10 relative overflow-hidden rounded-md md:rounded-none">
       <div className="sb-container mx-auto flex flex-col min-h-[500px] justify-center items-center relative">
         <div className="w-full h-64 sm:h-80 md:h-96 flex justify-center items-center relative lg:absolute lg:w-full lg:h-full lg:z-0">
           <Image
@@ -42,7 +42,7 @@ export default function Section_type_8() {
           </div>
 
           <div className="flex justify-center lg:justify-start w-full max-w-2xl mx-auto lg:mx-0">
-            <p className="text-[#FFF8EF] text-base md:text-lg py-2 text-center lg:text-left drop-shadow-lg">
+            <p className="text-black text-base md:text-lg py-2 text-center lg:text-left drop-shadow-lg">
               {data.description}
             </p>
           </div>

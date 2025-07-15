@@ -8,7 +8,7 @@ export default function Section_type_1() {
   const { title, sub_title, description, data } = HomePageStrings.secondSection;
   return (
     <section className="bg-[#C4DEE1] place-content-center">
-      <div className="sb-container mx-auto py-4">
+      <div className="sb-container mx-auto py-8">
         <TemplateType1
           title={title}
           title_color="#028391"
