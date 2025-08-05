@@ -111,7 +111,7 @@ export default function ContactUsPage() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#028391] focus:border-transparent"
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+91 94444 XXXX"
                       />
                     </div>
                     <div>
@@ -180,11 +180,11 @@ export default function ContactUsPage() {
                     <div>
                       <h3 className="text-lg font-semibold text-[#028391] mb-2">Our Location</h3>
                       <p className="text-gray-700">
-                        123 Pet Nutrition Way
+                        Whitefield, Bangalore
                         <br />
-                        San Francisco, CA 94105
+                        Karanataka 560037
                         <br />
-                        United States
+                        India
                       </p>
                     </div>
                   </div>
@@ -200,7 +200,7 @@ export default function ContactUsPage() {
                           href="mailto:hello@pawtful.com"
                           className="text-[#EE9422] hover:underline"
                         >
-                          hello@pawtful.com
+                          info@pawtful.com
                         </a>
                         <br />
                         <a
@@ -221,7 +221,7 @@ export default function ContactUsPage() {
                       <h3 className="text-lg font-semibold text-[#028391] mb-2">Call Us</h3>
                       <p className="text-gray-700">
                         <a href="tel:+1-800-PAWTFUL" className="text-[#EE9422] hover:underline">
-                          1-800-PAWTFUL
+                          +91 9769900142
                         </a>
                         <br />
                         <span className="text-sm text-gray-500">
