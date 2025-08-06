@@ -221,7 +221,7 @@ export default function ContactUsPage() {
                       <h3 className="text-lg font-semibold text-[#028391] mb-2">Call Us</h3>
                       <p className="text-gray-700">
                         <a href="tel:+1-800-PAWTFUL" className="text-[#EE9422] hover:underline">
-                          +91 9769900142
+                          +91 7019596309
                         </a>
                         <br />
                         <span className="text-sm text-gray-500">
