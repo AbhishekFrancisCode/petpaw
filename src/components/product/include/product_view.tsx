@@ -3,8 +3,6 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import ProductDisplay from "./expand_card";
-import BannerElevated from "./banner-elevated";
-import { Title } from "@/components/common/title-comp";
 import { fetchProducts } from "@/store/products";
 import { productDetailsTreats } from "@/constants/meal-data";
 import Heading from "@/sb-ui/h1/h1";
