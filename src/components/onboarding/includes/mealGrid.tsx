@@ -12,8 +12,8 @@ type MealGridProps = {
 
 export const MealGrid = ({ meals, petdata }: MealGridProps) => {
   return (
-    <div className="sb-container md:p-2 min-h-[calc(100vh-120px)] flex flex-col">
-      <div className="flex flex-col md:flex-row gap-2 flex-1">
+    <div className="sb-container md:p-2 min-h-[calc(100vh-180px)] flex flex-col">
+      <div className="flex flex-col md:flex-row gap-2">
         <div className="md:flex-shrink-0 h-fit">
           <DogMealSuggester
             name={petdata.petname!}
@@ -22,7 +22,7 @@ export const MealGrid = ({ meals, petdata }: MealGridProps) => {
             activity={petdata.activity_level as ActivityLevel}
           />
         </div>
-        <div className="w-full pb-4 h-fit overflow-x-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200 hover:scrollbar-thumb-blue-600 scrollbar-thumb-rounded-full">
+        {/* <div className="w-full pb-4 h-fit overflow-x-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200 hover:scrollbar-thumb-blue-600 scrollbar-thumb-rounded-full">
           <div className="flex flex-col md:flex-row md:flex-nowrap gap-2 h-full">
             {meals.map((meal, index) => (
               <Link
@@ -61,13 +61,13 @@ export const MealGrid = ({ meals, petdata }: MealGridProps) => {
               </Link>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Bottom Buttons */}
       <div className="flex flex-col sm:flex-row justify-center items-center px-4 sm:px-6 gap-3 md:gap-6 py-6 max-w-[85%] mx-auto">
         <WhatsAppButton />
-        <Link href="/mealplan">
+        <Link href="/product">
           <button className="bg-[#EE9422] rounded-md min-h-16 px-10 text-[#FFF8EF] font-medium hover:opacity-80 min-w-[220px]">
             Know More
           </button>
