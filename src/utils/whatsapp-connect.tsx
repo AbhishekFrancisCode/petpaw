@@ -41,10 +41,10 @@ const WhatsAppButton = ({
   return (
     <div
       onClick={openWhatsApp}
-      className="cursor-pointer bg-[#EE9422] min-w-[200px] h-16 rounded-md px-4 text-[#FFF8EF] hover:opacity-80  flex items-center gap-4 shadow-sm transition duration-200"
+      className="cursor-pointer bg-[#EE9422] min-w-[230px] h-16 rounded-md px-4 text-[#FFF8EF] hover:opacity-80  flex items-center gap-4 shadow-sm transition duration-200"
     >
       <Image src={wicon} alt="WhatsApp" width={32} height={32} />
-      <span className="text-white  font-medium">Chat on WhatsApp</span>
+      <span className="text-white  font-medium text-base">Chat on WhatsApp</span>
     </div>
   );
 };
