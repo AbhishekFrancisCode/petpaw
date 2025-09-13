@@ -170,18 +170,23 @@ export default function PetDetails({
   };
 
   async function sendEmail() {
-    const response = await fetch("/api/send-email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        to: "abhi09shek@gmail.com",
-        subject: "Hello from Next.js",
-        text: "This is a test email sent with Nodemailer in Next.js"
-      })
-    });
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          to: "abhi09shek@gmail.com",
+          subject: "Hello from Next.js",
+          text: "This is a test email sent with Nodemailer in Next.js"
+        })
+      });
 
-    const result = await response.json();
-    console.log(result);
+      const result = await response.json();
+      console.log("Email sent successfully:", result);
+    } catch (error) {
+      console.warn("Email sending failed, but continuing with the flow:", error);
+      // Don't throw the error - just log it and continue
+    }
   }
 
   const handleNext = (data: Formdata) => {
@@ -191,7 +196,10 @@ export default function PetDetails({
   const onSubmit = (data: Formdata) => {
     updateFormdata(data);
     createUser(data);
-    sendEmail();
+    // Send email in background without blocking the flow
+    sendEmail().catch((error) => {
+      console.warn("Background email sending failed:", error);
+    });
   };
 
   const handleBackRoute = () => {
