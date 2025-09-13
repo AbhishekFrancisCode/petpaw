@@ -1,16 +1,9 @@
 "use client";
-import Faq from "@/app/(public_routes)/faq/page";
-import FoodTypeSelection from "./includes/food-type-selection";
-import DogMealPlan from "../product-detail/includes/banner-2-grid";
+import FoodTypeSelection from "./includes/food-type-selection copy";
 import Marquee from "../common/marquee";
 import TempletGridSmall from "../common/section-templets/templet-grid-small";
-import CardWithHalfAvatar from "./includes/meal-portion";
-import BannerSection from "./includes/banner_section";
 import TestimonialsVideo from "./includes/testimonials";
 import FAQ from "../how-it-works/Faq";
-import FullyDynamicFoodCircle from "./includes/testing";
-import BannerElevated from "../product/include/banner-elevated";
-import UploadMeal from "@/backend/setMealTable";
 import MealPortionSize from "../home/section-4";
 import Section_type_8 from "../home/section-6";
 import { mealsPlanFaqData } from "@/faq-data/meals-plan-faq-data";

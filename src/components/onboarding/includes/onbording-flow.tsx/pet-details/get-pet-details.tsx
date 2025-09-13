@@ -50,7 +50,7 @@ export default function PetDetails({
   setInnerStep: (prev: any) => void;
 }) {
   const { user } = useContext(AuthContext) as AuthContextType;
-  const { formdata, updateFormdata } = useContext(UserDataContext) as UserDataContextType;
+  const { formdata, updateFormdata, userData } = useContext(UserDataContext) as UserDataContextType;
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -121,16 +121,23 @@ export default function PetDetails({
     setInnerStep((prev: number) => Math.max(prev - 1, MIN_STEP));
   }, [innerStep, currentStep]);
 
-  const handleNext = (data: Formdata) => {
-    updateFormdata(data);
-    goToNextStep();
-  };
-
   const createUser = async (data: Formdata) => {
+    // Get stored user data from localStorage using 'pf-det' key
+    let storedUserData = null;
+    try {
+      const storedData = localStorage.getItem("pf-det");
+      if (storedData) {
+        storedUserData = JSON.parse(storedData);
+      }
+    } catch (error) {
+      console.error("Error parsing stored user data:", error);
+    }
+
     const payload: User = {
-      name: data.name,
+      // Use stored user data from localStorage, fallback to context, then form data
+      name: storedUserData?.name || userData.name || data.name,
       contact: {
-        phone: data.phone,
+        phone: storedUserData?.contact?.phone || userData.contact?.phone || data.phone,
         email: data.email
       },
       pets: {
@@ -147,21 +154,44 @@ export default function PetDetails({
     };
 
     // Debug only:
-    console.log("Payload for submission:", payload);
+    // console.log("Data from localStorage (pf-det):", storedUserData);
+    // console.log("Stored user data from context:", userData);
+    // console.log("Form data:", data);
+    // console.log("Final payload for submission:", payload);
 
     // Uncomment to enable Firebase submission:
-    // try {
-    //   const docRef = await addDoc(collection(db, "user"), payload);
-    //   console.log("Document written with ID:", docRef.id);
-    //   router.push("/profile");
-    // } catch (error) {
-    //   console.error("Error adding document:", error);
-    // }
+    try {
+      const docRef = await addDoc(collection(db, "user"), payload);
+      // console.log("Document written with ID:", docRef.id);
+      // router.push("/profile");
+    } catch (error) {
+      console.error("Error adding document:", error);
+    }
   };
 
+  async function sendEmail() {
+    const response = await fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        to: "abhi09shek@gmail.com",
+        subject: "Hello from Next.js",
+        text: "This is a test email sent with Nodemailer in Next.js"
+      })
+    });
+
+    const result = await response.json();
+    console.log(result);
+  }
+
+  const handleNext = (data: Formdata) => {
+    updateFormdata(data);
+    goToNextStep();
+  };
   const onSubmit = (data: Formdata) => {
     updateFormdata(data);
     createUser(data);
+    sendEmail();
   };
 
   const handleBackRoute = () => {
@@ -173,7 +203,7 @@ export default function PetDetails({
       {/* Scrollable content (only if needed) */}
       <div className="flex-1 min-h-0 overflow-y-auto px-4 sm:px-6 md:px-8 pt-12 md:pt-6">
         <form
-          onSubmit={handleSubmit(innerStep === MAX_STEP ? onSubmit : handleNext)}
+          onSubmit={handleSubmit(innerStep === MAX_STEP - 1 ? onSubmit : handleNext)}
           className="mx-auto w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-6xl pb-40"
           id="onboarding-form"
         >

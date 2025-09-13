@@ -179,11 +179,11 @@ const FullyDynamicFoodCircle: React.FC = () => {
                     clipPath={`url(#clip-${section.id})`}
                   >
                     <div className="w-full h-full bg-transparent">
-                      {/* <img
+                      <img
                         src={section.imageUrl}
                         alt={section.name}
                         className="object-cover w-full h-full"
-                      /> */}
+                      />
                     </div>
                   </foreignObject>
 
