@@ -34,20 +34,37 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const logOut = () => {
-    signOut(auth).then(() => {
-      return true;
-    }).catch((error: any) => {
-      return false;
-    });
+    signOut(auth)
+      .then(() => {
+        return true;
+      })
+      .catch((error: any) => {
+        return false;
+      });
   };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log(currentUser);
-      setUser(currentUser);
+      console.log("Firebase currentUser:", currentUser);
+
+      if (currentUser) {
+        // Extract the data we need from Firebase user object
+        const userData: AuthType = {
+          id: currentUser.uid,
+          email: currentUser.email || "",
+          name: currentUser.displayName || "",
+          image: currentUser.photoURL || "",
+          phone: currentUser.phoneNumber || ""
+        };
+
+        console.log("Extracted user data:", userData);
+        setUser(userData);
+      } else {
+        setUser(null);
+      }
     });
     return () => unsubscribe();
-  }, [user]);
+  }, []);
 
   return (
     <AuthContext.Provider value={{ user, googleSignIn, logOut }}>{children}</AuthContext.Provider>

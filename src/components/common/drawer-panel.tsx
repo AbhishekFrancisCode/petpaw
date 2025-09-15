@@ -41,7 +41,7 @@ export default function MobileDrawer({
             onClick={(e) => e.stopPropagation()}
           >
             {/* Logo */}
-            <div className="flex items-center justify-between mb-6">
+            {/* <div className="flex items-center justify-between mb-6">
               <Image
                 src="/images/logos/logo_round.png"
                 alt="pawtful logo"
@@ -49,10 +49,10 @@ export default function MobileDrawer({
                 height={64}
                 className="rounded-full"
               />
-            </div>
+            </div> */}
 
             {/* Auth */}
-            <div className="pl-3 mb-6">
+            <div className=" mb-6">
               {!user ? (
                 <div onClick={toggleDrawer}>
                   <Link
@@ -64,10 +64,45 @@ export default function MobileDrawer({
                   </Link>
                 </div>
               ) : (
-                <div onClick={toggleDrawer}>
-                  <Link href="/profile" className="flex items-center gap-2 text-[#EE9422]">
-                    <UserRound size={20} />
-                    <span>Profile</span>
+                <div
+                  onClick={toggleDrawer}
+                  className="bg-white rounded-lg p-4 shadow-lg border border-gray-100 
+                           bg-gradient-to-br from-white to-gray-50
+                           backdrop-blur-sm
+                           hover:shadow-xl hover:scale-[1.02] 
+                           transition-all duration-300 ease-in-out
+                           relative overflow-hidden
+                           before:absolute before:inset-0 before:bg-gradient-to-r 
+                           before:from-transparent before:via-white/20 before:to-transparent
+                           before:translate-x-[-100%] hover:before:translate-x-[100%]
+                           before:transition-transform before:duration-700 before:ease-out"
+                >
+                  <Link
+                    href="/profile"
+                    className="flex items-center gap-2 text-[#EE9422] relative z-10"
+                  >
+                    {user.image ? (
+                      <div className="flex flex-col gap-2">
+                        <Image
+                          src={user.image}
+                          alt="User Profile"
+                          width={48}
+                          height={48}
+                          className="rounded-full ring-2 ring-[#EE9422]/20 shadow-md"
+                        />
+                        <text className="text-sm font-normal text-[#EE9422]">{user.name}</text>
+                      </div>
+                    ) : (
+                      <div className="flex flex-col gap-2">
+                        <div
+                          className="w-12 h-12 rounded-full bg-gradient-to-br from-[#EE9422]/10 to-[#EE9422]/20 
+                                      flex items-center justify-center ring-2 ring-[#EE9422]/20 shadow-md"
+                        >
+                          <UserRound size={20} className="text-[#EE9422]" />
+                        </div>
+                        <span className="text-sm font-medium text-[#EE9422]">Profile</span>
+                      </div>
+                    )}
                   </Link>
                 </div>
               )}

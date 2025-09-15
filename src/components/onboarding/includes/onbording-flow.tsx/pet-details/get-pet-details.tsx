@@ -13,7 +13,16 @@ import PetFoodTypesStep from "./includes/petFoodtypesStep";
 import PetAllergiesTypesStep from "./includes/petAllergiestypesStep";
 import { Formdata } from "@/store/interfaces/form-data";
 import { MdArrowBack } from "react-icons/md";
-import { addDoc, collection } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  query,
+  where,
+  getDocs,
+  doc,
+  updateDoc,
+  setDoc
+} from "firebase/firestore";
 import { db } from "@/store/firebase";
 import OnLoadingingPage from "@/components/onboarding/onUploadScreen";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -138,7 +147,7 @@ export default function PetDetails({
       name: storedUserData?.name || userData.name || data.name,
       contact: {
         phone: storedUserData?.contact?.phone || userData.contact?.phone || data.phone,
-        email: data.email
+        email: user?.email || data.email
       },
       pets: {
         petname: data.petname,
@@ -153,19 +162,25 @@ export default function PetDetails({
       }
     };
 
-    // Debug only:
-    // console.log("Data from localStorage (pf-det):", storedUserData);
-    // console.log("Stored user data from context:", userData);
-    // console.log("Form data:", data);
-    // console.log("Final payload for submission:", payload);
-
-    // Uncomment to enable Firebase submission:
     try {
-      const docRef = await addDoc(collection(db, "user"), payload);
-      // console.log("Document written with ID:", docRef.id);
-      // router.push("/profile");
+      // Check if user already exists by email
+      const userEmail = user?.email || data.email;
+      const userQuery = query(collection(db, "user"), where("contact.email", "==", userEmail));
+
+      const querySnapshot = await getDocs(userQuery);
+
+      if (!querySnapshot.empty) {
+        // User exists, update the existing document
+        const existingDoc = querySnapshot.docs[0];
+        await updateDoc(doc(db, "user", existingDoc.id), payload as any);
+        console.log("User data updated successfully for:", userEmail);
+      } else {
+        // User doesn't exist, create new document
+        const docRef = await addDoc(collection(db, "user"), payload as any);
+        console.log("New user created with ID:", docRef.id);
+      }
     } catch (error) {
-      console.error("Error adding document:", error);
+      console.error("Error managing user document:", error);
     }
   };
 
@@ -200,6 +215,8 @@ export default function PetDetails({
     sendEmail().catch((error) => {
       console.warn("Background email sending failed:", error);
     });
+    // Move to next step after completing the form
+    goToNextStep();
   };
 
   const handleBackRoute = () => {
