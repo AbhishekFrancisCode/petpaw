@@ -150,14 +150,17 @@ export default function HeaderBlack({ isFixed = false }: { isFixed?: boolean }) 
                     ) : (
                       // )
                       <Link href={"/profile"}>
-                        <UserRound size={24} className="mt-2  text-[#EE9422]" />
-                        {/* <Image
-                          src={ProfileIcon}
-                          alt=""
-                          width={18}
-                          height={18}
-                          className="mr-6 py-2"
-                        /> */}
+                        {user.image ? (
+                          <Image
+                            src={user.image}
+                            alt="User Profile"
+                            width={48}
+                            height={48}
+                            className="mt-2 rounded-full"
+                          />
+                        ) : (
+                          <UserRound size={24} className="mt-2 text-[#EE9422]" />
+                        )}
                       </Link>
                     )}
                   </div>

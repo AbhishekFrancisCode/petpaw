@@ -29,7 +29,7 @@ const ProfilePage = () => {
       <main className="profile-page">
         <div className="absolute">
           <Link href={"/"}>
-            <div className="fixed align-middle mb-4 z-50 p-4">
+            <div className="fixed align-middle mb-4 z-40 p-4">
               <Image src={Back} alt="" width={18} height={18} className="" />
             </div>
           </Link>
