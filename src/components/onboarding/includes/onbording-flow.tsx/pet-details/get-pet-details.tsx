@@ -29,6 +29,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import PetAgeStep from "./includes/petdobStep";
 import { AuthContext, AuthContextType } from "@/contexts/auth-context";
 import { useCallback as reactUseCallback } from "react";
+import { sendOnboardingEmail } from "@/utils/sendEmail";
 
 const steps = [
   PetNameStep,
@@ -174,35 +175,23 @@ export default function PetDetails({
         const existingDoc = querySnapshot.docs[0];
         await updateDoc(doc(db, "user", existingDoc.id), payload as any);
         console.log("User data updated successfully for:", userEmail);
+        sendOnboardingEmail(payload).catch((error) => {
+          console.warn("Background email sending failed:", error);
+        });
       } else {
         // User doesn't exist, create new document
         const docRef = await addDoc(collection(db, "user"), payload as any);
         console.log("New user created with ID:", docRef.id);
+        sendOnboardingEmail(payload).catch((error) => {
+          console.warn("Background email sending failed:", error);
+        });
       }
     } catch (error) {
       console.error("Error managing user document:", error);
     }
   };
 
-  async function sendEmail() {
-    try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          to: "abhi09shek@gmail.com",
-          subject: "Hello from Next.js",
-          text: "This is a test email sent with Nodemailer in Next.js"
-        })
-      });
-
-      const result = await response.json();
-      console.log("Email sent successfully:", result);
-    } catch (error) {
-      console.warn("Email sending failed, but continuing with the flow:", error);
-      // Don't throw the error - just log it and continue
-    }
-  }
+  // Email sending moved to utils/sendEmail.ts
 
   const handleNext = (data: Formdata) => {
     updateFormdata(data);
@@ -211,10 +200,6 @@ export default function PetDetails({
   const onSubmit = (data: Formdata) => {
     updateFormdata(data);
     createUser(data);
-    // Send email in background without blocking the flow
-    sendEmail().catch((error) => {
-      console.warn("Background email sending failed:", error);
-    });
     // Move to next step after completing the form
     goToNextStep();
   };

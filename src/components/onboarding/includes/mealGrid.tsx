@@ -66,12 +66,12 @@ export const MealGrid = ({ meals, petdata }: MealGridProps) => {
 
       {/* Bottom Buttons */}
       <div className="flex flex-col sm:flex-row justify-center items-center px-4 sm:px-6 gap-3 md:gap-6 py-6 max-w-[85%] mx-auto">
-        <WhatsAppButton />
         <Link href="/product">
           <button className="bg-[#EE9422] rounded-md min-h-16 px-10 text-[#FFF8EF] font-medium hover:opacity-80 min-w-[220px]">
-            Know More
+            Try a Free Sample
           </button>
         </Link>
+        <WhatsAppButton />
       </div>
     </div>
   );
