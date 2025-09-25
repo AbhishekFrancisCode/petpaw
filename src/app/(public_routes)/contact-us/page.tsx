@@ -1,4 +1,6 @@
 "use client";
+import { FeedbackMessage } from "@/store/interfaces/user";
+import { sendContactEmail } from "@/utils/sendEmail";
 import React, { useState } from "react";
 
 export default function ContactUsPage() {
@@ -24,6 +26,7 @@ export default function ContactUsPage() {
     e.preventDefault();
     // Handle form submission here
     console.log("Form submitted:", formData);
+    sendContactEmail(formData as FeedbackMessage);
     alert("Thank you for your message! We'll get back to you soon.");
     setFormData({
       name: "",
@@ -203,12 +206,12 @@ export default function ContactUsPage() {
                           info@pawtful.com
                         </a>
                         <br />
-                        <a
+                        {/* <a
                           href="mailto:support@pawtful.com"
                           className="text-[#EE9422] hover:underline"
                         >
                           support@pawtful.com
-                        </a>
+                        </a> */}
                       </p>
                     </div>
                   </div>
@@ -339,7 +342,7 @@ export default function ContactUsPage() {
               <div className="text-center text-gray-600">
                 <div className="text-6xl mb-4">🗺️</div>
                 <p className="text-xl">Interactive Map Coming Soon</p>
-                <p className="text-sm mt-2">123 Pet Nutrition Way, San Francisco, CA 94105</p>
+                <p className="text-sm mt-2">Bangalore</p>
               </div>
             </div>
           </div>
