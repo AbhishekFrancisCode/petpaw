@@ -47,23 +47,20 @@ export function buildOnboardingHtml(userName: string, recipient: string, phone: 
       </td>
     </tr>
     <!-- Footer -->
-    <tr>
-      <td style="padding:20px 24px;border-top:4px solid #028391;text-align:center;color:#94a3b8;font-size:12px;line-height:1.5;">
-        <p style="margin:0;">
-          Pawtful © 2024. All Rights Reserved |
-          <a href="{{unsubscribe_url}}" style="color:#EE9422;text-decoration:underline;">Unsubscribe</a>
-        </p>
-        <p style="margin-top:8px;">
-          Pawtful HQ, 123 Paw Street, Bangalore, India<br/>
-          Call us at +91 98765 43210 | <a href="https://www.pawtful.com" style="color:#EE9422;text-decoration:none;">www.pawtful.com</a>
-        </p>
-        <p style="margin-top:8px;">
-          Follow us:
-          <a href="https://instagram.com/pawtful" style="color:#028391;text-decoration:none;">Instagram</a> •
-          <a href="https://facebook.com/pawtful" style="color:#028391;text-decoration:none;">Facebook</a>
-        </p>
-      </td>
-    </tr>
+        <tr>
+          <td style="padding:20px 24px;text-align:center;background:#f6f7fb;font-size:12px;color:#94a3b8;line-height:1.5;">
+            <p style="margin:0;">Pawtful © 2024. All Rights Reserved</p>
+            <p style="margin-top:8px;">
+              Pawtful, Whitefield Bangalore India<br/>
+              Email us at info@pawtful.com | <a href="https://www.pawtful.com" style="color:#EE9422;text-decoration:none;">www.pawtful.com</a>
+            </p>
+            <p style="margin-top:8px;">
+              Follow us: 
+              <a href="https://instagram.com/pawtful" style="color:#028391;text-decoration:none;">Instagram</a> • 
+              <a href="https://facebook.com/pawtful" style="color:#028391;text-decoration:none;">Facebook</a>
+            </p>
+          </td>
+        </tr>
   </table>
 </body>
 </html>
