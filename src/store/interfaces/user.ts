@@ -21,3 +21,11 @@ export interface Contact {
   email?: string;
   phone?: string;
 }
+
+export interface FeedbackMessage {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+  subject?: string;
+}

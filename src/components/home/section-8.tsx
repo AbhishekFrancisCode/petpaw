@@ -8,6 +8,8 @@ import Email from "../../../public/images/svg/email-1.svg";
 import Subscribe from "../../../public/images/svg/subscribe.svg";
 import { saveNewsLetter } from "@/store/clients/clients-slice";
 import { sbToasterSuccess } from "@/utils/sb-toaster";
+import { sendNewsLetterEmail } from "@/utils/sendEmail";
+import { User } from "@/store/interfaces/user";
 
 type Inputs = {
   email: string;
@@ -27,10 +29,14 @@ export default function NewsLetter() {
     formState: { errors }
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    saveNewsLetter(data);
-    reset();
-    sbToasterSuccess("Successfully Added.");
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    try {
+      await saveNewsLetter(data);
+      console.log({ email: data.email });
+      reset();
+    } catch (error) {
+      console.error("Newsletter submission error:", error);
+    }
   };
 
   return (
