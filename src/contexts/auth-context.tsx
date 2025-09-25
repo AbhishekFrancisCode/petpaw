@@ -57,7 +57,6 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
           phone: currentUser.phoneNumber || ""
         };
 
-        console.log("Extracted user data:", userData);
         setUser(userData);
       } else {
         setUser(null);

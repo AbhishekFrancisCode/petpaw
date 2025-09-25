@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { ApiClient } from "../api";
 import { checkError, sbToaster } from "@/utils/sb-toaster";
+import { sendNewsLetterEmail } from "@/utils/sendEmail";
 
 const initialState = {
   clients: [],
@@ -63,10 +64,11 @@ export const getUsersByIds = (Ids: string) => async (dispatch: any, getState: an
 
 export const saveNewsLetter = async (payload: any) => {
   try {
-    const res = await api.post(`news-letter/save`, { ...payload });
-    return res.data;
+    console.log(payload);
+    await sendNewsLetterEmail(payload);
+    // const res = await api.post(`news-letter/save`, { ...payload });
+    return true;
   } catch (err: any) {
     checkError(err);
-    // sbToaster(err["response"]["data"].error);
   }
 };

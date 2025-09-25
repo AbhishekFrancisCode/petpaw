@@ -3,10 +3,10 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   try {
-    const { to, subject, text } = await req.json();
+    const { to, subject, text, html } = await req.json();
 
     // Validate required fields
-    if (!to || !subject || !text) {
+    if (!to || !subject || !html) {
       return NextResponse.json(
         { success: false, error: "Missing required fields: to, subject, text" },
         { status: 400 }
@@ -54,8 +54,9 @@ export async function POST(req: Request) {
     const info = await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to,
+      cc: "info@pawtful.com",
       subject,
-      text
+      html
     });
 
     console.log("Email sent successfully:", info.messageId);
