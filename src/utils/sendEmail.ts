@@ -1,4 +1,5 @@
 import { User } from "@/store/interfaces/user";
+import { sbToasterSuccess } from "./sb-toaster";
 
 export async function sendOnboardingEmail(payload: User) {
   try {
@@ -40,7 +41,7 @@ export async function sendOnboardingEmail(payload: User) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        to: "support@pawtful.com",
+        to: "info@pawtful.com",
         subject: `Pawtful onboarding started for ${pet?.petname || "your pet"}`,
         text: emailText
       })
@@ -52,6 +53,49 @@ export async function sendOnboardingEmail(payload: User) {
       console.log("Email sent successfully:", result);
     } else {
       console.error("Email sending failed:", result.error);
+    }
+  } catch (error) {
+    console.error("Email sending failed, but continuing with the flow:", error);
+  }
+}
+
+export async function sendNewsLetterEmail(payload: any) {
+  try {
+    const recipient = payload?.email || "";
+    console.log("Sending newsletter email to:", recipient);
+    if (!recipient) {
+      console.warn("No recipient email available; skipping onboarding email.");
+      return;
+    }
+
+    const userName = payload?.name || "User";
+    const phone = payload?.contact?.phone || "";
+
+    const emailText = [
+      `Hi ${userName},`,
+      "",
+      "Thanks for subscribing to our newsletter! Here are the details we captured:",
+      "",
+      `Contact: ${recipient}${phone ? `, Phone: ${phone}` : ""}`,
+      ""
+    ].join("\n");
+
+    const response = await fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        to: "info@pawtful.com",
+        subject: `Pawtful newsletter subscribed`,
+        text: emailText
+      })
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      sbToasterSuccess("Successfully Added");
+    } else {
+      sbToasterSuccess("Something went wrong");
     }
   } catch (error) {
     console.error("Email sending failed, but continuing with the flow:", error);
